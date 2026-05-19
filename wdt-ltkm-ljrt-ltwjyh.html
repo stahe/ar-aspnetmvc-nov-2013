@@ -1,0 +1,2003 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="مقدمة إلى ASP.NET MVC من خلال أمثلة">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-aspnetmvc-nov-2013/wdt-ltkm-ljrt-ltwjyh.html">
+      
+      
+        <link rel="prev" href="ssyt-brmj-lwyb.html">
+      
+      
+        <link rel="next" href="nmwdhj-ljr.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>3. وحدات التحكم، الإجراءات، التوجيه - مقدمة إلى ASP.NET MVC من خلال أمثلة</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "مقدمة إلى ASP.NET MVC من خلال أمثلة";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="مقدمة إلى ASP.NET MVC من خلال أمثلة" class="md-header__button md-logo" aria-label="مقدمة إلى ASP.NET MVC من خلال أمثلة" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            مقدمة إلى ASP.NET MVC من خلال أمثلة
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. وحدات التحكم، الإجراءات، التوجيه
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/stahe/ar-aspnetmvc-nov-2013" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="مقدمة إلى ASP.NET MVC من خلال أمثلة" class="md-nav__button md-logo" aria-label="مقدمة إلى ASP.NET MVC من خلال أمثلة" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    مقدمة إلى ASP.NET MVC من خلال أمثلة
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/stahe/ar-aspnetmvc-nov-2013" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ssyt-brmj-lwyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. أساسيات برمجة الويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. وحدات التحكم، الإجراءات، التوجيه
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="wdt-ltkm-ljrt-ltwjyh.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. وحدات التحكم، الإجراءات، التوجيه
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-aspnet-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. بنية مشروع ASP.NET MVC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. توجيه عناوين URL الافتراضية
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. إنشاء وحدة تحكم وإجراء أول
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-contentresult-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. إجراء بنتيجة من النوع [ContentResult] - 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-contentresult-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. إجراء بنتيجة من النوع [ContentResult] - 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-jsonresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. إجراء بنتيجة من نوع [JsonResult]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7. إجراء بنتيجة [string]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-emptyresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8. إجراء بنوع [EmptyResult]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-redirectresult-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.9. إجراء بنتيجة من النوع [RedirectResult] - 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310-redirectresult-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.10. إجراء بنتيجة من النوع [RedirectResult] - 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311-redirecttorouteresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.11. إجراء بنتيجة من النوع [RedirectToRouteResult]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#312-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.12. إجراء بنوع إرجاع [void]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.13. وحدة تحكم ثانية
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#314" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14. إجراء تمت تصفيته بواسطة سمة
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#315" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.15. استرداد العناصر من مسار
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nmwdhj-ljr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. نموذج الإجراء
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lr-wnmwdhjh.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. العرض ونموذجه
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tdwyl-lr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. تدويل العرض
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="twyl-tbyq-aspnet-mvc-l-ajax.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. تحويل تطبيق ASP.NET MVC إلى Ajax
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stntj-mwqt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. استنتاج مؤقت
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="drs-l.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. دراسة حالة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lkhl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. الخلاصة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lmlq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. الملاحق
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p><a id="refheading58022676630786"></a></p>
+<h1 id="3">3. <span style="color: #365f91">وحدات التحكم، الإجراءات، التوجيه</span></h1>
+<p>دعونا ننظر في بنية تطبيق ASP.NET MVC:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000535000001A54D09B830.png" width="667" height="211" style="display:inline-block; margin:4px;width:17.635cm;height:5.57cm;" class="odt-zoomable" data-zoom-src="images/1000000000000535000001A54D09B830.png" /></td></tr></table>
+
+<p>في هذا الفصل، ندرس العملية التي توجه الطلب [1] إلى وحدة التحكم والإجراء [2a] الذي سيقوم بمعالجته، وهي آلية تُعرف باسم التوجيه. كما نقدم الاستجابات المختلفة [3] التي يمكن أن يعيدها الإجراء إلى المتصفح. وقد يكون هذا شيئًا آخر غير العرض <strong>V</strong> [4b].</p>
+<p><a id="refheading10128914791633"></a></p>
+<h2 id="31-aspnet-mvc">3.1. <span style="color: #4f81bd">بنية مشروع ASP.NET MVC</span></h2>
+<p>لنقم بإنشاء أول مشروع ASP.NET MVC باستخدام Visual Studio Express 2012. سنقوم بإضافته [1] إلى الحل المستخدم في الفصل السابق:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D80000021E8F8AD477.png" width="680" height="246" style="display:inline-block; margin:4px;width:17.999cm;height:6.521cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D80000021E8F8AD477.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000515000002D013AB9480.png" width="651" height="360" style="display:inline-block; margin:4px;width:17.212cm;height:9.525cm;" class="odt-zoomable" data-zoom-src="images/1000000000000515000002D013AB9480.png" /></td></tr></table>
+
+<ul>
+  <li>في [2]، اسم المشروع الجديد؛
+  </li>
+  <li>في [3، 4]، نختار مشروع ASP.NET MVC أساسي. يوفر لنا هذا القالب تطبيق ويب فارغًا يتضمن مع ذلك جميع الموارد (ملفات DLL ومكتبات JavaScript وما إلى ذلك) اللازمة للبدء.
+  </li>
+</ul>
+
+<p>يظهر المشروع الناتج في [5]. سنجعله [6] مشروع البداية<a id="projet-de-demarrage"></a> للحل:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000356000003396474F365.png" width="427" height="412" style="display:inline-block; margin:4px;width:11.298cm;height:10.913cm;" class="odt-zoomable" data-zoom-src="images/1000000000000356000003396474F365.png" /></td></tr></table>
+
+<p>لاحظ النقاط التالية في [5]:</p>
+<ul>
+  <li>تعكس بنية المشروع نموذج MVC الخاص به:
+  </li>
+  <li>سيتم وضع وحدات التحكم <b>C </b>في مجلد [Controllers]،
+  </li>
+  <li>سيتم وضع نماذج البيانات <b>M </b>في مجلد [Models]،
+  </li>
+  <li>سيتم وضع طرق العرض <b>(V) </b>في مجلد [Views]،
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A4000002293447BEB9.png" width="680" height="261" style="display:inline-block; margin:4px;width:17.999cm;height:6.893cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A4000002293447BEB9.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، سيكون ملف [Site.css] هو ملف CSS الافتراضي للتطبيق؛
+  </li>
+  <li>في [2]، يتوفر عدد من مكتبات JavaScript؛
+  </li>
+  <li>في [3]، توجد ثلاث طرق عرض محددة: <b>_ViewStart و_Layout وError</b>.
+  </li>
+</ul>
+
+<p>ملف [_ViewStart] هو كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">@{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Layout = </span><span style="color:#a31515">&quot;~/Views/Shared/_Layout.cshtml&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">السطر 1: يشير الحرف @ إلى بداية كتلة C# داخل العرض. في الواقع، يمكن تضمين كود C# في العرض؛</span>
+  </li>
+  <li><span style="color: #000000">السطر 2: يُعرّف متغير </span><i><span style="color: #000000">Layout </span></i><span style="color: #000000">الذي يحدد العرض الأصلي لجميع العروض. وهو يقابل الصفحة الرئيسية في إطار عمل ASP.NET الكلاسيكي.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p>الملف [<a id="layout"></a> _Layout ] كما يلي:</p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;!</span><span style="color:#800000">DOCTYPE</span><span style="color:#000000"> </span><span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">html</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">meta</span><span style="color:#000000"> </span><span style="color:#ff0000">charset</span><span style="color:#0000ff">=&quot;utf-8&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">meta</span><span style="color:#000000"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=&quot;viewport&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">content</span><span style="color:#0000ff">=&quot;width=device-width&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">@ViewBag.Title</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    @</span><span style="color:#2b91af">Styles</span><span style="color:#000000">.Render(</span><span style="color:#a31515">&quot;~/Content/css&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    @</span><span style="color:#2b91af">Scripts</span><span style="color:#000000">.Render(</span><span style="color:#a31515">&quot;~/bundles/modernizr&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">body</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    @RenderBody()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    @</span><span style="color:#2b91af">Scripts</span><span style="color:#000000">.Render(</span><span style="color:#a31515">&quot;~/bundles/jquery&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    @RenderSection(</span><span style="color:#a31515">&quot;scripts&quot;</span><span style="color:#000000">, required: </span><span style="color:#0000ff">false</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">body</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">html</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">عندما يتم عرض طريقة عرض من مجلد [Views]، سيتم عرض نصها بواسطة السطر 11 أعلاه. وهذا يعني أن طريقة العرض لا تحتاج إلى تضمين العلامات &lt;html&gt; و&lt;head&gt; و&lt;body&gt;. يتم توفير هذه العلامات بواسطة الملف أعلاه. في الوقت الحالي، هذا الملف غامض إلى حد ما. دعونا نبسطه:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;!</span><span style="color:#800000">DOCTYPE</span><span style="color:#000000"> </span><span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">html</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">meta</span><span style="color:#000000"> </span><span style="color:#ff0000">charset</span><span style="color:#0000ff">=&quot;utf-8&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">meta</span><span style="color:#000000"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=&quot;viewport&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">content</span><span style="color:#0000ff">=&quot;width=device-width&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Tutoriel ASP.NET MVC</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">body</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h2</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Tutoriel ASP.NET MVC</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h2</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  @RenderBody()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">body</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">html</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">السطر 6: العنوان المشترك بين جميع طرق العرض؛</span>
+  </li>
+  <li><span style="color: #000000">السطر 9: العنوان المشترك بين جميع طرق العرض؛</span>
+  </li>
+  <li><span style="color: #000000">السطر 10: المحتوى الخاص بالعرض المعروض.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">   </span></p>
+<p><img src="images/10000000000000960000003AABB03712.png" width="150" height="58" style="width:3.971cm;height:1.535cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000960000003AABB03712.png" /></p>
+<ul>
+  <li><span style="color: #000000">[Web.config] هو ملف تكوين تطبيق الويب. وهو ملف معقد. ستحتاج إلى تعديله عند استخدام إطار عمل [Spring.net] في بنية متعددة المستويات.</span>
+  </li>
+  <li><span style="color: #000000">يحتوي [Global.asax] على الكود الذي يتم تنفيذه عند بدء تشغيل التطبيق. بشكل عام، يستخدم هذا الكود ملفات التكوين المختلفة للتطبيق، بما في ذلك [Web.config].</span>
+  </li>
+</ul>
+<p><a id="refheading58024676630786"></a></p>
+<h2 id="32-url">3.2. <span style="color: #4f81bd">توجيه عناوين URL الافتراضية</span></h2>
+<p><span style="color: #000000">الرمز الموجود في [Global.asax] هو حاليًا كما يلي:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Http;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Optimization;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Routing;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Exemple_01</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">MvcApplication</span><span style="color:#000000"> : System.Web.</span><span style="color:#2b91af">HttpApplication</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">protected</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> Application_Start()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">السطر 6: </span><i><span style="color: #000000">مساحة اسم</span></i><span style="color: #000000"> الفئة. وهي مشتقة مباشرة من اسم المشروع ومدرجة في خصائص المشروع:</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000"> </span></p>
+<p><img src="images/100000000000021E0000026DA93E2986.png" width="379" height="435" style="width:10.04cm;height:11.502cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021E0000026DA93E2986.png" /></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004210000006F383712A7.png" width="529" height="56" style="display:inline-block; margin:4px;width:13.984cm;height:1.469cm;" class="odt-zoomable" data-zoom-src="images/10000000000004210000006F383712A7.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">نقوم بتعيين [1] كمساحة الاسم الافتراضية. ثم يتم استخدامها بشكل افتراضي لجميع الفئات التي سيتم إنشاؤها في المشروع.</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">لنعد إلى الكود في [Global.asax]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Http;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Optimization;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Routing;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Exemple_01</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">MvcApplication</span><span style="color:#000000"> : System.Web.</span><span style="color:#2b91af">HttpApplication</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">protected</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> Application_Start()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">السطر 9: الفئة [MvcApplication] مشتقة من الفئة [HttpApplication]. يمكن تغيير اسم [MvcApplication]؛</span>
+  </li>
+  <li><span style="color: #000000">السطر 11: طريقة [Application_Start] هي الطريقة التي يتم تنفيذها عند بدء تشغيل تطبيق الويب. يتم تنفيذها مرة واحدة فقط. هذا هو المكان الذي يتم فيه تهيئة التطبيق.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">رمز [Application_Start] حاليًا كما يلي:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">protected</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> Application_Start()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#2b91af">AreaRegistration</span><span style="color:#000000">.RegisterAllAreas();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#2b91af">WebApiConfig</span><span style="color:#000000">.Register(</span><span style="color:#2b91af">GlobalConfiguration</span><span style="color:#000000">.Configuration);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#2b91af">FilterConfig</span><span style="color:#000000">.RegisterGlobalFilters(</span><span style="color:#2b91af">GlobalFilters</span><span style="color:#000000">.Filters);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#2b91af">RouteConfig</span><span style="color:#000000">.RegisterRoutes(</span><span style="color:#2b91af">RouteTable</span><span style="color:#000000">.Routes);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#2b91af">BundleConfig</span><span style="color:#000000">.RegisterBundles(</span><span style="color:#2b91af">BundleTable</span><span style="color:#000000">.Bundles);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">في الوقت الحالي، لا تحتاج إلى فهم كل هذا الكود. تحدد الأسطر من 5 إلى 8 المسارات التي يقبلها تطبيق الويب. دعونا نعود إلى بنية تطبيق ASP.NET MVC:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000546000001A892AB2DCF.png" width="675" height="212" style="display:inline-block; margin:4px;width:17.859cm;height:5.609cm;" class="odt-zoomable" data-zoom-src="images/1000000000000546000001A892AB2DCF.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">لقد أوضحنا أن [Front Controller] يجب أن يوجه عنوان URL إلى الإجراء المسؤول عن معالجته. تُستخدم المسارات لربط نمط عنوان URL بإجراء. يتم تعريف هذه المسارات في مجلد [App_Start] الخاص بالمشروع بواسطة فئات [WebApiConfig، FilterConfig، RouteConfig، BundleConfig]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">  </span></p>
+<p><img src="images/10000000000000A90000005B0B6C09C4.png" width="118" height="64" style="width:3.129cm;height:1.685cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000A90000005B0B6C09C4.png" /></p>
+<p><span style="color: #000000">في الوقت الحالي، نحن مهتمون فقط بفئة [RouteConfig]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Routing;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Exemple_01</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">RouteConfig</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">static</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> RegisterRoutes(</span><span style="color:#2b91af">RouteCollection</span><span style="color:#000000"> routes)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      routes.IgnoreRoute(</span><span style="color:#a31515">&quot;{resource}.axd/{*pathInfo}&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      routes.MapRoute(</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          name: </span><span style="color:#a31515">&quot;Default&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          url: </span><span style="color:#a31515">&quot;{controller}/{action}/{id}&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          defaults: </span><span style="color:#0000ff">new</span><span style="color:#000000"> { controller = </span><span style="color:#a31515">&quot;Home&quot;</span><span style="color:#000000">, action = </span><span style="color:#a31515">&quot;Index&quot;</span><span style="color:#000000">, id = </span><span style="color:#2b91af">UrlParameter</span><span style="color:#000000">.Optional }</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      );</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">تحدد الأسطر 12–16 تنسيق عناوين URL التي يقبلها التطبيق. وهذا ما يُسمى </span><strong><span style="color: #000000">مسارًا</span></strong><span style="color: #000000">. يمكن أن يكون هناك عدة مسارات محتملة (= عدة أنماط محتملة لعناوين URL). ويتم تمييزها عن بعضها البعض من خلال اسمها (السطر 13). يتم تحديد تنسيق عناوين URL الخاصة بالمسار في السطر 14. هنا، ستتكون عنوان URL من ثلاثة مكونات:</span></p>
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><b><span style="color: #000000">{controller}</span></b><span style="color: #000000">: اسم فئة مشتقة من [Controller]. سيتم البحث عنها في مجلد [Controllers] الخاص بالمشروع. وفقًا للأعراف، إذا كان عنوان URL هو /X/Y/Z، فإن وحدة التحكم المسؤولة عن معالجة عنوان URL هذا ستكون فئة </span><b><span style="color: #000000">XController</span></b><span style="color: #000000">. تضاف اللاحقة </span><b><span style="color: #000000">Controller </span></b><span style="color: #000000">إلى اسم وحدة التحكم الموجودة في عنوان URL؛</span>
+  </li>
+  <li><span style="color: #000000">{</span><b><span style="color: #000000">action</span></b><span style="color: #000000">}: اسم طريقة في وحدة التحكم المحددة أعلاه. ستتلقى هذه الطريقة المعلمات المصاحبة لعنوان URL وتقوم بمعالجتها. يمكن أن ترجع هذه الطريقة نتائج متنوعة:</span>
+    <ul>
+      <li><b><span style="color: #000000">void</span></b><span style="color: #000000">: ستقوم الإجراء بإنشاء الاستجابة لمتصفح العميل بنفسها</span>
+      </li>
+      <li><b><span style="color: #000000">String</span></b><span style="color: #000000">: تعيد الإجراء سلسلة نصية إلى العميل؛</span>
+      </li>
+      <li><b><span style="color: #000000">ViewResult</span></b><span style="color: #000000">: تعيد عرضًا إلى العميل؛</span>
+      </li>
+      <li><b><span style="color: #000000">PartialViewResult</span></b><span style="color: #000000">: تعيد عرضًا جزئيًا؛</span>
+      </li>
+      <li><b><span style="color: #000000">EmptyResult</span></b><span style="color: #000000">: يتم إرسال استجابة فارغة إلى العميل؛</span>
+      </li>
+      <li><b><span style="color: #000000">RedirectResult</span></b><span style="color: #000000">: يوجه العميل إلى إعادة التوجيه إلى عنوان URL</span>
+      </li>
+      <li><b><span style="color: #000000">RedirectToRouteResult</span></b><span style="color: #000000">: مثل ما سبق، لكن عنوان URL يتم إنشاؤه من مسارات التطبيق؛</span>
+      </li>
+      <li><b><span style="color: #000000">JsonResult</span></b><span style="color: #000000">: يرسل استجابة JSON</span>
+      </li>
+      <li><b><span style="color: #000000">JavaScriptResult</span></b><span style="color: #000000">: يعرض كود JavaScript للعميل؛</span>
+      </li>
+      <li><b><span style="color: #000000">ContentResult</span></b><span style="color: #000000">: يعيد دفق HTML إلى العميل دون المرور عبر عرض؛</span>
+      </li>
+      <li><b><span style="color: #000000">FileContentResult</span></b><span style="color: #000000">: يعيد ملفًا إلى العميل؛</span>
+      </li>
+      <li><b><span style="color: #000000">FileStreamResult</span></b><span style="color: #000000">: مثل ما سبق، ولكن عبر طريقة مختلفة؛</span>
+      </li>
+      <li><b><span style="color: #000000">FilePathResult</span></b><span style="color: #000000">: ...</span>
+      </li>
+    </ul>
+  </li>
+  <li><b><span style="color: #000000">{id}</span></b><span style="color: #000000">: معلمة سيتم تمريرها إلى الإجراء. لكي يعمل هذا، يجب أن يحتوي الإجراء على معلمة باسم </span><b><span style="color: #000000">id</span></b><span style="color: #000000">.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">يحدد السطر 15 القيم الافتراضية عندما لا يكون عنوان URL بالصيغة المتوقعة </span><span style="color: #a31515">/{controller}/{action}/{id}. </span>كما يشير إلى أن المعلمة <strong>{id}</strong> في عنوان URL اختيارية. فيما يلي قائمة بعناوين URL غير مكتملة وعناوين URL المكتملة بالقيم الافتراضية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>عنوان URL الأصلي</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>عنوان URL المكتمل</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/Home/Index</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/الأنشطة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/Do/Index</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء ما/4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء ما/4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيئًا/x/y/z</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان URL غير موجه</div></td></tr></table>
+
+<p><a id="refheading58026676630786"></a></p>
+<h2 id="33">3.3. <span style="color: #4f81bd">إنشاء وحدة تحكم وإجراء أول</span></h2>
+<p>لنقم بإنشاء وحدة تحكم أولى:</p>
+<p><img src="images/1000000000000359000000A19E6EE445.png" width="544" height="102" style="width:14.392cm;height:2.704cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000359000000A19E6EE445.png" /></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000368000001382C98CD67.png" width="436" height="156" style="display:inline-block; margin:4px;width:11.536cm;height:4.128cm;" class="odt-zoomable" data-zoom-src="images/1000000000000368000001382C98CD67.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، أدخل اسم وحدة التحكم مع اللاحقة [Controller]؛
+  </li>
+  <li>في [2]، قم بإنشاء وحدة تحكم MVC فارغة؛
+  </li>
+  <li>في [3]، تم إنشاؤها.
+  </li>
+</ul>
+
+<p>في [FirstController]، تم إنشاؤها.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Collections.Generic;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Linq;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Exemple_01.Controllers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">FirstController</span><span style="color:#000000"> : </span><span style="color:#2b91af">Controller</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">//</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// GET: /First/</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ActionResult</span><span style="color:#000000"> Index()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">return</span><span style="color:#000000"> View();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 7: تم إنشاء <i>مساحة اسم</i> افتراضية؛
+  </li>
+  <li>السطر 9: الفئة [FirstController] مشتقة من الفئة [System.Web.Mvc.Controller]؛
+  </li>
+  <li>الأسطر 14-17: تم إنشاء إجراء [Index] افتراضيًا. وهو <b>عام</b>. وهذا أمر مهم؛ وإلا فلن يتم العثور عليه. وهو يُرجع نوع [ActionResult]، وهو فئة مجردة تُشتق منها معظم النتائج التي يُرجعها الإجراء عادةً. وهذا نوع &quot;شامل&quot; يمكن تحديده باستبداله بالاسم الفعلي للنوع المُرجع؛
+  </li>
+  <li>السطر 16: لا تقوم الطريقة بأي شيء. إنها تعيد ببساطة عرضًا، أي نوع [ViewResult]. لم يتم تحديد اسم العرض. في هذه الحالة، يبحث إطار العمل في المجلد [Views/First] عن عرض يحمل نفس اسم الإجراء، وهو هنا [Index.cshtml].
+  </li>
+</ul>
+
+<p>لنقم بإنشاء عرض [Index.cshtml]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005820000026E4E43F847.png" width="680" height="300" style="display:inline-block; margin:4px;width:17.999cm;height:7.939cm;" class="odt-zoomable" data-zoom-src="images/10000000000005820000026E4E43F847.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، انقر بزر الماوس الأيمن على كود الإجراء واختر خيار [Add View]؛
+  </li>
+  <li>في [2]، يقترح المعالج عرضًا يحمل نفس اسم الإجراء. وهذا ما نريده هنا؛
+  </li>
+  <li>في [3]، بشكل افتراضي، يُقترح استخدام الصفحة الرئيسية [_Layout.cshtml]؛
+  </li>
+  <li>في [4]، بمجرد التأكيد، يقوم المعالج بإنشاء العرض في مجلد فرعي ضمن مجلد [Views] يحمل اسم وحدة التحكم (First).
+  </li>
+</ul>
+
+<p>الرمز الذي تم إنشاؤه لعرض [Index] هو كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">@{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    ViewBag.Title = </span><span style="color:#a31515">&quot;Index&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">h2</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Index</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h2</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>الأسطر 1–3: كود C# الذي يحدد متغيرًا؛
+  </li>
+  <li>السطر 5: علامة HTML.
+  </li>
+</ul>
+
+<p>استبدل كل الكود السابق بهذا:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Vue [Index]...</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<p>للتلخيص:</p>
+<ul>
+  <li>لدينا وحدة تحكم <b>C# </b>تسمى [First]؛
+  </li>
+  <li>لدينا إجراء يسمى [Index] يطلب عرض عرض يسمى [Index]؛
+  </li>
+  <li>لدينا العرض <b>V </b>[Index].
+  </li>
+</ul>
+
+<p>يمكننا استدعاء الإجراء [Index] بطريقتين:</p>
+<ul>
+  <li>/First/Index؛
+  </li>
+  <li>/أولاً، نظرًا لأن [Index] هو أيضًا الإجراء الافتراضي في المسارات.
+  </li>
+</ul>
+
+<p>دعونا نشغل التطبيق (CTRL-F5). نحصل على الصفحة التالية:</p>
+<p><img src="images/10000000000001EB00000112B2039E6A.png" width="344" height="192" style="width:9.089cm;height:5.071cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EB00000112B2039E6A.png" /></p>
+<p>في [1]، كان عنوان URL المطلوب <strong>هو http://localhost:49302</strong>. ولا يوجد مسار. ونحن نعلم أن جهاز التوجيه الخاص بنا يتوقع أن تكون عناوين URL بالصيغة <strong>/{controller}/{action}/{id}.</strong> ونظرًا لعدم وجود هذه العناصر، يتم استخدام القيم الافتراضية. ويصبح عنوان URL <strong>هو http://localhost:49302/Home/Index</strong>. ولا يوجد وحدة التحكم [Home]. ولذلك، يتم رفض عنوان URL.</p>
+<p>الآن دعونا نجرب عنوان URL <strong>http://localhost:49302/First/Index</strong> عن طريق كتابته مباشرة في المتصفح:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028400000136A17562B6.png" width="322" height="155" style="display:inline-block; margin:4px;width:8.52cm;height:4.101cm;" class="odt-zoomable" data-zoom-src="images/100000000000028400000136A17562B6.png" /></td></tr></table>
+
+<p>تم إنشاء الصفحة أعلاه بواسطة الإجراء [Index] لوحدة التحكم [First]. الصفحة التي تم إنشاؤها بواسطة هذا الإجراء هي طريقة العرض [Index]، والتي كان كودها كما يلي:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Vue [Index]...</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<p>وهي تُنشئ الجزء [1]. أما الجزء [2]، فيأتي من الصفحة الرئيسية [_Layout] التي حددناها سابقًا:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;!</span><span style="color:#800000">DOCTYPE</span><span style="color:#000000"> </span><span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">html</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">meta</span><span style="color:#000000"> </span><span style="color:#ff0000">charset</span><span style="color:#0000ff">=&quot;utf-8&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">meta</span><span style="color:#000000"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=&quot;viewport&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">content</span><span style="color:#0000ff">=&quot;width=device-width&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Tutoriel ASP.NET MVC</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">body</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h2</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Tutoriel ASP.NET MVC</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h2</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  @RenderBody()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">body</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">html</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<p>السطر 9 أنشأ القسم [2] من الصفحة. ومع ذلك، لا تظهر طريقة العرض [Index] إلا في السطر 10.</p>
+<p>إذا قمنا بعرض شفرة المصدر للصفحة المستلمة، يمكننا أن نرى أن صفحة [Index] مدرجة بالفعل (السطر 10 أدناه) في صفحة [Layout]:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span> <span class="p">/&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutoriel ASP.NET MVC<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Tutoriel ASP.NET MVC<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>  <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Vue [Index]...<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>الآن دعونا نجرب عنوان URL [/First]:</p>
+<p><img src="images/10000000000001270000009D2838ADF6.png" width="206" height="110" style="width:5.459cm;height:2.905cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001270000009D2838ADF6.png" /></p>
+<p>كان عنوان URL [/First] غير مكتمل. تم استكماله بالقيم الافتراضية للمسار وأصبح [/First/Index]. وبالتالي نحصل على نفس النتيجة السابقة.</p>
+<p><a id="refheading58028676630786"></a></p>
+<h2 id="34-contentresult-1">3.4. <span style="color: #4f81bd">إجراء بنتيجة من النوع [ContentResult] - 1</span></h2>
+<p>لنقم بإنشاء إجراء جديد في وحدة التحكم [First]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Text;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Exemple_01.Controllers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">FirstController</span><span style="color:#000000"> : </span><span style="color:#2b91af">Controller</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Index</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ViewResult</span><span style="color:#000000"> Index()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> View();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action01</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action01()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> Content(</span><span style="color:#a31515">&quot;&lt;h1&gt;Action [Action01]&lt;/h1&gt;&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">Encoding</span><span style="color:#000000">.UTF8);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>يتم تعريف الإجراء الجديد في الأسطر 14–18. وهو ببساطة يعيد سلسلة نصية باستخدام طريقة [Content] (السطر 16) من فئة [Controller] (السطر 6). معلمات الطريقة هي:</p>
+<ol>
+  <li>سلسلة الاستجابة؛
+  </li>
+  <li>مؤشر لنوع النص الذي يتم إرساله: &quot;text/plain&quot;، &quot;text/html&quot;، &quot;text/xml&quot;، إلخ. يُسمى هذا المؤشر بنوع MIME (<a href="http://fr.wikipedia.org/wiki/Type_MIME"><u><span style="color: #0563c1">http://fr.wikipedia.org/wiki/Type_MIME</span></u></a>)؛
+  </li>
+  <li>المعلمة الثالثة تحدد نوع الترميز المستخدم للنص.
+  </li>
+</ol>
+
+<p>بدلاً من استخدام النوع المجرد [ActionResult]، تحدد طرقنا نوع الإرجاع الفعلي (السطران 9 و 14).</p>
+<p>دعونا نطلب عنوان URL [/First/Action01]. نحصل على الصفحة التالية:</p>
+<p><img src="images/10000000000001680000007B99162A37.png" width="252" height="86" style="width:6.669cm;height:2.279cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001680000007B99162A37.png" /></p>
+<p>دعونا نلقي نظرة على شفرة المصدر للصفحة التي تم استلامها:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>&lt;h1&gt;Action [Action01]&lt;/h1&gt;
+</code></pre></div></td></tr></table></div>
+<p>لم يتلق المتصفح سوى النص الذي أرسلته الإجراء ولم يتلق أي شيء آخر. هذا الوضع مفيد عندما تريد طلب البيانات الأولية من خادم الويب دون علامات HTML المحيطة بها. لاحظ أعلاه أن المتصفح لم يفسر علامة HTML &lt;h1&gt;. لفهم السبب، دعونا نلقي نظرة على تبادلات HTTP في Chrome:</p>
+<p>أرسل المتصفح رؤوس HTTP التالية:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">GET</span> <span class="o">/</span><span class="n">First</span><span class="o">/</span><span class="n">Action01</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">49302</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="nb">max</span><span class="o">-</span><span class="n">age</span><span class="o">=</span><span class="mi">0</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">Accept</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xhtml</span><span class="o">+</span><span class="n">xml</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xml</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="o">*/*</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="n">Windows</span> <span class="n">NT</span> <span class="mf">6.2</span><span class="p">;</span> <span class="n">WOW64</span><span class="p">)</span> <span class="n">AppleWebKit</span><span class="o">/</span><span class="mf">537.36</span> <span class="p">(</span><span class="n">KHTML</span><span class="p">,</span> <span class="n">like</span> <span class="n">Gecko</span><span class="p">)</span> <span class="n">Chrome</span><span class="o">/</span><span class="mf">29.0.1547.76</span> <span class="n">Safari</span><span class="o">/</span><span class="mf">537.36</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span><span class="n">deflate</span><span class="p">,</span><span class="n">sdch</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">fr</span><span class="o">-</span><span class="n">FR</span><span class="p">,</span><span class="n">fr</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">en</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.4</span>
+</code></pre></div></td></tr></table></div>
+<p>رد الخادم بالرؤوس التالية:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>HTTP/1.1 200 OK
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>Cache-Control: private
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>Content-Type: text/plain; charset=utf-8
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>Content-Encoding: gzip
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>Vary: Accept-Encoding
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>Server: Microsoft-IIS/8.0
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>X-AspNetMvc-Version: 4.0
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>X-AspNet-Version: 4.0.30319
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>X-SourceFiles: =?UTF-8?B?RDpcZGF0YVxpc3RpYS0xMzE0XGFzcG5ldFxkdnBcRXhlbXBsZXNcRXhlbXBsZS0wMVxGaXJzdFxBY3Rpb24wMQ==?=
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>X-Powered-By: ASP.NET
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>Date: Mon, 23 Sep 2013 15:22:33 GMT
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>Content-Length: 141
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 3: يحدد نوع المستند. نرى السمات المحددة في الأسلوب [Action01]. ويرجع السبب في عدم تفسير المتصفح لعلامة &lt;h1&gt; الموجودة في المستند المستلم إلى أنه تم إعلامه بأن المستند من النوع &quot;text/plain&quot; وليس &quot;text/html&quot;.
+  </li>
+</ul>
+<p><a id="refheading58030676630786"></a></p>
+<h2 id="35-contentresult-2">3.5. <span style="color: #4f81bd">إجراء بنتيجة من النوع [ContentResult] - 2</span></h2>
+<p>لننظر إلى الإجراء الثالث التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Text;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Exemple_01.Controllers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">FirstController</span><span style="color:#000000"> : </span><span style="color:#2b91af">Controller</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action02</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action02()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">string</span><span style="color:#000000"> data = </span><span style="color:#a31515">&quot;&lt;action&gt;&lt;name&gt;Action02&lt;/name&gt;&lt;description&gt;renvoie un texte XML&lt;/description&gt;&lt;/action&gt;&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> Content(data, </span><span style="color:#a31515">&quot;text/xml&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">Encoding</span><span style="color:#000000">.UTF8);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 12: نحدد نص XML؛
+  </li>
+  <li>السطر 13: نرسله إلى المتصفح، مع تحديد أنه XML بنوع MIME &quot;text/xml&quot;.
+  </li>
+</ul>
+
+<p>في المتصفح، نحصل على الصفحة التالية:</p>
+<p><img src="images/10000000000002BE000000B7B494D346.png" width="491" height="128" style="width:13cm;height:3.388cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BE000000B7B494D346.png" /></p>
+<p>دعونا نلقي نظرة على استجابة HTTP للخادم في Chrome:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>HTTP/1.1 200 OK
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>Cache-Control: private
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>Content-Type: text/xml; charset=utf-8
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>Content-Encoding: gzip
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>Vary: Accept-Encoding
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>Server: Microsoft-IIS/8.0
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>X-AspNetMvc-Version: 4.0
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>X-AspNet-Version: 4.0.30319
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>X-SourceFiles: =?UTF-8?B?RDpcZGF0YVxpc3RpYS0xMzE0XGFzcG5ldFxkdnBcRXhlbXBsZXNcRXhlbXBsZS0wMVxGaXJzdFxBY3Rpb24wMg==?=
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>X-Powered-By: ASP.NET
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>Date: Mon, 23 Sep 2013 15:29:34 GMT
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>Content-Length: 176
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 3: يحدد نوع المستند. يتم تضمين السمات المحددة في طريقة [Action02] هنا؛
+  </li>
+  <li>السطر 12: حجم المستند المرسَل من الخادم بالبايت.
+  </li>
+</ul>
+
+<p>المستند الذي أرسله الخادم هو هذا (لقطة شاشة من Chrome):</p>
+<p><img src="images/10000000000002760000005B81C3C0C6.png" width="520" height="75" style="width:13.771cm;height:1.99cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002760000005B81C3C0C6.png" /></p>
+<p><a id="refheading58032676630786"></a></p>
+<h2 id="36-jsonresult">3.6. <span style="color: #4f81bd">إجراء بنتيجة من نوع [JsonResult]</span></h2>
+<p>دعونا نضيف الإجراء التالي إلى وحدة التحكم [First]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action03</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">JsonResult</span><span style="color:#000000"> Action03()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">dynamic</span><span style="color:#000000"> personne = </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">ExpandoObject</span><span style="color:#000000">();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      personne.nom = </span><span style="color:#a31515">&quot;someone&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      personne.age = 20;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> Json(personne,</span><span style="color:#2b91af">JsonRequestBehavior</span><span style="color:#000000">.AllowGet);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 4: متغير من النوع <i>dynamic</i>. في وقت التشغيل، يمكن إضافة الخصائص بحرية إلى مثل هذا المتغير. يتم إنشاء الخاصية في نفس الوقت الذي يتم فيه تهيئتها؛
+  </li>
+  <li>السطران 5-6: نقوم بتهيئة خاصيتين، <i>name </i>و <i>age</i>؛
+  </li>
+  <li>السطر 7: يُرجع تمثيل JSON (ترميز كائنات JavaScript) للكائن. يسمح JSON بتسلسل كائن إلى سلسلة، وبالعكس، بإلغاء تسلسل سلسلة إلى كائن. وهو بديل لتسلسل/إلغاء تسلسل XML؛
+  </li>
+  <li>السطر 2: تعرض الإجراء نوع [JsonResult]. لا يمكن عرض هذا النوع إلا لطلب POST. إذا كنت ترغب في عرضه لطريقة GET، يجب عليك تعيين المعلمة الثانية لمُنشئ فئة Json (السطر 7) إلى <span style="color: #2b91af">JsonRequestBehavior</span><span style="color: #000000">.AllowGet</span>.
+  </li>
+</ul>
+
+<p>عند طلب عنوان URL [/First/Action03]، يعرض المتصفح ما يلي:</p>
+<p><img src="images/10000000000001DA000000766AC21245.png" width="332" height="83" style="width:8.781cm;height:2.185cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DA000000766AC21245.png" /></p>
+<p>استجابة HTTP للخادم هي كما يلي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>HTTP/1.1 200 OK
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>Cache-Control: private
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>Content-Type: application/json; charset=utf-8
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>Server: Microsoft-IIS/8.0
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>X-AspNetMvc-Version: 4.0
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>X-AspNet-Version: 4.0.30319
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>X-SourceFiles: =?UTF-8?B?RDpcZGF0YVxpc3RpYS0xMzE0XGFzcG5ldFxkdnBcRXhlbXBsZXNcRXhlbXBsZS0wMVxGaXJzdFxBY3Rpb24wMw==?=
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>X-Powered-By: ASP.NET
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>Date: Mon, 23 Sep 2013 15:48:53 GMT
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>Content-Length: 58
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 3: يحدد أن المستند المرسل هو JSON؛
+  </li>
+  <li>السطر 10: حجم المستند المرسل هو 58 بايت. وهو كما يلي:
+  </li>
+</ul>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[{&quot;Key&quot;:&quot;nom&quot;,&quot;Value&quot;:&quot;someone&quot;},{&quot;Key&quot;:&quot;age&quot;,&quot;Value&quot;:20}]
+</code></pre></div>
+<p>يُنظر إلى العنصر الديناميكي [person] بواسطة JSON على أنه مصفوفة من القواميس حيث كل قاموس:</p>
+<ul>
+  <li>يتوافق مع حقل من متغير [person]؛
+  </li>
+  <li>يحتوي على مفتاحين، &quot;Key&quot; و&quot;Value&quot;. يحتوي &quot;Key&quot; على اسم الحقل كقيمة مرتبطة به، ويحتوي &quot;Value&quot; على قيمة الحقل.
+  </li>
+</ul>
+<p><a id="refheading58034676630786"></a></p>
+<h2 id="37-string">3.7. <span style="color: #4f81bd">إجراء بنتيجة [string]</span></h2>
+<p>دعونا نضيف الإجراء التالي إلى وحدة التحكم [First]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action04</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">string</span><span style="color:#000000"> Action04()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;&lt;h3&gt;Contrôleur=First, Action=Action04&lt;/h3&gt;&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>عندما نطلب عنوان URL [/First/Action04] في Chrome، نحصل على الاستجابة التالية:</p>
+<p><img src="images/100000000000016D000000769909198B.png" width="255" height="83" style="width:6.759cm;height:2.185cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016D000000769909198B.png" /></p>
+<p>يمكننا أن نرى أن العلامة &lt;h3&gt; قد تم تفسيرها. دعونا نلقي نظرة على استجابة HTTP للخادم:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>HTTP/1.1 200 OK
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>Cache-Control: private
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>Content-Type: text/html; charset=utf-8
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>Content-Encoding: gzip
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>Vary: Accept-Encoding
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>Server: Microsoft-IIS/8.0
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>X-AspNetMvc-Version: 4.0
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>X-AspNet-Version: 4.0.30319
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>X-SourceFiles: =?UTF-8?B?RDpcZGF0YVxpc3RpYS0xMzE0XGFzcG5ldFxkdnBcRXhlbXBsZXNcRXhlbXBsZS0wMVxGaXJzdFxBY3Rpb24wNA==?=
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>X-Powered-By: ASP.NET
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>Date: Tue, 24 Sep 2013 07:49:00 GMT
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a>Content-Length: 156
+</code></pre></div></td></tr></table></div>
+<p>والوثيقة التالية:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;h3&gt;Contrôleur=First, Action=Action04&lt;/h3&gt;
+</code></pre></div>
+<p>كما يظهر في السطر 3، أشار الخادم إلى أنه كان يرسل نصًا بتنسيق HTML. ولهذا السبب قام المتصفح بتفسير العلامة &lt;h3&gt;. لذلك، عندما تريد إرسال نص عادي، يفضل إرجاع [ContentResult] بدلاً من [string]. تسمح لنا [ContentResult] بتحديد نوع MIME &quot;text/plain&quot; للإشارة إلى أننا نرسل نصًا غير منسق، والذي لن يحاول المتصفح تفسيره.</p>
+<p><a id="refheading58036676630786"></a></p>
+<h2 id="38-emptyresult">3.8. <span style="color: #4f81bd">إجراء بنوع [EmptyResult]</span></h2>
+<p>انظر الإجراء الجديد التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action05</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">EmptyResult</span><span style="color:#000000"> Action05()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">EmptyResult</span><span style="color:#000000">();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>تقوم الإجراء ببساطة بإرجاع نوع [EmptyResult]. في هذه الحالة، يرسل الخادم استجابة فارغة إلى العميل، كما هو موضح في استجابة HTTP الخاصة به:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span>
+<span class="normal"><a href="#__codelineno-9-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>HTTP/1.1 200 OK
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>Cache-Control: private
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>Server: Microsoft-IIS/8.0
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>X-AspNetMvc-Version: 4.0
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>X-AspNet-Version: 4.0.30319
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>X-SourceFiles: =?UTF-8?B?RDpcZGF0YVxpc3RpYS0xMzE0XGFzcG5ldFxkdnBcRXhlbXBsZXNcRXhlbXBsZS0wMVxGaXJzdFxBY3Rpb24wNQ==?=
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>X-Powered-By: ASP.NET
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>Date: Tue, 24 Sep 2013 08:11:12 GMT
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>Content-Length: 0
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 9: يُعلم الخادم عميله بأنه يرسل مستندًا فارغًا.
+  </li>
+</ul>
+<p><a id="refheading58038676630786"></a></p>
+<h2 id="39-redirectresult-1">3.9. <span style="color: #4f81bd">إجراء بنتيجة من النوع [RedirectResult] - 1</span></h2>
+<p>ضع في اعتبارك الإجراء الجديد التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action06</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">RedirectResult</span><span style="color:#000000"> Action06()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">RedirectResult</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;/First/Action05&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>تُرجع الإجراء نوع [RedirectResult]. يسمح هذا النوع بإرسال طلب إعادة توجيه إلى العميل إلى عنوان URL المحدد في المنشئ (السطر 4). سيقوم العميل بعد ذلك بإرسال طلب GET جديد إلى [/First/Action05]. وبالتالي، يقوم العميل بإرسال طلبين إجمالاً.</p>
+<p>يعرض المتصفح نتيجة الطلب الثاني:</p>
+<p><img src="images/100000000000016E0000007EE49A70A7.png" width="256" height="88" style="width:6.78cm;height:2.334cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016E0000007EE49A70A7.png" /></p>
+<p>دعونا نفحص استجابة HTTP للخادم في Chrome:</p>
+<p><img src="images/10000000000000A1000000C0DD2AF862.png" width="113" height="134" style="width:2.979cm;height:3.552cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000A1000000C0DD2AF862.png" /></p>
+<p>في الأعلى، نرى طلبين للمتصفح. دعونا نفحص الطلب الأول [Action06]. استجابة HTTP للخادم هي كما يلي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>HTTP/1.1 302 Found
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>Cache-Control: private
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>Content-Type: text/html; charset=utf-8
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>Location: /First/Action05
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>Server: Microsoft-IIS/8.0
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>X-AspNetMvc-Version: 4.0
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>X-AspNet-Version: 4.0.30319
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>X-SourceFiles: =?UTF-8?B?RDpcZGF0YVxpc3RpYS0xMzE0XGFzcG5ldFxkdnBcRXhlbXBsZXNcRXhlbXBsZS0wMVxGaXJzdFxBY3Rpb24wNg==?=
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>X-Powered-By: ASP.NET
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>Date: Tue, 24 Sep 2013 08:16:59 GMT
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a>Content-Length: 132
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 1: استجاب الخادم برمز الحالة 302 Found. في السابق، كان الرمز 200 OK، مما يعني أنه تم العثور على المستند المطلوب. يشير الرمز 302 إلى أنه تم طلب إعادة توجيه. يتم توفير عنوان URL لإعادة التوجيه في السطر 4. وهذا يتطابق مع عنوان URL لإعادة التوجيه الذي حددناه في كود الإجراء؛
+  </li>
+  <li>السطر 11: يشير الخادم إلى أنه مع استجابة HTTP الخاصة به، فإنه يرسل مستند text/html (السطر 3) بحجم 132 بايت (السطر 11). عندما نفحص الاستجابة لطلب [Action06] في Chrome، نجدها فارغة، كما هو متوقع. ربما هناك تفسير لذلك، لكنني لا أعرف ما هو.
+  </li>
+</ul>
+
+<p>بسبب إعادة التوجيه، يقوم المتصفح بإرسال طلب GET جديد إلى عنوان URL المحدد في السطر 4 أعلاه، كما يمكن رؤيته في Chrome في السطر 1 أدناه:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span>
+<span class="normal"><a href="#__codelineno-11-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">GET</span> <span class="o">/</span><span class="n">First</span><span class="o">/</span><span class="n">Action05</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">49302</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="n">Accept</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xhtml</span><span class="o">+</span><span class="n">xml</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xml</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="o">*/*</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="n">Windows</span> <span class="n">NT</span> <span class="mf">6.2</span><span class="p">;</span> <span class="n">WOW64</span><span class="p">)</span> <span class="n">AppleWebKit</span><span class="o">/</span><span class="mf">537.36</span> <span class="p">(</span><span class="n">KHTML</span><span class="p">,</span> <span class="n">like</span> <span class="n">Gecko</span><span class="p">)</span> <span class="n">Chrome</span><span class="o">/</span><span class="mf">29.0.1547.76</span> <span class="n">Safari</span><span class="o">/</span><span class="mf">537.36</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span><span class="n">deflate</span><span class="p">,</span><span class="n">sdch</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">fr</span><span class="o">-</span><span class="n">FR</span><span class="p">,</span><span class="n">fr</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">en</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.4</span>
+</code></pre></div></td></tr></table></div>
+<p><a id="refheading58040676630786"></a></p>
+<h2 id="310-redirectresult-2">3.10. <span style="color: #4f81bd">إجراء بنتيجة من النوع [RedirectResult] - 2</span></h2>
+<p>ضع في اعتبارك الإجراء الجديد التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action07</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">RedirectResult</span><span style="color:#000000"> Action07()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">RedirectResult</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;/First/Action05&quot;</span><span style="color:#000000">,</span><span style="color:#0000ff">true</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>في السطر 4، أضفنا معلمة ثانية إلى منشئ [RedirectResult]. وهي قيمة منطقية (boolean) تكون قيمتها الافتراضية <em>false</em>. وعند تعيينها إلى true، فإنها تُعدّل استجابة HTTP المرسلة إلى العميل. وتصبح:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>HTTP/1.1 301 Moved Permanently
+</code></pre></div>
+<p>وبالتالي، أصبح رمز الاستجابة المرسل إلى العميل هو <em>301 Moved Permanently</em>. تتم إعادة التوجيه كما في السابق، لكننا نشير إلى أن إعادة التوجيه هذه دائمة. وهذا يسمح لمحركات البحث باستبدال عنوان URL القديم بالعنوان الجديد في نتائجها.</p>
+<p><a id="refheading58042676630786"></a></p>
+<h2 id="311-redirecttorouteresult">3.11. <span style="color: #4f81bd">إجراء بنتيجة من النوع [RedirectToRouteResult]</span></h2>
+<p>لننظر إلى الإجراء الجديد التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action08</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">RedirectToRouteResult</span><span style="color:#000000"> Action08()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">RedirectToRouteResult</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;Default&quot;</span><span style="color:#000000">,</span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">RouteValueDictionary</span><span style="color:#000000">(</span><span style="color:#0000ff">new</span><span style="color:#000000"> {controller=</span><span style="color:#a31515">&quot;First&quot;</span><span style="color:#000000">,action=</span><span style="color:#a31515">&quot;Action05&quot;</span><span style="color:#000000">}));</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 2: تعرض الإجراء نوع [RedirectToRouteResult]. يسمح هذا النوع بإعادة توجيه العميل إلى عنوان URL محدد، ليس عبر سلسلة نصية كما في السابق، بل عبر مسار.
+  </li>
+</ul>
+
+<p>يتم تعريف المسارات في [App_Start/RouteConfig]. يوجد حاليًا مسار واحد فقط:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">      routes.MapRoute(</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          name: </span><span style="color:#a31515">&quot;Default&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          url: </span><span style="color:#a31515">&quot;{controller}/{action}/{id}&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          defaults: </span><span style="color:#0000ff">new</span><span style="color:#000000"> { controller = </span><span style="color:#a31515">&quot;Home&quot;</span><span style="color:#000000">, action = </span><span style="color:#a31515">&quot;Index&quot;</span><span style="color:#000000">, id = </span><span style="color:#2b91af">UrlParameter</span><span style="color:#000000">.Optional }</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">);</span></span>
+</code></pre></div>
+
+<ul>
+  <li>في السطر 4، يتم توجيه العميل لإعادة التوجيه إلى المسار المسمى [Default] مع تعيين متغير وحدة التحكم على &quot;First&quot; ومتغير الإجراء على &quot;Action05&quot;. سيقوم نظام التوجيه بعد ذلك بإنشاء عنوان URL لإعادة التوجيه <i>/First/Action05</i>. يظهر هذا في استجابة HTTP للخادم:
+  </li>
+</ul>
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>HTTP/1.1 302 Found
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>Cache-Control: private
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a>Content-Type: text/html; charset=utf-8
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>Location: /First/Action05
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a>Server: Microsoft-IIS/8.0
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a>X-AspNetMvc-Version: 4.0
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a>X-AspNet-Version: 4.0.30319
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a>X-SourceFiles: =?UTF-8?B?RDpcZGF0YVxpc3RpYS0xMzE0XGFzcG5ldFxkdnBcRXhlbXBsZXNcRXhlbXBsZS0wMVxGaXJzdFxBY3Rpb24wOA==?=
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a>X-Powered-By: ASP.NET
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a>Date: Tue, 24 Sep 2013 08:58:19 GMT
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a>Content-Length: 132
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 1: إعادة التوجيه؛
+  </li>
+  <li>السطر 4: عنوان URL لإعادة التوجيه الذي تم إنشاؤه بواسطة نظام توجيه عناوين URL.
+  </li>
+</ul>
+<p><a id="refheading58044676630786"></a></p>
+<h2 id="312-void">3.12. <span style="color: #4f81bd">إجراء بنوع إرجاع [void]</span></h2>
+<p>لننظر إلى الإجراء الجديد التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action09</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> Action09()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">string</span><span style="color:#000000"> nom = Request.QueryString[</span><span style="color:#a31515">&quot;nom&quot;</span><span style="color:#000000">] ?? </span><span style="color:#a31515">&quot;inconnu&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      Response.AddHeader(</span><span style="color:#a31515">&quot;Content-Type&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      Response.Write(</span><span style="color:#0000ff">string</span><span style="color:#000000">.Format(</span><span style="color:#a31515">&quot;&lt;h3&gt;Action09&lt;/h3&gt;nom={0}&quot;</span><span style="color:#000000">, nom));</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 2: لا تُرجع الإجراء أي نتيجة. بل تكتب مباشرةً إلى دفق الاستجابة المرسَل إلى العميل؛
+  </li>
+  <li>السطر 4: نسترد معلمة محتملة باسم [name] من الطلب. يمكن الوصول إليها عبر الخاصية [<b>Request</b>] لفئة [Controller] التي يرث منها وحدة التحكم [First]. المعلمة [name] التي تم تمريرها في النموذج [/First/Action09?name=something] متاحة في <b>Request.QueryString[&quot;name&quot;]</b>. صيغة السطر 4 تعادل:
+  </li>
+</ul>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>string<span class="w"> </span><span class="nv">nom</span><span class="o">=</span>Request.QueryString<span class="o">[</span><span class="s2">&quot;nom&quot;</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">if</span><span class="o">(</span><span class="nv">nom</span><span class="o">==</span>null<span class="o">){</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nv">nom</span><span class="o">=</span><span class="s2">&quot;inconnu&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="o">}</span>
+</code></pre></div>
+<ul>
+  <li>السطر 5: يمكن الوصول إلى الاستجابة المرسلة إلى العميل عبر خاصية [<b>Response</b>] لفئة [Controller] التي يرث منها وحدة التحكم [First]؛
+  </li>
+  <li>السطر 5: نقوم بتعيين رأس HTTP [Content-Type]، الذي يشير إلى طبيعة المستند الذي سيقوم الخادم بإرساله إلى العميل. هنا، يشير &quot;text/plain&quot; إلى أن المستند عبارة عن نص عادي لا يجب أن يفسره المتصفح؛
+  </li>
+  <li>السطر 6: نكتب سلسلة من الأحرف في نص الاستجابة. وقد أدرجنا علامات HTML لا ينبغي للمتصفح تفسيرها، حيث إن المتصفح سيكون قد تلقى مسبقًا رأس HTTP [Content-Type: text/plain]. وهذا ما نريد التحقق منه.
+  </li>
+</ul>
+
+<p>دعونا نجمع المشروع ونطلب عنوان URL [/First/Action09?name=someone ][1] ثم عنوان URL [/First/Action09 ] [2]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FC000000F0C6E72D5F.png" width="680" height="107" style="display:inline-block; margin:4px;width:17.999cm;height:2.82cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FC000000F0C6E72D5F.png" /></td></tr></table>
+
+<p>الآن دعونا نلقي نظرة على استجابة HTTP للخادم في Chrome:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>HTTP/1.1 200 OK
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>Cache-Control: private
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>Content-Type: text/plain; charset=utf-8
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>...
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a>Content-Length: 144
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 3: نرى رأس HTTP الذي قمنا بتعيينه بأنفسنا في كود الإجراء.
+  </li>
+</ul>
+<p><a id="refheading58046676630786"></a></p>
+<h2 id="313">3.13. <span style="color: #4f81bd">وحدة تحكم ثانية</span></h2>
+<p>لنقم بإنشاء وحدة تحكم ثانية في المشروع. سنتبع الطريقة الموضحة في القسم 3.1، في <a href="#refheading10128914791633"><u><span style="color: #0563c1">الصفحة 36</span></u></a>. سنسميها [Second].</p>
+<p><img src="images/10000000000000C50000006F78BB882F.png" width="138" height="78" style="width:3.649cm;height:2.057cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C50000006F78BB882F.png" /></p>
+<p>والكود الذي تم إنشاؤه هو كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Exemple_01.Controllers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">SecondController</span><span style="color:#000000"> : </span><span style="color:#2b91af">Controller</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">//</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// GET: /Second/</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ActionResult</span><span style="color:#000000"> Index()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> View();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>دعونا نعدلها على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Text;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Exemple_01.Controllers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">SecondController</span><span style="color:#000000"> : </span><span style="color:#2b91af">Controller</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// /Second/Action01</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action01()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> Content(</span><span style="color:#a31515">&quot;Contrôleur=Second, Action=Action01&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">Encoding</span><span style="color:#000000">.UTF8);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>ثم لنطلب عنوان URL [/Second/Action01] باستخدام متصفح. نحصل على الاستجابة التالية:</p>
+<p><img src="images/10000000000001840000007C98FE446F.png" width="271" height="87" style="width:7.181cm;height:2.295cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001840000007C98FE446F.png" /></p>
+<p>تم طلب عنوان URL هذا باستخدام طلب HTTP GET، كما هو موضح في سجلات HTTP للطلب في Chrome:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>GET /Second/Action01 HTTP/1.1
+</code></pre></div>
+<p>يمكن أيضًا طلب عنوان URL هذا باستخدام طلب HTTP POST. لتوضيح ذلك، دعونا نستخدم تطبيق [Advanced Rest Client] مرة أخرى:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FB00000180482AEB96.png" width="680" height="171" style="display:inline-block; margin:4px;width:17.999cm;height:4.514cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FB00000180482AEB96.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، قم بتشغيل التطبيق (في علامة التبويب [Applications] في علامة تبويب Chrome جديدة)؛
+  </li>
+  <li>في [2]، حدد خيار [Request]؛
+  </li>
+  <li>في [3]، حدد عنوان URL المطلوب؛
+  </li>
+  <li>في [4]، حدد أن عنوان URL يجب أن يُطلب باستخدام طلب POST؛
+  </li>
+</ul>
+
+<p>نقوم بتفعيل سجلات Chrome (CTRL-I) لعرض استجابة HTTP من الخادم. وعندما نضغط على [إرسال] لتنفيذ الطلب السابق، تكون تبادلات HTTP كما يلي:</p>
+<p>يرسل المتصفح الطلب التالي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">POST</span> <span class="o">/</span><span class="n">Second</span><span class="o">/</span><span class="n">Action01</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">49302</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">0</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="n">Origin</span><span class="p">:</span> <span class="n">chrome</span><span class="o">-</span><span class="n">extension</span><span class="p">:</span><span class="o">//</span><span class="n">hgmloofddffdnphfgcellkdfbfbjeloo</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="n">Windows</span> <span class="n">NT</span> <span class="mf">6.2</span><span class="p">;</span> <span class="n">WOW64</span><span class="p">)</span> <span class="n">AppleWebKit</span><span class="o">/</span><span class="mf">537.36</span> <span class="p">(</span><span class="n">KHTML</span><span class="p">,</span> <span class="n">like</span> <span class="n">Gecko</span><span class="p">)</span> <span class="n">Chrome</span><span class="o">/</span><span class="mf">29.0.1547.76</span> <span class="n">Safari</span><span class="o">/</span><span class="mf">537.36</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">www</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">urlencoded</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span><span class="n">deflate</span><span class="p">,</span><span class="n">sdch</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">fr</span><span class="o">-</span><span class="n">FR</span><span class="p">,</span><span class="n">fr</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">en</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.4</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 1: تم بالفعل طلب عنوان URL باستخدام POST؛
+  </li>
+  <li>السطر 4: حجم العناصر المنشورة بالبايت. لا يوجد أي منها هنا.
+  </li>
+</ul>
+
+<p>استجابة HTTP للخادم هي كما يلي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>HTTP/1.1 200 OK
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>Cache-Control: private
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>Content-Type: text/plain; charset=utf-8
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a>Content-Encoding: gzip
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a>Vary: Accept-Encoding
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a>Server: Microsoft-IIS/8.0
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a>X-AspNetMvc-Version: 4.0
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a>X-AspNet-Version: 4.0.30319
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a>X-SourceFiles: =?UTF-8?B?RDpcZGF0YVxpc3RpYS0xMzE0XGFzcG5ldFxkdnBcRXhlbXBsZXNcRXhlbXBsZS0wMVxTZWNvbmRcQWN0aW9uMDE=?=
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a>X-Powered-By: ASP.NET
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a>Date: Tue, 24 Sep 2013 10:47:59 GMT
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a>Content-Length: 148
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 3: يرسل الخادم مستند نصي غير منسق (عادي)؛
+  </li>
+  <li>السطر 12: 148 حرفًا.
+  </li>
+</ul>
+
+<p>المستند المرسل هو كما يلي:</p>
+<p><img src="images/10000000000001170000006643970F20.png" width="195" height="71" style="width:5.159cm;height:1.886cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001170000006643970F20.png" /></p>
+<p>نحصل على نفس المستند كما في طلب GET.</p>
+<p><a id="refheading58048676630786"></a></p>
+<h2 id="314">3.14. <span style="color: #4f81bd">إجراء تمت تصفيته بواسطة سمة</span></h2>
+<p>لنقم بإنشاء الإجراء الجديد التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// /Second/Action02</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">HttpPost</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action02()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> Content(</span><span style="color:#a31515">&quot;Contrôleur=Second, Action=Action02&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">Encoding</span><span style="color:#000000">.UTF8);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>يشبه الإجراء [Action02] الإجراء [Action01]، لكنه يحدد أنه لا يمكن الوصول إليه إلا عبر طلب HTTP POST (السطر 2). يمكن استخدام سمات أخرى:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpGet</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يخدم طلب GET فقط</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpHead</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يخدم طلب HEAD فقط</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpOptions</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يدعم فقط الأمر OPTIONS</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpPut</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يدعم فقط الأمر PUT</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpDelete</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يُستخدم فقط للأمر DELETE</div></td></tr></table>
+
+<p>دعونا نطلب عنوان URL [/Second/Action02] مباشرةً في المتصفح. ثم يتم طلبه عبر GET. بعد ذلك يعرض المتصفح الاستجابة التالية:</p>
+<p><img src="images/100000000000026900000132851B890B.png" width="432" height="214" style="width:11.419cm;height:5.664cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026900000132851B890B.png" /></p>
+<p>كان رد HTTP من الخادم كما يلي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>HTTP/1.1 404 Not Found
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a>...
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a>Content-Length: 3807
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 1: يشير رمز HTTP<b> 404 غير موجود </b>إلى أن الخادم لم يتمكن من العثور على المستند المطلوب. هنا، لم تتمكن الإجراء [Action02] من معالجة طلب GET لأنها تعالج طلبات POST فقط؛
+  </li>
+  <li>السطر 3: حجم المستند الذي تم إرجاعه. هذه هي الصفحة التي تم عرضها بواسطة المتصفح:
+  </li>
+</ul>
+
+<p><img src="images/10000000000001AD000001572D04E269.png" width="300" height="240" style="width:7.939cm;height:6.348cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AD000001572D04E269.png" /></p>
+<p><a id="refheading58050676630786"></a></p>
+<h2 id="315">3.15. <span style="color: #4f81bd">استرداد العناصر من مسار</span></h2>
+<p>في الإجراءين الموصوفين أعلاه، كتبنا شيئًا مثل:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action02()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> Content(</span><span style="color:#a31515">&quot;Contrôleur=Second, Action=Action02&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">Encoding</span><span style="color:#000000">.UTF8);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>تم ترميز أسماء وحدة التحكم والإجراء بشكل ثابت في الكود. إذا قمنا بتغيير هذه الأسماء، فلن يكون الكود صحيحًا بعد ذلك. يمكننا الوصول إلى وحدة التحكم والإجراء على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// /Second/Action03</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action03()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">string</span><span style="color:#000000"> texte = </span><span style="color:#0000ff">string</span><span style="color:#000000">.Format(</span><span style="color:#a31515">&quot;Contrôleur={0}, Action={1}&quot;</span><span style="color:#000000">, RouteData.Values[</span><span style="color:#a31515">&quot;controller&quot;</span><span style="color:#000000">], RouteData.Values[</span><span style="color:#a31515">&quot;action&quot;</span><span style="color:#000000">]);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> Content(texte, </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">Encoding</span><span style="color:#000000">.UTF8);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>المسار المحدد في [App_Start/RouteConfig] هو كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">      routes.MapRoute(</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          name: </span><span style="color:#a31515">&quot;Default&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          url: </span><span style="color:#a31515">&quot;{controller}/{action}/{id}&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          defaults: </span><span style="color:#0000ff">new</span><span style="color:#000000"> { controller = </span><span style="color:#a31515">&quot;Home&quot;</span><span style="color:#000000">, action = </span><span style="color:#a31515">&quot;Index&quot;</span><span style="color:#000000">, id = </span><span style="color:#2b91af">UrlParameter</span><span style="color:#000000">.Optional }</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">);</span></span>
+</code></pre></div>
+
+<p>السطر 3: يمكن استرداد عناصر المسار الثلاثة باستخدام <strong>RouteData.Values[&quot;element&quot;],</strong> حيث <strong>element</strong> هو أحد [controller, action, id].</p>
+<p>دعونا نطلب عنوان URL [http://localhost:49302/Second/Action03]:</p>
+<p><img src="images/100000000000018100000072F6504BF3.png" width="269" height="80" style="width:7.13cm;height:2.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018100000072F6504BF3.png" /></p>
+<p>لقد نجحنا في استرداد اسم وحدة التحكم واسم الإجراء.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
