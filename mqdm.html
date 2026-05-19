@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -706,108 +708,108 @@
 
 <p><a id="refheading1882601168461456"></a></p>
 <h1 id="1">1. <span style="color: #365f91">مقدمة</span></h1>
-<p>ملف PDF لهذا المستند متاح |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQCuFKyyc4HXQpCZyEre-dD_AbXGxKUFOD_XRqL_nT8D1VI?e=3s9ZqZ">هنا</a>|.</p>
+<p>ملف <bdi dir="ltr" class="odt-ltr-term">PDF</bdi> لهذا المستند متاح |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQCuFKyyc4HXQpCZyEre-dD_AbXGxKUFOD_XRqL_nT8D1VI?e=3s9ZqZ">هنا</a>|.</p>
 <p>الأمثلة الواردة في هذا المستند متاحة |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQCKNeWRQFCfSqwnA6RDUJ7yAd9qZkIe89vFgFNJvCBIS6o?e=MPrul0">هنا</a>|.</p>
-<p>نهدف هنا إلى تقديم المفاهيم الأساسية لـ ASP.NET MVC، وهو إطار عمل ويب لـ .NET يوفر بنية لتطوير تطبيقات الويب وفقًا لنمط MVC (النموذج – العرض – وحدة التحكم)، وذلك من خلال أمثلة توضيحية.</p>
-<p>لا يتطلب فهم الأمثلة الواردة في هذا المستند سوى القليل من المتطلبات الأساسية. فكل ما تحتاجه هو معرفة أساسية بلغة C#. ويمكن العثور على هذه المعرفة في المستند <strong>&quot;مقدمة إلى لغة C#&quot;</strong> على الرابط [<a href="https://stahe.github.io/ar-csharp-mai-2008/"><u><span style="color: #0563c1">https://stahe.github.io/ar-csharp-mai-2008/</span></u></a>]. يتم تقديم دراسة حالة لتطبيق المعرفة المكتسبة حول ASP.NET MVC عمليًا. وهي تستخدم Entity Framework ORM (Object-Relational Mapper). يتم عرض هذا ORM في المستند <strong>&quot;مقدمة إلى Entity Framework 5 Code First</strong>&quot;، المتاح على [<a href="https://stahe.github.io/ar-ef5cf-oct-2012/"><u><span style="color: #0563c1">https://stahe.github.io/ar-ef5cf-oct-2012/</span></u></a>].</p>
-<p>تتوفر الأمثلة المختلفة الواردة في هذا المستند على الرابط [<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQCKNeWRQFCfSqwnA6RDUJ7yAd9qZkIe89vFgFNJvCBIS6o?e=MPrul0https://1drv.ms/u/c/f53a919f43d27eb5/IQCKNeWRQFCfSqwnA6RDUJ7yAd9qZkIe89vFgFNJvCBIS6o?e=MPrul0"><u><span style="color: #0563c1">http://tahe.developpez.com/dotnet/aspnetmvc</span></u></a>] كملف <em>ZIP</em> قابل للتنزيل.</p>
-<p>هذا المستند غير مكتمل من نواحٍ عديدة. لمعرفة المزيد عن ASP.NET MVC، يمكنك استخدام المراجع التالية:</p>
+<p>نهدف هنا إلى تقديم المفاهيم الأساسية لـ <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi>، وهو إطار عمل ويب لـ .<bdi dir="ltr" class="odt-ltr-term">NET</bdi> يوفر بنية لتطوير تطبيقات الويب وفقًا لنمط <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> (النموذج – العرض – وحدة التحكم)، وذلك من خلال أمثلة توضيحية.</p>
+<p>لا يتطلب فهم الأمثلة الواردة في هذا المستند سوى القليل من المتطلبات الأساسية. فكل ما تحتاجه هو معرفة أساسية بلغة <bdi dir="ltr" class="odt-ltr-term">C#.</bdi> ويمكن العثور على هذه المعرفة في المستند <strong>&quot;مقدمة إلى لغة <bdi dir="ltr" class="odt-ltr-term">C#</bdi>&quot;</strong> على الرابط [<a href="https://stahe.github.io/ar-csharp-mai-2008/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">https://stahe.github.io/ar-csharp-mai-2008/</bdi></span></u></a>]. يتم تقديم دراسة حالة لتطبيق المعرفة المكتسبة حول <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> عمليًا. وهي تستخدم <bdi dir="ltr" class="odt-ltr-term">Entity Framework ORM</bdi> (<bdi dir="ltr" class="odt-ltr-term">Object-Relational Mapper</bdi>). يتم عرض هذا <bdi dir="ltr" class="odt-ltr-term">ORM</bdi> في المستند <strong>&quot;مقدمة إلى <bdi dir="ltr" class="odt-ltr-term">Entity Framework</bdi> 5 <bdi dir="ltr" class="odt-ltr-term">Code First</bdi></strong>&quot;، المتاح على [<a href="https://stahe.github.io/ar-ef5cf-oct-2012/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">https://stahe.github.io/ar-ef5cf-oct-2012/</bdi></span></u></a>].</p>
+<p>تتوفر الأمثلة المختلفة الواردة في هذا المستند على الرابط [<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQCKNeWRQFCfSqwnA6RDUJ7yAd9qZkIe89vFgFNJvCBIS6o?e=MPrul0https://1drv.ms/u/c/f53a919f43d27eb5/IQCKNeWRQFCfSqwnA6RDUJ7yAd9qZkIe89vFgFNJvCBIS6o?e=MPrul0"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://tahe.developpez.com/dotnet/aspnetmvc</bdi></span></u></a>] كملف <em><bdi dir="ltr" class="odt-ltr-term">ZIP</bdi></em> قابل للتنزيل.</p>
+<p>هذا المستند غير مكتمل من نواحٍ عديدة. لمعرفة المزيد عن <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi>، يمكنك استخدام المراجع التالية:</p>
 <ul>
-<li><strong>[ref1]</strong>: كتاب &quot;<strong>Pro</strong> <strong><span style="color: #000000">ASP.NET MVC 4</span></strong>&quot; الذي كتبه <strong>آدم فريمان</strong> ونشرته دار <strong>Apress</strong>. إنه كتاب ممتاز. لو كان متاحًا مجانًا على الإنترنت وباللغة الفرنسية، لما كان هناك داعٍ لهذا المستند. أوصي كل من يستطيع ذلك بتعلم ASP.NET MVC باستخدام هذا الكتاب. يتوفر كود المصدر لأمثلة الكتاب مجانًا على [<a href="http://www.apress.com/9781430242369"><u><span style="color: #0563c1">http://www.apress.com/9781430242369</span></u></a>]؛</li>
-<li><strong>[ref2]</strong>: موقع الويب الخاص بالإطار [<a href="http://www.asp.net/mvc"><u><span style="color: #0563c1">http://www.asp.net/mvc</span></u></a>]. ستجد هناك جميع المواد اللازمة للدراسة الذاتية. تتوفر نسخة باللغة الفرنسية على الرابط [<a href="http://dotnet.developpez.com/mvc/"><u><span style="color: #0563c1">http://dotnet.developpez.com/mvc/</span></u></a>]؛</li>
-<li>موقع [developpez.com] المخصص لـ ASP.NET [<a href="http://dotnet.developpez.com/aspnet/"><u><span style="color: #0563c1">http://dotnet.developpez.com/aspnet/</span></u></a> ].</li>
+<li><strong>[<bdi dir="ltr" class="odt-ltr-term">ref1</bdi>]</strong>: كتاب &quot;<strong><bdi dir="ltr" class="odt-ltr-term">Pro</bdi></strong> <strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> 4</span></strong>&quot; الذي كتبه <strong>آدم فريمان</strong> ونشرته دار <strong><bdi dir="ltr" class="odt-ltr-term">Apress</bdi></strong>. إنه كتاب ممتاز. لو كان متاحًا مجانًا على الإنترنت وباللغة الفرنسية، لما كان هناك داعٍ لهذا المستند. أوصي كل من يستطيع ذلك بتعلم <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> باستخدام هذا الكتاب. يتوفر كود المصدر لأمثلة الكتاب مجانًا على [<a href="http://www.apress.com/9781430242369"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://www.apress.com/9781430242369</bdi></span></u></a>]؛</li>
+<li><strong>[<bdi dir="ltr" class="odt-ltr-term">ref2</bdi>]</strong>: موقع الويب الخاص بالإطار [<a href="http://www.asp.net/mvc"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://www.asp.net/mvc</bdi></span></u></a>]. ستجد هناك جميع المواد اللازمة للدراسة الذاتية. تتوفر نسخة باللغة الفرنسية على الرابط [<a href="http://dotnet.developpez.com/mvc/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://dotnet.developpez.com/mvc/</bdi></span></u></a>]؛</li>
+<li>موقع [<bdi dir="ltr" class="odt-ltr-term">developpez.com</bdi>] المخصص لـ <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> [<a href="http://dotnet.developpez.com/aspnet/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://dotnet.developpez.com/aspnet/</bdi></span></u></a> ].</li>
 </ul>
 <p>تمت كتابة هذا المستند بحيث يمكن قراءته دون الحاجة إلى جهاز كمبيوتر. لذلك، تم تضمين العديد من لقطات الشاشة.</p>
 <p><a id="refheading99511454977699"></a></p>
-<h2 id="11-aspnet-mvc">1.1. <span style="color: #4f81bd">دور ASP.NET MVC في تطبيق الويب</span></h2>
-<p>أولاً، دعونا نضع ASP.NET MVC في سياق تطوير تطبيق الويب. غالبًا ما يتم بناؤه على بنية متعددة الطبقات مثل ما يلي:</p>
+<h2 id="11-aspnet-mvc">1.1. <span style="color: #4f81bd">دور <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> في تطبيق الويب</span></h2>
+<p>أولاً، دعونا نضع <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> في سياق تطوير تطبيق الويب. غالبًا ما يتم بناؤه على بنية متعددة الطبقات مثل ما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007D8000001C76DFA2B2A.png" width="680" height="154" style="display:inline-block; margin:4px;width:17.999cm;height:4.078cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D8000001C76DFA2B2A.png" /></td></tr></table>
 
 <ul>
-<li>طبقة [<strong>Web</strong>] هي الطبقة التي تتعامل مع مستخدم تطبيق الويب. يتفاعل المستخدم مع تطبيق الويب من خلال صفحات الويب التي يعرضها المتصفح. <strong>ويقع ASP.NET MVC في هذه الطبقة، وفيها فقط؛</strong></li>
-<li>طبقة [<strong>الأعمال</strong>] تنفذ منطق الأعمال الخاص بالتطبيق، مثل حساب الراتب أو الفاتورة. تستخدم هذه الطبقة البيانات الواردة من المستخدم عبر طبقة [الويب] ومن نظام إدارة قواعد البيانات (DBMS) عبر طبقة [DAO]؛</li>
-<li>تدير طبقة [<strong>DAO</strong>] (كائنات الوصول إلى البيانات) وطبقة [<strong>ORM</strong>] (مخطط العلاقات بين الكائنات) وموصل ADO.NET الوصول إلى البيانات في نظام إدارة قواعد البيانات. تعمل طبقة [<strong>ORM</strong>] كجسر بين الكائنات التي تتعامل معها طبقة [DAO] والصفوف والأعمدة في الجداول في قاعدة البيانات العلائقية. يتم استخدام نوعين من ORM بشكل شائع في عالم .NET: <strong>NHibernate</strong> (<a href="http://sourceforge.net/projects/nhibernate/"><u><span style="color: #0563c1">http://sourceforge.net/projects/nhibernate/</span></u></a>) و <strong>Entity Framework</strong> (<a href="http://msdn.microsoft.com/en-us/data/ef.aspx"><u><span style="color: #0563c1">http://msdn.microsoft.com/en-us/data/ef.aspx</span></u></a>)؛</li>
-<li>ويمكن تحقيق تكامل هذه الطبقات باستخدام حاوية حقن التبعية مثل Spring (<a href="http://www.springframework.net/"><u><span style="color: #0563c1">http://www.springframework.net/</span></u></a>)؛</li>
+<li>طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">Web</bdi></strong>] هي الطبقة التي تتعامل مع مستخدم تطبيق الويب. يتفاعل المستخدم مع تطبيق الويب من خلال صفحات الويب التي يعرضها المتصفح. <strong>ويقع <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> في هذه الطبقة، وفيها فقط؛</strong></li>
+<li>طبقة [<strong>الأعمال</strong>] تنفذ منطق الأعمال الخاص بالتطبيق، مثل حساب الراتب أو الفاتورة. تستخدم هذه الطبقة البيانات الواردة من المستخدم عبر طبقة [الويب] ومن نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) عبر طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛</li>
+<li>تدير طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">DAO</bdi></strong>] (كائنات الوصول إلى البيانات) وطبقة [<strong><bdi dir="ltr" class="odt-ltr-term">ORM</bdi></strong>] (مخطط العلاقات بين الكائنات) وموصل <bdi dir="ltr" class="odt-ltr-term">ADO.NET</bdi> الوصول إلى البيانات في نظام إدارة قواعد البيانات. تعمل طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">ORM</bdi></strong>] كجسر بين الكائنات التي تتعامل معها طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] والصفوف والأعمدة في الجداول في قاعدة البيانات العلائقية. يتم استخدام نوعين من <bdi dir="ltr" class="odt-ltr-term">ORM</bdi> بشكل شائع في عالم .<bdi dir="ltr" class="odt-ltr-term">NET:</bdi> <strong><bdi dir="ltr" class="odt-ltr-term">NHibernate</bdi></strong> (<a href="http://sourceforge.net/projects/nhibernate/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://sourceforge.net/projects/nhibernate/</bdi></span></u></a>) و <strong><bdi dir="ltr" class="odt-ltr-term">Entity Framework</bdi></strong> (<a href="http://msdn.microsoft.com/en-us/data/ef.aspx"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://msdn.microsoft.com/en-us/data/ef.aspx</bdi></span></u></a>)؛</li>
+<li>ويمكن تحقيق تكامل هذه الطبقات باستخدام حاوية حقن التبعية مثل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> (<a href="http://www.springframework.net/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://www.springframework.net/</bdi></span></u></a>)؛</li>
 </ul>
-<p>ستستخدم معظم الأمثلة الواردة أدناه طبقة واحدة فقط، وهي طبقة [Web]:</p>
+<p>ستستخدم معظم الأمثلة الواردة أدناه طبقة واحدة فقط، وهي طبقة [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002CB000001344402A749.png" width="250" height="108" style="display:inline-block; margin:4px;width:6.62cm;height:2.852cm;" class="odt-zoomable" data-zoom-src="images/10000000000002CB000001344402A749.png" /></td></tr></table>
 
 <p>ومع ذلك، سيختتم هذا المستند بإنشاء تطبيق ويب متعدد الطبقات:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007E50000018DC284155D.png" width="680" height="134" style="display:inline-block; margin:4px;width:17.999cm;height:3.537cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E50000018DC284155D.png" /></td></tr></table>
 
 <p><a id="refheading99531454977699"></a></p>
-<h2 id="12-aspnet-mvc">1.2. <span style="color: #4f81bd">نموذج تطوير ASP.NET MVC</span></h2>
-<p>يُنفذ ASP.NET MVC نمط الهندسة المعمارية MVC (النموذج – العرض – وحدة التحكم) على النحو التالي:</p>
+<h2 id="12-aspnet-mvc">1.2. <span style="color: #4f81bd">نموذج تطوير <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi></span></h2>
+<p>يُنفذ <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> نمط الهندسة المعمارية <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> (النموذج – العرض – وحدة التحكم) على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000718000002334AE9A6E1.png" width="680" height="211" style="display:inline-block; margin:4px;width:17.999cm;height:5.579cm;" class="odt-zoomable" data-zoom-src="images/1000000000000718000002334AE9A6E1.png" /></td></tr></table>
 
 <p>تتم معالجة طلب العميل على النحو التالي:</p>
 <ol>
-<li><strong>الطلب</strong> - تكون عناوين URL المطلوبة على النحو <em>التالي http://machine:port/contexte/Controlleur/Action/param1/param2/....?p1=v1&amp;p2=v2&amp;...</em> يستخدم [Front Controller] ملف تكوين لـ&quot;توجيه&quot; الطلب إلى وحدة التحكم الصحيحة والإجراء الصحيح داخل تلك الوحدة. للقيام بذلك، يستخدم مسار [<em>Controller/Action</em>] من عنوان URL. يتكون باقي عنوان URL [<em>/param1/param2/...</em>] من معلمات اختيارية سيتم تمريرها إلى الإجراء. يشير الحرف <strong>&quot;C&quot;</strong> في MVC هنا إلى سلسلة [Front Controller, Controller, Action]. إذا لم يؤد مسار [<em>Controller/Action</em>] إلى وحدة تحكم أو إجراء موجود، فسيرد خادم الويب بأن عنوان URL المطلوب لم يتم العثور عليه.</li>
+<li><strong>الطلب</strong> - تكون عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوبة على النحو <em>التالي <bdi dir="ltr" class="odt-ltr-term">http://machine:port/contexte/Controlleur/Action/param1/param2/....</bdi>?<bdi dir="ltr" class="odt-ltr-term">p1</bdi>=<bdi dir="ltr" class="odt-ltr-term">v1</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">p2</bdi>=<bdi dir="ltr" class="odt-ltr-term">v2</bdi>&amp;...</em> يستخدم [<bdi dir="ltr" class="odt-ltr-term">Front Controller</bdi>] ملف تكوين لـ&quot;توجيه&quot; الطلب إلى وحدة التحكم الصحيحة والإجراء الصحيح داخل تلك الوحدة. للقيام بذلك، يستخدم مسار [<em><bdi dir="ltr" class="odt-ltr-term">Controller/Action</bdi></em>] من عنوان <bdi dir="ltr" class="odt-ltr-term">URL.</bdi> يتكون باقي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<em>/<bdi dir="ltr" class="odt-ltr-term">param1/param2/...</bdi></em>] من معلمات اختيارية سيتم تمريرها إلى الإجراء. يشير الحرف <strong>&quot;<bdi dir="ltr" class="odt-ltr-term">C</bdi>&quot;</strong> في <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> هنا إلى سلسلة [<bdi dir="ltr" class="odt-ltr-term">Front Controller</bdi>, <bdi dir="ltr" class="odt-ltr-term">Controller</bdi>, <bdi dir="ltr" class="odt-ltr-term">Action</bdi>]. إذا لم يؤد مسار [<em><bdi dir="ltr" class="odt-ltr-term">Controller/Action</bdi></em>] إلى وحدة تحكم أو إجراء موجود، فسيرد خادم الويب بأن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب لم يتم العثور عليه.</li>
 </ol>
 <ol start="2">
   <li>المعالجة
   </li>
 </ol>
 <ul>
-  <li>يمكن للإجراء المحدد استخدام المعلمات التي مررها [Front Controller] إليه. يمكن أن تأتي هذه المعلمات من عدة مصادر:
+  <li>يمكن للإجراء المحدد استخدام المعلمات التي مررها [<bdi dir="ltr" class="odt-ltr-term">Front Controller</bdi>] إليه. يمكن أن تأتي هذه المعلمات من عدة مصادر:
   </li>
-  <li>مسار [<i>/param1/param2/...</i>] لعنوان URL،
+  <li>مسار [<i>/<bdi dir="ltr" class="odt-ltr-term">param1/param2/...</bdi></i>] لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>،
   </li>
-  <li>معلمات [<i>p1=v1&amp;p2=v2</i>] لعنوان URL<i>،</i>
+  <li>معلمات [<i><bdi dir="ltr" class="odt-ltr-term">p1</bdi>=<bdi dir="ltr" class="odt-ltr-term">v1</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">p2</bdi>=<bdi dir="ltr" class="odt-ltr-term">v2</bdi></i>] لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi><i>،</i>
   </li>
   <li>المعلمات التي أرسلها المتصفح مع طلبه؛
   </li>
-  <li>عند معالجة طلب المستخدم، قد يحتاج الإجراء إلى طبقة [business] [2b]. بمجرد معالجة طلب العميل، قد يؤدي ذلك إلى استجابات متنوعة. ومن الأمثلة الكلاسيكية على ذلك:
+  <li>عند معالجة طلب المستخدم، قد يحتاج الإجراء إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] [2b]. بمجرد معالجة طلب العميل، قد يؤدي ذلك إلى استجابات متنوعة. ومن الأمثلة الكلاسيكية على ذلك:
   </li>
   <li>صفحة خطأ إذا تعذر معالجة الطلب بشكل صحيح
   </li>
   <li>صفحة تأكيد في الحالات الأخرى
   </li>
-  <li>يأمر الإجراء بعرض طريقة عرض محددة [3]. ستعرض طريقة <b>العرض</b> هذه البيانات المعروفة باسم <b>نموذج العرض</b>. هذا هو <b>M </b>في MVC. سيقوم الإجراء بإنشاء نموذج M هذا [2c] ويأمر بعرض طريقة عرض <b>V </b>[3]؛
+  <li>يأمر الإجراء بعرض طريقة عرض محددة [3]. ستعرض طريقة <b>العرض</b> هذه البيانات المعروفة باسم <b>نموذج العرض</b>. هذا هو <b><bdi dir="ltr" class="odt-ltr-term">M</bdi> </b>في <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi> سيقوم الإجراء بإنشاء نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> هذا [2c] ويأمر بعرض طريقة عرض <b><bdi dir="ltr" class="odt-ltr-term">V</bdi> </b>[3]؛
   </li>
 </ul>
 <ol>
-  <li><b>الاستجابة </b>— تستخدم طريقة العرض <b>V</b> المحددة النموذج <b>M </b>الذي أنشأته الإجراء لتهيئة الأجزاء الديناميكية من استجابة HTML التي يجب إرسالها إلى العميل، ثم ترسل هذه الاستجابة.
+  <li><b>الاستجابة </b>— تستخدم طريقة العرض <b><bdi dir="ltr" class="odt-ltr-term">V</bdi></b> المحددة النموذج <b><bdi dir="ltr" class="odt-ltr-term">M</bdi> </b>الذي أنشأته الإجراء لتهيئة الأجزاء الديناميكية من استجابة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> التي يجب إرسالها إلى العميل، ثم ترسل هذه الاستجابة.
   </li>
 </ol>
 
-<p>الآن، دعونا نوضح العلاقة بين بنية الويب MVC والبنية الطبقية. اعتمادًا على كيفية تعريفنا للنموذج، قد يكون هذان المفهومان مرتبطين أو غير مرتبطين. لنفكر في تطبيق ويب ASP.NET MVC أحادي الطبقة:</p>
+<p>الآن، دعونا نوضح العلاقة بين بنية الويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> والبنية الطبقية. اعتمادًا على كيفية تعريفنا للنموذج، قد يكون هذان المفهومان مرتبطين أو غير مرتبطين. لنفكر في تطبيق ويب <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> أحادي الطبقة:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062E00000242EE335F0F.png" width="680" height="249" style="display:inline-block; margin:4px;width:17.999cm;height:6.576cm;" class="odt-zoomable" data-zoom-src="images/100000000000062E00000242EE335F0F.png" /></td></tr></table>
 
-<p>إذا قمنا بتنفيذ الطبقة [Web] باستخدام ASP.NET MVC، فسيكون لدينا بالفعل بنية ويب MVC ولكن ليس بنية متعددة الطبقات. هنا، ستتولى الطبقة [Web] كل شيء: العرض، ومنطق الأعمال، والوصول إلى البيانات. والأعمال هي التي ستقوم بهذا العمل.</p>
+<p>إذا قمنا بتنفيذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>] باستخدام <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi>، فسيكون لدينا بالفعل بنية ويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> ولكن ليس بنية متعددة الطبقات. هنا، ستتولى الطبقة [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>] كل شيء: العرض، ومنطق الأعمال، والوصول إلى البيانات. والأعمال هي التي ستقوم بهذا العمل.</p>
 <p>الآن، لنفكر في بنية ويب متعددة الطبقات:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007260000018CC3D6C76D.png" width="680" height="147" style="display:inline-block; margin:4px;width:17.999cm;height:3.895cm;" class="odt-zoomable" data-zoom-src="images/10000000000007260000018CC3D6C76D.png" /></td></tr></table>
 
-<p>يمكن تنفيذ طبقة [Web] بدون إطار عمل وبدون اتباع نموذج MVC. عندئذٍ نحصل على بنية متعددة الطبقات، لكن طبقة الويب لا تنفذ نموذج MVC.</p>
-<p>وبالتالي، يمكن تنفيذ الطبقة [الويب] المذكورة أعلاه باستخدام ASP.NET MVC، مما ينتج عنه بنية متعددة الطبقات تتضمن طبقة [ويب] على غرار نمط MVC. وبمجرد الانتهاء من ذلك، يمكننا استبدال طبقة ASP.NET MVC هذه بطبقة ASP.NET كلاسيكية (WebForms) مع الحفاظ على بقية العناصر (منطق الأعمال، DAO، ORM) <strong>دون تغيير</strong>.  وبذلك نحصل على بنية متعددة الطبقات مع طبقة [Web] لم تعد قائمة على MVC.</p>
-<p>في MVC، قلنا إن نموذج M هو نموذج عرض V، أي مجموعة البيانات التي يعرضها عرض V. وهناك تعريف آخر لنموذج M في MVC:</p>
+<p>يمكن تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>] بدون إطار عمل وبدون اتباع نموذج <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi> عندئذٍ نحصل على بنية متعددة الطبقات، لكن طبقة الويب لا تنفذ نموذج <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi></p>
+<p>وبالتالي، يمكن تنفيذ الطبقة [الويب] المذكورة أعلاه باستخدام <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi>، مما ينتج عنه بنية متعددة الطبقات تتضمن طبقة [ويب] على غرار نمط <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi> وبمجرد الانتهاء من ذلك، يمكننا استبدال طبقة <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> هذه بطبقة <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> كلاسيكية (<bdi dir="ltr" class="odt-ltr-term">WebForms</bdi>) مع الحفاظ على بقية العناصر (منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>، <bdi dir="ltr" class="odt-ltr-term">ORM</bdi>) <strong>دون تغيير</strong>.  وبذلك نحصل على بنية متعددة الطبقات مع طبقة [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>] لم تعد قائمة على <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi></p>
+<p>في <bdi dir="ltr" class="odt-ltr-term">MVC</bdi>، قلنا إن نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> هو نموذج عرض <bdi dir="ltr" class="odt-ltr-term">V</bdi>، أي مجموعة البيانات التي يعرضها عرض <bdi dir="ltr" class="odt-ltr-term">V.</bdi> وهناك تعريف آخر لنموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> في <bdi dir="ltr" class="odt-ltr-term">MVC:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076E0000019EAC026A07.png" width="680" height="148" style="display:inline-block; margin:4px;width:17.999cm;height:3.918cm;" class="odt-zoomable" data-zoom-src="images/100000000000076E0000019EAC026A07.png" /></td></tr></table>
 
-<p>يعتبر العديد من المؤلفين أن ما يقع على يمين طبقة [الويب] يشكل نموذج M في MVC. لتجنب الغموض، يمكننا الإشارة إلى:</p>
+<p>يعتبر العديد من المؤلفين أن ما يقع على يمين طبقة [الويب] يشكل نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> في <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi> لتجنب الغموض، يمكننا الإشارة إلى:</p>
 <ul>
   <li><b>نموذج المجال </b>عند الإشارة إلى كل ما يقع على يمين طبقة [الويب]
   </li>
-  <li><b>نموذج العرض </b>عند الإشارة إلى البيانات التي تعرضها طريقة العرض V
+  <li><b>نموذج العرض </b>عند الإشارة إلى البيانات التي تعرضها طريقة العرض <bdi dir="ltr" class="odt-ltr-term">V</bdi>
   </li>
 </ul>
 
-<p>فيما يلي، سيشير مصطلح &quot;نموذج M&quot; حصريًا إلى <strong>نموذج عرض</strong> V.</p>
+<p>فيما يلي، سيشير مصطلح &quot;نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi>&quot; حصريًا إلى <strong>نموذج عرض</strong> <bdi dir="ltr" class="odt-ltr-term">V.</bdi></p>
 <p><a id="refheading99551454977699"></a></p>
 <h2 id="13">1.3. <span style="color: #4f81bd">الأدوات المستخدمة</span></h2>
-<p>من الآن فصاعدًا، نستخدم (اعتبارًا من سبتمبر 2013) إصدارات Express من Visual Studio 2012:</p>
+<p>من الآن فصاعدًا، نستخدم (اعتبارًا من سبتمبر 2013) إصدارات <bdi dir="ltr" class="odt-ltr-term">Express</bdi> من <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> 2012:</p>
 <ul>
-  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop"><u><span style="color: #0563c1">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop</span></u></a> ] لتطبيقات سطح المكتب؛
+  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop</bdi></span></u></a> ] لتطبيقات سطح المكتب؛
   </li>
-  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-web"><u><span style="color: #0563c1">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-Web</span></u></a> ] لتطبيقات الويب.
+  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-web"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-Web</bdi></span></u></a> ] لتطبيقات الويب.
   </li>
 </ul>
 
-<p>لتثبيت أحدث إصدارات هذه المنتجات، يمكنك استخدام [Web Platform Installer] (<a href="http://www.microsoft.com/web/downloads/platform.aspx"><u><span style="color: #0563c1">http://www.microsoft.com/Web/downloads/platform.aspx</span></u></a>) من Microsoft.</p>
-<p>بالإضافة إلى ذلك، استخدم متصفح <strong>Chrome</strong> من Google (<a href="http://www.google.fr/intl/fr/chrome/browser/"><u><span style="color: #0563c1">http://www.google.fr/intl/fr/chrome/browser/</span></u></a>). قم بتثبيت ملحق [<a id="advanced-rest-client"></a> Advanced Rest Client] ( ). وإليك كيفية القيام بذلك:</p>
+<p>لتثبيت أحدث إصدارات هذه المنتجات، يمكنك استخدام [<bdi dir="ltr" class="odt-ltr-term">Web Platform Installer</bdi>] (<a href="http://www.microsoft.com/web/downloads/platform.aspx"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://www.microsoft.com/Web/downloads/platform.aspx</bdi></span></u></a>) من <bdi dir="ltr" class="odt-ltr-term">Microsoft.</bdi></p>
+<p>بالإضافة إلى ذلك، استخدم متصفح <strong><bdi dir="ltr" class="odt-ltr-term">Chrome</bdi></strong> من <bdi dir="ltr" class="odt-ltr-term">Google</bdi> (<a href="http://www.google.fr/intl/fr/chrome/browser/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://www.google.fr/intl/fr/chrome/browser/</bdi></span></u></a>). قم بتثبيت ملحق [<a id="advanced-rest-client"></a> <bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>] ( ). وإليك كيفية القيام بذلك:</p>
 <ul>
-  <li>انتقل إلى [متجر Google Web Store] (<a href="https://chrome.google.com/webstore"><u><span style="color: #0563c1">https://chrome.google.com/webstore</span></u></a>) باستخدام متصفح Chrome؛
+  <li>انتقل إلى [متجر <bdi dir="ltr" class="odt-ltr-term">Google Web Store</bdi>] (<a href="https://chrome.google.com/webstore"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">https://chrome.google.com/webstore</bdi></span></u></a>) باستخدام متصفح <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi>؛
   </li>
-  <li>ابحث عن تطبيق [Advanced Rest Client]:
+  <li>ابحث عن تطبيق [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>]:
   </li>
 </ul>
 
@@ -819,14 +821,14 @@
 
 <p><img src="images/10000000000003BB000000AE1112526C.png" width="661" height="120" style="width:17.48cm;height:3.186cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003BB000000AE1112526C.png" /></p>
 <ul>
-  <li>للحصول عليه، ستحتاج إلى إنشاء حساب Google. سيطلب منك [متجر Google الإلكتروني] بعد ذلك تأكيدًا [1]:
+  <li>للحصول عليه، ستحتاج إلى إنشاء حساب <bdi dir="ltr" class="odt-ltr-term">Google.</bdi> سيطلب منك [متجر <bdi dir="ltr" class="odt-ltr-term">Google</bdi> الإلكتروني] بعد ذلك تأكيدًا [1]:
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000083800000381099DA849.png" width="680" height="290" style="display:inline-block; margin:4px;width:17.999cm;height:7.675cm;" class="odt-zoomable" data-zoom-src="images/100000000000083800000381099DA849.png" /></td></tr></table>
 
 <ul>
-  <li>في [2]، يتوفر الملحق المضاف ضمن خيار [التطبيقات] [3]. يظهر هذا الخيار في كل علامة تبويب جديدة تنشئها (CTRL-T) في المتصفح.
+  <li>في [2]، يتوفر الملحق المضاف ضمن خيار [التطبيقات] [3]. يظهر هذا الخيار في كل علامة تبويب جديدة تنشئها (<bdi dir="ltr" class="odt-ltr-term">CTRL-T</bdi>) في المتصفح.
   </li>
 </ul>
 <p><a id="refheading99631454977699"></a></p>

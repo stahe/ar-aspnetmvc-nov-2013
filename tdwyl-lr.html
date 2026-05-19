@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -741,11 +743,11 @@
 <h1 id="6">6. <span style="color: #365f91">تدويل العرض</span></h1>
 <p><span style="color: #000000">سنناقش هنا مسألة تدويل العرض. هذه مسألة معقدة، ويمكن العثور على وصف جيد لها في المقالة التالية التي كتبها سكوت هانسلمان:</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">[</span><a href="http://www.hanselman.com/blog/GlobalizationInternationalizationAndLocalizationInASPNETMVC3JavaScriptAndJQueryPart1.aspx"><u><span style="color: #0563c1">http://www.hanselman.com/blog/GlobalizationInternationalizationAndLocalizationInASPNETMVC3JavaScriptAndJQueryPart1.aspx</span></u></a>]</p>
+<p><span style="color: #000000">[</span><a href="http://www.hanselman.com/blog/GlobalizationInternationalizationAndLocalizationInASPNETMVC3JavaScriptAndJQueryPart1.aspx"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://www.hanselman.com/blog/GlobalizationInternationalizationAndLocalizationInASPNETMVC3JavaScriptAndJQueryPart1.aspx</bdi></span></u></a>]</p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">أولاً، دعونا نستعرض تعريفاته للمصطلحات المختلفة المتعلقة بتدويل العرض:</span></p>
 <p><span style="color: #000000"> </span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>التدويل (i18n)</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">جعل التطبيق يدعم لغات وإعدادات محلية مختلفة</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>التوطين (l10n)</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">جعل التطبيق يدعم زوجًا معينًا من اللغة/الإعدادات المحلية</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>العولمة</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الجمع بين <i>التدويل والتوطين</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>اللغة</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">اللغة المنطوقة – المحددة برمز ISO (fr: الفرنسية، es: الإسبانية، en: الإنجليزية، ...)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الإعدادات</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">نوع من اللغة – يُشار إليه أيضًا برمز ISO (en_GB: الإنجليزية البريطانية، en_US: الإنجليزية الأمريكية، ...)</div></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>التدويل (<bdi dir="ltr" class="odt-ltr-term">i18n</bdi>)</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">جعل التطبيق يدعم لغات وإعدادات محلية مختلفة</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>التوطين (<bdi dir="ltr" class="odt-ltr-term">l10n</bdi>)</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">جعل التطبيق يدعم زوجًا معينًا من اللغة/الإعدادات المحلية</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>العولمة</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الجمع بين <i>التدويل والتوطين</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>اللغة</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">اللغة المنطوقة – المحددة برمز <bdi dir="ltr" class="odt-ltr-term">ISO</bdi> (<bdi dir="ltr" class="odt-ltr-term">fr:</bdi> الفرنسية، <bdi dir="ltr" class="odt-ltr-term">es:</bdi> الإسبانية، <bdi dir="ltr" class="odt-ltr-term">en:</bdi> الإنجليزية، ...)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الإعدادات</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">نوع من اللغة – يُشار إليه أيضًا برمز <bdi dir="ltr" class="odt-ltr-term">ISO</bdi> (<bdi dir="ltr" class="odt-ltr-term">en_GB:</bdi> الإنجليزية البريطانية، <bdi dir="ltr" class="odt-ltr-term">en_US:</bdi> الإنجليزية الأمريكية، ...)</div></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">لنبدأ بمعالجة المشكلة من خلال مثال أول.</span></p>
@@ -762,7 +764,7 @@
 <p><img src="images/10000000000001B400000060BFC6E1DC.png" width="305" height="67" style="width:8.07cm;height:1.776cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B400000060BFC6E1DC.png" /></p>
 <p><span style="color: #000000">وبالتالي، فإن التنسيق المتوقع هو التنسيق الأنجلوساكسوني، وليس التنسيق الفرنسي. ويكشف البحث السريع عبر الإنترنت عن بعض الحلول. وإليك أحدها.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">تصبح إجراءات [GET] و[POST] كما يلي:</span></p>
+<p><span style="color: #000000">تصبح إجراءات [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    // Action13-GET</span></span>
@@ -784,7 +786,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">تتشابه طريقة العرض [Action13Get.cshtml] مع طريقة العرض [Action12Get.cshtml] باستثناء نصوص JavaScript:</span></p>
+<p><span style="color: #000000">تتشابه طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action13Get.cshtml</bdi>] مع طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action12Get.cshtml</bdi>] باستثناء نصوص <bdi dir="ltr" class="odt-ltr-term">JavaScript:</bdi></span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -800,9 +802,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p><strong>ملاحظة</strong>: في السطر 5، اضبط إصدار jQuery ليتوافق مع إصدار Visual Studio لديك.</p>
+<p><strong>ملاحظة</strong>: في السطر 5، اضبط إصدار <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> ليتوافق مع إصدار <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> لديك.</p>
 <ul>
-  <li>السطر 9، أضفنا نصًا برمجيًا [<a id="myscripts-js"></a> myscripts.js ]. وهو كما يلي:
+  <li>السطر 9، أضفنا نصًا برمجيًا [<a id="myscripts-js"></a> <bdi dir="ltr" class="odt-ltr-term">myscripts.js</bdi> ]. وهو كما يلي:
   </li>
 </ul>
 
@@ -836,35 +838,35 @@
 <span class="odt-code-line"><span class="odt-code-line-content">});</span></span>
 </code></pre></div>
 
-<p><a id="jquery-globalization"></a>لقد أشرت في السطر 1 إلى المكان الذي تم العثور فيه على هذا البرنامج النصي. لن أحاول شرحه لأنني لا أفهمه. قد تكون لغة JavaScript غامضة بعض الشيء في بعض الأحيان. في الأسطر 4 و9 و15، يتم استخدام كائن [Globalize]. يتم توفير هذا الكائن بواسطة مكتبة jQuery Globalization، والتي يمكن الحصول عليها عبر [NuGet]:</p>
+<p><a id="jquery-globalization"></a>لقد أشرت في السطر 1 إلى المكان الذي تم العثور فيه على هذا البرنامج النصي. لن أحاول شرحه لأنني لا أفهمه. قد تكون لغة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> غامضة بعض الشيء في بعض الأحيان. في الأسطر 4 و9 و15، يتم استخدام كائن [<bdi dir="ltr" class="odt-ltr-term">Globalize</bdi>]. يتم توفير هذا الكائن بواسطة مكتبة <bdi dir="ltr" class="odt-ltr-term">jQuery Globalization</bdi>، والتي يمكن الحصول عليها عبر [<bdi dir="ltr" class="odt-ltr-term">NuGet</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002E3000002BDB68F72ED.png" width="370" height="351" style="display:inline-block; margin:4px;width:9.781cm;height:9.278cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E3000002BDB68F72ED.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059D0000013BBF15C1D3.png" width="680" height="149" style="display:inline-block; margin:4px;width:17.999cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/100000000000059D0000013BBF15C1D3.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، قم بإدارة حزم [NuGet] لمشروع [Example-03]؛
+  <li>في [1]، قم بإدارة حزم [<bdi dir="ltr" class="odt-ltr-term">NuGet</bdi>] لمشروع [<bdi dir="ltr" class="odt-ltr-term">Example-03</bdi>]؛
   </li>
   <li>في [2]، تصفح الحزم عبر الإنترنت؛
   </li>
-  <li>في [3]، اكتب المصطلح [globalization]؛
+  <li>في [3]، اكتب المصطلح [<bdi dir="ltr" class="odt-ltr-term">globalization</bdi>]؛
   </li>
-  <li>في [4]، قم بتثبيت حزمة [Globalize] لمشروع JQuery.
+  <li>في [4]، قم بتثبيت حزمة [<bdi dir="ltr" class="odt-ltr-term">Globalize</bdi>] لمشروع <bdi dir="ltr" class="odt-ltr-term">JQuery.</bdi>
   </li>
 </ul>
 
-<p>بمجرد تثبيت حزمة [Globalize]، يظهر مجلد جديد في مجلد [Scripts]:</p>
+<p>بمجرد تثبيت حزمة [<bdi dir="ltr" class="odt-ltr-term">Globalize</bdi>]، يظهر مجلد جديد في مجلد [<bdi dir="ltr" class="odt-ltr-term">Scripts</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000584000001C13A93CAC2.png" width="680" height="216" style="display:inline-block; margin:4px;width:17.999cm;height:5.724cm;" class="odt-zoomable" data-zoom-src="images/1000000000000584000001C13A93CAC2.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، تم إنشاء مجلد [globalize] يحتوي على البرنامج النصي الرئيسي [globalize.js]؛
+  <li>في [1]، تم إنشاء مجلد [<bdi dir="ltr" class="odt-ltr-term">globalize</bdi>] يحتوي على البرنامج النصي الرئيسي [<bdi dir="ltr" class="odt-ltr-term">globalize.js</bdi>]؛
   </li>
-  <li>في [2]، يتم استكمال البرنامج النصي الرئيسي [globalize.js] ببرامج نصية خاصة بلغة وإعدادات محلية معينة؛
+  <li>في [2]، يتم استكمال البرنامج النصي الرئيسي [<bdi dir="ltr" class="odt-ltr-term">globalize.js</bdi>] ببرامج نصية خاصة بلغة وإعدادات محلية معينة؛
   </li>
-  <li>في [3]، النصوص البرمجية الخاصة باللغة الفرنسية مع الإعدادات المحلية البلجيكية (BE)، الكندية (CA)، الفرنسية (FR)، السويسرية (CH)، اللوكسمبورغية (LU)، والمونغاسية (MC).
+  <li>في [3]، النصوص البرمجية الخاصة باللغة الفرنسية مع الإعدادات المحلية البلجيكية (<bdi dir="ltr" class="odt-ltr-term">BE</bdi>)، الكندية (<bdi dir="ltr" class="odt-ltr-term">CA</bdi>)، الفرنسية (<bdi dir="ltr" class="odt-ltr-term">FR</bdi>)، السويسرية (<bdi dir="ltr" class="odt-ltr-term">CH</bdi>)، اللوكسمبورغية (<bdi dir="ltr" class="odt-ltr-term">LU</bdi>)، والمونغاسية (<bdi dir="ltr" class="odt-ltr-term">MC</bdi>).
   </li>
 </ul>
 
-<p>يجب تضمين البرنامج النصي [globalize.js] وبرنامجنا النصي الخاص بالثقافة [globalize.culture.fr-FR.js] في قائمة البرامج النصية على صفحتنا [Action13Get.cshtml]:</p>
+<p>يجب تضمين البرنامج النصي [<bdi dir="ltr" class="odt-ltr-term">globalize.js</bdi>] وبرنامجنا النصي الخاص بالثقافة [<bdi dir="ltr" class="odt-ltr-term">globalize.culture.fr-FR.js</bdi>] في قائمة البرامج النصية على صفحتنا [<bdi dir="ltr" class="odt-ltr-term">Action13Get.cshtml</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">meta</span><span style="color:#000000"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=&quot;viewport&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">content</span><span style="color:#0000ff">=&quot;width=device-width&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
@@ -878,11 +880,11 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li>السطر 5: البرنامج النصي [globalize]؛
+  <li>السطر 5: البرنامج النصي [<bdi dir="ltr" class="odt-ltr-term">globalize</bdi>]؛
   </li>
-  <li>السطر 6: البرنامج النصي [globalize.culture.fr-FR.js]؛
+  <li>السطر 6: البرنامج النصي [<bdi dir="ltr" class="odt-ltr-term">globalize.culture.fr-FR.js</bdi>]؛
   </li>
-  <li>السطر 7: البرنامج النصي [myscripts.js]؛
+  <li>السطر 7: البرنامج النصي [<bdi dir="ltr" class="odt-ltr-term">myscripts.js</bdi>]؛
   </li>
 </ul>
 
@@ -903,11 +905,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">});</span></span>
 </code></pre></div>
 
-<p>تقوم الأسطر 10–13 بتعيين الثقافة من جانب العميل إلى [fr-FR]:</p>
+<p>تقوم الأسطر 10–13 بتعيين الثقافة من جانب العميل إلى [<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>]:</p>
 <ul>
-  <li>السطر 10: يتم تنفيذ دالة jQuery [ready] عندما يتم تحميل المستند الذي يحتوي على البرنامج النصي بالكامل بواسطة المتصفح؛
+  <li>السطر 10: يتم تنفيذ دالة <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> [<bdi dir="ltr" class="odt-ltr-term">ready</bdi>] عندما يتم تحميل المستند الذي يحتوي على البرنامج النصي بالكامل بواسطة المتصفح؛
   </li>
-  <li>السطور 11–12: يتم تعيين الثقافة من جانب العميل إلى [fr-FR]. لكي يعمل هذا، يجب تضمين الملف [globalize.culture.fr-FR.js] في قائمة نصوص JavaScript المرتبطة بالمستند.
+  <li>السطور 11–12: يتم تعيين الثقافة من جانب العميل إلى [<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>]. لكي يعمل هذا، يجب تضمين الملف [<bdi dir="ltr" class="odt-ltr-term">globalize.culture.fr-FR.js</bdi>] في قائمة نصوص <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المرتبطة بالمستند.
   </li>
 </ul>
 
@@ -921,11 +923,11 @@
 <p>لنتناول الآن تدويل العروض. سنواصل مع مثال النموذج السابق من خلال تقديمه بلغتين: الفرنسية والإنجليزية.</p>
 <p><a id="refheading58146676630786"></a></p>
 <h2 id="62">6.2. <span style="color: #4f81bd">إدارة الثقافة</span></h2>
-<p>يتم التحكم في لغة طرق العرض بواسطة الكائن [<span style="color: #000000">Thread.CurrentThread.CurrentUICulture]. لعرض الصفحات باللغة [fr-FR]، نكتب:</span></p>
+<p>يتم التحكم في لغة طرق العرض بواسطة الكائن [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Thread.CurrentThread.CurrentUICulture</bdi>]. لعرض الصفحات باللغة [<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>]، نكتب:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Thread.CurrentThread.CurrentUICulture=new CultureInfo(&quot;fr-FR&quot;);
 </code></pre></div>
-<p>يتم التحكم في الترجمة (التواريخ والأرقام والعملات والأوقات وما إلى ذلك) بواسطة الكائن [Thread.CurrentThread.CurrentCulture]. على غرار ما كُتب سابقًا، نكتب:</p>
+<p>يتم التحكم في الترجمة (التواريخ والأرقام والعملات والأوقات وما إلى ذلك) بواسطة الكائن [<bdi dir="ltr" class="odt-ltr-term">Thread.CurrentThread.CurrentCulture</bdi>]. على غرار ما كُتب سابقًا، نكتب:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Thread.CurrentThread.CurrentCulture=new CultureInfo(&quot;fr-FR&quot;);
 </code></pre></div>
 <p><span style="color: #000000"> </span></p>
@@ -936,14 +938,14 @@
 <p><span style="color: #000000">   </span></p>
 <p><img src="images/10000000000000C20000004D3A845F11.png" width="136" height="54" style="width:3.59cm;height:1.425cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C20000004D3A845F11.png" /></p>
 <ul>
-  <li><span style="color: #000000">ستكون [I18NController] هي الفئة الأساسية لجميع وحدات التحكم التي تستخدم الترجمة؛</span>
+  <li><span style="color: #000000">ستكون [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>] هي الفئة الأساسية لجميع وحدات التحكم التي تستخدم الترجمة؛</span>
   </li>
-  <li><span style="color: #000000">[SecondController] هي وحدة تحكم نموذجية مشتقة من [I18NController].</span>
+  <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">SecondController</bdi>] هي وحدة تحكم نموذجية مشتقة من [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">فيما يلي كود وحدة التحكم [I18NController]:</span></p>
+<p><span style="color: #000000">فيما يلي كود وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Threading;</span></span></span>
@@ -993,36 +995,36 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 7: [I18NController] مشتق من فئة [Controller]؛</span>
+  <li><span style="color: #000000">السطر 7: [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>] مشتق من فئة [<bdi dir="ltr" class="odt-ltr-term">Controller</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: تم إعلان الفئة على أنها [abstract] لمنع الإنشاء المباشر: لا يمكن استخدامها إلا بعد اشتقاقها؛</span>
+  <li><span style="color: #000000">السطر 7: تم إعلان الفئة على أنها [<bdi dir="ltr" class="odt-ltr-term">abstract</bdi>] لمنع الإنشاء المباشر: لا يمكن استخدامها إلا بعد اشتقاقها؛</span>
   </li>
-  <li><span style="color: #000000">السطر 9: سيتم تنفيذ منشئ الفئة في كل مرة يتم فيها إنشاء مثيل لوحدة تحكم مشتقة من [I18NController]؛</span>
+  <li><span style="color: #000000">السطر 9: سيتم تنفيذ منشئ الفئة في كل مرة يتم فيها إنشاء مثيل لوحدة تحكم مشتقة من [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 12: نسترد سياق طلب HTTP الذي تتم معالجته حاليًا بواسطة وحدة التحكم؛</span>
+  <li><span style="color: #000000">السطر 12: نسترد سياق طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الذي تتم معالجته حاليًا بواسطة وحدة التحكم؛</span>
   </li>
-  <li><span style="color: #000000">السطر 15: نفترض أن اللغة يتم تعيينها بواسطة معلمة [lang] التي يمكن العثور عليها في مواقع مختلفة. نبحث بالترتيب التالي:</span>
+  <li><span style="color: #000000">السطر 15: نفترض أن اللغة يتم تعيينها بواسطة معلمة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>] التي يمكن العثور عليها في مواقع مختلفة. نبحث بالترتيب التالي:</span>
     <ul>
-      <li><span style="color: #000000">السطر 15: في معلمات عنوان URL [?lang=en-US]،</span>
+      <li><span style="color: #000000">السطر 15: في معلمات عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [?<bdi dir="ltr" class="odt-ltr-term">lang</bdi>=<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]،</span>
       </li>
-      <li><span style="color: #000000">السطر 19: في المعلمات المنشورة [lang=de]،</span>
+      <li><span style="color: #000000">السطر 19: في المعلمات المنشورة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>=<bdi dir="ltr" class="odt-ltr-term">de</bdi>]،</span>
       </li>
       <li><span style="color: #000000">السطر 24: في جلسة عمل المستخدم،</span>
       </li>
-      <li><span style="color: #000000">السطر 29: في تفضيلات اللغة المرسلة من قبل عميل HTTP،</span>
+      <li><span style="color: #000000">السطر 29: في تفضيلات اللغة المرسلة من قبل عميل <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>،</span>
       </li>
-      <li><span style="color: #000000">السطر 26: إذا لم يتم العثور على شيء، يتم تعيين الإعدادات المحلية إلى [fr-FR]؛</span>
+      <li><span style="color: #000000">السطر 26: إذا لم يتم العثور على شيء، يتم تعيين الإعدادات المحلية إلى [<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>]؛</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">السطر 37: نقوم بتخزين الإعدادات المحلية في الجلسة. ومن هنا سيتم استردادها للطلبات اللاحقة. يمكن للمستخدم تغييرها عن طريق تضمينها في معلمات طلب GET أو POST؛</span>
+  <li><span style="color: #000000">السطر 37: نقوم بتخزين الإعدادات المحلية في الجلسة. ومن هنا سيتم استردادها للطلبات اللاحقة. يمكن للمستخدم تغييرها عن طريق تضمينها في معلمات طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> أو <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛</span>
   </li>
   <li><span style="color: #000000">السطران 39-40: نقوم بتعيين الإعدادات المحلية للعرض الذي سيتم عرضه بعد معالجة الطلب الحالي.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">سيكون وحدة التحكم [SecondController] كما يلي:</span></p>
+<p><span style="color: #000000">سيكون وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">SecondController</bdi>] كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> Exemple_03.Models;</span></span></span>
@@ -1052,18 +1054,18 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 7: [SecondController] يمتد من [I18NController]. وهذا يضمن تهيئة الإعدادات المحلية للعرض المراد عرضه؛</span>
+  <li><span style="color: #000000">السطر 7: [<bdi dir="ltr" class="odt-ltr-term">SecondController</bdi>] يمتد من [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>]. وهذا يضمن تهيئة الإعدادات المحلية للعرض المراد عرضه؛</span>
   </li>
-  <li><span style="color: #000000">السطر 13: نستخدم نموذج العرض [ViewModel14]، الذي سنقدمه بعد قليل؛</span>
+  <li><span style="color: #000000">السطر 13: نستخدم نموذج العرض [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>]، الذي سنقدمه بعد قليل؛</span>
   </li>
-  <li><span style="color: #000000">السطران 13 و 20: تعرض طريقة العرض [Action14Get.cshtml] النموذج.</span>
+  <li><span style="color: #000000">السطران 13 و 20: تعرض طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action14Get.cshtml</bdi>] النموذج.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
 <p><a id="refheading58148676630786"></a></p>
-<h2 id="63-viewmodel14">6.3. <span style="color: #4f81bd">تدويل نموذج العرض [ViewModel14]</span></h2>
-<p><span style="color: #000000">نموذج العرض [ViewModel14] هو كما يلي:</span></p>
+<h2 id="63-viewmodel14">6.3. <span style="color: #4f81bd">تدويل نموذج العرض [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>]</span></h2>
+<p><span style="color: #000000">نموذج العرض [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>] هو كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000181000001C669F9A7B6.png" width="193" height="227" style="display:inline-block; margin:4px;width:5.094cm;height:6.008cm;" class="odt-zoomable" data-zoom-src="images/1000000000000181000001C669F9A7B6.png" /></td></tr></table>
 
@@ -1170,7 +1172,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">هذا النموذج هو النسخة الدولية من النموذج السابق [ViewModel11]. سنصف آلية التدويل للسمة الأولى من الخاصية الأولى. تتبع السمات الأخرى نفس الآلية.</span></p>
+<p><span style="color: #000000">هذا النموذج هو النسخة الدولية من النموذج السابق [<bdi dir="ltr" class="odt-ltr-term">ViewModel11</bdi>]. سنصف آلية التدويل للسمة الأولى من الخاصية الأولى. تتبع السمات الأخرى نفس الآلية.</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequise&quot;</span>)]</span></span>
@@ -1178,7 +1180,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في النموذج السابق [ViewModel11]، كانت هذه الأسطر كما يلي:</span></p>
+<p><span style="color: #000000">في النموذج السابق [<bdi dir="ltr" class="odt-ltr-term">ViewModel11</bdi>]، كانت هذه الأسطر كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">[<span style="color:#2b91af">Required</span>(ErrorMessage = <span style="color:#a31515">&quot;Information requise&quot;</span>)]</span></span>
@@ -1186,7 +1188,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في النسخة الدولية، السطر 1، يتم وضع النص المراد عرضه في ملف موارد. هنا، يُسمى هذا الملف [MyResources.resx] (</span><em><span style="color: #000000">typeof</span></em><span style="color: #000000">) وقد تم وضعه في جذر المشروع. ويُسمى ملف موارد.</span></p>
+<p><span style="color: #000000">في النسخة الدولية، السطر 1، يتم وضع النص المراد عرضه في ملف موارد. هنا، يُسمى هذا الملف [<bdi dir="ltr" class="odt-ltr-term">MyResources.resx</bdi>] (</span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">typeof</bdi></span></em><span style="color: #000000">) وقد تم وضعه في جذر المشروع. ويُسمى ملف موارد.</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018A00000265B06EB6F3.png" width="197" height="306" style="display:inline-block; margin:4px;width:5.212cm;height:8.109cm;" class="odt-zoomable" data-zoom-src="images/100000000000018A00000265B06EB6F3.png" /></td></tr></table>
 
@@ -1194,11 +1196,11 @@
 <p><span style="color: #000000">لقد أنشأنا ثلاثة ملفات موارد هنا:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">[MyResources]: المورد الافتراضي في حالة عدم وجود مورد للغة الحالية؛</span>
+  <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]: المورد الافتراضي في حالة عدم وجود مورد للغة الحالية؛</span>
   </li>
-  <li><span style="color: #000000">[MyResources.fr-FR]: المورد الخاص بالإعدادات المحلية [fr-FR]؛</span>
+  <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">MyResources.fr-FR</bdi>]: المورد الخاص بالإعدادات المحلية [<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">[MyResources.en-US]: المورد الخاص بالإعدادات المحلية [en-US]؛</span>
+  <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">MyResources.en-US</bdi>]: المورد الخاص بالإعدادات المحلية [<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]؛</span>
   </li>
 </ul>
 
@@ -1211,12 +1213,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000522000002312847CC19.png" width="657" height="281" style="display:inline-block; margin:4px;width:17.383cm;height:7.422cm;" class="odt-zoomable" data-zoom-src="images/1000000000000522000002312847CC19.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يؤدي هذا إلى إنشاء ملف الموارد [MyResources2.resx]. عند النقر المزدوج عليه، ستظهر الصفحة التالية:</span></p>
+<p><span style="color: #000000">يؤدي هذا إلى إنشاء ملف الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources2.resx</bdi>]. عند النقر المزدوج عليه، ستظهر الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048F000000E80A658FAB.png" width="584" height="116" style="display:inline-block; margin:4px;width:15.439cm;height:3.069cm;" class="odt-zoomable" data-zoom-src="images/100000000000048F000000E80A658FAB.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">ملف الموارد هو قاموس يحتوي على مفاتيح وقيم مرتبطة بتلك المفاتيح. أدخل المفتاح في [1]، والقيمة في [2]، ونطاق المورد في [3]. لكي تكون هذه الموارد قابلة للقراءة، يجب أن يكون نطاقها [</span><strong><span style="color: #000000">Public</span></strong><span style="color: #000000">]. لنعد إلى السطر:</span></p>
+<p><span style="color: #000000">ملف الموارد هو قاموس يحتوي على مفاتيح وقيم مرتبطة بتلك المفاتيح. أدخل المفتاح في [1]، والقيمة في [2]، ونطاق المورد في [3]. لكي تكون هذه الموارد قابلة للقراءة، يجب أن يكون نطاقها [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Public</bdi></span></strong><span style="color: #000000">]. لنعد إلى السطر:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequise&quot;</span>)]</span></span>
@@ -1224,44 +1226,44 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">[ErrorMessageResourceType]: يشير إلى ملف الموارد. المعلمة [typeof] هي اسم الملف. يتم تحويل هذا إلى فئة أثناء عملية التحويل البرمجي، ويتم تضمين ملفه الثنائي في تجميع المشروع. لذا، في النهاية، [MyResources] هو اسم فئة الموارد؛</span>
+  <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">ErrorMessageResourceType</bdi>]: يشير إلى ملف الموارد. المعلمة [<bdi dir="ltr" class="odt-ltr-term">typeof</bdi>] هي اسم الملف. يتم تحويل هذا إلى فئة أثناء عملية التحويل البرمجي، ويتم تضمين ملفه الثنائي في تجميع المشروع. لذا، في النهاية، [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>] هو اسم فئة الموارد؛</span>
   </li>
-  <li><span style="color: #000000">[ErrorMessageResourceName = </span><span style="color: #a31515">&quot;infoRequise&quot;</span><span style="color: #000000">]: يشير إلى مفتاح في ملف الموارد. في النهاية، يعني هذا السطر أن رسالة الخطأ التي سيتم عرضها هي القيمة الموجودة في ملف [MyResources] المرتبطة بالمفتاح [</span><span style="color: #a31515">infoRequise</span><span style="color: #000000">].</span>
+  <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">ErrorMessageResourceName</bdi> = </span><span style="color: #a31515">&quot;<bdi dir="ltr" class="odt-ltr-term">infoRequise</bdi>&quot;</span><span style="color: #000000">]: يشير إلى مفتاح في ملف الموارد. في النهاية، يعني هذا السطر أن رسالة الخطأ التي سيتم عرضها هي القيمة الموجودة في ملف [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>] المرتبطة بالمفتاح [</span><span style="color: #a31515"><bdi dir="ltr" class="odt-ltr-term">infoRequise</bdi></span><span style="color: #000000">].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لإنشاء المفتاح [</span><span style="color: #a31515">infoRequise</span><span style="color: #000000">] والقيمة المرتبطة به في ملف [MyResources]، اتبع الخطوات التالية:</span></p>
+<p><span style="color: #000000">لإنشاء المفتاح [</span><span style="color: #a31515"><bdi dir="ltr" class="odt-ltr-term">infoRequise</bdi></span><span style="color: #000000">] والقيمة المرتبطة به في ملف [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]، اتبع الخطوات التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000045E000001151F627ABE.png" width="559" height="138" style="display:inline-block; margin:4px;width:14.79cm;height:3.664cm;" class="odt-zoomable" data-zoom-src="images/100000000000045E000001151F627ABE.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">أدخل المفتاح في [1]، والقيمة في [2]، ونطاق المورد في [3].</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">هناك نقطة أخيرة يجب توضيحها: مساحة اسم فئة [MyResources]. يتم تعريفها في خصائص ملف [MyResources.resx]:</span></p>
+<p><span style="color: #000000">هناك نقطة أخيرة يجب توضيحها: مساحة اسم فئة [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]. يتم تعريفها في خصائص ملف [<bdi dir="ltr" class="odt-ltr-term">MyResources.resx</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002BA0000017F29395012.png" width="349" height="192" style="display:inline-block; margin:4px;width:9.234cm;height:5.068cm;" class="odt-zoomable" data-zoom-src="images/10000000000002BA0000017F29395012.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في [1]، نحدد مساحة اسم فئة [MyResources] التي سيتم إنشاؤها من ملف الموارد [MyResources.resx]. لنعد إلى السطر المُترجم الذي درسناه:</span></p>
+<p><span style="color: #000000">في [1]، نحدد مساحة اسم فئة [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>] التي سيتم إنشاؤها من ملف الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources.resx</bdi>]. لنعد إلى السطر المُترجم الذي درسناه:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2b91af">[Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequise&quot;</span>)]</span></span>
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يتوقع عامل </span><em><span style="color: #000000">typeof </span></em><span style="color: #000000">وجود فئة، وهي في هذه الحالة فئة [MyResources]. لكي يتم العثور على هذه الفئة، يجب استيراد مساحة اسمها إلى فئة [ViewModel14]:</span></p>
+<p><span style="color: #000000">يتوقع عامل </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">typeof</bdi> </span></em><span style="color: #000000">وجود فئة، وهي في هذه الحالة فئة [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]. لكي يتم العثور على هذه الفئة، يجب استيراد مساحة اسمها إلى فئة [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Exemple_03.Resources;</span></span>
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لكي تكون فئة [MyResources] مرئية، يجب أن يكون المشروع قد تم بناؤه مرة واحدة على الأقل منذ إنشاء ملف الموارد [MyResources]. يظهر كود هذه الفئة في ملف [MyResources.Designer.cs]:</span></p>
+<p><span style="color: #000000">لكي تكون فئة [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>] مرئية، يجب أن يكون المشروع قد تم بناؤه مرة واحدة على الأقل منذ إنشاء ملف الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]. يظهر كود هذه الفئة في ملف [<bdi dir="ltr" class="odt-ltr-term">MyResources.Designer.cs</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">   </span></p>
 <p><img src="images/10000000000000D10000002B6FFBA015.png" width="146" height="30" style="width:3.87cm;height:0.796cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D10000002B6FFBA015.png" /></p>
-<p><span style="color: #000000">عند النقر المزدوج على هذا الملف، يمكنك الوصول إلى كود فئة [MyResources]:</span></p>
+<p><span style="color: #000000">عند النقر المزدوج على هذا الملف، يمكنك الوصول إلى كود فئة [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> Exemple_03.Resources {</span></span>
@@ -1287,7 +1289,7 @@
 <ul>
   <li><span style="color: #000000">السطر 1: مساحة اسم الفئة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 11: أصبح المفتاح [infoRequise] خاصية ثابتة لفئة [MyResources]. ويمكن الوصول إليه عبر الترميز [MyResources.infoRequise]. بالإضافة إلى ذلك، لاحظ أن هذه الخاصية لها نطاق [public]. وبدون ذلك، لن يكون من الممكن الوصول إليها. من المهم تذكر ذلك لأن النطاق الافتراضي هو [internal]، وهذا قد يتسبب في أخطاء يصعب فهمها إذا نسيت تغيير النطاق.</span>
+  <li><span style="color: #000000">السطر 11: أصبح المفتاح [<bdi dir="ltr" class="odt-ltr-term">infoRequise</bdi>] خاصية ثابتة لفئة [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]. ويمكن الوصول إليه عبر الترميز [<bdi dir="ltr" class="odt-ltr-term">MyResources.infoRequise</bdi>]. بالإضافة إلى ذلك، لاحظ أن هذه الخاصية لها نطاق [<bdi dir="ltr" class="odt-ltr-term">public</bdi>]. وبدون ذلك، لن يكون من الممكن الوصول إليها. من المهم تذكر ذلك لأن النطاق الافتراضي هو [<bdi dir="ltr" class="odt-ltr-term">internal</bdi>]، وهذا قد يتسبب في أخطاء يصعب فهمها إذا نسيت تغيير النطاق.</span>
   </li>
 </ul>
 
@@ -1296,19 +1298,19 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">   </span></p>
 <p><img src="images/10000000000000BA0000003919A6C624.png" width="130" height="40" style="width:3.44cm;height:1.055cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000BA0000003919A6C624.png" /></p>
-<p><span style="color: #000000">لقد أنشأنا [MyResources.resx]. هذا هو المورد الجذري. بعد ذلك، نقوم بإنشاء عدد من ملفات الموارد [MyResources.locale.resx] يساوي عدد اللغات (اللغات) المطلوب إدارتها. هنا نتعامل مع الفرنسية [fr-FR] والإنجليزية الأمريكية [en-US]. عندما لا تكون الإعدادات المحلية الحالية [fr-FR] ولا [en-US]، يتم استخدام المورد الجذري [MyResources.resx].</span></p>
+<p><span style="color: #000000">لقد أنشأنا [<bdi dir="ltr" class="odt-ltr-term">MyResources.resx</bdi>]. هذا هو المورد الجذري. بعد ذلك، نقوم بإنشاء عدد من ملفات الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources.locale.resx</bdi>] يساوي عدد اللغات (اللغات) المطلوب إدارتها. هنا نتعامل مع الفرنسية [<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>] والإنجليزية الأمريكية [<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]. عندما لا تكون الإعدادات المحلية الحالية [<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>] ولا [<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]، يتم استخدام المورد الجذري [<bdi dir="ltr" class="odt-ltr-term">MyResources.resx</bdi>].</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">المحتوى النهائي لملف [MyResources.resx] هو كما يلي:</span></p>
+<p><span style="color: #000000">المحتوى النهائي لملف [<bdi dir="ltr" class="odt-ltr-term">MyResources.resx</bdi>] هو كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/100000000000025B0000017836C24371.png" width="422" height="263" style="width:11.171cm;height:6.966cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000025B0000017836C24371.png" /></p>
-<p><span style="color: #000000">ستكون الرسائل باللغة الفرنسية عندما لا يتم التعرف على الإعدادات المحلية. المحتوى النهائي لملف [MyResources.fr-FR.resx] مطابق ويتم الحصول عليه ببساطة عن طريق نسخ الملف.</span></p>
+<p><span style="color: #000000">ستكون الرسائل باللغة الفرنسية عندما لا يتم التعرف على الإعدادات المحلية. المحتوى النهائي لملف [<bdi dir="ltr" class="odt-ltr-term">MyResources.fr-FR.resx</bdi>] مطابق ويتم الحصول عليه ببساطة عن طريق نسخ الملف.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يتم الحصول على المحتوى النهائي لملف [MyResources.en-US.resx] أيضًا عن طريق نسخ الملف ثم تعديله على النحو التالي:</span></p>
+<p><span style="color: #000000">يتم الحصول على المحتوى النهائي لملف [<bdi dir="ltr" class="odt-ltr-term">MyResources.en-US.resx</bdi>] أيضًا عن طريق نسخ الملف ثم تعديله على النحو التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/100000000000024C000001736336DEC1.png" width="412" height="260" style="width:10.89cm;height:6.87cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024C000001736336DEC1.png" /></p>
-<p><span style="color: #000000">لنعد إلى عرض [ViewModel14] وطريقة [Validate] الخاصة به:</span></p>
+<p><span style="color: #000000">لنعد إلى عرض [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>] وطريقة [<bdi dir="ltr" class="odt-ltr-term">Validate</bdi>] الخاصة به:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">// validation</span></span></span>
@@ -1331,18 +1333,18 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يوضح السطر 7 كيفية استرداد رسالة من ملف الموارد [MyResources]. هنا، نريد استرداد الرسالة المرتبطة بالمفتاح [infoIncorrecte] في الثقافة الحالية:</span></p>
+<p><span style="color: #000000">يوضح السطر 7 كيفية استرداد رسالة من ملف الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]. هنا، نريد استرداد الرسالة المرتبطة بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">infoIncorrecte</bdi>] في الثقافة الحالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><b><span style="color: #000000">MyResources.ResourceManager.GetObject(&quot;infoIncorrecte&quot;, new CultureInfo(&quot;en-US&quot;)) </span></b><span style="color: #000000">: يسترد الكائن المرتبط بالمفتاح [infoIncorrecte] من ملف الموارد [MyResources.en-US.resx]؛</span>
+  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyResources.ResourceManager.GetObject</bdi>(&quot;<bdi dir="ltr" class="odt-ltr-term">infoIncorrecte</bdi>&quot;, <bdi dir="ltr" class="odt-ltr-term">new CultureInfo</bdi>(&quot;<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>&quot;)) </span></b><span style="color: #000000">: يسترد الكائن المرتبط بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">infoIncorrecte</bdi>] من ملف الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources.en-US.resx</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">لقد رأينا أن وحدة التحكم [I18NController] تحدد الثقافة الحالية في الجلسة المرتبطة بالمفتاح [lang]. وبالتالي، يمكن استرداد الثقافة الحالية باستخدام </span><b><span style="color: #000000">System.Web.HttpContext.Current.Session[&quot;lang&quot;] as </span></b><span style="color: #000000">string؛</span>
+  <li><span style="color: #000000">لقد رأينا أن وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>] تحدد الثقافة الحالية في الجلسة المرتبطة بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>]. وبالتالي، يمكن استرداد الثقافة الحالية باستخدام </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">System.Web.HttpContext.Current.Session</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">lang</bdi>&quot;] <bdi dir="ltr" class="odt-ltr-term">as</bdi> </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">string</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">يتم استرداد المورد كـ [object]. للحصول على رسالة الخطأ، نطبق عليها طريقة [ToString].</span>
+  <li><span style="color: #000000">يتم استرداد المورد كـ [<bdi dir="ltr" class="odt-ltr-term">object</bdi>]. للحصول على رسالة الخطأ، نطبق عليها طريقة [<bdi dir="ltr" class="odt-ltr-term">ToString</bdi>].</span>
   </li>
 </ul>
 <p><a id="refheading58150676630786"></a></p>
-<h2 id="64-action14getcshtml">6.4. <span style="color: #4f81bd">تدويل العرض [Action14Get.cshtml]</span></h2>
+<h2 id="64-action14getcshtml">6.4. <span style="color: #4f81bd">تدويل العرض [<bdi dir="ltr" class="odt-ltr-term">Action14Get.cshtml</bdi>]</span></h2>
 <p><span style="color: #000000">نقوم بتحديث عرض النموذج على النحو التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">   </span></p>
@@ -1416,11 +1418,11 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><strong><span style="color: #000000">ملاحظة</span></strong><span style="color: #000000">: السطر 14—تأكد من مطابقة إصدار jQuery مع إصدار Visual Studio الخاص بك.</span></p>
+<p><strong><span style="color: #000000">ملاحظة</span></strong><span style="color: #000000">: السطر 14—تأكد من مطابقة إصدار <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> مع إصدار <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> الخاص بك.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لنبدأ بالجزء الأبسط، الأسطر 36–38. تستخدم هذه الأسطر الخصائص الثابتة لفئة [MyResources] التي وصفناها للتو. للوصول إلى فئة [MyResources]، يجب استيراد مساحة اسمها (السطر 2).</span></p>
+<p><span style="color: #000000">لنبدأ بالجزء الأبسط، الأسطر 36–38. تستخدم هذه الأسطر الخصائص الثابتة لفئة [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>] التي وصفناها للتو. للوصول إلى فئة [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]، يجب استيراد مساحة اسمها (السطر 2).</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في الرسائل المُترجمة، يجب عليك أيضًا تضمين الرسائل التي يعرضها إطار عمل التحقق من الصحة من جانب العميل. للقيام بذلك، استخدم مكتبات jQuery في الأسطر 17–19. نستخدم ملفات jQuery لللغتين اللتين ندعمهما: [fr- FR] و[en-US]. بالإضافة إلى ذلك، قد تتذكر أن طريقة العرض [Action13Get] استخدمت البرنامج النصي JavaScript التالي [myscripts.js]:</span></p>
+<p><span style="color: #000000">في الرسائل المُترجمة، يجب عليك أيضًا تضمين الرسائل التي يعرضها إطار عمل التحقق من الصحة من جانب العميل. للقيام بذلك، استخدم مكتبات <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> في الأسطر 17–19. نستخدم ملفات <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> لللغتين اللتين ندعمهما: [<bdi dir="ltr" class="odt-ltr-term">fr- FR</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]. بالإضافة إلى ذلك، قد تتذكر أن طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action13Get</bdi>] استخدمت البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> التالي [<bdi dir="ltr" class="odt-ltr-term">myscripts.js</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// document loading</span></span>
@@ -1431,10 +1433,10 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">الآن، لم تعد الثقافة مجرد [fr-FR]؛ بل أصبحت متنوعة. لذلك، يتم الآن إنشاء هذه الأسطر بواسطة عرض [Action14Get] نفسه في الأسطر 21–26. سيتم تضمين هذه الأسطر الست في صفحة HTML المرسلة إلى العميل.</span></p>
+<p><span style="color: #000000">الآن، لم تعد الثقافة مجرد [<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>]؛ بل أصبحت متنوعة. لذلك، يتم الآن إنشاء هذه الأسطر بواسطة عرض [<bdi dir="ltr" class="odt-ltr-term">Action14Get</bdi>] نفسه في الأسطر 21–26. سيتم تضمين هذه الأسطر الست في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المرسلة إلى العميل.</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 23: يتم تهيئة متغير JavaScript [culture] بالثقافة الحالية للخيط الذي يعالج الطلب. قد تتذكر أن هذا تم تهيئته بواسطة منشئ فئة [I18NController]:</span>
+  <li><span style="color: #000000">السطر 23: يتم تهيئة متغير <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> [<bdi dir="ltr" class="odt-ltr-term">culture</bdi>] بالثقافة الحالية للخيط الذي يعالج الطلب. قد تتذكر أن هذا تم تهيئته بواسطة منشئ فئة [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>]:</span>
   </li>
 </ul>
 
@@ -1448,7 +1450,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">إذا كانت الثقافة الحالية هي [en-US]، يصبح نص JavaScript المضمن في صفحة HTML كما يلي:</span></p>
+<p><span style="color: #000000">إذا كانت الثقافة الحالية هي [<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]، يصبح نص <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المضمن في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1460,7 +1462,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p>لقد ذكرنا سابقًا أن الدالة [$(document).ready] يتم تنفيذها بمجرد انتهاء المتصفح من تحميل الصفحة. سيؤدي تنفيذها إلى تعيين الثقافة لإطار عمل التحقق من الصحة من جانب العميل. مع الثقافة [en-US]، ستكون رسائل الخطأ الخاصة بالإطار باللغة الإنجليزية وستأتي من ملف الموارد [MyResources.en-US.resx]. سنرى كيف.</p>
+<p>لقد ذكرنا سابقًا أن الدالة [$(<bdi dir="ltr" class="odt-ltr-term">document</bdi>).<bdi dir="ltr" class="odt-ltr-term">ready</bdi>] يتم تنفيذها بمجرد انتهاء المتصفح من تحميل الصفحة. سيؤدي تنفيذها إلى تعيين الثقافة لإطار عمل التحقق من الصحة من جانب العميل. مع الثقافة [<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]، ستكون رسائل الخطأ الخاصة بالإطار باللغة الإنجليزية وستأتي من ملف الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources.en-US.resx</bdi>]. سنرى كيف.</p>
 <p>الآن دعونا نفحص الأسطر 57–65:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- language selection --&gt;</span></span>
@@ -1479,9 +1481,9 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014B000000AD2CD06CBB.png" width="166" height="87" style="display:inline-block; margin:4px;width:4.38cm;height:2.29cm;" class="odt-zoomable" data-zoom-src="images/100000000000014B000000AD2CD06CBB.png" /></td></tr></table>
 
 <ul>
-  <li>السطر 2: يتم إرسال النموذج إلى الإجراء [Lang] في وحدة التحكم [Second]. في الوقت الحالي، لا نرى أي قيم يمكن إرسالها؛
+  <li>السطر 2: يتم إرسال النموذج إلى الإجراء [<bdi dir="ltr" class="odt-ltr-term">Lang</bdi>] في وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Second</bdi>]. في الوقت الحالي، لا نرى أي قيم يمكن إرسالها؛
   </li>
-  <li>السطران 6 و7: يؤدي النقر على الروابط إلى تشغيل دالة JavaScript [postForm]. أين توجد هذه الدالة؟ في البرنامج النصي [myscripts2.js] المشار إليه في السطر 20 من العرض:
+  <li>السطران 6 و7: يؤدي النقر على الروابط إلى تشغيل دالة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> [<bdi dir="ltr" class="odt-ltr-term">postForm</bdi>]. أين توجد هذه الدالة؟ في البرنامج النصي [<bdi dir="ltr" class="odt-ltr-term">myscripts2.js</bdi>] المشار إليه في السطر 20 من العرض:
   </li>
 </ul>
 
@@ -1532,9 +1534,9 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p>الأسطر 22–40 هي نفسها الموجودة بالفعل في البرنامج النصي [myscripts.js] المستخدم في المثال السابق. لن نعيد تناولها هنا. توجد الدالة [postForm]، التي يتم تنفيذها عند النقر على روابط اللغات، في الأسطر 1–20:</p>
+<p>الأسطر 22–40 هي نفسها الموجودة بالفعل في البرنامج النصي [<bdi dir="ltr" class="odt-ltr-term">myscripts.js</bdi>] المستخدم في المثال السابق. لن نعيد تناولها هنا. توجد الدالة [<bdi dir="ltr" class="odt-ltr-term">postForm</bdi>]، التي يتم تنفيذها عند النقر على روابط اللغات، في الأسطر 1–20:</p>
 <ul>
-  <li>السطر 1: تأخذ الدالة معلمتين، [lang]، وهي الثقافة التي اختارها المستخدم، و[url]، وهي عنوان URL الذي يجب إعادة توجيه متصفح العميل إليه بمجرد إجراء تغيير الثقافة. يتم تحديد هاتين المعلمتين في الاستدعاء:
+  <li>السطر 1: تأخذ الدالة معلمتين، [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>]، وهي الثقافة التي اختارها المستخدم، و[<bdi dir="ltr" class="odt-ltr-term">url</bdi>]، وهي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يجب إعادة توجيه متصفح العميل إليه بمجرد إجراء تغيير الثقافة. يتم تحديد هاتين المعلمتين في الاستدعاء:
   </li>
 </ul>
 
@@ -1552,7 +1554,7 @@
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;xx-XX&quot;</span><span class="p">/&gt;</span>
 </code></pre></div>
-<p>حيث [xx-XX] هي قيمة المعلمة [lang] للدالة؛</p>
+<p>حيث [<bdi dir="ltr" class="odt-ltr-term">xx-XX</bdi>] هي قيمة المعلمة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>] للدالة؛</p>
 <ul>
   <li>السطر 10: مرة أخرى، باستخدام الكود، نضيف هذا الحقل إلى النموذج الثاني. في النهاية، يتصرف هذا الحقل كما لو كان موجودًا في النموذج الثاني منذ البداية. وبالتالي، سيتم إرسال قيمته. وهذا بالضبط ما أردناه؛
   </li>
@@ -1562,13 +1564,13 @@
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;url&quot;</span><span class="p">/&gt;</span>
 </code></pre></div>
-<p>حيث [url] هي قيمة المعلمة [url] للدالة؛</p>
+<p>حيث [<bdi dir="ltr" class="odt-ltr-term">url</bdi>] هي قيمة المعلمة [<bdi dir="ltr" class="odt-ltr-term">url</bdi>] للدالة؛</p>
 <ul>
-  <li>السطر 19: تم الآن إرسال النموذج الثاني. إلى أي عنوان URL؟
+  <li>السطر 19: تم الآن إرسال النموذج الثاني. إلى أي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>؟
   </li>
 </ul>
 
-<p>نحتاج إلى العودة إلى كود النموذج الثاني في صفحة [Action14Get.cshtml]:</p>
+<p>نحتاج إلى العودة إلى كود النموذج الثاني في صفحة [<bdi dir="ltr" class="odt-ltr-term">Action14Get.cshtml</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@</span><span style="color:#0000ff">using</span><span style="color:#000000"> (Html.BeginForm(</span><span style="color:#a31515">&quot;Lang&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;Second&quot;</span><span style="color:#000000">))</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
@@ -1576,7 +1578,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>وبالتالي، يتم إرسال النموذج إلى عنوان URL [/Second/Lang]. بعد ذلك، نحتاج إلى تعريف إجراء [Lang] في وحدة التحكم [SecondController]. وسيكون على النحو التالي:</p>
+<p>وبالتالي، يتم إرسال النموذج إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">Second/Lang</bdi>]. بعد ذلك، نحتاج إلى تعريف إجراء [<bdi dir="ltr" class="odt-ltr-term">Lang</bdi>] في وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">SecondController</bdi>]. وسيكون على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">SecondController</span><span style="color:#000000"> : </span><span style="color:#2b91af">I18NController</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
@@ -1606,15 +1608,15 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 18: لا يستجيب الإجراء إلا لـ [POST]؛
+  <li>السطر 18: لا يستجيب الإجراء إلا لـ [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]؛
   </li>
-  <li>السطر 19: يسترد فقط المعلمة المسماة [url]؛
+  <li>السطر 19: يسترد فقط المعلمة المسماة [<bdi dir="ltr" class="odt-ltr-term">url</bdi>]؛
   </li>
-  <li>السطر 22: يوجه العميل لإعادة التوجيه إلى عنوان URL هذا.
+  <li>السطر 22: يوجه العميل لإعادة التوجيه إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا.
   </li>
 </ul>
 
-<p>ولكن ماذا حدث للمعلمة المسماة [lang]؟ يجب أن نتذكر الآن أن وحدة التحكم [SecondController] مشتقة من فئة [I18NController] (السطر 1 أدناه). وهذه الوحدة هي التي تتعامل مع المعلمة [lang]:</p>
+<p>ولكن ماذا حدث للمعلمة المسماة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>]؟ يجب أن نتذكر الآن أن وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">SecondController</bdi>] مشتقة من فئة [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>] (السطر 1 أدناه). وهذه الوحدة هي التي تتعامل مع المعلمة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">abstract</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">I18NController</span><span style="color:#000000"> : </span><span style="color:#2b91af">Controller</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
@@ -1653,14 +1655,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>في مثالنا، يتم تمرير المعلمة [lang] بالرجوع. وبالتالي، سيتم العثور عليها في السطر 13، وتخزينها في الجلسة في السطر 31، واستخدامها لتحديث ثقافة الخيط الحالي في السطرين 33-34.</p>
+<p>في مثالنا، يتم تمرير المعلمة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>] بالرجوع. وبالتالي، سيتم العثور عليها في السطر 13، وتخزينها في الجلسة في السطر 31، واستخدامها لتحديث ثقافة الخيط الحالي في السطرين 33-34.</p>
 <p>ماذا يحدث بعد ذلك؟ دعونا نراجع الروابط:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a</span><span style="color:#000000"> </span><span style="color:#ff0000">href</span><span style="color:#0000ff">=&quot;javascript:postForm(&#x27;fr-FR&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span><span style="color:#000000">Français</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">a</span><span style="color:#0000ff">&gt;&lt;/</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a</span><span style="color:#000000"> </span><span style="color:#ff0000">href</span><span style="color:#0000ff">=&quot;javascript:postForm(&#x27;en-US&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span><span style="color:#000000">English</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">a</span><span style="color:#0000ff">&gt;&lt;/</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>عنوان URL لإعادة التوجيه هو [/Second/Action14Get]. وبالتالي يتم تنفيذ الإجراء [Action14Get]:</p>
+<p>عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه هو [/<bdi dir="ltr" class="odt-ltr-term">Second/Action14Get</bdi>]. وبالتالي يتم تنفيذ الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action14Get</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">SecondController</span><span style="color:#000000"> : </span><span style="color:#2b91af">I18NController</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
@@ -1674,7 +1676,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>في السابق، يتم تنفيذ منشئ فئة [I18NController]:</p>
+<p>في السابق، يتم تنفيذ منشئ فئة [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">abstract</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">I18NController</span><span style="color:#000000"> : </span><span style="color:#2b91af">Controller</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
@@ -1713,7 +1715,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>هذه المرة، سيتم العثور على المعلمة [lang] في الجلسة في السطر 18. لنفترض أن قيمتها هي [en-US]. وبالتالي، تصبح هذه الثقافة هي ثقافة الخيط الذي ينفذ الطلب (السطران 33-34). لنعد إلى الإجراء [Action14Get]:</p>
+<p>هذه المرة، سيتم العثور على المعلمة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>] في الجلسة في السطر 18. لنفترض أن قيمتها هي [<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]. وبالتالي، تصبح هذه الثقافة هي ثقافة الخيط الذي ينفذ الطلب (السطران 33-34). لنعد إلى الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action14Get</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// Action14-GET</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      [</span><span style="color:#2b91af">HttpGet</span><span style="color:#000000">]</span></span></span>
@@ -1723,7 +1725,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>السطر 5، سيتم إنشاء مثيل لنموذج العرض [ViewModel14]:</p>
+<p>السطر 5، سيتم إنشاء مثيل لنموذج العرض [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">ViewModel14</span><span style="color:#000000"> : </span><span style="color:#2b91af">IValidatableObject</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
@@ -1735,8 +1737,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 </code></pre></div>
 
-<p>نظرًا لأن ثقافة مؤشر الترابط الحالي هي [en-US]، فسيتم استخدام ملف [MyResources.en-US.resx]. وبالتالي، ستكون رسائل الخطأ باللغة الإنجليزية.</p>
-<p>بمجرد إنشاء مثيل النموذج [ViewModel14]، يتم عرض طريقة العرض [Action14Get.cshtml]:</p>
+<p>نظرًا لأن ثقافة مؤشر الترابط الحالي هي [<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]، فسيتم استخدام ملف [<bdi dir="ltr" class="odt-ltr-term">MyResources.en-US.resx</bdi>]. وبالتالي، ستكون رسائل الخطأ باللغة الإنجليزية.</p>
+<p>بمجرد إنشاء مثيل النموذج [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>]، يتم عرض طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action14Get.cshtml</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@model Exemple_03.Models.</span><span style="color:#2b91af">ViewModel14</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@</span><span style="color:#0000ff">using</span><span style="color:#000000"> Exemple_03.Resources</span></span></span>
@@ -1779,7 +1781,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>نظرًا لأن الإعدادات المحلية الحالية للخيط هي [en-US]، فإن البرنامج النصي المضمن في الصفحة في الأسطر 15–20 هو:</p>
+<p>نظرًا لأن الإعدادات المحلية الحالية للخيط هي [<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]، فإن البرنامج النصي المضمن في الصفحة في الأسطر 15–20 هو:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    $(document).ready(</span><span style="color:#0000ff">function</span><span style="color:#000000"> () {</span></span></span>
@@ -1790,7 +1792,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يضمن هذا أن إطار عمل التحقق من الصحة سيستخدم التنسيقات الأمريكية (التاريخ، العملة، الأرقام، إلخ). وللسبب نفسه، سيتم استرداد الرسائل الموجودة في الأسطر 30–32 من ملف الموارد [MyResources.en-US.resx]، وبالتالي ستكون باللغة الإنجليزية.</span></p>
+<p><span style="color: #000000">يضمن هذا أن إطار عمل التحقق من الصحة سيستخدم التنسيقات الأمريكية (التاريخ، العملة، الأرقام، إلخ). وللسبب نفسه، سيتم استرداد الرسائل الموجودة في الأسطر 30–32 من ملف الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources.en-US.resx</bdi>]، وبالتالي ستكون باللغة الإنجليزية.</span></p>
 <p><a id="refheading58152676630786"></a></p>
 <h2 id="65">6.5. <span style="color: #4f81bd">أمثلة على التنفيذ</span></h2>
 <p><span style="color: #000000">فيما يلي بعض أمثلة التنفيذ:</span></p>
@@ -1813,7 +1815,7 @@
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">إذا نظرنا إلى كود مصدر الصفحة، يمكننا أن نرى أن رسائل الخطأ هذه قد تم تضمينها في الصفحة، مما يعني أنها تم إنشاؤها بواسطة عرض ASP.NET [Action14Get] ونموذج العرض الخاص به [ViewModel14]:</span></p>
+<p><span style="color: #000000">إذا نظرنا إلى كود مصدر الصفحة، يمكننا أن نرى أن رسائل الخطأ هذه قد تم تضمينها في الصفحة، مما يعني أنها تم إنشاؤها بواسطة عرض <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> [<bdi dir="ltr" class="odt-ltr-term">Action14Get</bdi>] ونموذج العرض الخاص به [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
@@ -1830,11 +1832,11 @@
 
 <p><a id="refheading58154676630786"></a></p>
 <h2 id="66">6.6. <span style="color: #4f81bd">تدويل التاريخ</span></h2>
-<p><span style="color: #000000">التدويل مسألة معقدة. لنلقِ نظرة على الخاصية [Date1] وتقويمها:</span></p>
+<p><span style="color: #000000">التدويل مسألة معقدة. لنلقِ نظرة على الخاصية [<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>] وتقويمها:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">   </span></p>
 <p><img src="images/10000000000001FC00000108819F607A.png" width="356" height="185" style="width:9.41cm;height:4.89cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001FC00000108819F607A.png" /></p>
-<p><span style="color: #000000">يمكننا أن نرى أن التقويم هو تقويم فرنسي، على الرغم من أن ثقافة الصفحة هي [en-US]. في HTML5، هناك سمة [lang] تسمح لك بتعيين لغة الصفحة أو أحد مكونات الصفحة. يمكننا بعد ذلك كتابة الكود التالي في عرض [Action14Get.cshtml]:</span></p>
+<p><span style="color: #000000">يمكننا أن نرى أن التقويم هو تقويم فرنسي، على الرغم من أن ثقافة الصفحة هي [<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]. في <bdi dir="ltr" class="odt-ltr-term">HTML5</bdi>، هناك سمة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>] تسمح لك بتعيين لغة الصفحة أو أحد مكونات الصفحة. يمكننا بعد ذلك كتابة الكود التالي في عرض [<bdi dir="ltr" class="odt-ltr-term">Action14Get.cshtml</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">@model Exemple_03.Models.<span style="color:#2b91af">ViewModel14</span></span></span>
@@ -1856,7 +1858,7 @@
 <ul>
   <li><span style="color: #000000">السطر 6: استرداد الإعدادات المحلية من الجلسة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 11: نضبط سمة [lang] للصفحة على هذه القيمة.</span>
+  <li><span style="color: #000000">السطر 11: نضبط سمة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>] للصفحة على هذه القيمة.</span>
   </li>
 </ul>
 
@@ -1866,11 +1868,11 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000034A000001B65CBFA548.png" width="421" height="219" style="display:inline-block; margin:4px;width:11.139cm;height:5.794cm;" class="odt-zoomable" data-zoom-src="images/100000000000034A000001B65CBFA548.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في [1]، لا يزال التاريخ مطلوبًا بالتنسيق الفرنسي </span><strong><span style="color: #000000">dd/mm/yyyy </span></strong><span style="color: #000000">(20/11/2013)، في حين أن التنسيق الأمريكي هو </span><strong><span style="color: #000000">mm/dd/yyyy </span></strong><span style="color: #000000">(10/21/2013). سنحاول حل هاتين المشكلتين باستخدام عرض جديد ونموذج عرض جديد.</span></p>
+<p><span style="color: #000000">في [1]، لا يزال التاريخ مطلوبًا بالتنسيق الفرنسي </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">dd/mm/yyyy</bdi> </span></strong><span style="color: #000000">(20/11/2013)، في حين أن التنسيق الأمريكي هو </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">mm/dd/yyyy</bdi> </span></strong><span style="color: #000000">(10/21/2013). سنحاول حل هاتين المشكلتين باستخدام عرض جديد ونموذج عرض جديد.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">jQuery UI هو مشروع مشتق من مشروع jQuery ويقدم مكونات النماذج، بما في ذلك التقويم. يمكن ترجمة هذا التقويم. وهذا ما سنقوم بتوضيحه.</span></p>
+<p><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi> هو مشروع مشتق من مشروع <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> ويقدم مكونات النماذج، بما في ذلك التقويم. يمكن ترجمة هذا التقويم. وهذا ما سنقوم بتوضيحه.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لنبدأ بإضافة [jQuery UI] إلى مشروعنا.</span></p>
+<p><span style="color: #000000">لنبدأ بإضافة [<bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi>] إلى مشروعنا.</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000036E000002C84CC5FEB9.png" width="439" height="356" style="display:inline-block; margin:4px;width:11.615cm;height:9.419cm;" class="odt-zoomable" data-zoom-src="images/100000000000036E000002C84CC5FEB9.png" /></td></tr></table>
 
@@ -1878,31 +1880,31 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B70000014BF0AEC049.png" width="604" height="166" style="display:inline-block; margin:4px;width:15.968cm;height:4.38cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B70000014BF0AEC049.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">بمجرد تثبيت jQuery UI، تظهر عناصر جديدة في المشروع:</span></p>
+<p><span style="color: #000000">بمجرد تثبيت <bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi>، تظهر عناصر جديدة في المشروع:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E10000014BD096A7F2.png" width="497" height="166" style="display:inline-block; margin:4px;width:13.137cm;height:4.38cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E10000014BD096A7F2.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [1]، مكتبة [JQuery UI] في كل من الإصدار العادي والإصدار المضغوط؛</span>
+  <li><span style="color: #000000">في [1]، مكتبة [<bdi dir="ltr" class="odt-ltr-term">JQuery UI</bdi>] في كل من الإصدار العادي والإصدار المضغوط؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، ورقة أنماط [JQuery UI]؛</span>
+  <li><span style="color: #000000">في [2]، ورقة أنماط [<bdi dir="ltr" class="odt-ltr-term">JQuery UI</bdi>]؛</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">تقويم jQuery UI باللغة الإنجليزية بشكل افتراضي. لتدويله، تحتاج إلى إضافة البرامج النصية الموجودة على الرابط [</span><a href="https://github.com/jquery/jquery-ui/tree/master/ui/i18n"><u><span style="color: #0563c1">https://github.com/jquery/jquery-ui/tree/master/ui/i18n</span></u></a><span style="color: #000000">]:</span></p>
+<p><span style="color: #000000">تقويم <bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi> باللغة الإنجليزية بشكل افتراضي. لتدويله، تحتاج إلى إضافة البرامج النصية الموجودة على الرابط [</span><a href="https://github.com/jquery/jquery-ui/tree/master/ui/i18n"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">https://github.com/jquery/jquery-ui/tree/master/ui/i18n</bdi></span></u></a><span style="color: #000000">]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000607000000B0116E25BF.png" width="680" height="78" style="display:inline-block; margin:4px;width:17.999cm;height:2.053cm;" class="odt-zoomable" data-zoom-src="images/1000000000000607000000B0116E25BF.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">للحصول على تقويم jQuery UI باللغة الفرنسية، انسخ محتويات ملف [jquery.ui.datepicker-fr.js] أعلاه إلى مجلد [Scripts] الخاص بالمشروع.</span></p>
+<p><span style="color: #000000">للحصول على تقويم <bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi> باللغة الفرنسية، انسخ محتويات ملف [<bdi dir="ltr" class="odt-ltr-term">jquery.ui.datepicker-fr.js</bdi>] أعلاه إلى مجلد [<bdi dir="ltr" class="odt-ltr-term">Scripts</bdi>] الخاص بالمشروع.</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B00000147534A1B0D.png" width="206" height="164" style="display:inline-block; margin:4px;width:5.438cm;height:4.327cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B00000147534A1B0D.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يتم الحصول على كود العرض الجديد [Action15.cshtml] عن طريق نسخ العرض السابق [Action14.cshtml] ثم تعديله. سنعرض التغييرات فقط:</span></p>
+<p><span style="color: #000000">يتم الحصول على كود العرض الجديد [<bdi dir="ltr" class="odt-ltr-term">Action15.cshtml</bdi>] عن طريق نسخ العرض السابق [<bdi dir="ltr" class="odt-ltr-term">Action14.cshtml</bdi>] ثم تعديله. سنعرض التغييرات فقط:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015A000000AD293D7287.png" width="173" height="87" style="display:inline-block; margin:4px;width:4.577cm;height:2.29cm;" class="odt-zoomable" data-zoom-src="images/100000000000015A000000AD293D7287.png" /></td></tr></table>
 
@@ -1966,32 +1968,32 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><strong><span style="color: #000000">ملاحظة</span></strong><span style="color: #000000">: في السطر 16، اضبط إصدار jQuery UI ليتوافق مع الإصدار الذي قمت بتنزيله.</span></p>
+<p><strong><span style="color: #000000">ملاحظة</span></strong><span style="color: #000000">: في السطر 16، اضبط إصدار <bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi> ليتوافق مع الإصدار الذي قمت بتنزيله.</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 15: قم بالإشارة إلى ورقة أنماط jQuery UI؛</span>
+  <li><span style="color: #000000">السطر 15: قم بالإشارة إلى ورقة أنماط <bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 16: قم بالإشارة إلى الإصدار الذي تم تنزيله من jQuery UI؛</span>
+  <li><span style="color: #000000">السطر 16: قم بالإشارة إلى الإصدار الذي تم تنزيله من <bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi>؛</span>
   </li>
   <li><span style="color: #000000">السطر 17: أشر إلى البرنامج النصي للتقويم الفرنسي الذي قمنا بتنزيله للتو؛</span>
   </li>
-  <li><span style="color: #000000">السطر 34: ستقوم طريقة [Html.TextBox] بإنشاء علامة [input] هنا، من النوع [text]، مع المعرف [Date1] والاسم [Date1]؛</span>
+  <li><span style="color: #000000">السطر 34: ستقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">Html.TextBox</bdi>] بإنشاء علامة [<bdi dir="ltr" class="odt-ltr-term">input</bdi>] هنا، من النوع [<bdi dir="ltr" class="odt-ltr-term">text</bdi>]، مع المعرف [<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>] والاسم [<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 19: عند انتهاء تحميل الصفحة، سيتم تطبيق دالة jQuery UI [datepicker] على العنصر </span><b><span style="color: #000000">الذي يحمل المعرف </span></b><span style="color: #000000">[Date1]، أي العنصر الموجود في السطر 34. تضمن هذه الدالة أنه عند تركيز المستخدم على حقل الإدخال [Date1]، سيظهر تقويم يسمح له باختيار تاريخ. تقبل دالة [datepicker] معلمة تحدد لغة التقويم. يجب تعيين المتغير [@Model.Regionale] إلى:</span>
+  <li><span style="color: #000000">السطر 19: عند انتهاء تحميل الصفحة، سيتم تطبيق دالة <bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi> [<bdi dir="ltr" class="odt-ltr-term">datepicker</bdi>] على العنصر </span><b><span style="color: #000000">الذي يحمل المعرف </span></b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>]، أي العنصر الموجود في السطر 34. تضمن هذه الدالة أنه عند تركيز المستخدم على حقل الإدخال [<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>]، سيظهر تقويم يسمح له باختيار تاريخ. تقبل دالة [<bdi dir="ltr" class="odt-ltr-term">datepicker</bdi>] معلمة تحدد لغة التقويم. يجب تعيين المتغير [@<bdi dir="ltr" class="odt-ltr-term">Model.Regionale</bdi>] إلى:</span>
   </li>
-  <li><span style="color: #000000">&#x27;fr&#x27; للتقويم الفرنسي،</span>
+  <li><span style="color: #000000">&#x27;<bdi dir="ltr" class="odt-ltr-term">fr</bdi>&#x27; للتقويم الفرنسي،</span>
   </li>
   <li><span style="color: #000000">&#x27;&#x27; للتقويم الإنجليزي؛</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">سيكون نموذج العرض السابق [Action15.cshtml] هو نموذج [ViewModel15] التالي:</span></p>
+<p><span style="color: #000000">سيكون نموذج العرض السابق [<bdi dir="ltr" class="odt-ltr-term">Action15.cshtml</bdi>] هو نموذج [<bdi dir="ltr" class="odt-ltr-term">ViewModel15</bdi>] التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000149000001E31DFED8CA.png" width="165" height="242" style="display:inline-block; margin:4px;width:4.353cm;height:6.391cm;" class="odt-zoomable" data-zoom-src="images/1000000000000149000001E31DFED8CA.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">كوده هو كود نموذج [ViewModel14]، مع تعديل طفيف. نعرض التغييرات فقط:</span></p>
+<p><span style="color: #000000">كوده هو كود نموذج [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>]، مع تعديل طفيف. نعرض التغييرات فقط:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Exemple_03.Resources;</span></span>
@@ -2065,28 +2067,28 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">بالمقارنة مع النموذج السابق [ViewModel14]، لدينا أربع خصائص إضافية:</span></p>
+<p><span style="color: #000000">بالمقارنة مع النموذج السابق [<bdi dir="ltr" class="odt-ltr-term">ViewModel14</bdi>]، لدينا أربع خصائص إضافية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 60: لغة العرض، &#x27;fr-FR&#x27; أو &#x27;en-US&#x27;. يتم تهيئة هذه اللغة في المنشئ في السطر 26؛</span>
+  <li><span style="color: #000000">السطر 60: لغة العرض، &#x27;<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>&#x27; أو &#x27;<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>&#x27;. يتم تهيئة هذه اللغة في المنشئ في السطر 26؛</span>
   </li>
-  <li><span style="color: #000000">السطر 61: الثقافة الإقليمية لتقويم jQuery، &#x27;fr&#x27; للتقويم الفرنسي، &#x27;&#x27; للتقويم الإنجليزي. يتم تهيئة هذا الحقل في السطر 29 من المنشئ؛</span>
+  <li><span style="color: #000000">السطر 61: الثقافة الإقليمية لتقويم <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi>، &#x27;<bdi dir="ltr" class="odt-ltr-term">fr</bdi>&#x27; للتقويم الفرنسي، &#x27;&#x27; للتقويم الإنجليزي. يتم تهيئة هذا الحقل في السطر 29 من المنشئ؛</span>
   </li>
-  <li><span style="color: #000000">السطر 63: تنسيق التاريخ من السطر 15: &#x27;dd/MM/yyyy&#x27; للتاريخ الفرنسي، &#x27;MM/dd/yyyy&#x27; للتاريخ الإنجليزي. يتم تهيئة هذا الحقل في السطر 31 من المنشئ؛</span>
+  <li><span style="color: #000000">السطر 63: تنسيق التاريخ من السطر 15: &#x27;<bdi dir="ltr" class="odt-ltr-term">dd/MM/yyyy</bdi>&#x27; للتاريخ الفرنسي، &#x27;<bdi dir="ltr" class="odt-ltr-term">MM/dd/yyyy</bdi>&#x27; للتاريخ الإنجليزي. يتم تهيئة هذا الحقل في السطر 31 من المنشئ؛</span>
   </li>
-  <li><span style="color: #000000">السطر 62: السلسلة المراد عرضها في حقل الإدخال [Date1]. سيتم تهيئة هذا الحقل بواسطة الإجراء؛</span>
+  <li><span style="color: #000000">السطر 62: السلسلة المراد عرضها في حقل الإدخال [<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>]. سيتم تهيئة هذا الحقل بواسطة الإجراء؛</span>
   </li>
-  <li><span style="color: #000000">السطر 47: يتم الآن التحقق من صحة التاريخ [Regexp1] وفقًا لتنسيق الإعدادات المحلية الحالية.</span>
+  <li><span style="color: #000000">السطر 47: يتم الآن التحقق من صحة التاريخ [<bdi dir="ltr" class="odt-ltr-term">Regexp1</bdi>] وفقًا لتنسيق الإعدادات المحلية الحالية.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">توجد قيم خصائص [Regionale] و [FormatDate] في ملفات الموارد [MyResources]. تتغير ملفات الموارد الفرنسية [MyResources] [MyResources.fr-FR] [1] وملف الموارد الإنجليزي [2] على النحو التالي:</span></p>
+<p><span style="color: #000000">توجد قيم خصائص [<bdi dir="ltr" class="odt-ltr-term">Regionale</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">FormatDate</bdi>] في ملفات الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>]. تتغير ملفات الموارد الفرنسية [<bdi dir="ltr" class="odt-ltr-term">MyResources</bdi>] [<bdi dir="ltr" class="odt-ltr-term">MyResources.fr-FR</bdi>] [1] وملف الموارد الإنجليزي [2] على النحو التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062F00000078EB3A38F2.png" width="680" height="52" style="display:inline-block; margin:4px;width:17.999cm;height:1.363cm;" class="odt-zoomable" data-zoom-src="images/100000000000062F00000078EB3A38F2.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لقد أوشكنا على الانتهاء. نضيف إجراءً [Action15] إلى وحدة التحكم [SecondController]:</span></p>
+<p><span style="color: #000000">لقد أوشكنا على الانتهاء. نضيف إجراءً [<bdi dir="ltr" class="odt-ltr-term">Action15</bdi>] إلى وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">SecondController</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">      // Action15</span></span>
@@ -2112,23 +2114,23 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: تعالج الطريقة [Action15] كل من طلبات [GET] و[POST]. في الحالة الأخيرة، يتم استرداد القيم المرسلة في المعلمة [formData]؛</span>
+  <li><span style="color: #000000">السطر 2: تعالج الطريقة [<bdi dir="ltr" class="odt-ltr-term">Action15</bdi>] كل من طلبات [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]. في الحالة الأخيرة، يتم استرداد القيم المرسلة في المعلمة [<bdi dir="ltr" class="odt-ltr-term">formData</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 5: يتم استرداد طريقة HTTP للطلب؛</span>
+  <li><span style="color: #000000">السطر 5: يتم استرداد طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للطلب؛</span>
   </li>
   <li><span style="color: #000000">السطر 7: يتم إنشاء قالب العرض المراد عرضه (النموذج)؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 8-11: في حالة طلب [GET]، يتم تهيئة حقل الإدخال [Date1] بسلسلة فارغة؛</span>
+  <li><span style="color: #000000">الأسطر 8-11: في حالة طلب [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>]، يتم تهيئة حقل الإدخال [<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>] بسلسلة فارغة؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 12-16: في حالة طلب [POST]:</span>
+  <li><span style="color: #000000">الأسطر 12-16: في حالة طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]:</span>
     <ul>
       <li><span style="color: #000000">السطر 14: يتم تهيئة النموذج بالقيم المرسلة،</span>
       </li>
-      <li><span style="color: #000000">السطر 15: يتم تهيئة حقل الإدخال [Date1] بسلسلة تمثل قيمة [Date1] منسقة وفقًا للإعدادات المحلية الحالية [dd/MM/yyyy] للتاريخ الفرنسي، و[MM/dd/yyyy] للتاريخ الإنجليزي؛</span>
+      <li><span style="color: #000000">السطر 15: يتم تهيئة حقل الإدخال [<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>] بسلسلة تمثل قيمة [<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>] منسقة وفقًا للإعدادات المحلية الحالية [<bdi dir="ltr" class="odt-ltr-term">dd/MM/yyyy</bdi>] للتاريخ الفرنسي، و[<bdi dir="ltr" class="odt-ltr-term">MM/dd/yyyy</bdi>] للتاريخ الإنجليزي؛</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">السطر 18: يتم عرض طريقة العرض [Action15.cshtml] مع القالب الخاص بها.</span>
+  <li><span style="color: #000000">السطر 18: يتم عرض طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action15.cshtml</bdi>] مع القالب الخاص بها.</span>
   </li>
 </ul>
 

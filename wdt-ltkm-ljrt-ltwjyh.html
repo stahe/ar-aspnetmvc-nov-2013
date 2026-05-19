@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -827,13 +829,13 @@
 
 <p><a id="refheading58022676630786"></a></p>
 <h1 id="3">3. <span style="color: #365f91">وحدات التحكم، الإجراءات، التوجيه</span></h1>
-<p>دعونا ننظر في بنية تطبيق ASP.NET MVC:</p>
+<p>دعونا ننظر في بنية تطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000535000001A54D09B830.png" width="667" height="211" style="display:inline-block; margin:4px;width:17.635cm;height:5.57cm;" class="odt-zoomable" data-zoom-src="images/1000000000000535000001A54D09B830.png" /></td></tr></table>
 
-<p>في هذا الفصل، ندرس العملية التي توجه الطلب [1] إلى وحدة التحكم والإجراء [2a] الذي سيقوم بمعالجته، وهي آلية تُعرف باسم التوجيه. كما نقدم الاستجابات المختلفة [3] التي يمكن أن يعيدها الإجراء إلى المتصفح. وقد يكون هذا شيئًا آخر غير العرض <strong>V</strong> [4b].</p>
+<p>في هذا الفصل، ندرس العملية التي توجه الطلب [1] إلى وحدة التحكم والإجراء [2a] الذي سيقوم بمعالجته، وهي آلية تُعرف باسم التوجيه. كما نقدم الاستجابات المختلفة [3] التي يمكن أن يعيدها الإجراء إلى المتصفح. وقد يكون هذا شيئًا آخر غير العرض <strong><bdi dir="ltr" class="odt-ltr-term">V</bdi></strong> [4b].</p>
 <p><a id="refheading10128914791633"></a></p>
-<h2 id="31-aspnet-mvc">3.1. <span style="color: #4f81bd">بنية مشروع ASP.NET MVC</span></h2>
-<p>لنقم بإنشاء أول مشروع ASP.NET MVC باستخدام Visual Studio Express 2012. سنقوم بإضافته [1] إلى الحل المستخدم في الفصل السابق:</p>
+<h2 id="31-aspnet-mvc">3.1. <span style="color: #4f81bd">بنية مشروع <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi></span></h2>
+<p>لنقم بإنشاء أول مشروع <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> باستخدام <bdi dir="ltr" class="odt-ltr-term">Visual Studio Express</bdi> 2012. سنقوم بإضافته [1] إلى الحل المستخدم في الفصل السابق:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D80000021E8F8AD477.png" width="680" height="246" style="display:inline-block; margin:4px;width:17.999cm;height:6.521cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D80000021E8F8AD477.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000515000002D013AB9480.png" width="651" height="360" style="display:inline-block; margin:4px;width:17.212cm;height:9.525cm;" class="odt-zoomable" data-zoom-src="images/1000000000000515000002D013AB9480.png" /></td></tr></table>
@@ -841,7 +843,7 @@
 <ul>
   <li>في [2]، اسم المشروع الجديد؛
   </li>
-  <li>في [3، 4]، نختار مشروع ASP.NET MVC أساسي. يوفر لنا هذا القالب تطبيق ويب فارغًا يتضمن مع ذلك جميع الموارد (ملفات DLL ومكتبات JavaScript وما إلى ذلك) اللازمة للبدء.
+  <li>في [3، 4]، نختار مشروع <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> أساسي. يوفر لنا هذا القالب تطبيق ويب فارغًا يتضمن مع ذلك جميع الموارد (ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> ومكتبات <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> وما إلى ذلك) اللازمة للبدء.
   </li>
 </ul>
 
@@ -850,24 +852,24 @@
 
 <p>لاحظ النقاط التالية في [5]:</p>
 <ul>
-  <li>تعكس بنية المشروع نموذج MVC الخاص به:
+  <li>تعكس بنية المشروع نموذج <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> الخاص به:
   </li>
-  <li>سيتم وضع وحدات التحكم <b>C </b>في مجلد [Controllers]،
+  <li>سيتم وضع وحدات التحكم <b><bdi dir="ltr" class="odt-ltr-term">C</bdi> </b>في مجلد [<bdi dir="ltr" class="odt-ltr-term">Controllers</bdi>]،
   </li>
-  <li>سيتم وضع نماذج البيانات <b>M </b>في مجلد [Models]،
+  <li>سيتم وضع نماذج البيانات <b><bdi dir="ltr" class="odt-ltr-term">M</bdi> </b>في مجلد [<bdi dir="ltr" class="odt-ltr-term">Models</bdi>]،
   </li>
-  <li>سيتم وضع طرق العرض <b>(V) </b>في مجلد [Views]،
+  <li>سيتم وضع طرق العرض <b>(<bdi dir="ltr" class="odt-ltr-term">V</bdi>) </b>في مجلد [<bdi dir="ltr" class="odt-ltr-term">Views</bdi>]،
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A4000002293447BEB9.png" width="680" height="261" style="display:inline-block; margin:4px;width:17.999cm;height:6.893cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A4000002293447BEB9.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، سيكون ملف [Site.css] هو ملف CSS الافتراضي للتطبيق؛
+  <li>في [1]، سيكون ملف [<bdi dir="ltr" class="odt-ltr-term">Site.css</bdi>] هو ملف <bdi dir="ltr" class="odt-ltr-term">CSS</bdi> الافتراضي للتطبيق؛
   </li>
-  <li>في [2]، يتوفر عدد من مكتبات JavaScript؛
+  <li>في [2]، يتوفر عدد من مكتبات <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi>؛
   </li>
-  <li>في [3]، توجد ثلاث طرق عرض محددة: <b>_ViewStart و_Layout وError</b>.
+  <li>في [3]، توجد ثلاث طرق عرض محددة: <b>_ViewStart و_Layout و<bdi dir="ltr" class="odt-ltr-term">Error</bdi></b>.
   </li>
 </ul>
 
@@ -880,9 +882,9 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: يشير الحرف @ إلى بداية كتلة C# داخل العرض. في الواقع، يمكن تضمين كود C# في العرض؛</span>
+  <li><span style="color: #000000">السطر 1: يشير الحرف @ إلى بداية كتلة <bdi dir="ltr" class="odt-ltr-term">C#</bdi> داخل العرض. في الواقع، يمكن تضمين كود <bdi dir="ltr" class="odt-ltr-term">C#</bdi> في العرض؛</span>
   </li>
-  <li><span style="color: #000000">السطر 2: يُعرّف متغير </span><i><span style="color: #000000">Layout </span></i><span style="color: #000000">الذي يحدد العرض الأصلي لجميع العروض. وهو يقابل الصفحة الرئيسية في إطار عمل ASP.NET الكلاسيكي.</span>
+  <li><span style="color: #000000">السطر 2: يُعرّف متغير </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Layout</bdi> </span></i><span style="color: #000000">الذي يحدد العرض الأصلي لجميع العروض. وهو يقابل الصفحة الرئيسية في إطار عمل <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> الكلاسيكي.</span>
   </li>
 </ul>
 
@@ -909,7 +911,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">عندما يتم عرض طريقة عرض من مجلد [Views]، سيتم عرض نصها بواسطة السطر 11 أعلاه. وهذا يعني أن طريقة العرض لا تحتاج إلى تضمين العلامات &lt;html&gt; و&lt;head&gt; و&lt;body&gt;. يتم توفير هذه العلامات بواسطة الملف أعلاه. في الوقت الحالي، هذا الملف غامض إلى حد ما. دعونا نبسطه:</span></p>
+<p><span style="color: #000000">عندما يتم عرض طريقة عرض من مجلد [<bdi dir="ltr" class="odt-ltr-term">Views</bdi>]، سيتم عرض نصها بواسطة السطر 11 أعلاه. وهذا يعني أن طريقة العرض لا تحتاج إلى تضمين العلامات &lt;<bdi dir="ltr" class="odt-ltr-term">html</bdi>&gt; و&lt;<bdi dir="ltr" class="odt-ltr-term">head</bdi>&gt; و&lt;<bdi dir="ltr" class="odt-ltr-term">body</bdi>&gt;. يتم توفير هذه العلامات بواسطة الملف أعلاه. في الوقت الحالي، هذا الملف غامض إلى حد ما. دعونا نبسطه:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;!</span><span style="color:#800000">DOCTYPE</span><span style="color:#000000"> </span><span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -940,14 +942,14 @@
 <p><span style="color: #000000">   </span></p>
 <p><img src="images/10000000000000960000003AABB03712.png" width="150" height="58" style="width:3.971cm;height:1.535cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000960000003AABB03712.png" /></p>
 <ul>
-  <li><span style="color: #000000">[Web.config] هو ملف تكوين تطبيق الويب. وهو ملف معقد. ستحتاج إلى تعديله عند استخدام إطار عمل [Spring.net] في بنية متعددة المستويات.</span>
+  <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">Web.config</bdi>] هو ملف تكوين تطبيق الويب. وهو ملف معقد. ستحتاج إلى تعديله عند استخدام إطار عمل [<bdi dir="ltr" class="odt-ltr-term">Spring.net</bdi>] في بنية متعددة المستويات.</span>
   </li>
-  <li><span style="color: #000000">يحتوي [Global.asax] على الكود الذي يتم تنفيذه عند بدء تشغيل التطبيق. بشكل عام، يستخدم هذا الكود ملفات التكوين المختلفة للتطبيق، بما في ذلك [Web.config].</span>
+  <li><span style="color: #000000">يحتوي [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>] على الكود الذي يتم تنفيذه عند بدء تشغيل التطبيق. بشكل عام، يستخدم هذا الكود ملفات التكوين المختلفة للتطبيق، بما في ذلك [<bdi dir="ltr" class="odt-ltr-term">Web.config</bdi>].</span>
   </li>
 </ul>
 <p><a id="refheading58024676630786"></a></p>
-<h2 id="32-url">3.2. <span style="color: #4f81bd">توجيه عناوين URL الافتراضية</span></h2>
-<p><span style="color: #000000">الرمز الموجود في [Global.asax] هو حاليًا كما يلي:</span></p>
+<h2 id="32-url">3.2. <span style="color: #4f81bd">توجيه عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الافتراضية</span></h2>
+<p><span style="color: #000000">الرمز الموجود في [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>] هو حاليًا كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Http;</span></span></span>
@@ -984,7 +986,7 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">نقوم بتعيين [1] كمساحة الاسم الافتراضية. ثم يتم استخدامها بشكل افتراضي لجميع الفئات التي سيتم إنشاؤها في المشروع.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لنعد إلى الكود في [Global.asax]:</span></p>
+<p><span style="color: #000000">لنعد إلى الكود في [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Http;</span></span></span>
@@ -1007,14 +1009,14 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 9: الفئة [MvcApplication] مشتقة من الفئة [HttpApplication]. يمكن تغيير اسم [MvcApplication]؛</span>
+  <li><span style="color: #000000">السطر 9: الفئة [<bdi dir="ltr" class="odt-ltr-term">MvcApplication</bdi>] مشتقة من الفئة [<bdi dir="ltr" class="odt-ltr-term">HttpApplication</bdi>]. يمكن تغيير اسم [<bdi dir="ltr" class="odt-ltr-term">MvcApplication</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 11: طريقة [Application_Start] هي الطريقة التي يتم تنفيذها عند بدء تشغيل تطبيق الويب. يتم تنفيذها مرة واحدة فقط. هذا هو المكان الذي يتم فيه تهيئة التطبيق.</span>
+  <li><span style="color: #000000">السطر 11: طريقة [<bdi dir="ltr" class="odt-ltr-term">Application_Start</bdi>] هي الطريقة التي يتم تنفيذها عند بدء تشغيل تطبيق الويب. يتم تنفيذها مرة واحدة فقط. هذا هو المكان الذي يتم فيه تهيئة التطبيق.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">رمز [Application_Start] حاليًا كما يلي:</span></p>
+<p><span style="color: #000000">رمز [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>_Start] حاليًا كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">protected</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> Application_Start()</span></span></span>
@@ -1029,17 +1031,17 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في الوقت الحالي، لا تحتاج إلى فهم كل هذا الكود. تحدد الأسطر من 5 إلى 8 المسارات التي يقبلها تطبيق الويب. دعونا نعود إلى بنية تطبيق ASP.NET MVC:</span></p>
+<p><span style="color: #000000">في الوقت الحالي، لا تحتاج إلى فهم كل هذا الكود. تحدد الأسطر من 5 إلى 8 المسارات التي يقبلها تطبيق الويب. دعونا نعود إلى بنية تطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC:</bdi></span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000546000001A892AB2DCF.png" width="675" height="212" style="display:inline-block; margin:4px;width:17.859cm;height:5.609cm;" class="odt-zoomable" data-zoom-src="images/1000000000000546000001A892AB2DCF.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لقد أوضحنا أن [Front Controller] يجب أن يوجه عنوان URL إلى الإجراء المسؤول عن معالجته. تُستخدم المسارات لربط نمط عنوان URL بإجراء. يتم تعريف هذه المسارات في مجلد [App_Start] الخاص بالمشروع بواسطة فئات [WebApiConfig، FilterConfig، RouteConfig، BundleConfig]:</span></p>
+<p><span style="color: #000000">لقد أوضحنا أن [<bdi dir="ltr" class="odt-ltr-term">Front Controller</bdi>] يجب أن يوجه عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> إلى الإجراء المسؤول عن معالجته. تُستخدم المسارات لربط نمط عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> بإجراء. يتم تعريف هذه المسارات في مجلد [<bdi dir="ltr" class="odt-ltr-term">App</bdi>_Start] الخاص بالمشروع بواسطة فئات [<bdi dir="ltr" class="odt-ltr-term">WebApiConfig</bdi>، <bdi dir="ltr" class="odt-ltr-term">FilterConfig</bdi>، <bdi dir="ltr" class="odt-ltr-term">RouteConfig</bdi>، <bdi dir="ltr" class="odt-ltr-term">BundleConfig</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000000A90000005B0B6C09C4.png" width="118" height="64" style="width:3.129cm;height:1.685cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000A90000005B0B6C09C4.png" /></p>
-<p><span style="color: #000000">في الوقت الحالي، نحن مهتمون فقط بفئة [RouteConfig]:</span></p>
+<p><span style="color: #000000">في الوقت الحالي، نحن مهتمون فقط بفئة [<bdi dir="ltr" class="odt-ltr-term">RouteConfig</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
@@ -1064,48 +1066,48 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">تحدد الأسطر 12–16 تنسيق عناوين URL التي يقبلها التطبيق. وهذا ما يُسمى </span><strong><span style="color: #000000">مسارًا</span></strong><span style="color: #000000">. يمكن أن يكون هناك عدة مسارات محتملة (= عدة أنماط محتملة لعناوين URL). ويتم تمييزها عن بعضها البعض من خلال اسمها (السطر 13). يتم تحديد تنسيق عناوين URL الخاصة بالمسار في السطر 14. هنا، ستتكون عنوان URL من ثلاثة مكونات:</span></p>
+<p><span style="color: #000000">تحدد الأسطر 12–16 تنسيق عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> التي يقبلها التطبيق. وهذا ما يُسمى </span><strong><span style="color: #000000">مسارًا</span></strong><span style="color: #000000">. يمكن أن يكون هناك عدة مسارات محتملة (= عدة أنماط محتملة لعناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi>). ويتم تمييزها عن بعضها البعض من خلال اسمها (السطر 13). يتم تحديد تنسيق عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الخاصة بالمسار في السطر 14. هنا، ستتكون عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> من ثلاثة مكونات:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><b><span style="color: #000000">{controller}</span></b><span style="color: #000000">: اسم فئة مشتقة من [Controller]. سيتم البحث عنها في مجلد [Controllers] الخاص بالمشروع. وفقًا للأعراف، إذا كان عنوان URL هو /X/Y/Z، فإن وحدة التحكم المسؤولة عن معالجة عنوان URL هذا ستكون فئة </span><b><span style="color: #000000">XController</span></b><span style="color: #000000">. تضاف اللاحقة </span><b><span style="color: #000000">Controller </span></b><span style="color: #000000">إلى اسم وحدة التحكم الموجودة في عنوان URL؛</span>
+  <li><b><span style="color: #000000">{<bdi dir="ltr" class="odt-ltr-term">controller</bdi>}</span></b><span style="color: #000000">: اسم فئة مشتقة من [<bdi dir="ltr" class="odt-ltr-term">Controller</bdi>]. سيتم البحث عنها في مجلد [<bdi dir="ltr" class="odt-ltr-term">Controllers</bdi>] الخاص بالمشروع. وفقًا للأعراف، إذا كان عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هو /<bdi dir="ltr" class="odt-ltr-term">X/Y/Z</bdi>، فإن وحدة التحكم المسؤولة عن معالجة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا ستكون فئة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">XController</bdi></span></b><span style="color: #000000">. تضاف اللاحقة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Controller</bdi> </span></b><span style="color: #000000">إلى اسم وحدة التحكم الموجودة في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">{</span><b><span style="color: #000000">action</span></b><span style="color: #000000">}: اسم طريقة في وحدة التحكم المحددة أعلاه. ستتلقى هذه الطريقة المعلمات المصاحبة لعنوان URL وتقوم بمعالجتها. يمكن أن ترجع هذه الطريقة نتائج متنوعة:</span>
+  <li><span style="color: #000000">{</span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">action</bdi></span></b><span style="color: #000000">}: اسم طريقة في وحدة التحكم المحددة أعلاه. ستتلقى هذه الطريقة المعلمات المصاحبة لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> وتقوم بمعالجتها. يمكن أن ترجع هذه الطريقة نتائج متنوعة:</span>
     <ul>
-      <li><b><span style="color: #000000">void</span></b><span style="color: #000000">: ستقوم الإجراء بإنشاء الاستجابة لمتصفح العميل بنفسها</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">void</bdi></span></b><span style="color: #000000">: ستقوم الإجراء بإنشاء الاستجابة لمتصفح العميل بنفسها</span>
       </li>
-      <li><b><span style="color: #000000">String</span></b><span style="color: #000000">: تعيد الإجراء سلسلة نصية إلى العميل؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">String</bdi></span></b><span style="color: #000000">: تعيد الإجراء سلسلة نصية إلى العميل؛</span>
       </li>
-      <li><b><span style="color: #000000">ViewResult</span></b><span style="color: #000000">: تعيد عرضًا إلى العميل؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ViewResult</bdi></span></b><span style="color: #000000">: تعيد عرضًا إلى العميل؛</span>
       </li>
-      <li><b><span style="color: #000000">PartialViewResult</span></b><span style="color: #000000">: تعيد عرضًا جزئيًا؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">PartialViewResult</bdi></span></b><span style="color: #000000">: تعيد عرضًا جزئيًا؛</span>
       </li>
-      <li><b><span style="color: #000000">EmptyResult</span></b><span style="color: #000000">: يتم إرسال استجابة فارغة إلى العميل؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">EmptyResult</bdi></span></b><span style="color: #000000">: يتم إرسال استجابة فارغة إلى العميل؛</span>
       </li>
-      <li><b><span style="color: #000000">RedirectResult</span></b><span style="color: #000000">: يوجه العميل إلى إعادة التوجيه إلى عنوان URL</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">RedirectResult</bdi></span></b><span style="color: #000000">: يوجه العميل إلى إعادة التوجيه إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi></span>
       </li>
-      <li><b><span style="color: #000000">RedirectToRouteResult</span></b><span style="color: #000000">: مثل ما سبق، لكن عنوان URL يتم إنشاؤه من مسارات التطبيق؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">RedirectToRouteResult</bdi></span></b><span style="color: #000000">: مثل ما سبق، لكن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> يتم إنشاؤه من مسارات التطبيق؛</span>
       </li>
-      <li><b><span style="color: #000000">JsonResult</span></b><span style="color: #000000">: يرسل استجابة JSON</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">JsonResult</bdi></span></b><span style="color: #000000">: يرسل استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span>
       </li>
-      <li><b><span style="color: #000000">JavaScriptResult</span></b><span style="color: #000000">: يعرض كود JavaScript للعميل؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">JavaScriptResult</bdi></span></b><span style="color: #000000">: يعرض كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> للعميل؛</span>
       </li>
-      <li><b><span style="color: #000000">ContentResult</span></b><span style="color: #000000">: يعيد دفق HTML إلى العميل دون المرور عبر عرض؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ContentResult</bdi></span></b><span style="color: #000000">: يعيد دفق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> إلى العميل دون المرور عبر عرض؛</span>
       </li>
-      <li><b><span style="color: #000000">FileContentResult</span></b><span style="color: #000000">: يعيد ملفًا إلى العميل؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">FileContentResult</bdi></span></b><span style="color: #000000">: يعيد ملفًا إلى العميل؛</span>
       </li>
-      <li><b><span style="color: #000000">FileStreamResult</span></b><span style="color: #000000">: مثل ما سبق، ولكن عبر طريقة مختلفة؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">FileStreamResult</bdi></span></b><span style="color: #000000">: مثل ما سبق، ولكن عبر طريقة مختلفة؛</span>
       </li>
-      <li><b><span style="color: #000000">FilePathResult</span></b><span style="color: #000000">: ...</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">FilePathResult</bdi></span></b><span style="color: #000000">: ...</span>
       </li>
     </ul>
   </li>
-  <li><b><span style="color: #000000">{id}</span></b><span style="color: #000000">: معلمة سيتم تمريرها إلى الإجراء. لكي يعمل هذا، يجب أن يحتوي الإجراء على معلمة باسم </span><b><span style="color: #000000">id</span></b><span style="color: #000000">.</span>
+  <li><b><span style="color: #000000">{<bdi dir="ltr" class="odt-ltr-term">id</bdi>}</span></b><span style="color: #000000">: معلمة سيتم تمريرها إلى الإجراء. لكي يعمل هذا، يجب أن يحتوي الإجراء على معلمة باسم </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">id</bdi></span></b><span style="color: #000000">.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يحدد السطر 15 القيم الافتراضية عندما لا يكون عنوان URL بالصيغة المتوقعة </span><span style="color: #a31515">/{controller}/{action}/{id}. </span>كما يشير إلى أن المعلمة <strong>{id}</strong> في عنوان URL اختيارية. فيما يلي قائمة بعناوين URL غير مكتملة وعناوين URL المكتملة بالقيم الافتراضية:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>عنوان URL الأصلي</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>عنوان URL المكتمل</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/Home/Index</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/الأنشطة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/Do/Index</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء ما/4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء ما/4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيئًا/x/y/z</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان URL غير موجه</div></td></tr></table>
+<p><span style="color: #000000">يحدد السطر 15 القيم الافتراضية عندما لا يكون عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> بالصيغة المتوقعة </span><span style="color: #a31515">/{<bdi dir="ltr" class="odt-ltr-term">controller</bdi>}/{<bdi dir="ltr" class="odt-ltr-term">action</bdi>}/{<bdi dir="ltr" class="odt-ltr-term">id</bdi>}. </span>كما يشير إلى أن المعلمة <strong>{<bdi dir="ltr" class="odt-ltr-term">id</bdi>}</strong> في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> اختيارية. فيما يلي قائمة بعناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> غير مكتملة وعناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المكتملة بالقيم الافتراضية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الأصلي</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المكتمل</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/<bdi dir="ltr" class="odt-ltr-term">Home/Index</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/الأنشطة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/<bdi dir="ltr" class="odt-ltr-term">Do/Index</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء ما/4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيء ما/4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/افعل/شيئًا/<bdi dir="ltr" class="odt-ltr-term">x/y/z</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> غير موجه</div></td></tr></table>
 
 <p><a id="refheading58026676630786"></a></p>
 <h2 id="33">3.3. <span style="color: #4f81bd">إنشاء وحدة تحكم وإجراء أول</span></h2>
@@ -1114,15 +1116,15 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000368000001382C98CD67.png" width="436" height="156" style="display:inline-block; margin:4px;width:11.536cm;height:4.128cm;" class="odt-zoomable" data-zoom-src="images/1000000000000368000001382C98CD67.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، أدخل اسم وحدة التحكم مع اللاحقة [Controller]؛
+  <li>في [1]، أدخل اسم وحدة التحكم مع اللاحقة [<bdi dir="ltr" class="odt-ltr-term">Controller</bdi>]؛
   </li>
-  <li>في [2]، قم بإنشاء وحدة تحكم MVC فارغة؛
+  <li>في [2]، قم بإنشاء وحدة تحكم <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> فارغة؛
   </li>
   <li>في [3]، تم إنشاؤها.
   </li>
 </ul>
 
-<p>في [FirstController]، تم إنشاؤها.</p>
+<p>في [<bdi dir="ltr" class="odt-ltr-term">FirstController</bdi>]، تم إنشاؤها.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Collections.Generic;</span></span></span>
@@ -1149,29 +1151,29 @@
 <ul>
   <li>السطر 7: تم إنشاء <i>مساحة اسم</i> افتراضية؛
   </li>
-  <li>السطر 9: الفئة [FirstController] مشتقة من الفئة [System.Web.Mvc.Controller]؛
+  <li>السطر 9: الفئة [<bdi dir="ltr" class="odt-ltr-term">FirstController</bdi>] مشتقة من الفئة [<bdi dir="ltr" class="odt-ltr-term">System.Web.Mvc.Controller</bdi>]؛
   </li>
-  <li>الأسطر 14-17: تم إنشاء إجراء [Index] افتراضيًا. وهو <b>عام</b>. وهذا أمر مهم؛ وإلا فلن يتم العثور عليه. وهو يُرجع نوع [ActionResult]، وهو فئة مجردة تُشتق منها معظم النتائج التي يُرجعها الإجراء عادةً. وهذا نوع &quot;شامل&quot; يمكن تحديده باستبداله بالاسم الفعلي للنوع المُرجع؛
+  <li>الأسطر 14-17: تم إنشاء إجراء [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>] افتراضيًا. وهو <b>عام</b>. وهذا أمر مهم؛ وإلا فلن يتم العثور عليه. وهو يُرجع نوع [<bdi dir="ltr" class="odt-ltr-term">ActionResult</bdi>]، وهو فئة مجردة تُشتق منها معظم النتائج التي يُرجعها الإجراء عادةً. وهذا نوع &quot;شامل&quot; يمكن تحديده باستبداله بالاسم الفعلي للنوع المُرجع؛
   </li>
-  <li>السطر 16: لا تقوم الطريقة بأي شيء. إنها تعيد ببساطة عرضًا، أي نوع [ViewResult]. لم يتم تحديد اسم العرض. في هذه الحالة، يبحث إطار العمل في المجلد [Views/First] عن عرض يحمل نفس اسم الإجراء، وهو هنا [Index.cshtml].
+  <li>السطر 16: لا تقوم الطريقة بأي شيء. إنها تعيد ببساطة عرضًا، أي نوع [<bdi dir="ltr" class="odt-ltr-term">ViewResult</bdi>]. لم يتم تحديد اسم العرض. في هذه الحالة، يبحث إطار العمل في المجلد [<bdi dir="ltr" class="odt-ltr-term">Views/First</bdi>] عن عرض يحمل نفس اسم الإجراء، وهو هنا [<bdi dir="ltr" class="odt-ltr-term">Index.cshtml</bdi>].
   </li>
 </ul>
 
-<p>لنقم بإنشاء عرض [Index.cshtml]:</p>
+<p>لنقم بإنشاء عرض [<bdi dir="ltr" class="odt-ltr-term">Index.cshtml</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005820000026E4E43F847.png" width="680" height="300" style="display:inline-block; margin:4px;width:17.999cm;height:7.939cm;" class="odt-zoomable" data-zoom-src="images/10000000000005820000026E4E43F847.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، انقر بزر الماوس الأيمن على كود الإجراء واختر خيار [Add View]؛
+  <li>في [1]، انقر بزر الماوس الأيمن على كود الإجراء واختر خيار [<bdi dir="ltr" class="odt-ltr-term">Add View</bdi>]؛
   </li>
   <li>في [2]، يقترح المعالج عرضًا يحمل نفس اسم الإجراء. وهذا ما نريده هنا؛
   </li>
-  <li>في [3]، بشكل افتراضي، يُقترح استخدام الصفحة الرئيسية [_Layout.cshtml]؛
+  <li>في [3]، بشكل افتراضي، يُقترح استخدام الصفحة الرئيسية [_Layout.<bdi dir="ltr" class="odt-ltr-term">cshtml</bdi>]؛
   </li>
-  <li>في [4]، بمجرد التأكيد، يقوم المعالج بإنشاء العرض في مجلد فرعي ضمن مجلد [Views] يحمل اسم وحدة التحكم (First).
+  <li>في [4]، بمجرد التأكيد، يقوم المعالج بإنشاء العرض في مجلد فرعي ضمن مجلد [<bdi dir="ltr" class="odt-ltr-term">Views</bdi>] يحمل اسم وحدة التحكم (<bdi dir="ltr" class="odt-ltr-term">First</bdi>).
   </li>
 </ul>
 
-<p>الرمز الذي تم إنشاؤه لعرض [Index] هو كما يلي:</p>
+<p>الرمز الذي تم إنشاؤه لعرض [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>] هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">@{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    ViewBag.Title = </span><span style="color:#a31515">&quot;Index&quot;</span><span style="color:#000000">;</span></span></span>
@@ -1181,9 +1183,9 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 1–3: كود C# الذي يحدد متغيرًا؛
+  <li>الأسطر 1–3: كود <bdi dir="ltr" class="odt-ltr-term">C#</bdi> الذي يحدد متغيرًا؛
   </li>
-  <li>السطر 5: علامة HTML.
+  <li>السطر 5: علامة <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi>
   </li>
 </ul>
 
@@ -1194,29 +1196,29 @@
 
 <p>للتلخيص:</p>
 <ul>
-  <li>لدينا وحدة تحكم <b>C# </b>تسمى [First]؛
+  <li>لدينا وحدة تحكم <b><bdi dir="ltr" class="odt-ltr-term">C#</bdi> </b>تسمى [<bdi dir="ltr" class="odt-ltr-term">First</bdi>]؛
   </li>
-  <li>لدينا إجراء يسمى [Index] يطلب عرض عرض يسمى [Index]؛
+  <li>لدينا إجراء يسمى [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>] يطلب عرض عرض يسمى [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>]؛
   </li>
-  <li>لدينا العرض <b>V </b>[Index].
+  <li>لدينا العرض <b><bdi dir="ltr" class="odt-ltr-term">V</bdi> </b>[<bdi dir="ltr" class="odt-ltr-term">Index</bdi>].
   </li>
 </ul>
 
-<p>يمكننا استدعاء الإجراء [Index] بطريقتين:</p>
+<p>يمكننا استدعاء الإجراء [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>] بطريقتين:</p>
 <ul>
-  <li>/First/Index؛
+  <li>/<bdi dir="ltr" class="odt-ltr-term">First/Index</bdi>؛
   </li>
-  <li>/أولاً، نظرًا لأن [Index] هو أيضًا الإجراء الافتراضي في المسارات.
+  <li>/أولاً، نظرًا لأن [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>] هو أيضًا الإجراء الافتراضي في المسارات.
   </li>
 </ul>
 
-<p>دعونا نشغل التطبيق (CTRL-F5). نحصل على الصفحة التالية:</p>
+<p>دعونا نشغل التطبيق (<bdi dir="ltr" class="odt-ltr-term">CTRL-F5</bdi>). نحصل على الصفحة التالية:</p>
 <p><img src="images/10000000000001EB00000112B2039E6A.png" width="344" height="192" style="width:9.089cm;height:5.071cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EB00000112B2039E6A.png" /></p>
-<p>في [1]، كان عنوان URL المطلوب <strong>هو http://localhost:49302</strong>. ولا يوجد مسار. ونحن نعلم أن جهاز التوجيه الخاص بنا يتوقع أن تكون عناوين URL بالصيغة <strong>/{controller}/{action}/{id}.</strong> ونظرًا لعدم وجود هذه العناصر، يتم استخدام القيم الافتراضية. ويصبح عنوان URL <strong>هو http://localhost:49302/Home/Index</strong>. ولا يوجد وحدة التحكم [Home]. ولذلك، يتم رفض عنوان URL.</p>
-<p>الآن دعونا نجرب عنوان URL <strong>http://localhost:49302/First/Index</strong> عن طريق كتابته مباشرة في المتصفح:</p>
+<p>في [1]، كان عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب <strong>هو <bdi dir="ltr" class="odt-ltr-term">http://localhost:49302</bdi></strong>. ولا يوجد مسار. ونحن نعلم أن جهاز التوجيه الخاص بنا يتوقع أن تكون عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> بالصيغة <strong>/{<bdi dir="ltr" class="odt-ltr-term">controller</bdi>}/{<bdi dir="ltr" class="odt-ltr-term">action</bdi>}/{<bdi dir="ltr" class="odt-ltr-term">id</bdi>}.</strong> ونظرًا لعدم وجود هذه العناصر، يتم استخدام القيم الافتراضية. ويصبح عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> <strong>هو <bdi dir="ltr" class="odt-ltr-term">http://localhost:49302/Home/Index</bdi></strong>. ولا يوجد وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Home</bdi>]. ولذلك، يتم رفض عنوان <bdi dir="ltr" class="odt-ltr-term">URL.</bdi></p>
+<p>الآن دعونا نجرب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> <strong><bdi dir="ltr" class="odt-ltr-term">http://localhost:49302/First/Index</bdi></strong> عن طريق كتابته مباشرة في المتصفح:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028400000136A17562B6.png" width="322" height="155" style="display:inline-block; margin:4px;width:8.52cm;height:4.101cm;" class="odt-zoomable" data-zoom-src="images/100000000000028400000136A17562B6.png" /></td></tr></table>
 
-<p>تم إنشاء الصفحة أعلاه بواسطة الإجراء [Index] لوحدة التحكم [First]. الصفحة التي تم إنشاؤها بواسطة هذا الإجراء هي طريقة العرض [Index]، والتي كان كودها كما يلي:</p>
+<p>تم إنشاء الصفحة أعلاه بواسطة الإجراء [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>] لوحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">First</bdi>]. الصفحة التي تم إنشاؤها بواسطة هذا الإجراء هي طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>]، والتي كان كودها كما يلي:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Vue [Index]...</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
@@ -1237,8 +1239,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">html</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>السطر 9 أنشأ القسم [2] من الصفحة. ومع ذلك، لا تظهر طريقة العرض [Index] إلا في السطر 10.</p>
-<p>إذا قمنا بعرض شفرة المصدر للصفحة المستلمة، يمكننا أن نرى أن صفحة [Index] مدرجة بالفعل (السطر 10 أدناه) في صفحة [Layout]:</p>
+<p>السطر 9 أنشأ القسم [2] من الصفحة. ومع ذلك، لا تظهر طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>] إلا في السطر 10.</p>
+<p>إذا قمنا بعرض شفرة المصدر للصفحة المستلمة، يمكننا أن نرى أن صفحة [<bdi dir="ltr" class="odt-ltr-term">Index</bdi>] مدرجة بالفعل (السطر 10 أدناه) في صفحة [<bdi dir="ltr" class="odt-ltr-term">Layout</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1263,12 +1265,12 @@
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>الآن دعونا نجرب عنوان URL [/First]:</p>
+<p>الآن دعونا نجرب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">First</bdi>]:</p>
 <p><img src="images/10000000000001270000009D2838ADF6.png" width="206" height="110" style="width:5.459cm;height:2.905cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001270000009D2838ADF6.png" /></p>
-<p>كان عنوان URL [/First] غير مكتمل. تم استكماله بالقيم الافتراضية للمسار وأصبح [/First/Index]. وبالتالي نحصل على نفس النتيجة السابقة.</p>
+<p>كان عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">First</bdi>] غير مكتمل. تم استكماله بالقيم الافتراضية للمسار وأصبح [/<bdi dir="ltr" class="odt-ltr-term">First/Index</bdi>]. وبالتالي نحصل على نفس النتيجة السابقة.</p>
 <p><a id="refheading58028676630786"></a></p>
-<h2 id="34-contentresult-1">3.4. <span style="color: #4f81bd">إجراء بنتيجة من النوع [ContentResult] - 1</span></h2>
-<p>لنقم بإنشاء إجراء جديد في وحدة التحكم [First]:</p>
+<h2 id="34-contentresult-1">3.4. <span style="color: #4f81bd">إجراء بنتيجة من النوع [<bdi dir="ltr" class="odt-ltr-term">ContentResult</bdi>] - 1</span></h2>
+<p>لنقم بإنشاء إجراء جديد في وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">First</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Text;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
@@ -1291,24 +1293,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>يتم تعريف الإجراء الجديد في الأسطر 14–18. وهو ببساطة يعيد سلسلة نصية باستخدام طريقة [Content] (السطر 16) من فئة [Controller] (السطر 6). معلمات الطريقة هي:</p>
+<p>يتم تعريف الإجراء الجديد في الأسطر 14–18. وهو ببساطة يعيد سلسلة نصية باستخدام طريقة [<bdi dir="ltr" class="odt-ltr-term">Content</bdi>] (السطر 16) من فئة [<bdi dir="ltr" class="odt-ltr-term">Controller</bdi>] (السطر 6). معلمات الطريقة هي:</p>
 <ol>
   <li>سلسلة الاستجابة؛
   </li>
-  <li>مؤشر لنوع النص الذي يتم إرساله: &quot;text/plain&quot;، &quot;text/html&quot;، &quot;text/xml&quot;، إلخ. يُسمى هذا المؤشر بنوع MIME (<a href="http://fr.wikipedia.org/wiki/Type_MIME"><u><span style="color: #0563c1">http://fr.wikipedia.org/wiki/Type_MIME</span></u></a>)؛
+  <li>مؤشر لنوع النص الذي يتم إرساله: &quot;<bdi dir="ltr" class="odt-ltr-term">text/plain</bdi>&quot;، &quot;<bdi dir="ltr" class="odt-ltr-term">text/html</bdi>&quot;، &quot;<bdi dir="ltr" class="odt-ltr-term">text/xml</bdi>&quot;، إلخ. يُسمى هذا المؤشر بنوع <bdi dir="ltr" class="odt-ltr-term">MIME</bdi> (<a href="http://fr.wikipedia.org/wiki/Type_MIME"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://fr.wikipedia.org/wiki/Type_MIME</bdi></span></u></a>)؛
   </li>
   <li>المعلمة الثالثة تحدد نوع الترميز المستخدم للنص.
   </li>
 </ol>
 
-<p>بدلاً من استخدام النوع المجرد [ActionResult]، تحدد طرقنا نوع الإرجاع الفعلي (السطران 9 و 14).</p>
-<p>دعونا نطلب عنوان URL [/First/Action01]. نحصل على الصفحة التالية:</p>
+<p>بدلاً من استخدام النوع المجرد [<bdi dir="ltr" class="odt-ltr-term">ActionResult</bdi>]، تحدد طرقنا نوع الإرجاع الفعلي (السطران 9 و 14).</p>
+<p>دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">First/Action01</bdi>]. نحصل على الصفحة التالية:</p>
 <p><img src="images/10000000000001680000007B99162A37.png" width="252" height="86" style="width:6.669cm;height:2.279cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001680000007B99162A37.png" /></p>
 <p>دعونا نلقي نظرة على شفرة المصدر للصفحة التي تم استلامها:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>&lt;h1&gt;Action [Action01]&lt;/h1&gt;
 </code></pre></div></td></tr></table></div>
-<p>لم يتلق المتصفح سوى النص الذي أرسلته الإجراء ولم يتلق أي شيء آخر. هذا الوضع مفيد عندما تريد طلب البيانات الأولية من خادم الويب دون علامات HTML المحيطة بها. لاحظ أعلاه أن المتصفح لم يفسر علامة HTML &lt;h1&gt;. لفهم السبب، دعونا نلقي نظرة على تبادلات HTTP في Chrome:</p>
-<p>أرسل المتصفح رؤوس HTTP التالية:</p>
+<p>لم يتلق المتصفح سوى النص الذي أرسلته الإجراء ولم يتلق أي شيء آخر. هذا الوضع مفيد عندما تريد طلب البيانات الأولية من خادم الويب دون علامات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المحيطة بها. لاحظ أعلاه أن المتصفح لم يفسر علامة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> &lt;<bdi dir="ltr" class="odt-ltr-term">h1</bdi>&gt;. لفهم السبب، دعونا نلقي نظرة على تبادلات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> في <bdi dir="ltr" class="odt-ltr-term">Chrome:</bdi></p>
+<p>أرسل المتصفح رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التالية:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -1351,11 +1353,11 @@
 <a id="__codelineno-3-12" name="__codelineno-3-12"></a>Content-Length: 141
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 3: يحدد نوع المستند. نرى السمات المحددة في الأسلوب [Action01]. ويرجع السبب في عدم تفسير المتصفح لعلامة &lt;h1&gt; الموجودة في المستند المستلم إلى أنه تم إعلامه بأن المستند من النوع &quot;text/plain&quot; وليس &quot;text/html&quot;.
+  <li>السطر 3: يحدد نوع المستند. نرى السمات المحددة في الأسلوب [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]. ويرجع السبب في عدم تفسير المتصفح لعلامة &lt;<bdi dir="ltr" class="odt-ltr-term">h1</bdi>&gt; الموجودة في المستند المستلم إلى أنه تم إعلامه بأن المستند من النوع &quot;<bdi dir="ltr" class="odt-ltr-term">text/plain</bdi>&quot; وليس &quot;<bdi dir="ltr" class="odt-ltr-term">text/html</bdi>&quot;.
   </li>
 </ul>
 <p><a id="refheading58030676630786"></a></p>
-<h2 id="35-contentresult-2">3.5. <span style="color: #4f81bd">إجراء بنتيجة من النوع [ContentResult] - 2</span></h2>
+<h2 id="35-contentresult-2">3.5. <span style="color: #4f81bd">إجراء بنتيجة من النوع [<bdi dir="ltr" class="odt-ltr-term">ContentResult</bdi>] - 2</span></h2>
 <p>لننظر إلى الإجراء الثالث التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Text;</span></span></span>
@@ -1377,15 +1379,15 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 12: نحدد نص XML؛
+  <li>السطر 12: نحدد نص <bdi dir="ltr" class="odt-ltr-term">XML</bdi>؛
   </li>
-  <li>السطر 13: نرسله إلى المتصفح، مع تحديد أنه XML بنوع MIME &quot;text/xml&quot;.
+  <li>السطر 13: نرسله إلى المتصفح، مع تحديد أنه <bdi dir="ltr" class="odt-ltr-term">XML</bdi> بنوع <bdi dir="ltr" class="odt-ltr-term">MIME</bdi> &quot;<bdi dir="ltr" class="odt-ltr-term">text/xml</bdi>&quot;.
   </li>
 </ul>
 
 <p>في المتصفح، نحصل على الصفحة التالية:</p>
 <p><img src="images/10000000000002BE000000B7B494D346.png" width="491" height="128" style="width:13cm;height:3.388cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BE000000B7B494D346.png" /></p>
-<p>دعونا نلقي نظرة على استجابة HTTP للخادم في Chrome:</p>
+<p>دعونا نلقي نظرة على استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للخادم في <bdi dir="ltr" class="odt-ltr-term">Chrome:</bdi></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1411,17 +1413,17 @@
 <a id="__codelineno-4-12" name="__codelineno-4-12"></a>Content-Length: 176
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 3: يحدد نوع المستند. يتم تضمين السمات المحددة في طريقة [Action02] هنا؛
+  <li>السطر 3: يحدد نوع المستند. يتم تضمين السمات المحددة في طريقة [<bdi dir="ltr" class="odt-ltr-term">Action02</bdi>] هنا؛
   </li>
   <li>السطر 12: حجم المستند المرسَل من الخادم بالبايت.
   </li>
 </ul>
 
-<p>المستند الذي أرسله الخادم هو هذا (لقطة شاشة من Chrome):</p>
+<p>المستند الذي أرسله الخادم هو هذا (لقطة شاشة من <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi>):</p>
 <p><img src="images/10000000000002760000005B81C3C0C6.png" width="520" height="75" style="width:13.771cm;height:1.99cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002760000005B81C3C0C6.png" /></p>
 <p><a id="refheading58032676630786"></a></p>
-<h2 id="36-jsonresult">3.6. <span style="color: #4f81bd">إجراء بنتيجة من نوع [JsonResult]</span></h2>
-<p>دعونا نضيف الإجراء التالي إلى وحدة التحكم [First]:</p>
+<h2 id="36-jsonresult">3.6. <span style="color: #4f81bd">إجراء بنتيجة من نوع [<bdi dir="ltr" class="odt-ltr-term">JsonResult</bdi>]</span></h2>
+<p>دعونا نضيف الإجراء التالي إلى وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">First</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action03</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">JsonResult</span><span style="color:#000000"> Action03()</span></span></span>
@@ -1434,19 +1436,19 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 4: متغير من النوع <i>dynamic</i>. في وقت التشغيل، يمكن إضافة الخصائص بحرية إلى مثل هذا المتغير. يتم إنشاء الخاصية في نفس الوقت الذي يتم فيه تهيئتها؛
+  <li>السطر 4: متغير من النوع <i><bdi dir="ltr" class="odt-ltr-term">dynamic</bdi></i>. في وقت التشغيل، يمكن إضافة الخصائص بحرية إلى مثل هذا المتغير. يتم إنشاء الخاصية في نفس الوقت الذي يتم فيه تهيئتها؛
   </li>
-  <li>السطران 5-6: نقوم بتهيئة خاصيتين، <i>name </i>و <i>age</i>؛
+  <li>السطران 5-6: نقوم بتهيئة خاصيتين، <i><bdi dir="ltr" class="odt-ltr-term">name</bdi> </i>و <i><bdi dir="ltr" class="odt-ltr-term">age</bdi></i>؛
   </li>
-  <li>السطر 7: يُرجع تمثيل JSON (ترميز كائنات JavaScript) للكائن. يسمح JSON بتسلسل كائن إلى سلسلة، وبالعكس، بإلغاء تسلسل سلسلة إلى كائن. وهو بديل لتسلسل/إلغاء تسلسل XML؛
+  <li>السطر 7: يُرجع تمثيل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> (ترميز كائنات <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi>) للكائن. يسمح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بتسلسل كائن إلى سلسلة، وبالعكس، بإلغاء تسلسل سلسلة إلى كائن. وهو بديل لتسلسل/إلغاء تسلسل <bdi dir="ltr" class="odt-ltr-term">XML</bdi>؛
   </li>
-  <li>السطر 2: تعرض الإجراء نوع [JsonResult]. لا يمكن عرض هذا النوع إلا لطلب POST. إذا كنت ترغب في عرضه لطريقة GET، يجب عليك تعيين المعلمة الثانية لمُنشئ فئة Json (السطر 7) إلى <span style="color: #2b91af">JsonRequestBehavior</span><span style="color: #000000">.AllowGet</span>.
+  <li>السطر 2: تعرض الإجراء نوع [<bdi dir="ltr" class="odt-ltr-term">JsonResult</bdi>]. لا يمكن عرض هذا النوع إلا لطلب <bdi dir="ltr" class="odt-ltr-term">POST.</bdi> إذا كنت ترغب في عرضه لطريقة <bdi dir="ltr" class="odt-ltr-term">GET</bdi>، يجب عليك تعيين المعلمة الثانية لمُنشئ فئة <bdi dir="ltr" class="odt-ltr-term">Json</bdi> (السطر 7) إلى <span style="color: #2b91af"><bdi dir="ltr" class="odt-ltr-term">JsonRequestBehavior</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">AllowGet</bdi></span>.
   </li>
 </ul>
 
-<p>عند طلب عنوان URL [/First/Action03]، يعرض المتصفح ما يلي:</p>
+<p>عند طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">First/Action03</bdi>]، يعرض المتصفح ما يلي:</p>
 <p><img src="images/10000000000001DA000000766AC21245.png" width="332" height="83" style="width:8.781cm;height:2.185cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DA000000766AC21245.png" /></p>
-<p>استجابة HTTP للخادم هي كما يلي:</p>
+<p>استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للخادم هي كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1468,7 +1470,7 @@
 <a id="__codelineno-5-10" name="__codelineno-5-10"></a>Content-Length: 58
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 3: يحدد أن المستند المرسل هو JSON؛
+  <li>السطر 3: يحدد أن المستند المرسل هو <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
   <li>السطر 10: حجم المستند المرسل هو 58 بايت. وهو كما يلي:
   </li>
@@ -1476,16 +1478,16 @@
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[{&quot;Key&quot;:&quot;nom&quot;,&quot;Value&quot;:&quot;someone&quot;},{&quot;Key&quot;:&quot;age&quot;,&quot;Value&quot;:20}]
 </code></pre></div>
-<p>يُنظر إلى العنصر الديناميكي [person] بواسطة JSON على أنه مصفوفة من القواميس حيث كل قاموس:</p>
+<p>يُنظر إلى العنصر الديناميكي [<bdi dir="ltr" class="odt-ltr-term">person</bdi>] بواسطة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> على أنه مصفوفة من القواميس حيث كل قاموس:</p>
 <ul>
-  <li>يتوافق مع حقل من متغير [person]؛
+  <li>يتوافق مع حقل من متغير [<bdi dir="ltr" class="odt-ltr-term">person</bdi>]؛
   </li>
-  <li>يحتوي على مفتاحين، &quot;Key&quot; و&quot;Value&quot;. يحتوي &quot;Key&quot; على اسم الحقل كقيمة مرتبطة به، ويحتوي &quot;Value&quot; على قيمة الحقل.
+  <li>يحتوي على مفتاحين، &quot;<bdi dir="ltr" class="odt-ltr-term">Key</bdi>&quot; و&quot;<bdi dir="ltr" class="odt-ltr-term">Value</bdi>&quot;. يحتوي &quot;<bdi dir="ltr" class="odt-ltr-term">Key</bdi>&quot; على اسم الحقل كقيمة مرتبطة به، ويحتوي &quot;<bdi dir="ltr" class="odt-ltr-term">Value</bdi>&quot; على قيمة الحقل.
   </li>
 </ul>
 <p><a id="refheading58034676630786"></a></p>
-<h2 id="37-string">3.7. <span style="color: #4f81bd">إجراء بنتيجة [string]</span></h2>
-<p>دعونا نضيف الإجراء التالي إلى وحدة التحكم [First]:</p>
+<h2 id="37-string">3.7. <span style="color: #4f81bd">إجراء بنتيجة [<bdi dir="ltr" class="odt-ltr-term">string</bdi>]</span></h2>
+<p>دعونا نضيف الإجراء التالي إلى وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">First</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action04</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">string</span><span style="color:#000000"> Action04()</span></span></span>
@@ -1494,9 +1496,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>عندما نطلب عنوان URL [/First/Action04] في Chrome، نحصل على الاستجابة التالية:</p>
+<p>عندما نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">First/Action04</bdi>] في <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi>، نحصل على الاستجابة التالية:</p>
 <p><img src="images/100000000000016D000000769909198B.png" width="255" height="83" style="width:6.759cm;height:2.185cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016D000000769909198B.png" /></p>
-<p>يمكننا أن نرى أن العلامة &lt;h3&gt; قد تم تفسيرها. دعونا نلقي نظرة على استجابة HTTP للخادم:</p>
+<p>يمكننا أن نرى أن العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">h3</bdi>&gt; قد تم تفسيرها. دعونا نلقي نظرة على استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للخادم:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -1524,9 +1526,9 @@
 <p>والوثيقة التالية:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;h3&gt;Contrôleur=First, Action=Action04&lt;/h3&gt;
 </code></pre></div>
-<p>كما يظهر في السطر 3، أشار الخادم إلى أنه كان يرسل نصًا بتنسيق HTML. ولهذا السبب قام المتصفح بتفسير العلامة &lt;h3&gt;. لذلك، عندما تريد إرسال نص عادي، يفضل إرجاع [ContentResult] بدلاً من [string]. تسمح لنا [ContentResult] بتحديد نوع MIME &quot;text/plain&quot; للإشارة إلى أننا نرسل نصًا غير منسق، والذي لن يحاول المتصفح تفسيره.</p>
+<p>كما يظهر في السطر 3، أشار الخادم إلى أنه كان يرسل نصًا بتنسيق <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> ولهذا السبب قام المتصفح بتفسير العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">h3</bdi>&gt;. لذلك، عندما تريد إرسال نص عادي، يفضل إرجاع [<bdi dir="ltr" class="odt-ltr-term">ContentResult</bdi>] بدلاً من [<bdi dir="ltr" class="odt-ltr-term">string</bdi>]. تسمح لنا [<bdi dir="ltr" class="odt-ltr-term">ContentResult</bdi>] بتحديد نوع <bdi dir="ltr" class="odt-ltr-term">MIME</bdi> &quot;<bdi dir="ltr" class="odt-ltr-term">text/plain</bdi>&quot; للإشارة إلى أننا نرسل نصًا غير منسق، والذي لن يحاول المتصفح تفسيره.</p>
 <p><a id="refheading58036676630786"></a></p>
-<h2 id="38-emptyresult">3.8. <span style="color: #4f81bd">إجراء بنوع [EmptyResult]</span></h2>
+<h2 id="38-emptyresult">3.8. <span style="color: #4f81bd">إجراء بنوع [<bdi dir="ltr" class="odt-ltr-term">EmptyResult</bdi>]</span></h2>
 <p>انظر الإجراء الجديد التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action05</span></span></span>
@@ -1536,7 +1538,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>تقوم الإجراء ببساطة بإرجاع نوع [EmptyResult]. في هذه الحالة، يرسل الخادم استجابة فارغة إلى العميل، كما هو موضح في استجابة HTTP الخاصة به:</p>
+<p>تقوم الإجراء ببساطة بإرجاع نوع [<bdi dir="ltr" class="odt-ltr-term">EmptyResult</bdi>]. في هذه الحالة، يرسل الخادم استجابة فارغة إلى العميل، كما هو موضح في استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الخاصة به:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
@@ -1560,7 +1562,7 @@
   </li>
 </ul>
 <p><a id="refheading58038676630786"></a></p>
-<h2 id="39-redirectresult-1">3.9. <span style="color: #4f81bd">إجراء بنتيجة من النوع [RedirectResult] - 1</span></h2>
+<h2 id="39-redirectresult-1">3.9. <span style="color: #4f81bd">إجراء بنتيجة من النوع [<bdi dir="ltr" class="odt-ltr-term">RedirectResult</bdi>] - 1</span></h2>
 <p>ضع في اعتبارك الإجراء الجديد التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action06</span></span></span>
@@ -1570,12 +1572,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>تُرجع الإجراء نوع [RedirectResult]. يسمح هذا النوع بإرسال طلب إعادة توجيه إلى العميل إلى عنوان URL المحدد في المنشئ (السطر 4). سيقوم العميل بعد ذلك بإرسال طلب GET جديد إلى [/First/Action05]. وبالتالي، يقوم العميل بإرسال طلبين إجمالاً.</p>
+<p>تُرجع الإجراء نوع [<bdi dir="ltr" class="odt-ltr-term">RedirectResult</bdi>]. يسمح هذا النوع بإرسال طلب إعادة توجيه إلى العميل إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المحدد في المنشئ (السطر 4). سيقوم العميل بعد ذلك بإرسال طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> جديد إلى [/<bdi dir="ltr" class="odt-ltr-term">First/Action05</bdi>]. وبالتالي، يقوم العميل بإرسال طلبين إجمالاً.</p>
 <p>يعرض المتصفح نتيجة الطلب الثاني:</p>
 <p><img src="images/100000000000016E0000007EE49A70A7.png" width="256" height="88" style="width:6.78cm;height:2.334cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016E0000007EE49A70A7.png" /></p>
-<p>دعونا نفحص استجابة HTTP للخادم في Chrome:</p>
+<p>دعونا نفحص استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للخادم في <bdi dir="ltr" class="odt-ltr-term">Chrome:</bdi></p>
 <p><img src="images/10000000000000A1000000C0DD2AF862.png" width="113" height="134" style="width:2.979cm;height:3.552cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000A1000000C0DD2AF862.png" /></p>
-<p>في الأعلى، نرى طلبين للمتصفح. دعونا نفحص الطلب الأول [Action06]. استجابة HTTP للخادم هي كما يلي:</p>
+<p>في الأعلى، نرى طلبين للمتصفح. دعونا نفحص الطلب الأول [<bdi dir="ltr" class="odt-ltr-term">Action06</bdi>]. استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للخادم هي كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
@@ -1599,13 +1601,13 @@
 <a id="__codelineno-10-11" name="__codelineno-10-11"></a>Content-Length: 132
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 1: استجاب الخادم برمز الحالة 302 Found. في السابق، كان الرمز 200 OK، مما يعني أنه تم العثور على المستند المطلوب. يشير الرمز 302 إلى أنه تم طلب إعادة توجيه. يتم توفير عنوان URL لإعادة التوجيه في السطر 4. وهذا يتطابق مع عنوان URL لإعادة التوجيه الذي حددناه في كود الإجراء؛
+  <li>السطر 1: استجاب الخادم برمز الحالة 302 <bdi dir="ltr" class="odt-ltr-term">Found.</bdi> في السابق، كان الرمز 200 <bdi dir="ltr" class="odt-ltr-term">OK</bdi>، مما يعني أنه تم العثور على المستند المطلوب. يشير الرمز 302 إلى أنه تم طلب إعادة توجيه. يتم توفير عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه في السطر 4. وهذا يتطابق مع عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه الذي حددناه في كود الإجراء؛
   </li>
-  <li>السطر 11: يشير الخادم إلى أنه مع استجابة HTTP الخاصة به، فإنه يرسل مستند text/html (السطر 3) بحجم 132 بايت (السطر 11). عندما نفحص الاستجابة لطلب [Action06] في Chrome، نجدها فارغة، كما هو متوقع. ربما هناك تفسير لذلك، لكنني لا أعرف ما هو.
+  <li>السطر 11: يشير الخادم إلى أنه مع استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الخاصة به، فإنه يرسل مستند <bdi dir="ltr" class="odt-ltr-term">text/html</bdi> (السطر 3) بحجم 132 بايت (السطر 11). عندما نفحص الاستجابة لطلب [<bdi dir="ltr" class="odt-ltr-term">Action06</bdi>] في <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi>، نجدها فارغة، كما هو متوقع. ربما هناك تفسير لذلك، لكنني لا أعرف ما هو.
   </li>
 </ul>
 
-<p>بسبب إعادة التوجيه، يقوم المتصفح بإرسال طلب GET جديد إلى عنوان URL المحدد في السطر 4 أعلاه، كما يمكن رؤيته في Chrome في السطر 1 أدناه:</p>
+<p>بسبب إعادة التوجيه، يقوم المتصفح بإرسال طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> جديد إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المحدد في السطر 4 أعلاه، كما يمكن رؤيته في <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> في السطر 1 أدناه:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
@@ -1621,7 +1623,7 @@
 <a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">fr</span><span class="o">-</span><span class="n">FR</span><span class="p">,</span><span class="n">fr</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">en</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.4</span>
 </code></pre></div></td></tr></table></div>
 <p><a id="refheading58040676630786"></a></p>
-<h2 id="310-redirectresult-2">3.10. <span style="color: #4f81bd">إجراء بنتيجة من النوع [RedirectResult] - 2</span></h2>
+<h2 id="310-redirectresult-2">3.10. <span style="color: #4f81bd">إجراء بنتيجة من النوع [<bdi dir="ltr" class="odt-ltr-term">RedirectResult</bdi>] - 2</span></h2>
 <p>ضع في اعتبارك الإجراء الجديد التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action07</span></span></span>
@@ -1631,12 +1633,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>في السطر 4، أضفنا معلمة ثانية إلى منشئ [RedirectResult]. وهي قيمة منطقية (boolean) تكون قيمتها الافتراضية <em>false</em>. وعند تعيينها إلى true، فإنها تُعدّل استجابة HTTP المرسلة إلى العميل. وتصبح:</p>
+<p>في السطر 4، أضفنا معلمة ثانية إلى منشئ [<bdi dir="ltr" class="odt-ltr-term">RedirectResult</bdi>]. وهي قيمة منطقية (<bdi dir="ltr" class="odt-ltr-term">boolean</bdi>) تكون قيمتها الافتراضية <em><bdi dir="ltr" class="odt-ltr-term">false</bdi></em>. وعند تعيينها إلى <bdi dir="ltr" class="odt-ltr-term">true</bdi>، فإنها تُعدّل استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> المرسلة إلى العميل. وتصبح:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>HTTP/1.1 301 Moved Permanently
 </code></pre></div>
-<p>وبالتالي، أصبح رمز الاستجابة المرسل إلى العميل هو <em>301 Moved Permanently</em>. تتم إعادة التوجيه كما في السابق، لكننا نشير إلى أن إعادة التوجيه هذه دائمة. وهذا يسمح لمحركات البحث باستبدال عنوان URL القديم بالعنوان الجديد في نتائجها.</p>
+<p>وبالتالي، أصبح رمز الاستجابة المرسل إلى العميل هو <em>301 <bdi dir="ltr" class="odt-ltr-term">Moved Permanently</bdi></em>. تتم إعادة التوجيه كما في السابق، لكننا نشير إلى أن إعادة التوجيه هذه دائمة. وهذا يسمح لمحركات البحث باستبدال عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> القديم بالعنوان الجديد في نتائجها.</p>
 <p><a id="refheading58042676630786"></a></p>
-<h2 id="311-redirecttorouteresult">3.11. <span style="color: #4f81bd">إجراء بنتيجة من النوع [RedirectToRouteResult]</span></h2>
+<h2 id="311-redirecttorouteresult">3.11. <span style="color: #4f81bd">إجراء بنتيجة من النوع [<bdi dir="ltr" class="odt-ltr-term">RedirectToRouteResult</bdi>]</span></h2>
 <p>لننظر إلى الإجراء الجديد التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action08</span></span></span>
@@ -1647,11 +1649,11 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 2: تعرض الإجراء نوع [RedirectToRouteResult]. يسمح هذا النوع بإعادة توجيه العميل إلى عنوان URL محدد، ليس عبر سلسلة نصية كما في السابق، بل عبر مسار.
+  <li>السطر 2: تعرض الإجراء نوع [<bdi dir="ltr" class="odt-ltr-term">RedirectToRouteResult</bdi>]. يسمح هذا النوع بإعادة توجيه العميل إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> محدد، ليس عبر سلسلة نصية كما في السابق، بل عبر مسار.
   </li>
 </ul>
 
-<p>يتم تعريف المسارات في [App_Start/RouteConfig]. يوجد حاليًا مسار واحد فقط:</p>
+<p>يتم تعريف المسارات في [<bdi dir="ltr" class="odt-ltr-term">App</bdi>_Start/<bdi dir="ltr" class="odt-ltr-term">RouteConfig</bdi>]. يوجد حاليًا مسار واحد فقط:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">      routes.MapRoute(</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          name: </span><span style="color:#a31515">&quot;Default&quot;</span><span style="color:#000000">,</span></span></span>
@@ -1661,7 +1663,7 @@
 </code></pre></div>
 
 <ul>
-  <li>في السطر 4، يتم توجيه العميل لإعادة التوجيه إلى المسار المسمى [Default] مع تعيين متغير وحدة التحكم على &quot;First&quot; ومتغير الإجراء على &quot;Action05&quot;. سيقوم نظام التوجيه بعد ذلك بإنشاء عنوان URL لإعادة التوجيه <i>/First/Action05</i>. يظهر هذا في استجابة HTTP للخادم:
+  <li>في السطر 4، يتم توجيه العميل لإعادة التوجيه إلى المسار المسمى [<bdi dir="ltr" class="odt-ltr-term">Default</bdi>] مع تعيين متغير وحدة التحكم على &quot;<bdi dir="ltr" class="odt-ltr-term">First</bdi>&quot; ومتغير الإجراء على &quot;<bdi dir="ltr" class="odt-ltr-term">Action05</bdi>&quot;. سيقوم نظام التوجيه بعد ذلك بإنشاء عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه <i>/<bdi dir="ltr" class="odt-ltr-term">First/Action05</bdi></i>. يظهر هذا في استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للخادم:
   </li>
 </ul>
 
@@ -1690,11 +1692,11 @@
 <ul>
   <li>السطر 1: إعادة التوجيه؛
   </li>
-  <li>السطر 4: عنوان URL لإعادة التوجيه الذي تم إنشاؤه بواسطة نظام توجيه عناوين URL.
+  <li>السطر 4: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه الذي تم إنشاؤه بواسطة نظام توجيه عناوين <bdi dir="ltr" class="odt-ltr-term">URL.</bdi>
   </li>
 </ul>
 <p><a id="refheading58044676630786"></a></p>
-<h2 id="312-void">3.12. <span style="color: #4f81bd">إجراء بنوع إرجاع [void]</span></h2>
+<h2 id="312-void">3.12. <span style="color: #4f81bd">إجراء بنوع إرجاع [<bdi dir="ltr" class="odt-ltr-term">void</bdi>]</span></h2>
 <p>لننظر إلى الإجراء الجديد التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action09</span></span></span>
@@ -1709,7 +1711,7 @@
 <ul>
   <li>السطر 2: لا تُرجع الإجراء أي نتيجة. بل تكتب مباشرةً إلى دفق الاستجابة المرسَل إلى العميل؛
   </li>
-  <li>السطر 4: نسترد معلمة محتملة باسم [name] من الطلب. يمكن الوصول إليها عبر الخاصية [<b>Request</b>] لفئة [Controller] التي يرث منها وحدة التحكم [First]. المعلمة [name] التي تم تمريرها في النموذج [/First/Action09?name=something] متاحة في <b>Request.QueryString[&quot;name&quot;]</b>. صيغة السطر 4 تعادل:
+  <li>السطر 4: نسترد معلمة محتملة باسم [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] من الطلب. يمكن الوصول إليها عبر الخاصية [<b><bdi dir="ltr" class="odt-ltr-term">Request</bdi></b>] لفئة [<bdi dir="ltr" class="odt-ltr-term">Controller</bdi>] التي يرث منها وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">First</bdi>]. المعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] التي تم تمريرها في النموذج [/<bdi dir="ltr" class="odt-ltr-term">First/Action09</bdi>?<bdi dir="ltr" class="odt-ltr-term">name</bdi>=<bdi dir="ltr" class="odt-ltr-term">something</bdi>] متاحة في <b><bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</b>. صيغة السطر 4 تعادل:
   </li>
 </ul>
 
@@ -1719,18 +1721,18 @@
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="o">}</span>
 </code></pre></div>
 <ul>
-  <li>السطر 5: يمكن الوصول إلى الاستجابة المرسلة إلى العميل عبر خاصية [<b>Response</b>] لفئة [Controller] التي يرث منها وحدة التحكم [First]؛
+  <li>السطر 5: يمكن الوصول إلى الاستجابة المرسلة إلى العميل عبر خاصية [<b><bdi dir="ltr" class="odt-ltr-term">Response</bdi></b>] لفئة [<bdi dir="ltr" class="odt-ltr-term">Controller</bdi>] التي يرث منها وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">First</bdi>]؛
   </li>
-  <li>السطر 5: نقوم بتعيين رأس HTTP [Content-Type]، الذي يشير إلى طبيعة المستند الذي سيقوم الخادم بإرساله إلى العميل. هنا، يشير &quot;text/plain&quot; إلى أن المستند عبارة عن نص عادي لا يجب أن يفسره المتصفح؛
+  <li>السطر 5: نقوم بتعيين رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Content-Type</bdi>]، الذي يشير إلى طبيعة المستند الذي سيقوم الخادم بإرساله إلى العميل. هنا، يشير &quot;<bdi dir="ltr" class="odt-ltr-term">text/plain</bdi>&quot; إلى أن المستند عبارة عن نص عادي لا يجب أن يفسره المتصفح؛
   </li>
-  <li>السطر 6: نكتب سلسلة من الأحرف في نص الاستجابة. وقد أدرجنا علامات HTML لا ينبغي للمتصفح تفسيرها، حيث إن المتصفح سيكون قد تلقى مسبقًا رأس HTTP [Content-Type: text/plain]. وهذا ما نريد التحقق منه.
+  <li>السطر 6: نكتب سلسلة من الأحرف في نص الاستجابة. وقد أدرجنا علامات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> لا ينبغي للمتصفح تفسيرها، حيث إن المتصفح سيكون قد تلقى مسبقًا رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Content-Type: text/plain</bdi>]. وهذا ما نريد التحقق منه.
   </li>
 </ul>
 
-<p>دعونا نجمع المشروع ونطلب عنوان URL [/First/Action09?name=someone ][1] ثم عنوان URL [/First/Action09 ] [2]:</p>
+<p>دعونا نجمع المشروع ونطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">First/Action09</bdi>?<bdi dir="ltr" class="odt-ltr-term">name</bdi>=<bdi dir="ltr" class="odt-ltr-term">someone</bdi> ][1] ثم عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">First/Action09</bdi> ] [2]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FC000000F0C6E72D5F.png" width="680" height="107" style="display:inline-block; margin:4px;width:17.999cm;height:2.82cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FC000000F0C6E72D5F.png" /></td></tr></table>
 
-<p>الآن دعونا نلقي نظرة على استجابة HTTP للخادم في Chrome:</p>
+<p>الآن دعونا نلقي نظرة على استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للخادم في <bdi dir="ltr" class="odt-ltr-term">Chrome:</bdi></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>
 <span class="normal"><a href="#__codelineno-15-3">3</a></span>
@@ -1742,12 +1744,12 @@
 <a id="__codelineno-15-5" name="__codelineno-15-5"></a>Content-Length: 144
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 3: نرى رأس HTTP الذي قمنا بتعيينه بأنفسنا في كود الإجراء.
+  <li>السطر 3: نرى رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الذي قمنا بتعيينه بأنفسنا في كود الإجراء.
   </li>
 </ul>
 <p><a id="refheading58046676630786"></a></p>
 <h2 id="313">3.13. <span style="color: #4f81bd">وحدة تحكم ثانية</span></h2>
-<p>لنقم بإنشاء وحدة تحكم ثانية في المشروع. سنتبع الطريقة الموضحة في القسم 3.1، في <a href="#refheading10128914791633"><u><span style="color: #0563c1">الصفحة 36</span></u></a>. سنسميها [Second].</p>
+<p>لنقم بإنشاء وحدة تحكم ثانية في المشروع. سنتبع الطريقة الموضحة في القسم 3.1، في <a href="#refheading10128914791633"><u><span style="color: #0563c1">الصفحة 36</span></u></a>. سنسميها [<bdi dir="ltr" class="odt-ltr-term">Second</bdi>].</p>
 <p><img src="images/10000000000000C50000006F78BB882F.png" width="138" height="78" style="width:3.649cm;height:2.057cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C50000006F78BB882F.png" /></p>
 <p>والكود الذي تم إنشاؤه هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
@@ -1786,26 +1788,26 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>ثم لنطلب عنوان URL [/Second/Action01] باستخدام متصفح. نحصل على الاستجابة التالية:</p>
+<p>ثم لنطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">Second/Action01</bdi>] باستخدام متصفح. نحصل على الاستجابة التالية:</p>
 <p><img src="images/10000000000001840000007C98FE446F.png" width="271" height="87" style="width:7.181cm;height:2.295cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001840000007C98FE446F.png" /></p>
-<p>تم طلب عنوان URL هذا باستخدام طلب HTTP GET، كما هو موضح في سجلات HTTP للطلب في Chrome:</p>
+<p>تم طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">HTTP GET</bdi>، كما هو موضح في سجلات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للطلب في <bdi dir="ltr" class="odt-ltr-term">Chrome:</bdi></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>GET /Second/Action01 HTTP/1.1
 </code></pre></div>
-<p>يمكن أيضًا طلب عنوان URL هذا باستخدام طلب HTTP POST. لتوضيح ذلك، دعونا نستخدم تطبيق [Advanced Rest Client] مرة أخرى:</p>
+<p>يمكن أيضًا طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">HTTP POST.</bdi> لتوضيح ذلك، دعونا نستخدم تطبيق [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>] مرة أخرى:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FB00000180482AEB96.png" width="680" height="171" style="display:inline-block; margin:4px;width:17.999cm;height:4.514cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FB00000180482AEB96.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، قم بتشغيل التطبيق (في علامة التبويب [Applications] في علامة تبويب Chrome جديدة)؛
+  <li>في [1]، قم بتشغيل التطبيق (في علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Applications</bdi>] في علامة تبويب <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> جديدة)؛
   </li>
-  <li>في [2]، حدد خيار [Request]؛
+  <li>في [2]، حدد خيار [<bdi dir="ltr" class="odt-ltr-term">Request</bdi>]؛
   </li>
-  <li>في [3]، حدد عنوان URL المطلوب؛
+  <li>في [3]، حدد عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب؛
   </li>
-  <li>في [4]، حدد أن عنوان URL يجب أن يُطلب باستخدام طلب POST؛
+  <li>في [4]، حدد أن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> يجب أن يُطلب باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛
   </li>
 </ul>
 
-<p>نقوم بتفعيل سجلات Chrome (CTRL-I) لعرض استجابة HTTP من الخادم. وعندما نضغط على [إرسال] لتنفيذ الطلب السابق، تكون تبادلات HTTP كما يلي:</p>
+<p>نقوم بتفعيل سجلات <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> (<bdi dir="ltr" class="odt-ltr-term">CTRL-I</bdi>) لعرض استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> من الخادم. وعندما نضغط على [إرسال] لتنفيذ الطلب السابق، تكون تبادلات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> كما يلي:</p>
 <p>يرسل المتصفح الطلب التالي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
@@ -1828,13 +1830,13 @@
 <a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">fr</span><span class="o">-</span><span class="n">FR</span><span class="p">,</span><span class="n">fr</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">en</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.4</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 1: تم بالفعل طلب عنوان URL باستخدام POST؛
+  <li>السطر 1: تم بالفعل طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> باستخدام <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛
   </li>
   <li>السطر 4: حجم العناصر المنشورة بالبايت. لا يوجد أي منها هنا.
   </li>
 </ul>
 
-<p>استجابة HTTP للخادم هي كما يلي:</p>
+<p>استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للخادم هي كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
@@ -1868,7 +1870,7 @@
 
 <p>المستند المرسل هو كما يلي:</p>
 <p><img src="images/10000000000001170000006643970F20.png" width="195" height="71" style="width:5.159cm;height:1.886cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001170000006643970F20.png" /></p>
-<p>نحصل على نفس المستند كما في طلب GET.</p>
+<p>نحصل على نفس المستند كما في طلب <bdi dir="ltr" class="odt-ltr-term">GET.</bdi></p>
 <p><a id="refheading58048676630786"></a></p>
 <h2 id="314">3.14. <span style="color: #4f81bd">إجراء تمت تصفيته بواسطة سمة</span></h2>
 <p>لنقم بإنشاء الإجراء الجديد التالي:</p>
@@ -1881,12 +1883,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>يشبه الإجراء [Action02] الإجراء [Action01]، لكنه يحدد أنه لا يمكن الوصول إليه إلا عبر طلب HTTP POST (السطر 2). يمكن استخدام سمات أخرى:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpGet</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يخدم طلب GET فقط</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpHead</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يخدم طلب HEAD فقط</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpOptions</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يدعم فقط الأمر OPTIONS</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpPut</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يدعم فقط الأمر PUT</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HttpDelete</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يُستخدم فقط للأمر DELETE</div></td></tr></table>
+<p>يشبه الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02</bdi>] الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]، لكنه يحدد أنه لا يمكن الوصول إليه إلا عبر طلب <bdi dir="ltr" class="odt-ltr-term">HTTP POST</bdi> (السطر 2). يمكن استخدام سمات أخرى:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">HttpGet</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يخدم طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> فقط</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">HttpHead</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يخدم طلب <bdi dir="ltr" class="odt-ltr-term">HEAD</bdi> فقط</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">HttpOptions</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يدعم فقط الأمر <bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">HttpPut</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يدعم فقط الأمر <bdi dir="ltr" class="odt-ltr-term">PUT</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">HttpDelete</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يُستخدم فقط للأمر <bdi dir="ltr" class="odt-ltr-term">DELETE</bdi></div></td></tr></table>
 
-<p>دعونا نطلب عنوان URL [/Second/Action02] مباشرةً في المتصفح. ثم يتم طلبه عبر GET. بعد ذلك يعرض المتصفح الاستجابة التالية:</p>
+<p>دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">Second/Action02</bdi>] مباشرةً في المتصفح. ثم يتم طلبه عبر <bdi dir="ltr" class="odt-ltr-term">GET.</bdi> بعد ذلك يعرض المتصفح الاستجابة التالية:</p>
 <p><img src="images/100000000000026900000132851B890B.png" width="432" height="214" style="width:11.419cm;height:5.664cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026900000132851B890B.png" /></p>
-<p>كان رد HTTP من الخادم كما يلي:</p>
+<p>كان رد <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> من الخادم كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
 <span class="normal"><a href="#__codelineno-19-2">2</a></span>
 <span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>HTTP/1.1 404 Not Found
@@ -1894,7 +1896,7 @@
 <a id="__codelineno-19-3" name="__codelineno-19-3"></a>Content-Length: 3807
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 1: يشير رمز HTTP<b> 404 غير موجود </b>إلى أن الخادم لم يتمكن من العثور على المستند المطلوب. هنا، لم تتمكن الإجراء [Action02] من معالجة طلب GET لأنها تعالج طلبات POST فقط؛
+  <li>السطر 1: يشير رمز <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi><b> 404 غير موجود </b>إلى أن الخادم لم يتمكن من العثور على المستند المطلوب. هنا، لم تتمكن الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02</bdi>] من معالجة طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> لأنها تعالج طلبات <bdi dir="ltr" class="odt-ltr-term">POST</bdi> فقط؛
   </li>
   <li>السطر 3: حجم المستند الذي تم إرجاعه. هذه هي الصفحة التي تم عرضها بواسطة المتصفح:
   </li>
@@ -1921,7 +1923,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>المسار المحدد في [App_Start/RouteConfig] هو كما يلي:</p>
+<p>المسار المحدد في [<bdi dir="ltr" class="odt-ltr-term">App</bdi>_Start/<bdi dir="ltr" class="odt-ltr-term">RouteConfig</bdi>] هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">      routes.MapRoute(</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          name: </span><span style="color:#a31515">&quot;Default&quot;</span><span style="color:#000000">,</span></span></span>
@@ -1930,8 +1932,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">);</span></span>
 </code></pre></div>
 
-<p>السطر 3: يمكن استرداد عناصر المسار الثلاثة باستخدام <strong>RouteData.Values[&quot;element&quot;],</strong> حيث <strong>element</strong> هو أحد [controller, action, id].</p>
-<p>دعونا نطلب عنوان URL [http://localhost:49302/Second/Action03]:</p>
+<p>السطر 3: يمكن استرداد عناصر المسار الثلاثة باستخدام <strong><bdi dir="ltr" class="odt-ltr-term">RouteData.Values</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">element</bdi>&quot;],</strong> حيث <strong><bdi dir="ltr" class="odt-ltr-term">element</bdi></strong> هو أحد [<bdi dir="ltr" class="odt-ltr-term">controller</bdi>, <bdi dir="ltr" class="odt-ltr-term">action</bdi>, <bdi dir="ltr" class="odt-ltr-term">id</bdi>].</p>
+<p>دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:49302/Second/Action03</bdi>]:</p>
 <p><img src="images/100000000000018100000072F6504BF3.png" width="269" height="80" style="width:7.13cm;height:2.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018100000072F6504BF3.png" /></p>
 <p>لقد نجحنا في استرداد اسم وحدة التحكم واسم الإجراء.</p>
 

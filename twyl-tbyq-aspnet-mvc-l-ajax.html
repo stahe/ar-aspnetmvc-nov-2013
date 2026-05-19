@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -976,17 +978,17 @@
 
 
 <p><a id="refheading58160676630786"></a></p>
-<h1 id="7-aspnet-mvc-ajax">7. <span style="color: #365f91">تحويل تطبيق ASP.NET MVC إلى Ajax</span></h1>
+<h1 id="7-aspnet-mvc-ajax">7. <span style="color: #365f91">تحويل تطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> إلى <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi></span></h1>
 <p><a id="refheading58162676630786"></a></p>
-<h2 id="71-ajax">7.1. <span style="color: #4f81bd">دور AJAX في تطبيق الويب</span></h2>
+<h2 id="71-ajax">7.1. <span style="color: #4f81bd">دور <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> في تطبيق الويب</span></h2>
 <p>في الوقت الحالي، تتميز الأمثلة التعليمية التي درسناها بالبنية التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000499000001AE34C14C09.png" width="589" height="215" style="display:inline-block; margin:4px;width:15.572cm;height:5.689cm;" class="odt-zoomable" data-zoom-src="images/1000000000000499000001AE34C14C09.png" /></td></tr></table>
 
-<p><span style="color: #000000">للتبديل من عرض [View1] إلى عرض [View2]، يقوم المتصفح بما يلي:</span></p>
+<p><span style="color: #000000">للتبديل من عرض [<bdi dir="ltr" class="odt-ltr-term">View1</bdi>] إلى عرض [<bdi dir="ltr" class="odt-ltr-term">View2</bdi>]، يقوم المتصفح بما يلي:</span></p>
 <ul>
   <li><span style="color: #000000">يرسل طلبًا إلى تطبيق الويب؛</span>
   </li>
-  <li><span style="color: #000000">يستقبل العرض [View2] ويعرضه بدلاً من العرض [View1].</span>
+  <li><span style="color: #000000">يستقبل العرض [<bdi dir="ltr" class="odt-ltr-term">View2</bdi>] ويعرضه بدلاً من العرض [<bdi dir="ltr" class="odt-ltr-term">View1</bdi>].</span>
   </li>
 </ul>
 
@@ -1002,43 +1004,43 @@
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">هناك نمط آخر للتفاعل بين المتصفح وخادم الويب: </span><strong><span style="color: #000000">AJAX </span></strong><span style="color: #000000">(جافا سكريبت غير متزامن و XML). يتضمن هذا تفاعلات بين العرض الذي يعرضه المتصفح وخادم الويب. يواصل المتصفح القيام بما يجيده — عرض HTML — ولكنه الآن يخضع لسيطرة جافا سكريبت المضمنة في عرض HTML المعروض. تتم العملية على النحو التالي:</span></p>
+<p><span style="color: #000000">هناك نمط آخر للتفاعل بين المتصفح وخادم الويب: </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> </span></strong><span style="color: #000000">(جافا سكريبت غير متزامن و <bdi dir="ltr" class="odt-ltr-term">XML</bdi>). يتضمن هذا تفاعلات بين العرض الذي يعرضه المتصفح وخادم الويب. يواصل المتصفح القيام بما يجيده — عرض <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> — ولكنه الآن يخضع لسيطرة جافا سكريبت المضمنة في عرض <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المعروض. تتم العملية على النحو التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053D000001A2BD6E0E80.png" width="671" height="209" style="display:inline-block; margin:4px;width:17.741cm;height:5.53cm;" class="odt-zoomable" data-zoom-src="images/100000000000053D000001A2BD6E0E80.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [1]، يحدث حدث على الصفحة المعروضة في المتصفح (النقر على زر، تغيير في النص، إلخ). يتم اعتراض هذا الحدث بواسطة JavaScript (JS) المضمن في الصفحة؛</span>
+  <li><span style="color: #000000">في [1]، يحدث حدث على الصفحة المعروضة في المتصفح (النقر على زر، تغيير في النص، إلخ). يتم اعتراض هذا الحدث بواسطة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> (<bdi dir="ltr" class="odt-ltr-term">JS</bdi>) المضمن في الصفحة؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، يقوم كود JavaScript بإرسال طلب HTTP تمامًا كما كان سيفعل المتصفح. الطلب </span><b><span style="color: #000000">غير متزامن</span></b><span style="color: #000000">: يمكن للمستخدم الاستمرار في التفاعل مع الصفحة دون أن يتم حظره أثناء انتظار </span><span style="color: #000000">استجابة HTTP. يتبع الطلب تدفق المعالجة القياسي. لا شيء (أو القليل جدًا) يميزه عن الطلب القياسي؛</span>
+  <li><span style="color: #000000">في [2]، يقوم كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> بإرسال طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> تمامًا كما كان سيفعل المتصفح. الطلب </span><b><span style="color: #000000">غير متزامن</span></b><span style="color: #000000">: يمكن للمستخدم الاستمرار في التفاعل مع الصفحة دون أن يتم حظره أثناء انتظار </span><span style="color: #000000">استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP.</bdi> يتبع الطلب تدفق المعالجة القياسي. لا شيء (أو القليل جدًا) يميزه عن الطلب القياسي؛</span>
   </li>
-  <li><span style="color: #000000">في [3]، يتم إرسال استجابة إلى عميل JavaScript. وبدلاً من عرض HTML كامل، عادةً ما يتم إرسال عرض HTML جزئي أو موجز XML أو JSON (ترميز كائنات JavaScript)؛</span>
+  <li><span style="color: #000000">في [3]، يتم إرسال استجابة إلى عميل <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> وبدلاً من عرض <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> كامل، عادةً ما يتم إرسال عرض <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> جزئي أو موجز <bdi dir="ltr" class="odt-ltr-term">XML</bdi> أو <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> (ترميز كائنات <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi>)؛</span>
   </li>
-  <li><span style="color: #000000">في [4]، يسترد JavaScript هذا الرد ويستخدمه لتحديث منطقة من صفحة HTML المعروضة.</span>
+  <li><span style="color: #000000">في [4]، يسترد <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> هذا الرد ويستخدمه لتحديث منطقة من صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المعروضة.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">بالنسبة للمستخدم، يحدث تغيير في العرض لأن ما يراه قد تغير. ومع ذلك، لا يتم إعادة تحميل الصفحة بالكامل؛ بل يحدث تعديل جزئي فقط للصفحة المعروضة. وهذا يساعد في جعل الصفحة أكثر سلاسة وتفاعلية: نظرًا لعدم إعادة تحميل الصفحة بالكامل، يمكننا التعامل مع أحداث لم يكن من الممكن إدارتها في السابق. على سبيل المثال، تقديم قائمة من الخيارات للمستخدم أثناء كتابة الأحرف في حقل الإدخال. مع كل حرف جديد يتم كتابته، يتم إرسال طلب AJAX إلى الخادم، والذي يعرض بعد ذلك اقتراحات إضافية. بدون AJAX، كان هذا النوع من المساعدة في الإدخال مستحيلًا في السابق. لم نكن نستطيع إعادة تحميل صفحة جديدة مع كل حرف يتم كتابته.</span></p>
+<p><span style="color: #000000">بالنسبة للمستخدم، يحدث تغيير في العرض لأن ما يراه قد تغير. ومع ذلك، لا يتم إعادة تحميل الصفحة بالكامل؛ بل يحدث تعديل جزئي فقط للصفحة المعروضة. وهذا يساعد في جعل الصفحة أكثر سلاسة وتفاعلية: نظرًا لعدم إعادة تحميل الصفحة بالكامل، يمكننا التعامل مع أحداث لم يكن من الممكن إدارتها في السابق. على سبيل المثال، تقديم قائمة من الخيارات للمستخدم أثناء كتابة الأحرف في حقل الإدخال. مع كل حرف جديد يتم كتابته، يتم إرسال طلب <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> إلى الخادم، والذي يعرض بعد ذلك اقتراحات إضافية. بدون <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi>، كان هذا النوع من المساعدة في الإدخال مستحيلًا في السابق. لم نكن نستطيع إعادة تحميل صفحة جديدة مع كل حرف يتم كتابته.</span></p>
 <p><a id="refheading58164676630786"></a></p>
-<h2 id="72-jquery-javascript">7.2. <span style="color: #4f81bd">أساسيات jQuery و JavaScript</span></h2>
-<p><span style="color: #000000">غالبًا ما قمنا بتضمين مكتبة jQuery JavaScript في صفحاتنا. على سبيل المثال، ستجد السطر التالي:</span></p>
+<h2 id="72-jquery-javascript">7.2. <span style="color: #4f81bd">أساسيات <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> و <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi></span></h2>
+<p><span style="color: #000000">غالبًا ما قمنا بتضمين مكتبة <bdi dir="ltr" class="odt-ltr-term">jQuery JavaScript</bdi> في صفحاتنا. على سبيل المثال، ستجد السطر التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span> <span style="color:#ff0000">type</span><span style="color:#0000ff">=&quot;text/javascript&quot;</span> <span style="color:#ff0000">src</span><span style="color:#0000ff">=&quot;~/Scripts/jquery-1.8.2.min.js&quot;&gt;&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><strong><span style="color: #000000">ملاحظة</span></strong><span style="color: #000000">: قم بمطابقة إصدار jQuery مع إصدار Visual Studio الخاص بك.</span></p>
+<p><strong><span style="color: #000000">ملاحظة</span></strong><span style="color: #000000">: قم بمطابقة إصدار <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> مع إصدار <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> الخاص بك.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">تستخدم تقنية Ajax في ASP.NET MVC jQuery. سنقوم بكتابة بعض نصوص jQuery بأنفسنا. لذا دعونا الآن نستعرض أساسيات jQuery التي تحتاج إلى معرفتها لفهم النصوص في هذا الفصل.</span></p>
+<p><span style="color: #000000">تستخدم تقنية <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> في <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC jQuery.</bdi> سنقوم بكتابة بعض نصوص <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> بأنفسنا. لذا دعونا الآن نستعرض أساسيات <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> التي تحتاج إلى معرفتها لفهم النصوص في هذا الفصل.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">نقوم بإنشاء مشروع جديد [Example-04] ضمن حل [Examples] الخاص بنا:</span></p>
+<p><span style="color: #000000">نقوم بإنشاء مشروع جديد [<bdi dir="ltr" class="odt-ltr-term">Example-04</bdi>] ضمن حل [<bdi dir="ltr" class="odt-ltr-term">Examples</bdi>] الخاص بنا:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006210000026FAA6138D8.png" width="680" height="270" style="display:inline-block; margin:4px;width:17.999cm;height:7.147cm;" class="odt-zoomable" data-zoom-src="images/10000000000006210000026FAA6138D8.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لاستخدام Ajax مع ASP.NET MVC، يجب أن يتواجد السطر التالي في ملف التكوين [Web.config] [1]:</span></p>
+<p><span style="color: #000000">لاستخدام <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> مع <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi>، يجب أن يتواجد السطر التالي في ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">Web.config</bdi>] [1]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">appSettings</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1048,9 +1050,9 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">السطر 3 يتيح استخدام Ajax في طرق عرض ASP.NET. وهو موجود بشكل افتراضي.</span></p>
+<p><span style="color: #000000">السطر 3 يتيح استخدام <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> في طرق عرض <bdi dir="ltr" class="odt-ltr-term">ASP.NET.</bdi> وهو موجود بشكل افتراضي.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">نقوم بإنشاء ملف HTML [JQuery-01.html] في مجلد [Content] للمشروع الجديد [2]:</span></p>
+<p><span style="color: #000000">نقوم بإنشاء ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> [<bdi dir="ltr" class="odt-ltr-term">JQuery-01.html</bdi>] في مجلد [<bdi dir="ltr" class="odt-ltr-term">Content</bdi>] للمشروع الجديد [2]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005770000017C61A6FE69.png" width="680" height="185" style="display:inline-block; margin:4px;width:17.999cm;height:4.89cm;" class="odt-zoomable" data-zoom-src="images/10000000000005770000017C61A6FE69.png" /></td></tr></table>
 
@@ -1076,45 +1078,45 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 6: استيراد jQuery (اضبط الإصدار ليتوافق مع إصدار Visual Studio الخاص بك)؛</span>
+  <li><span style="color: #000000">السطر 6: استيراد <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> (اضبط الإصدار ليتوافق مع إصدار <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> الخاص بك)؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 10-12: عنصر صفحة </span><b><span style="color: #000000">بمعرف </span></b><span style="color: #000000">[element1]. سنعمل مع هذا العنصر.</span>
+  <li><span style="color: #000000">الأسطر 10-12: عنصر صفحة </span><b><span style="color: #000000">بمعرف </span></b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">element1</bdi>]. سنعمل مع هذا العنصر.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">اعرض هذا الملف في متصفح Google Chrome [4] و[5]:</span></p>
+<p><span style="color: #000000">اعرض هذا الملف في متصفح <bdi dir="ltr" class="odt-ltr-term">Google Chrome</bdi> [4] و[5]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000063200000145641533D9.png" width="680" height="139" style="display:inline-block; margin:4px;width:17.999cm;height:3.688cm;" class="odt-zoomable" data-zoom-src="images/100000000000063200000145641533D9.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في Google Chrome، اضغط على [Ctrl-Shift-I] لفتح أدوات المطور [6]. تتيح لك علامة التبويب [Console] [7] تشغيل كود JavaScript. أدناه، نقدم أوامر JavaScript التي يجب كتابتها ونشرح وظائفها.</span></p>
+<p><span style="color: #000000">في <bdi dir="ltr" class="odt-ltr-term">Google Chrome</bdi>، اضغط على [<bdi dir="ltr" class="odt-ltr-term">Ctrl-Shift-I</bdi>] لفتح أدوات المطور [6]. تتيح لك علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Console</bdi>] [7] تشغيل كود <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> أدناه، نقدم أوامر <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> التي يجب كتابتها ونشرح وظائفها.</span></p>
 <p><span style="color: #000000"> </span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>JS</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>result</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">JS</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">result</bdi></b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$(&quot;#element1&quot;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يُرجع مجموعة جميع العناصر <b>التي تحمل المعرف </b>[element1]، لذا عادةً ما تكون المجموعة مكونة من عنصر واحد أو صفر، لأنه لا يمكن وجود <b>معرفين</b> متطابقين في صفحة HTML.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B60000008356BBD730.png" width="127" height="92" style="display:inline-block; margin:4px;width:3.371cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B60000008356BBD730.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يُرجع مجموعة جميع العناصر <b>التي تحمل المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">element1</bdi>]، لذا عادةً ما تكون المجموعة مكونة من عنصر واحد أو صفر، لأنه لا يمكن وجود <b>معرفين</b> متطابقين في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B60000008356BBD730.png" width="127" height="92" style="display:inline-block; margin:4px;width:3.371cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B60000008356BBD730.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$(&quot;#element1&quot;).text(&quot;blabla&quot;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يعيّن النص [blabla] لجميع العناصر في المجموعة. يؤدي هذا إلى تغيير المحتوى المعروض على الصفحة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000253B59BD93.png" width="180" height="26" style="display:inline-block; margin:4px;width:4.761cm;height:0.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000253B59BD93.png" /><img src="images/10000000000000EF000000B740C0BE12.png" width="167" height="128" style="display:inline-block; margin:4px;width:4.431cm;height:3.394cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000B740C0BE12.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يعيّن النص [<bdi dir="ltr" class="odt-ltr-term">blabla</bdi>] لجميع العناصر في المجموعة. يؤدي هذا إلى تغيير المحتوى المعروض على الصفحة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000253B59BD93.png" width="180" height="26" style="display:inline-block; margin:4px;width:4.761cm;height:0.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000253B59BD93.png" /><img src="images/10000000000000EF000000B740C0BE12.png" width="167" height="128" style="display:inline-block; margin:4px;width:4.431cm;height:3.394cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000B740C0BE12.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$(&quot;#element1&quot;).hide()
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">يخفي العناصر الموجودة في المجموعة. لم يعد النص [blabla] معروضًا.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD0000001F991499F4.png" width="177" height="22" style="display:inline-block; margin:4px;width:4.68cm;height:0.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD0000001F991499F4.png" /><img src="images/10000000000000DE000000987D612336.png" width="155" height="106" style="display:inline-block; margin:4px;width:4.11cm;height:2.813cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000987D612336.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">يخفي العناصر الموجودة في المجموعة. لم يعد النص [<bdi dir="ltr" class="odt-ltr-term">blabla</bdi>] معروضًا.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD0000001F991499F4.png" width="177" height="22" style="display:inline-block; margin:4px;width:4.68cm;height:0.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD0000001F991499F4.png" /><img src="images/10000000000000DE000000987D612336.png" width="155" height="106" style="display:inline-block; margin:4px;width:4.11cm;height:2.813cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000987D612336.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$(&quot;#element1&quot;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يعرض المجموعة مرة أخرى. وهذا يسمح لنا برؤية أن العنصر الذي يحمل المعرف [element1] له سمة CSS <b>style=&#x27;display: none;&#x27;</b>، مما يؤدي إلى إخفاء العنصر.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B0000002A4792CCDD.png" width="288" height="29" style="display:inline-block; margin:4px;width:7.609cm;height:0.778cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B0000002A4792CCDD.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يعرض المجموعة مرة أخرى. وهذا يسمح لنا برؤية أن العنصر الذي يحمل المعرف [<bdi dir="ltr" class="odt-ltr-term">element1</bdi>] له سمة <bdi dir="ltr" class="odt-ltr-term">CSS</bdi> <b><bdi dir="ltr" class="odt-ltr-term">style</bdi>=&#x27;<bdi dir="ltr" class="odt-ltr-term">display: none</bdi>;&#x27;</b>، مما يؤدي إلى إخفاء العنصر.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B0000002A4792CCDD.png" width="288" height="29" style="display:inline-block; margin:4px;width:7.609cm;height:0.778cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B0000002A4792CCDD.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$(&quot;#element1&quot;).show()
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يعرض عناصر المجموعة. يظهر النص [blabla] مرة أخرى. السمة CSS <b>style=&#x27;display: block;&#x27; </b>هي المسؤولة عن هذا العرض.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A500000026083A7878.png" width="294" height="27" style="display:inline-block; margin:4px;width:7.789cm;height:0.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A500000026083A7878.png" /><img src="images/10000000000000F9000000C13449EDE1.png" width="174" height="135" style="display:inline-block; margin:4px;width:4.611cm;height:3.574cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F9000000C13449EDE1.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يعرض عناصر المجموعة. يظهر النص [<bdi dir="ltr" class="odt-ltr-term">blabla</bdi>] مرة أخرى. السمة <bdi dir="ltr" class="odt-ltr-term">CSS</bdi> <b><bdi dir="ltr" class="odt-ltr-term">style</bdi>=&#x27;<bdi dir="ltr" class="odt-ltr-term">display: block</bdi>;&#x27; </b>هي المسؤولة عن هذا العرض.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A500000026083A7878.png" width="294" height="27" style="display:inline-block; margin:4px;width:7.789cm;height:0.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A500000026083A7878.png" /><img src="images/10000000000000F9000000C13449EDE1.png" width="174" height="135" style="display:inline-block; margin:4px;width:4.611cm;height:3.574cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F9000000C13449EDE1.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$(&quot;#element1&quot;).attr(&#39;style&#39;,&#39;color: red&#39;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يعيّن سمة على جميع العناصر في المجموعة. السمة هنا هي [style] وقيمتها هي [color: red]. يتحول النص [blabla] إلى اللون الأحمر.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B000000231B4940BC.png" width="276" height="24" style="display:inline-block; margin:4px;width:7.31cm;height:0.647cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000231B4940BC.png" /><img src="images/10000000000000F7000000BF541DB4ED.png" width="173" height="134" style="display:inline-block; margin:4px;width:4.57cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BF541DB4ED.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يعيّن سمة على جميع العناصر في المجموعة. السمة هنا هي [<bdi dir="ltr" class="odt-ltr-term">style</bdi>] وقيمتها هي [<bdi dir="ltr" class="odt-ltr-term">color: red</bdi>]. يتحول النص [<bdi dir="ltr" class="odt-ltr-term">blabla</bdi>] إلى اللون الأحمر.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B000000231B4940BC.png" width="276" height="24" style="display:inline-block; margin:4px;width:7.31cm;height:0.647cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000231B4940BC.png" /><img src="images/10000000000000F7000000BF541DB4ED.png" width="173" height="134" style="display:inline-block; margin:4px;width:4.57cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BF541DB4ED.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>جدول
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE0000011645A3961D.png" width="167" height="195" style="display:inline-block; margin:4px;width:4.41cm;height:5.151cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE0000011645A3961D.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
@@ -1123,7 +1125,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A0000000F3CAFDC489.png" width="291" height="170" style="display:inline-block; margin:4px;width:7.699cm;height:4.496cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A0000000F3CAFDC489.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لاحظ أن عنوان URL للمتصفح لم يتغير خلال كل هذه العمليات. لم يكن هناك أي اتصال بخادم الويب. كل شيء يحدث داخل المتصفح. الآن، دعونا نعرض كود مصدر الصفحة:</span></p>
+<p><span style="color: #000000">لاحظ أن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للمتصفح لم يتغير خلال كل هذه العمليات. لم يكن هناك أي اتصال بخادم الويب. كل شيء يحدث داخل المتصفح. الآن، دعونا نعرض كود مصدر الصفحة:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/100000000000025900000159479D0FB6.png" width="327" height="187" style="width:8.64cm;height:4.96cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000025900000159479D0FB6.png" /></p>
@@ -1147,13 +1149,13 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">هذا هو النص الأولي. وهو لا يعكس التغييرات التي تم إجراؤها على العنصر في الأسطر 10-12. من المهم تذكر ذلك عند تصحيح أخطاء JavaScript. في مثل هذه الحالات، غالبًا ما يكون من غير الضروري عرض شفرة المصدر للصفحة المعروضة. لعرض شفرة المصدر للصفحة المعروضة حاليًا، اتبع الخطوات التالية:</span></p>
+<p><span style="color: #000000">هذا هو النص الأولي. وهو لا يعكس التغييرات التي تم إجراؤها على العنصر في الأسطر 10-12. من المهم تذكر ذلك عند تصحيح أخطاء <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> في مثل هذه الحالات، غالبًا ما يكون من غير الضروري عرض شفرة المصدر للصفحة المعروضة. لعرض شفرة المصدر للصفحة المعروضة حاليًا، اتبع الخطوات التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/1000000000000167000000DB7C07E0B6.png" width="251" height="153" style="width:6.65cm;height:4.057cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000167000000DB7C07E0B6.png" /></p>
-<p><span style="color: #000000">لدينا الآن ما يكفي من المعرفة لفهم نصوص JS التالية.</span></p>
+<p><span style="color: #000000">لدينا الآن ما يكفي من المعرفة لفهم نصوص <bdi dir="ltr" class="odt-ltr-term">JS</bdi> التالية.</span></p>
 <p><a id="refheading58166676630786"></a></p>
-<h2 id="73-html">7.3. <span style="color: #4f81bd">تحديث صفحة باستخدام موجز HTML</span></h2>
+<h2 id="73-html">7.3. <span style="color: #4f81bd">تحديث صفحة باستخدام موجز <bdi dir="ltr" class="odt-ltr-term">HTML</bdi></span></h2>
 <p><a id="refheading58168676630786"></a></p>
 <h3 id="731">7.3.1. <span style="color: #4f81bd">طرق العرض</span></h3>
 <p><span style="color: #000000">سنقوم بفحص التطبيق التالي:</span></p>
@@ -1164,21 +1166,21 @@
 <ul>
   <li><span style="color: #000000">في [1]، وقت تحميل الصفحة؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، نقوم بإجراء العمليات الحسابية الأربع على عددين حقيقيين A و B؛</span>
+  <li><span style="color: #000000">في [2]، نقوم بإجراء العمليات الحسابية الأربع على عددين حقيقيين <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛</span>
   </li>
   <li><span style="color: #000000">في [3]، يتم عرض استجابة الخادم في منطقة من الصفحة؛</span>
   </li>
-  <li><span style="color: #000000">في [4]، وقت الحساب. وهذا يختلف عن وقت تحميل الصفحة [5]. هذا الأخير يساوي [1]، مما يدل على أن المنطقة [6] لم يتم إعادة تحميلها. علاوة على ذلك، لم يتغير عنوان URL للصفحة [7].</span>
+  <li><span style="color: #000000">في [4]، وقت الحساب. وهذا يختلف عن وقت تحميل الصفحة [5]. هذا الأخير يساوي [1]، مما يدل على أن المنطقة [6] لم يتم إعادة تحميلها. علاوة على ذلك، لم يتغير عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للصفحة [7].</span>
   </li>
 </ul>
 <p><a id="refheading58170676630786"></a></p>
 <h3 id="732">7.3.2. <span style="color: #4f81bd">وحدة التحكم، الإجراءات، النموذج، العرض</span></h3>
-<p><span style="color: #000000">نقوم بإنشاء وحدة تحكم باسم [Premier]:</span></p>
+<p><span style="color: #000000">نقوم بإنشاء وحدة تحكم باسم [<bdi dir="ltr" class="odt-ltr-term">Premier</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001690000010444621A3A.png" width="181" height="130" style="display:inline-block; margin:4px;width:4.777cm;height:3.441cm;" class="odt-zoomable" data-zoom-src="images/10000000000001690000010444621A3A.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لعرض العرض الأولي، نقوم بإنشاء الإجراء [Action01Get] التالي:</span></p>
+<p><span style="color: #000000">لعرض العرض الأولي، نقوم بإنشاء الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action01Get</bdi>] التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">HttpGet</span>]</span></span>
@@ -1196,12 +1198,12 @@
   </li>
   <li><span style="color: #000000">السطر 5: تهيئة وقت تحميل العرض؛</span>
   </li>
-  <li><span style="color: #000000">السطر 6: عرض العرض [Action10Get.cshtml] ونموذجه.</span>
+  <li><span style="color: #000000">السطر 6: عرض العرض [<bdi dir="ltr" class="odt-ltr-term">Action10Get.cshtml</bdi>] ونموذجه.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">النموذج [</span><a id="ajax-01-viewmodel01"></a><span style="color: #000000"> ViewModel01] هو كما يلي:</span></p>
+<p><span style="color: #000000">النموذج [</span><a id="ajax-01-viewmodel01"></a><span style="color: #000000"> <bdi dir="ltr" class="odt-ltr-term">ViewModel01</bdi>] هو كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012400000080F7ACF287.png" width="146" height="64" style="display:inline-block; margin:4px;width:3.863cm;height:1.693cm;" class="odt-zoomable" data-zoom-src="images/100000000000012400000080F7ACF287.png" /></td></tr></table>
 
@@ -1240,11 +1242,11 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">الأسطر 11–14: القيمة A من النموذج؛</span>
+  <li><span style="color: #000000">الأسطر 11–14: القيمة <bdi dir="ltr" class="odt-ltr-term">A</bdi> من النموذج؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 15–18: القيمة B من النموذج؛</span>
+  <li><span style="color: #000000">الأسطر 15–18: القيمة <bdi dir="ltr" class="odt-ltr-term">B</bdi> من النموذج؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 21–24: نتائج العمليات الحسابية الأربع على A و B؛</span>
+  <li><span style="color: #000000">الأسطر 21–24: نتائج العمليات الحسابية الأربع على <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛</span>
   </li>
   <li><span style="color: #000000">السطر 25: نص أي خطأ؛</span>
   </li>
@@ -1257,7 +1259,7 @@
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">الطريقة [Action01Get.cshtml] هي كما يلي:</span></p>
+<p><span style="color: #000000">الطريقة [<bdi dir="ltr" class="odt-ltr-term">Action01Get.cshtml</bdi>] هي كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B000000C246EFB7AA.png" width="206" height="97" style="display:inline-block; margin:4px;width:5.438cm;height:2.566cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B000000C246EFB7AA.png" /></td></tr></table>
 
@@ -1332,35 +1334,35 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: تعتمد طريقة العرض على نوع [ViewModel01]؛</span>
+  <li><span style="color: #000000">السطر 1: تعتمد طريقة العرض على نوع [<bdi dir="ltr" class="odt-ltr-term">ViewModel01</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 21: jQuery مطلوب لكل من التحقق من الصحة و Ajax؛</span>
+  <li><span style="color: #000000">السطر 21: <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> مطلوب لكل من التحقق من الصحة و <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
   <li><span style="color: #000000">السطران 22-23: مكتبات التحقق من الصحة؛</span>
   </li>
   <li><span style="color: #000000">السطور 24–26: مكتبات التدويل؛</span>
   </li>
-  <li><span style="color: #000000">السطر 27: مكتبة Ajax؛</span>
+  <li><span style="color: #000000">السطر 27: مكتبة <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
   <li><span style="color: #000000">السطر 28: مكتبة جافا سكريبت محلية؛</span>
   </li>
   <li><span style="color: #000000">السطر 33: يعرض وقت تحميل العرض؛</span>
   </li>
-  <li><span style="color: #000000">السطر 35: نموذج Ajax — سنعود إلى هذا لاحقًا؛</span>
+  <li><span style="color: #000000">السطر 35: نموذج <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> — سنعود إلى هذا لاحقًا؛</span>
   </li>
-  <li><span style="color: #000000">السطران 40-41: تسميات لحقول إدخال الأرقام A و B؛</span>
+  <li><span style="color: #000000">السطران 40-41: تسميات لحقول إدخال الأرقام <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطران 46-47: حقول إدخال الأرقام A و B؛</span>
+  <li><span style="color: #000000">السطران 46-47: حقول إدخال الأرقام <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطران 50-51: رسائل خطأ لإدخالات الأرقام A و B؛</span>
+  <li><span style="color: #000000">السطران 50-51: رسائل خطأ لإدخالات الأرقام <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 56: الزر الذي يرسل النموذج. سيتم إرساله عبر طلب Ajax؛</span>
+  <li><span style="color: #000000">السطر 56: الزر الذي يرسل النموذج. سيتم إرساله عبر طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 57: صورة التحميل التي تظهر أثناء طلب Ajax؛</span>
+  <li><span style="color: #000000">السطر 57: صورة التحميل التي تظهر أثناء طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 58: رابط لإرسال النموذج باستخدام طلب Ajax؛</span>
+  <li><span style="color: #000000">السطر 58: رابط لإرسال النموذج باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 62: علامة div مع المعرف [results]. هذا هو المكان الذي سنضع فيه ناتج HTML الذي يعيده خادم الويب.</span>
+  <li><span style="color: #000000">السطر 62: علامة <bdi dir="ltr" class="odt-ltr-term">div</bdi> مع المعرف [<bdi dir="ltr" class="odt-ltr-term">results</bdi>]. هذا هو المكان الذي سنضع فيه ناتج <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الذي يعيده خادم الويب.</span>
   </li>
 </ul>
 
@@ -1369,7 +1371,7 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001F200000168C747BA74.png" width="323" height="234" style="width:8.55cm;height:6.181cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F200000168C747BA74.png" /></p>
-<p><span style="color: #000000">الآن دعونا نفحص الكود الذي يتعامل مع وظيفة Ajax للنموذج:</span></p>
+<p><span style="color: #000000">الآن دعونا نفحص الكود الذي يتعامل مع وظيفة <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> للنموذج:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
@@ -1401,7 +1403,7 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 15: بدلاً من استخدام [@Html.BeginForm]، نستخدم [@Ajax.BeginForm]. تدعم هذه الطريقة العديد من التحميلات الزائدة. الطريقة المستخدمة لها التوقيع التالي:</span>
+  <li><span style="color: #000000">السطر 15: بدلاً من استخدام [@<bdi dir="ltr" class="odt-ltr-term">Html.BeginForm</bdi>]، نستخدم [@<bdi dir="ltr" class="odt-ltr-term">Ajax.BeginForm</bdi>]. تدعم هذه الطريقة العديد من التحميلات الزائدة. الطريقة المستخدمة لها التوقيع التالي:</span>
   </li>
 </ul>
 
@@ -1411,28 +1413,28 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">هنا، نستخدم المعلمات الفعلية التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><strong><span style="color: #000000">Action01Post</span></strong><span style="color: #000000">: اسم الإجراء الذي سيقوم بمعالجة طلب POST الخاص بالنموذج،</span></p>
-<p><strong><span style="color: #000000">null</span></strong><span style="color: #000000">: لا توجد معلومات مسار لتقديمها،</span></p>
-<p><strong><span style="color: #000000">ajaxOpts</span></strong><span style="color: #000000">: خيارات استدعاء Ajax. تم تعريفها في الأسطر 6–10،</span></p>
-<p><strong><span style="color: #000000">new { id = &quot;form&quot; }</span></strong><span style="color: #000000">: لتعيين السمة [id=&#x27;form&#x27;] إلى العلامة &lt;form&gt; التي تم إنشاؤها؛</span></p>
+<p><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Action01Post</bdi></span></strong><span style="color: #000000">: اسم الإجراء الذي سيقوم بمعالجة طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> الخاص بالنموذج،</span></p>
+<p><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi></span></strong><span style="color: #000000">: لا توجد معلومات مسار لتقديمها،</span></p>
+<p><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ajaxOpts</bdi></span></strong><span style="color: #000000">: خيارات استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax.</bdi> تم تعريفها في الأسطر 6–10،</span></p>
+<p><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">new</bdi> { <bdi dir="ltr" class="odt-ltr-term">id</bdi> = &quot;<bdi dir="ltr" class="odt-ltr-term">form</bdi>&quot; }</span></strong><span style="color: #000000">: لتعيين السمة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>=&#x27;<bdi dir="ltr" class="odt-ltr-term">form</bdi>&#x27;] إلى العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">form</bdi>&gt; التي تم إنشاؤها؛</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">خيارات Ajax المستخدمة هي كما يلي:</span></p>
+<p><span style="color: #000000">خيارات <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> المستخدمة هي كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 8: عنوان URL الهدف لطلب HTTP Ajax؛</span>
+  <li><span style="color: #000000">السطر 8: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف لطلب <bdi dir="ltr" class="odt-ltr-term">HTTP Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: طريقة طلب HTTP لـ Ajax؛</span>
+  <li><span style="color: #000000">السطر 7: طريقة طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> لـ <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 6: </span><b><span style="color: #000000">معرف </span></b><span style="color: #000000">منطقة الصفحة التي سيتم تحديثها بواسطة الاستجابة لطلب Ajax؛</span>
+  <li><span style="color: #000000">السطر 6: </span><b><span style="color: #000000">معرف </span></b><span style="color: #000000">منطقة الصفحة التي سيتم تحديثها بواسطة الاستجابة لطلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 9: </span><b><span style="color: #000000">معرف </span></b><span style="color: #000000">منطقة الصفحة التي سيتم عرضها أثناء طلب Ajax — عادةً ما تكون صورة تحميل. هنا، سيتم عرض السطر 20. وهو يحتوي على صورة متحركة ترمز إلى حالة التحميل. في البداية، يتم إخفاء هذه الصورة بواسطة نمط [display: none]؛</span>
+  <li><span style="color: #000000">السطر 9: </span><b><span style="color: #000000">معرف </span></b><span style="color: #000000">منطقة الصفحة التي سيتم عرضها أثناء طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> — عادةً ما تكون صورة تحميل. هنا، سيتم عرض السطر 20. وهو يحتوي على صورة متحركة ترمز إلى حالة التحميل. في البداية، يتم إخفاء هذه الصورة بواسطة نمط [<bdi dir="ltr" class="odt-ltr-term">display: none</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 10: وقت الانتظار بالمللي ثانية قبل عرض الصورة المتحركة، وهو هنا 1 ثانية.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">رمز HTML الذي تم إنشاؤه بواسطة نموذج Ajax هو كما يلي:</span></p>
+<p><span style="color: #000000">رمز <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الذي تم إنشاؤه بواسطة نموذج <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> هو كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">form</span> <span style="color:#7f007f">action</span>=<span style="font-style:italic;color:#2a00ff">&quot;/Premier/Action01Post&quot;</span> <span style="color:#7f007f">data-ajax</span>=<span style="font-style:italic;color:#2a00ff">&quot;true&quot;</span> <span style="color:#7f007f">data-ajax-loading</span>=<span style="font-style:italic;color:#2a00ff">&quot;#loading&quot;</span> <span style="color:#7f007f">data-ajax-loading-duration</span>=<span style="font-style:italic;color:#2a00ff">&quot;1000&quot;</span> <span style="color:#7f007f">data-ajax-method</span>=<span style="font-style:italic;color:#2a00ff">&quot;post&quot;</span> <span style="color:#7f007f">data-ajax-mode</span>=<span style="font-style:italic;color:#2a00ff">&quot;replace&quot;</span> <span style="color:#7f007f">data-ajax-update</span>=<span style="font-style:italic;color:#2a00ff">&quot;#résultats&quot;</span> <span style="color:#7f007f">data-ajax-url</span>=<span style="font-style:italic;color:#2a00ff">&quot;/Premier/Action01Post&quot;</span> <span style="color:#7f007f">id</span>=<span style="font-style:italic;color:#2a00ff">&quot;formulaire&quot;</span> <span style="color:#7f007f">method</span>=<span style="font-style:italic;color:#2a00ff">&quot;post&quot;</span><span style="color:#008080">&gt;</span>    <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">table</span><span style="color:#008080">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
@@ -1448,7 +1450,7 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: علامة &lt;form&gt; التي تم إنشاؤها. لاحظ سمات [data-ajax-attr]، التي تعكس قيم الحقول في كائن [AjaxOptions] المرتبط بطلب Ajax. تتم إدارة هذه السمات بواسطة مكتبة Ajax. بدونها، تصبح علامة &lt;form&gt; كما يلي:</span>
+  <li><span style="color: #000000">السطر 1: علامة &lt;<bdi dir="ltr" class="odt-ltr-term">form</bdi>&gt; التي تم إنشاؤها. لاحظ سمات [<bdi dir="ltr" class="odt-ltr-term">data-ajax-attr</bdi>]، التي تعكس قيم الحقول في كائن [<bdi dir="ltr" class="odt-ltr-term">AjaxOptions</bdi>] المرتبط بطلب <bdi dir="ltr" class="odt-ltr-term">Ajax.</bdi> تتم إدارة هذه السمات بواسطة مكتبة <bdi dir="ltr" class="odt-ltr-term">Ajax.</bdi> بدونها، تصبح علامة &lt;<bdi dir="ltr" class="odt-ltr-term">form</bdi>&gt; كما يلي:</span>
   </li>
 </ul>
 
@@ -1465,10 +1467,10 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">هذا نموذج HTML قياسي. سيتم تنفيذ هذا الرمز إذا قام المستخدم بتعطيل JavaScript في متصفحه. عندئذٍ لن يتم استخدام السطرين 5 و6.</span></p>
+<p><span style="color: #000000">هذا نموذج <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> قياسي. سيتم تنفيذ هذا الرمز إذا قام المستخدم بتعطيل <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> في متصفحه. عندئذٍ لن يتم استخدام السطرين 5 و6.</span></p>
 <p><a id="refheading58172676630786"></a></p>
-<h3 id="733-action01post">7.3.3. <span style="color: #4f81bd">الإجراء [Action01Post]</span></h3>
-<p><span style="color: #000000">إجراء [Action01Post] الذي يتعامل مع طلب Ajax HTTP هو كما يلي:</span></p>
+<h3 id="733-action01post">7.3.3. <span style="color: #4f81bd">الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action01Post</bdi>]</span></h3>
+<p><span style="color: #000000">إجراء [<bdi dir="ltr" class="odt-ltr-term">Action01Post</bdi>] الذي يتعامل مع طلب <bdi dir="ltr" class="odt-ltr-term">Ajax HTTP</bdi> هو كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">HttpPost</span>]</span></span>
@@ -1507,31 +1509,31 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: لا يتعامل الإجراء إلا مع [POST]؛</span>
+  <li><span style="color: #000000">السطر 1: لا يتعامل الإجراء إلا مع [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 2: يقبل نموذج الإجراء التالي:</span>
     <ul>
-      <li><span style="color: #000000">[FormCollection postedData]: مجموعة القيم التي تم إرسالها بواسطة طلب Ajax POST،</span>
+      <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">FormCollection postedData</bdi>]: مجموعة القيم التي تم إرسالها بواسطة طلب <bdi dir="ltr" class="odt-ltr-term">Ajax POST</bdi>،</span>
       </li>
-      <li><span style="color: #000000">[SessionModel session]: عناصر الجلسة. هنا، نستخدم تقنية موصوفة في القسم 4.10؛</span>
+      <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">SessionModel session</bdi>]: عناصر الجلسة. هنا، نستخدم تقنية موصوفة في القسم 4.10؛</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">السطر 2: ستُرجع الإجراء جزءًا من HTML بدلاً من صفحة HTML كاملة؛</span>
+  <li><span style="color: #000000">السطر 2: ستُرجع الإجراء جزءًا من <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> بدلاً من صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> كاملة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 5: بشكل مصطنع، نتوقف لمدة ثانيتين لمحاكاة إجراء Ajax طويل؛</span>
+  <li><span style="color: #000000">السطر 5: بشكل مصطنع، نتوقف لمدة ثانيتين لمحاكاة إجراء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> طويل؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: يتم إنشاء مثيل لنموذج من النوع [ViewModel01]؛</span>
+  <li><span style="color: #000000">السطر 7: يتم إنشاء مثيل لنموذج من النوع [<bdi dir="ltr" class="odt-ltr-term">ViewModel01</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 9: يتم تهيئة وقت الحساب؛</span>
   </li>
-  <li><span style="color: #000000">السطر 11: نحاول تحديث نموذج [ViewModel01] بالقيم المنشورة. تذكر أن هناك قيمتين: قيمتي العددين A و B؛</span>
+  <li><span style="color: #000000">السطر 11: نحاول تحديث نموذج [<bdi dir="ltr" class="odt-ltr-term">ViewModel01</bdi>] بالقيم المنشورة. تذكر أن هناك قيمتين: قيمتي العددين <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛</span>
   </li>
   <li><span style="color: #000000">السطر 12: نتحقق مما إذا كان هذا التحديث ناجحًا؛</span>
   </li>
-  <li><span style="color: #000000">السطر 15: في حالة حدوث خطأ، يتم ملء حقل [Error] في النموذج؛</span>
+  <li><span style="color: #000000">السطر 15: في حالة حدوث خطأ، يتم ملء حقل [<bdi dir="ltr" class="odt-ltr-term">Error</bdi>] في النموذج؛</span>
   </li>
-  <li><span style="color: #000000">السطر 16: يتم عرض عرض جزئي [Action01Error.cshtml] باستخدام نموذج [ViewModel01]؛</span>
+  <li><span style="color: #000000">السطر 16: يتم عرض عرض جزئي [<bdi dir="ltr" class="odt-ltr-term">Action01Error.cshtml</bdi>] باستخدام نموذج [<bdi dir="ltr" class="odt-ltr-term">ViewModel01</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 19-24: في كل مرة أخرى، يتم محاكاة خطأ؛</span>
   </li>
@@ -1541,16 +1543,16 @@
   </li>
   <li><span style="color: #000000">السطر 22: يتم وضع رسالة الخطأ في النموذج؛</span>
   </li>
-  <li><span style="color: #000000">السطر 23: يتم عرض عرض جزئي [Action01Error.cshtml] باستخدام النموذج [ViewModel01]؛</span>
+  <li><span style="color: #000000">السطر 23: يتم عرض عرض جزئي [<bdi dir="ltr" class="odt-ltr-term">Action01Error.cshtml</bdi>] باستخدام النموذج [<bdi dir="ltr" class="odt-ltr-term">ViewModel01</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 26-29: يتم إجراء حسابات حسابية على الأرقام A و B، ويتم وضع النتائج في نموذج العرض كسلاسل؛</span>
+  <li><span style="color: #000000">الأسطر 26-29: يتم إجراء حسابات حسابية على الأرقام <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>، ويتم وضع النتائج في نموذج العرض كسلاسل؛</span>
   </li>
-  <li><span style="color: #000000">السطر 31: يتم عرض عرض جزئي [Action01Success.cshtml] باستخدام النموذج [ViewModel01]؛</span>
+  <li><span style="color: #000000">السطر 31: يتم عرض عرض جزئي [<bdi dir="ltr" class="odt-ltr-term">Action01Success.cshtml</bdi>] باستخدام النموذج [<bdi dir="ltr" class="odt-ltr-term">ViewModel01</bdi>]؛</span>
   </li>
 </ul>
 <p><a id="refheading58174676630786"></a></p>
-<h3 id="734-action01error">7.3.4. <span style="color: #4f81bd">عرض [Action01Error]</span></h3>
-<p>العرض [Action01Error.cshtml] هو كما يلي:</p>
+<h3 id="734-action01error">7.3.4. <span style="color: #4f81bd">عرض [<bdi dir="ltr" class="odt-ltr-term">Action01Error</bdi>]</span></h3>
+<p>العرض [<bdi dir="ltr" class="odt-ltr-term">Action01Error.cshtml</bdi>] هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@model Exemple_04.Models.</span><span style="color:#2b91af">ViewModel01</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Résultats</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1558,7 +1560,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">p</span><span style="color:#000000"> </span><span style="color:#ff0000">style</span><span style="color:#0000ff">=&quot;</span><span style="color:#ff0000">color</span><span style="color:#000000">: </span><span style="color:#0000ff">red</span><span style="color:#000000">;</span><span style="color:#0000ff">&quot;&gt;</span><span style="color:#000000">Une erreur s&#x27;est produite : @Model.Erreur</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">p</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>يرجى ملاحظة أن هذا الجزء من HTML سيتم إرساله استجابةً لطلب HTTP من نوع POST عبر Ajax، وسيتم وضعه في الصفحة ضمن المنطقة التي تحمل المعرف [results]. وتأتي كل هذه المعلومات من إعدادات Ajax المستخدمة في الصفحة الرئيسية [Action01Get.cshtml]:</p>
+<p>يرجى ملاحظة أن هذا الجزء من <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> سيتم إرساله استجابةً لطلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> من نوع <bdi dir="ltr" class="odt-ltr-term">POST</bdi> عبر <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، وسيتم وضعه في الصفحة ضمن المنطقة التي تحمل المعرف [<bdi dir="ltr" class="odt-ltr-term">results</bdi>]. وتأتي كل هذه المعلومات من إعدادات <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> المستخدمة في الصفحة الرئيسية [<bdi dir="ltr" class="odt-ltr-term">Action01Get.cshtml</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@model Exemple_04.Models.</span><span style="color:#2b91af">ViewModel01</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">@{</span></span>
@@ -1580,8 +1582,8 @@
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001ED000001D0C5DC1D96.png" width="322" height="303" style="width:8.513cm;height:8.012cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001ED000001D0C5DC1D96.png" /></p>
 <p><a id="refheading58176676630786"></a></p>
-<h3 id="735-action01success">7.3.5. <span style="color: #4f81bd">طريقة العرض [Action01Success]</span></h3>
-<p><span style="color: #000000">عرض [Action01Success.cshtml] كما يلي:</span></p>
+<h3 id="735-action01success">7.3.5. <span style="color: #4f81bd">طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action01Success</bdi>]</span></h3>
+<p><span style="color: #000000">عرض [<bdi dir="ltr" class="odt-ltr-term">Action01Success.cshtml</bdi>] كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">@model Exemple_04.Models.<span style="color:#2b91af">ViewModel01</span></span></span>
@@ -1594,14 +1596,14 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">مرة أخرى، سيتم إرسال هذا التدفق الجزئي لـ HTML استجابة لطلب HTTP من نوع POST عبر Ajax ووضعه على الصفحة في المنطقة التي تحمل المعرف [results]:</span></p>
+<p><span style="color: #000000">مرة أخرى، سيتم إرسال هذا التدفق الجزئي لـ <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> استجابة لطلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> من نوع <bdi dir="ltr" class="odt-ltr-term">POST</bdi> عبر <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> ووضعه على الصفحة في المنطقة التي تحمل المعرف [<bdi dir="ltr" class="odt-ltr-term">results</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001E60000023EEF6674F0.png" width="322" height="380" style="width:8.513cm;height:10.054cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E60000023EEF6674F0.png" /></p>
 <p><a id="refheading58178676630786"></a>
 <a id="ajax-01-session"></a></p>
-<h3 id="736-g">7.3.6. <span style="color: #4f81bd">إدارة جلسات G</span></h3>
-<p><span style="color: #000000">لقد رأينا أن [Action01Post] يستخدم الجلسة. نموذج الجلسة هو النوع [SessionModel] التالي:</span></p>
+<h3 id="736-g">7.3.6. <span style="color: #4f81bd">إدارة جلسات <bdi dir="ltr" class="odt-ltr-term">G</bdi></span></h3>
+<p><span style="color: #000000">لقد رأينا أن [<bdi dir="ltr" class="odt-ltr-term">Action01Post</bdi>] يستخدم الجلسة. نموذج الجلسة هو النوع [<bdi dir="ltr" class="odt-ltr-term">SessionModel</bdi>] التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System;</span></span></span>
@@ -1614,7 +1616,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>يتم تهيئة الجلسة في [Global.asax]:</p>
+<p>يتم تهيئة الجلسة في [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">protected</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> Session_Start()</span></span></span>
@@ -1625,7 +1627,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>يتم ربط الجلسة بنموذج في [Application_Start]:</p>
+<p>يتم ربط الجلسة بنموذج في [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>_Start]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">protected</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> Application_Start()</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
@@ -1635,7 +1637,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>تم وصف فئة [SessionModelBinder].</p>
+<p>تم وصف فئة [<bdi dir="ltr" class="odt-ltr-term">SessionModelBinder</bdi>].</p>
 <p><a id="refheading58180676630786"></a></p>
 <h3 id="737">7.3.7. <span style="color: #4f81bd">إدارة صورة العنصر النائب</span></h3>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1666,12 +1668,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 </code></pre></div>
 
-<p>عند بدء طلب Ajax، يتم عرض المنطقة التي تحمل المعرف [loading] في السطر 7 بعد ثانية واحدة [السطر 8]. هذه المنطقة هي الصورة من السطر 21، والتي كانت مخفية في البداية. وينتج عن ذلك الواجهة التالية:</p>
+<p>عند بدء طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، يتم عرض المنطقة التي تحمل المعرف [<bdi dir="ltr" class="odt-ltr-term">loading</bdi>] في السطر 7 بعد ثانية واحدة [السطر 8]. هذه المنطقة هي الصورة من السطر 21، والتي كانت مخفية في البداية. وينتج عن ذلك الواجهة التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000257000000E96C4BE1FD.png" width="300" height="117" style="display:inline-block; margin:4px;width:7.925cm;height:3.083cm;" class="odt-zoomable" data-zoom-src="images/1000000000000257000000E96C4BE1FD.png" /></td></tr></table>
 
 <p><a id="refheading58182676630786"></a></p>
-<h3 id="738-calculate">7.3.8. <span style="color: #4f81bd">التعامل مع رابط [Calculate]</span></h3>
-<p>دعونا نفحص رابط [Calculate] في الصفحة الرئيسية [Action01Get.cshtml]:</p>
+<h3 id="738-calculate">7.3.8. <span style="color: #4f81bd">التعامل مع رابط [<bdi dir="ltr" class="odt-ltr-term">Calculate</bdi>]</span></h3>
+<p>دعونا نفحص رابط [<bdi dir="ltr" class="odt-ltr-term">Calculate</bdi>] في الصفحة الرئيسية [<bdi dir="ltr" class="odt-ltr-term">Action01Get.cshtml</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">meta</span><span style="color:#000000"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=&quot;viewport&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">content</span><span style="color:#0000ff">=&quot;width=device-width&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
@@ -1698,7 +1700,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 18: يؤدي النقر على رابط [Calculate] إلى تشغيل دالة JS [postForm]. تم تعريف هذه الدالة في ملف [myScripts-01.js] في السطر 5. النص البرمجي كالتالي:
+  <li>السطر 18: يؤدي النقر على رابط [<bdi dir="ltr" class="odt-ltr-term">Calculate</bdi>] إلى تشغيل دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">postForm</bdi>]. تم تعريف هذه الدالة في ملف [<bdi dir="ltr" class="odt-ltr-term">myScripts-01.js</bdi>] في السطر 5. النص البرمجي كالتالي:
   </li>
 </ul>
 
@@ -1744,35 +1746,35 @@
 <span class="odt-code-line"><span class="odt-code-line-content">});</span></span>
 </code></pre></div>
 
-<p>تمت تغطية الوظائف الواردة في الأسطر 19–37 سابقًا في القسم 6.1. وهي تتولى عملية تدويل الصفحات. ولن نعيد تناولها هنا. أما في الأسطر 1–17، فنقوم يدويًّا بإجراء استدعاء Ajax، وهو ما كانت مكتبة Ajax الخاصة بالمشروع تتولى تنفيذه سابقًا في حالة زر [Calculate]. ولهذا الغرض، نستخدم مكتبة jQuery الخاصة بالمشروع.</p>
+<p>تمت تغطية الوظائف الواردة في الأسطر 19–37 سابقًا في القسم 6.1. وهي تتولى عملية تدويل الصفحات. ولن نعيد تناولها هنا. أما في الأسطر 1–17، فنقوم يدويًّا بإجراء استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، وهو ما كانت مكتبة <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> الخاصة بالمشروع تتولى تنفيذه سابقًا في حالة زر [<bdi dir="ltr" class="odt-ltr-term">Calculate</bdi>]. ولهذا الغرض، نستخدم مكتبة <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> الخاصة بالمشروع.</p>
 <ul>
-  <li>السطر 3: إشارة إلى المكون <b>الذي يحمل المعرف </b>[loading]. [$(&quot;#loading&quot;)] تُرجع مجموعة العناصر التي تحمل المعرف [loading]. لا يوجد سوى عنصر واحد؛
+  <li>السطر 3: إشارة إلى المكون <b>الذي يحمل المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">loading</bdi>]. [$(&quot;#<bdi dir="ltr" class="odt-ltr-term">loading</bdi>&quot;)] تُرجع مجموعة العناصر التي تحمل المعرف [<bdi dir="ltr" class="odt-ltr-term">loading</bdi>]. لا يوجد سوى عنصر واحد؛
   </li>
-  <li>السطر 4: إشارة إلى المكون الذي يحمل <b>المعرف </b>[form]؛
+  <li>السطر 4: إشارة إلى المكون الذي يحمل <b>المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">form</bdi>]؛
   </li>
-  <li>السطر 5: إشارة إلى المكون الذي يحمل <b>المعرف </b>[results]؛
+  <li>السطر 5: إشارة إلى المكون الذي يحمل <b>المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">results</bdi>]؛
   </li>
-  <li>السطر 6: استدعاء Ajax مع خياراته؛
+  <li>السطر 6: استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> مع خياراته؛
   </li>
-  <li>السطر 7: عنوان URL الهدف لاستدعاء Ajax؛
+  <li>السطر 7: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف لاستدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛
   </li>
-  <li>السطر 8: طريقة HTTP المستخدمة؛
+  <li>السطر 8: طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> المستخدمة؛
   </li>
-  <li>السطر 9: البيانات المرسلة. [form.serialize] ينشئ سلسلة POST [A=val1&amp;B=val2] للنموذج <b>الذي يحمل المعرف </b>[form]؛
+  <li>السطر 9: البيانات المرسلة. [<bdi dir="ltr" class="odt-ltr-term">form.serialize</bdi>] ينشئ سلسلة <bdi dir="ltr" class="odt-ltr-term">POST</bdi> [<bdi dir="ltr" class="odt-ltr-term">A</bdi>=<bdi dir="ltr" class="odt-ltr-term">val1</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">B</bdi>=<bdi dir="ltr" class="odt-ltr-term">val2</bdi>] للنموذج <b>الذي يحمل المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">form</bdi>]؛
   </li>
-  <li>السطر 10: نوع البيانات المتوقع في الاستجابة. نعلم أن الخادم سيعيد دفق HTML؛
+  <li>السطر 10: نوع البيانات المتوقع في الاستجابة. نعلم أن الخادم سيعيد دفق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi>؛
   </li>
-  <li>السطر 11: الطريقة التي يجب تنفيذها عند بدء الطلب. هنا، نحدد أنه يجب عرض المكون <b>الذي يحمل المعرف </b>[loading]. هذه هي صورة التحميل المتحركة؛
+  <li>السطر 11: الطريقة التي يجب تنفيذها عند بدء الطلب. هنا، نحدد أنه يجب عرض المكون <b>الذي يحمل المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">loading</bdi>]. هذه هي صورة التحميل المتحركة؛
   </li>
-  <li>السطر 12: الطريقة التي يجب تنفيذها في حالة نجاح طلب Ajax. المعلمة [data] هي الاستجابة الكاملة من الخادم. نعلم أن هذا تيار HTML؛
+  <li>السطر 12: الطريقة التي يجب تنفيذها في حالة نجاح طلب <bdi dir="ltr" class="odt-ltr-term">Ajax.</bdi> المعلمة [<bdi dir="ltr" class="odt-ltr-term">data</bdi>] هي الاستجابة الكاملة من الخادم. نعلم أن هذا تيار <bdi dir="ltr" class="odt-ltr-term">HTML</bdi>؛
   </li>
   <li>السطر 13: نخفي مؤشر التحميل؛
   </li>
-  <li>السطر 14: نقوم بتحديث المكون الذي يحمل <b>المعرف </b>[results] باستخدام HTML من المعلمة [data].
+  <li>السطر 14: نقوم بتحديث المكون الذي يحمل <b>المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">results</bdi>] باستخدام <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> من المعلمة [<bdi dir="ltr" class="odt-ltr-term">data</bdi>].
   </li>
 </ul>
 
-<p><a id="anomalie-validation-client"></a>ندعو القارئ إلى اختبار الرابط [Calculate]. يعمل هذا الرابط تمامًا مثل الزر [Calculate]، باستثناء رسالة الخطأ &quot; .&quot; بمجرد استخدام هذا الرابط، يمكن إدخال قيم غير صالحة لـ A و B:</p>
+<p><a id="anomalie-validation-client"></a>ندعو القارئ إلى اختبار الرابط [<bdi dir="ltr" class="odt-ltr-term">Calculate</bdi>]. يعمل هذا الرابط تمامًا مثل الزر [<bdi dir="ltr" class="odt-ltr-term">Calculate</bdi>]، باستثناء رسالة الخطأ &quot; .&quot; بمجرد استخدام هذا الرابط، يمكن إدخال قيم غير صالحة لـ <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056B0000034D1D6A7911.png" width="680" height="414" style="display:inline-block; margin:4px;width:17.999cm;height:10.966cm;" class="odt-zoomable" data-zoom-src="images/100000000000056B0000034D1D6A7911.png" /></td></tr></table>
 
 <ul>
@@ -1780,17 +1782,17 @@
   </li>
   <li>في [3]، نقرنا على رابط [حساب]؛
   </li>
-  <li>في [4]، حدث [POST] لأننا تلقينا الاستجابة [4].
+  <li>في [4]، حدث [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] لأننا تلقينا الاستجابة [4].
   </li>
 </ul>
 
-<p>عندما تكون القيم غير صالحة ونضغط على زر [حساب]، لا يحدث طلب [POST] إلى الخادم. في نفس السيناريو، يؤدي استخدام رابط [حساب] إلى تشغيل طلب [POST] إلى الخادم. لذلك، هناك سلوك لزر [حساب] لم نتمكن من إعادة إنتاجه باستخدام رابط [حساب]. بدلاً من محاولة حل هذه المشكلة الآن، سنتركها لمثال لاحق سيوضح أيضًا مشكلة أخرى تتعلق بالتحقق من صحة البيانات من جانب العميل.</p>
+<p>عندما تكون القيم غير صالحة ونضغط على زر [حساب]، لا يحدث طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] إلى الخادم. في نفس السيناريو، يؤدي استخدام رابط [حساب] إلى تشغيل طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] إلى الخادم. لذلك، هناك سلوك لزر [حساب] لم نتمكن من إعادة إنتاجه باستخدام رابط [حساب]. بدلاً من محاولة حل هذه المشكلة الآن، سنتركها لمثال لاحق سيوضح أيضًا مشكلة أخرى تتعلق بالتحقق من صحة البيانات من جانب العميل.</p>
 <p><a id="refheading58184676630786"></a></p>
-<h2 id="74-html-json">7.4. <span style="color: #4f81bd">تحديث صفحة HTML باستخدام موجز JSON</span></h2>
-<p>في المثال السابق، استجاب خادم الويب لطلب Ajax HTTP بتدفق HTML. احتوى هذا التدفق على بيانات مصحوبة بتنسيق HTML. سنعيد النظر في المثال السابق، هذه المرة باستخدام استجابات JSON (ترميز كائنات JavaScript) التي تحتوي على البيانات فقط. وتتمثل الميزة في نقل عدد أقل من البايتات.</p>
+<h2 id="74-html-json">7.4. <span style="color: #4f81bd">تحديث صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> باستخدام موجز <bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span></h2>
+<p>في المثال السابق، استجاب خادم الويب لطلب <bdi dir="ltr" class="odt-ltr-term">Ajax HTTP</bdi> بتدفق <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> احتوى هذا التدفق على بيانات مصحوبة بتنسيق <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> سنعيد النظر في المثال السابق، هذه المرة باستخدام استجابات <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> (ترميز كائنات <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi>) التي تحتوي على البيانات فقط. وتتمثل الميزة في نقل عدد أقل من البايتات.</p>
 <p><a id="refheading58186676630786"></a></p>
-<h3 id="741-action02get">7.4.1. <span style="color: #4f81bd">الإجراء [Action02Get]</span></h3>
-<p>سيكون الإجراء [Action02Get] نقطة الدخول للتطبيق الجديد. وفيما يلي كوده:</p>
+<h3 id="741-action02get">7.4.1. <span style="color: #4f81bd">الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02Get</bdi>]</span></h3>
+<p>سيكون الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02Get</bdi>] نقطة الدخول للتطبيق الجديد. وفيما يلي كوده:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@model Exemple_04.Models.</span><span style="color:#2b91af">ViewModel02</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">@{</span></span>
@@ -1849,26 +1851,26 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 4–14: خيارات استدعاء Ajax؛
+  <li>الأسطر 4–14: خيارات استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛
   </li>
-  <li>السطر 10: دالة JS التي يتم تنفيذها عند بدء الطلب. يتم تعريف هذه الدالة في ملف JS المشار إليه في السطر 24؛
+  <li>السطر 10: دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> التي يتم تنفيذها عند بدء الطلب. يتم تعريف هذه الدالة في ملف <bdi dir="ltr" class="odt-ltr-term">JS</bdi> المشار إليه في السطر 24؛
   </li>
-  <li>السطر 11: دالة JS التي يجب تنفيذها في حالة فشل الطلب؛
+  <li>السطر 11: دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> التي يجب تنفيذها في حالة فشل الطلب؛
   </li>
-  <li>السطر 12: دالة JS التي يجب تنفيذها في حالة نجاح الطلب؛
+  <li>السطر 12: دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> التي يجب تنفيذها في حالة نجاح الطلب؛
   </li>
-  <li>السطر 13: دالة JS التي يجب تنفيذها بعد أن يعود طلب Ajax بنتيجته (فشل أو نجاح)؛
+  <li>السطر 13: دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> التي يجب تنفيذها بعد أن يعود طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> بنتيجته (فشل أو نجاح)؛
   </li>
-  <li>الأسطر 40-43: منطقة ذات المعرف [header]؛
+  <li>الأسطر 40-43: منطقة ذات المعرف [<bdi dir="ltr" class="odt-ltr-term">header</bdi>]؛
   </li>
-  <li>الأسطر 44-49: منطقة ذات المعرف [results]. ستعرض نتائج العمليات الحسابية الأربع؛
+  <li>الأسطر 44-49: منطقة ذات المعرف [<bdi dir="ltr" class="odt-ltr-term">results</bdi>]. ستعرض نتائج العمليات الحسابية الأربع؛
   </li>
-  <li>الأسطر 50-52: منطقة معرف [error]. ستعرض أي رسائل خطأ.
+  <li>الأسطر 50-52: منطقة معرف [<bdi dir="ltr" class="odt-ltr-term">error</bdi>]. ستعرض أي رسائل خطأ.
   </li>
 </ul>
 <p><a id="refheading58188676630786"></a></p>
-<h3 id="742-action02post">7.4.2. <span style="color: #4f81bd">الإجراء [Action02Post]</span></h3>
-<p>يتم معالجة طلب Ajax بواسطة الإجراء [Action02Post] التالي:</p>
+<h3 id="742-action02post">7.4.2. <span style="color: #4f81bd">الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02Post</bdi>]</span></h3>
+<p>يتم معالجة طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> بواسطة الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02Post</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">[</span><span style="color:#2b91af">HttpPost</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">JsonResult</span><span style="color:#000000"> Action02Post(</span><span style="color:#2b91af">FormCollection</span><span style="color:#000000"> postedData, </span><span style="color:#2b91af">SessionModel</span><span style="color:#000000"> session)</span></span></span>
@@ -1905,16 +1907,16 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 2: تُرجع الطريقة نوع [JsonResult]، أي نص بتنسيق JSON؛
+  <li>السطر 2: تُرجع الطريقة نوع [<bdi dir="ltr" class="odt-ltr-term">JsonResult</bdi>]، أي نص بتنسيق <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>السطر 16: يتم إرجاع المعلومات كمثيل لفئة مجهولة تم تسلسلها إلى JSON. تم تقديم الطريقة [getErrorMessagesFor] بالفعل. ستكون سلسلة JSON المرسلة إلى المتصفح بالشكل التالي:
+  <li>السطر 16: يتم إرجاع المعلومات كمثيل لفئة مجهولة تم تسلسلها إلى <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> تم تقديم الطريقة [<bdi dir="ltr" class="odt-ltr-term">getErrorMessagesFor</bdi>] بالفعل. ستكون سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المرسلة إلى المتصفح بالشكل التالي:
   </li>
 </ul>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{&quot;Erreur&quot;:&quot;[erreur aléatoire]&quot;,&quot;HeureCalcul&quot;:&quot;05:31:37&quot;}
 </code></pre></div>
 <ul>
-  <li>السطر 31: نفس النهج بالنسبة للنتائج الحسابية. هذه المرة، ستكون سلسلة JSON المرسلة إلى المتصفح بالشكل التالي:
+  <li>السطر 31: نفس النهج بالنسبة للنتائج الحسابية. هذه المرة، ستكون سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المرسلة إلى المتصفح بالشكل التالي:
   </li>
 </ul>
 
@@ -1922,7 +1924,7 @@
 </code></pre></div>
 <p><a id="refheading58190676630786"></a></p>
 <h3 id="743">7.4.3. <span style="color: #4f81bd">كود جافا سكريبت من جانب العميل</span></h3>
-<p>دعونا نراجع تكوين استدعاء Ajax في صفحة HTML المرسلة إلى متصفح العميل:</p>
+<p>دعونا نراجع تكوين استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المرسلة إلى متصفح العميل:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2b91af">AjaxOptions</span><span style="color:#000000"> ajaxOpts = </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">AjaxOptions</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
@@ -1937,7 +1939,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">};    </span></span>
 </code></pre></div>
 
-<p>يتم تعريف وظائف JS المشار إليها في الأسطر 7–10 (على يمين علامة &quot;=&quot;) في الملف [myScripts-02.js] التالي:</p>
+<p>يتم تعريف وظائف <bdi dir="ltr" class="odt-ltr-term">JS</bdi> المشار إليها في الأسطر 7–10 (على يمين علامة &quot;=&quot;) في الملف [<bdi dir="ltr" class="odt-ltr-term">myScripts-02.js</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// global data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">var</span><span style="color:#000000"> entete;</span></span></span>
@@ -1998,15 +2000,15 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 19: الدالة JS التي يتم تنفيذها عند انتهاء تحميل الصفحة في المتصفح؛
+  <li>السطر 19: الدالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> التي يتم تنفيذها عند انتهاء تحميل الصفحة في المتصفح؛
   </li>
   <li>الأسطر 20–30: نسترد مراجع جميع مكونات الصفحة التي نهتم بها. البحث عن مكون في الصفحة يتطلب تكلفة، لذا من الأفضل القيام بذلك مرة واحدة فقط؛
   </li>
-  <li>الأسطر 33–35: يتم إخفاء مكونات [header] و[results] و[loading]؛
+  <li>الأسطر 33–35: يتم إخفاء مكونات [<bdi dir="ltr" class="odt-ltr-term">header</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">results</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">loading</bdi>]؛
   </li>
 </ul>
 
-<p>عندما يبدأ طلب Ajax، يتم تنفيذ الدالة التالية:</p>
+<p>عندما يبدأ طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، يتم تنفيذ الدالة التالية:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// start</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">function</span><span style="color:#000000"> OnBegin() {</span></span></span>
@@ -2020,13 +2022,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 4: يتم عرض مكون [loading]. هذه هي الصورة المتحركة؛
+  <li>السطر 4: يتم عرض مكون [<bdi dir="ltr" class="odt-ltr-term">loading</bdi>]. هذه هي الصورة المتحركة؛
   </li>
-  <li>الأسطر 6–8: يتم إخفاء مكونات [header] و[results] و[error]؛
+  <li>الأسطر 6–8: يتم إخفاء مكونات [<bdi dir="ltr" class="odt-ltr-term">header</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">results</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">error</bdi>]؛
   </li>
 </ul>
 
-<p>إذا نجح طلب Ajax، يتم تنفيذ كود JS التالي:</p>
+<p>إذا نجح طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، يتم تنفيذ كود <bdi dir="ltr" class="odt-ltr-term">JS</bdi> التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
 <span class="odt-code-line"><span class="odt-code-line-content">// réussite</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">function</span><span style="color:#000000"> OnSuccess(data) {</span></span></span>
@@ -2048,44 +2050,44 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لفهم هذا الكود، عليك أن تتذكر سلسلتي JSON اللتين قد يتم إرسالهما استجابة للمتصفح:</span></p>
+<p><span style="color: #000000">لفهم هذا الكود، عليك أن تتذكر سلسلتي <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> اللتين قد يتم إرسالهما استجابة للمتصفح:</span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{&quot;Erreur&quot;:&quot;[erreur aléatoire]&quot;,&quot;HeureCalcul&quot;:&quot;05:31:37&quot;}
 </code></pre></div>
 <p>في حالة حدوث خطأ؛ وإلا، فإن السلسلة:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>{&quot;Erreur&quot;:&quot;&quot;,&quot;AplusB&quot;:&quot;4&quot;,&quot;AmoinsB&quot;:&quot;-2&quot;,&quot;AmultipliéparB&quot;:&quot;3&quot;,&quot;AdiviséparB&quot;:&quot;0,333333333333333&quot;,&quot;HeureCalcul&quot;:&quot;05:52:17&quot;}
 </code></pre></div>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">إذا أطلقنا على هذه السلسلة اسم [data]، يتم الحصول على قيمة حقل [Error] باستخدام الترميز [</span><strong><span style="color: #000000">data.Error</span></strong><span style="color: #000000">] أو [</span><strong><span style="color: #000000">data[&quot;Error&quot;]</span></strong><span style="color: #000000">], حسب الرغبة. وينطبق الأمر نفسه على الحقول الأخرى في سلسلة JSON. بالإضافة إلى ذلك، لتعيين نص غير منسق لمكون </span><strong><span style="color: #000000">بمعرف </span></strong><span style="color: #000000">X، نكتب [</span><strong><span style="color: #000000">X.text(string)</span></strong><span style="color: #000000">]. لنعد إلى كود الدالة [OnSuccess]:</span></p>
+<p><span style="color: #000000">إذا أطلقنا على هذه السلسلة اسم [<bdi dir="ltr" class="odt-ltr-term">data</bdi>]، يتم الحصول على قيمة حقل [<bdi dir="ltr" class="odt-ltr-term">Error</bdi>] باستخدام الترميز [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">data.Error</bdi></span></strong><span style="color: #000000">] أو [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">data</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">Error</bdi>&quot;]</span></strong><span style="color: #000000">], حسب الرغبة. وينطبق الأمر نفسه على الحقول الأخرى في سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> بالإضافة إلى ذلك، لتعيين نص غير منسق لمكون </span><strong><span style="color: #000000">بمعرف </span></strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">X</bdi>، نكتب [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">X.text</bdi>(<bdi dir="ltr" class="odt-ltr-term">string</bdi>)</span></strong><span style="color: #000000">]. لنعد إلى كود الدالة [<bdi dir="ltr" class="odt-ltr-term">OnSuccess</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: [data] هي سلسلة JSON المستلمة؛</span>
+  <li><span style="color: #000000">السطر 2: [<bdi dir="ltr" class="odt-ltr-term">data</bdi>] هي سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المستلمة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 4: يتلقى المكون [calculationTime] قيمته؛</span>
+  <li><span style="color: #000000">السطر 4: يتلقى المكون [<bdi dir="ltr" class="odt-ltr-term">calculationTime</bdi>] قيمته؛</span>
   </li>
-  <li><span style="color: #000000">السطر 5: يتم عرض المكون [entete]؛</span>
+  <li><span style="color: #000000">السطر 5: يتم عرض المكون [<bdi dir="ltr" class="odt-ltr-term">entete</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 6: يتحقق من حقل [Error] في سلسلة JSON؛</span>
+  <li><span style="color: #000000">السطر 6: يتحقق من حقل [<bdi dir="ltr" class="odt-ltr-term">Error</bdi>] في سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: يتلقى المكون [msg] قيمته؛</span>
+  <li><span style="color: #000000">السطر 7: يتلقى المكون [<bdi dir="ltr" class="odt-ltr-term">msg</bdi>] قيمته؛</span>
   </li>
-  <li><span style="color: #000000">السطر 8: يتم عرض المكون [error]؛</span>
+  <li><span style="color: #000000">السطر 8: يتم عرض المكون [<bdi dir="ltr" class="odt-ltr-term">error</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 9: هذا كل شيء بالنسبة لحالة الخطأ؛</span>
   </li>
-  <li><span style="color: #000000">السطر 12: يتلقى المكون [AplusB] قيمته؛</span>
+  <li><span style="color: #000000">السطر 12: يتلقى المكون [<bdi dir="ltr" class="odt-ltr-term">AplusB</bdi>] قيمته؛</span>
   </li>
-  <li><span style="color: #000000">السطر 13: يتلقى المكون [AminusB] قيمته؛</span>
+  <li><span style="color: #000000">السطر 13: يتلقى المكون [<bdi dir="ltr" class="odt-ltr-term">AminusB</bdi>] قيمته؛</span>
   </li>
-  <li><span style="color: #000000">السطر 14: يتلقى المكون [AmultipliedbyB] قيمته؛</span>
+  <li><span style="color: #000000">السطر 14: يتلقى المكون [<bdi dir="ltr" class="odt-ltr-term">AmultipliedbyB</bdi>] قيمته؛</span>
   </li>
-  <li><span style="color: #000000">السطر 15: يتم تعيين قيمة للمكون [AdividedbyB]؛</span>
+  <li><span style="color: #000000">السطر 15: يتم تعيين قيمة للمكون [<bdi dir="ltr" class="odt-ltr-term">AdividedbyB</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 16: يتم عرض المكون [results].</span>
+  <li><span style="color: #000000">السطر 16: يتم عرض المكون [<bdi dir="ltr" class="odt-ltr-term">results</bdi>].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">سيتم تنفيذ الدالة [</span><a id="onfailure"></a><span style="color: #000000"> OnFailure] في حالة فشل طلب Ajax HTTP. يتم تحديد هذا الفشل من خلال رمز حالة HTTP الذي يرجعه الخادم. على سبيل المثال، يشير الرمز 500 [Internal Server Error] إلى أن الخادم لم يتمكن من معالجة الطلب. الدالة [OnFailure] هي كما يلي:</span></p>
+<p><span style="color: #000000">سيتم تنفيذ الدالة [</span><a id="onfailure"></a><span style="color: #000000"> <bdi dir="ltr" class="odt-ltr-term">OnFailure</bdi>] في حالة فشل طلب <bdi dir="ltr" class="odt-ltr-term">Ajax HTTP.</bdi> يتم تحديد هذا الفشل من خلال رمز حالة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الذي يرجعه الخادم. على سبيل المثال، يشير الرمز 500 [<bdi dir="ltr" class="odt-ltr-term">Internal Server Error</bdi>] إلى أن الخادم لم يتمكن من معالجة الطلب. الدالة [<bdi dir="ltr" class="odt-ltr-term">OnFailure</bdi>] هي كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// error</span></span>
@@ -2097,7 +2099,7 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">نقوم ببساطة بعرض مربع حوار يحتوي على الخطأ الذي حدث. في الواقع، يجب أن نكون أكثر تحديدًا. سنقترح قريبًا حلاً آخر.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">أخيرًا، يتم تنفيذ الدالة [OnComplete] عند اكتمال الطلب، سواء نجح أم فشل.</span></p>
+<p><span style="color: #000000">أخيرًا، يتم تنفيذ الدالة [<bdi dir="ltr" class="odt-ltr-term">OnComplete</bdi>] عند اكتمال الطلب، سواء نجح أم فشل.</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// end of query</span></span>
@@ -2108,7 +2110,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لاحظ أن تكوين استدعاء Ajax في عرض [Action02Get.cshtml] هو الذي يتسبب في استدعاء هذه الوظائف المختلفة:</span></p>
+<p><span style="color: #000000">لاحظ أن تكوين استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> في عرض [<bdi dir="ltr" class="odt-ltr-term">Action02Get.cshtml</bdi>] هو الذي يتسبب في استدعاء هذه الوظائف المختلفة:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2b91af">AjaxOptions</span><span style="color:#000000"> ajaxOpts = </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">AjaxOptions</span></span></span>
@@ -2122,15 +2124,15 @@
 </code></pre></div>
 
 <p><a id="refheading58192676630786"></a></p>
-<h3 id="744-calculate">7.4.4. <span style="color: #4f81bd">رابط [Calculate]</span></h3>
-<p><span style="color: #000000">فيما يلي كود HTML للرابط [Calculate] في طريقة العرض [Action02Get.cshtml]:</span></p>
+<h3 id="744-calculate">7.4.4. <span style="color: #4f81bd">رابط [<bdi dir="ltr" class="odt-ltr-term">Calculate</bdi>]</span></h3>
+<p><span style="color: #000000">فيما يلي كود <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> للرابط [<bdi dir="ltr" class="odt-ltr-term">Calculate</bdi>] في طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action02Get.cshtml</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">a</span> <span style="color:#ff0000">href</span><span style="color:#0000ff">=&quot;javascript:postForm()&quot;&gt;</span>Calculer<span style="color:#0000ff">&lt;/</span><span style="color:#800000">a</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">توجد دالة JS [postForm] في الملف المستورد [myScripts-02.js]:</span></p>
+<p><span style="color: #000000">توجد دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">postForm</bdi>] في الملف المستورد [<bdi dir="ltr" class="odt-ltr-term">myScripts-02.js</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span> <span style="color:#ff0000">type</span><span style="color:#0000ff">=&quot;text/javascript&quot;</span> <span style="color:#ff0000">src</span><span style="color:#0000ff">=&quot;~/Scripts/myScripts-02.js&quot;&gt;&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -2159,28 +2161,28 @@
 <p><span style="color: #000000">لقد صادفنا بالفعل كودًا مشابهًا.</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 4: عنوان URL الهدف لنداء Ajax؛</span>
+  <li><span style="color: #000000">السطر 4: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف لنداء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 5: طريقة HTTP المستخدمة في استدعاء Ajax؛</span>
+  <li><span style="color: #000000">السطر 5: طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> المستخدمة في استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 6: القيم المنشورة. هذه هي نتيجة تسلسل قيم النموذج. يُشار إلى النموذج، المحدد بواسطة </span><b><span style="color: #000000">المعرف </span></b><span style="color: #000000">[form]، بواسطة المتغير [form]. سيكون [data] سلسلة في النموذج [A=val1&amp;B=val2]؛</span>
+  <li><span style="color: #000000">السطر 6: القيم المنشورة. هذه هي نتيجة تسلسل قيم النموذج. يُشار إلى النموذج، المحدد بواسطة </span><b><span style="color: #000000">المعرف </span></b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">form</bdi>]، بواسطة المتغير [<bdi dir="ltr" class="odt-ltr-term">form</bdi>]. سيكون [<bdi dir="ltr" class="odt-ltr-term">data</bdi>] سلسلة في النموذج [<bdi dir="ltr" class="odt-ltr-term">A</bdi>=<bdi dir="ltr" class="odt-ltr-term">val1</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">B</bdi>=<bdi dir="ltr" class="odt-ltr-term">val2</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: نوع تنسيق الاستجابة المتوقع. هذه سلسلة JSON؛</span>
+  <li><span style="color: #000000">السطر 7: نوع تنسيق الاستجابة المتوقع. هذه سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 8: دالة JS التي سيتم تنفيذها عند بدء استدعاء Ajax؛</span>
+  <li><span style="color: #000000">السطر 8: دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> التي سيتم تنفيذها عند بدء استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 9: دالة JS لتنفيذها في حالة نجاح استدعاء Ajax؛</span>
+  <li><span style="color: #000000">السطر 9: دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> لتنفيذها في حالة نجاح استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 10: دالة JS لتنفيذها في حالة فشل استدعاء Ajax؛</span>
+  <li><span style="color: #000000">السطر 10: دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> لتنفيذها في حالة فشل استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 11: دالة JS لتنفيذها بمجرد استلام استجابة الخادم، بغض النظر عما إذا كانت ناجحة أم خطأ.</span>
+  <li><span style="color: #000000">السطر 11: دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> لتنفيذها بمجرد استلام استجابة الخادم، بغض النظر عما إذا كانت ناجحة أم خطأ.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نعيد النظر في دالة JavaScript التي تتعامل مع حالة فشل استدعاء Ajax (السطر 10). يفشل استدعاء Ajax في حالات مختلفة، على سبيل المثال عندما يعرض الخادم رمز خطأ مثل [403 Forbidden]، [404 Not Found]، [500 Internal Server Error]، [301 Moved Permanently]، ...</span></p>
+<p><span style="color: #000000">دعونا نعيد النظر في دالة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> التي تتعامل مع حالة فشل استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> (السطر 10). يفشل استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> في حالات مختلفة، على سبيل المثال عندما يعرض الخادم رمز خطأ مثل [403 <bdi dir="ltr" class="odt-ltr-term">Forbidden</bdi>]، [404 <bdi dir="ltr" class="odt-ltr-term">Not Found</bdi>]، [500 <bdi dir="ltr" class="odt-ltr-term">Internal Server Error</bdi>]، [301 <bdi dir="ltr" class="odt-ltr-term">Moved Permanently</bdi>]، ...</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في المثال السابق، تكون دالة [OnFailure] كما يلي:</span></p>
+<p><span style="color: #000000">في المثال السابق، تكون دالة [<bdi dir="ltr" class="odt-ltr-term">OnFailure</bdi>] كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// error</span></span>
@@ -2190,7 +2192,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">بشكل عام، لا يوفر عرض كائن [error] أي معلومات مفيدة. إذا كنت تستخدم استدعاء Ajax تم إجراؤه باستخدام jQuery، فيمكنك استخدام طريقة [OnFailure] التالية؛</span></p>
+<p><span style="color: #000000">بشكل عام، لا يوفر عرض كائن [<bdi dir="ltr" class="odt-ltr-term">error</bdi>] أي معلومات مفيدة. إذا كنت تستخدم استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> تم إجراؤه باستخدام <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi>، فيمكنك استخدام طريقة [<bdi dir="ltr" class="odt-ltr-term">OnFailure</bdi>] التالية؛</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// error</span></span>
@@ -2202,13 +2204,13 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يحتوي كائن jQuery [</span><strong><span style="color: #000000">jqXHR</span></strong><span style="color: #000000">] على الخصائص التالية:</span></p>
+<p><span style="color: #000000">يحتوي كائن <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">jqXHR</bdi></span></strong><span style="color: #000000">] على الخصائص التالية:</span></p>
 <ul>
-  <li><b><span style="color: #000000">responseText</span></b><span style="color: #000000">: نص استجابة الخادم؛</span>
+  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">responseText</bdi></span></b><span style="color: #000000">: نص استجابة الخادم؛</span>
   </li>
-  <li><b><span style="color: #000000">status</span></b><span style="color: #000000">: رمز الخطأ الذي أعاده الخادم؛</span>
+  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">status</bdi></span></b><span style="color: #000000">: رمز الخطأ الذي أعاده الخادم؛</span>
   </li>
-  <li><b><span style="color: #000000">statusText</span></b><span style="color: #000000">: النص المرتبط برمز الخطأ هذا.</span>
+  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">statusText</bdi></span></b><span style="color: #000000">: النص المرتبط برمز الخطأ هذا.</span>
   </li>
 </ul>
 
@@ -2216,14 +2218,14 @@
 <ul>
   <li><span style="color: #000000">السطر 3: نعرض رمز الخطأ والرسالة المقابلة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 4: نقوم بتخزين استجابة HTML للخادم في المكون </span><b><span style="color: #000000">الذي يحمل المعرف </span></b><span style="color: #000000">[msg]؛</span>
+  <li><span style="color: #000000">السطر 4: نقوم بتخزين استجابة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> للخادم في المكون </span><b><span style="color: #000000">الذي يحمل المعرف </span></b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">msg</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 5: نعرض المنطقة </span><b><span style="color: #000000">التي تحمل المعرف </span></b><span style="color: #000000">[error].</span>
+  <li><span style="color: #000000">السطر 5: نعرض المنطقة </span><b><span style="color: #000000">التي تحمل المعرف </span></b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">error</bdi>].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لاختبار معالجة الأخطاء هذه، سنقوم بإنشاء استثناء مصطنع في الإجراء [Action02Post]:</span></p>
+<p><span style="color: #000000">لاختبار معالجة الأخطاء هذه، سنقوم بإنشاء استثناء مصطنع في الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02Post</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">HttpPost</span>]</span></span>
@@ -2248,15 +2250,15 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CA0000046CB295F21C.png" width="613" height="566" style="display:inline-block; margin:4px;width:16.219cm;height:14.975cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CA0000046CB295F21C.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p>يتيح لنا رد الخادم معرفة السطر الذي حدث فيه الخطأ في كود الخادم. وغالبًا ما تكون هذه معلومة مفيدة. من الآن فصاعدًا، سنستخدم هذه التقنية لمعالجة الأخطاء في استدعاءات Ajax.</p>
+<p>يتيح لنا رد الخادم معرفة السطر الذي حدث فيه الخطأ في كود الخادم. وغالبًا ما تكون هذه معلومة مفيدة. من الآن فصاعدًا، سنستخدم هذه التقنية لمعالجة الأخطاء في استدعاءات <bdi dir="ltr" class="odt-ltr-term">Ajax.</bdi></p>
 <p><a id="refheading58194676630786"></a></p>
 <h2 id="75">7.5. <span style="color: #4f81bd">تطبيق ويب أحادي الصفحة</span></h2>
-<p><span style="color: #000000">تتيح لنا تقنية Ajax إنشاء تطبيقات </span><strong><span style="color: #000000">ذات صفحة واحدة</span></strong><span style="color: #000000">:</span></p>
+<p><span style="color: #000000">تتيح لنا تقنية <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> إنشاء تطبيقات </span><strong><span style="color: #000000">ذات صفحة واحدة</span></strong><span style="color: #000000">:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
   <li><span style="color: #000000">يتم تحميل الصفحة الأولى عبر طلب متصفح قياسي؛</span>
   </li>
-  <li><span style="color: #000000">يتم الحصول على الصفحات اللاحقة عبر مكالمات Ajax. ونتيجة لذلك، لا يغير المتصفح عنوان URL أبدًا ولا يقوم بتحميل صفحة جديدة أبدًا. يُطلق على هذا النوع من التطبيقات </span><b><span style="color: #000000">اسم تطبيق صفحة واحدة </span></b><span style="color: #000000">(SPA).</span>
+  <li><span style="color: #000000">يتم الحصول على الصفحات اللاحقة عبر مكالمات <bdi dir="ltr" class="odt-ltr-term">Ajax.</bdi> ونتيجة لذلك، لا يغير المتصفح عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> أبدًا ولا يقوم بتحميل صفحة جديدة أبدًا. يُطلق على هذا النوع من التطبيقات </span><b><span style="color: #000000">اسم تطبيق صفحة واحدة </span></b><span style="color: #000000">(<bdi dir="ltr" class="odt-ltr-term">SPA</bdi>).</span>
   </li>
 </ul>
 
@@ -2270,20 +2272,20 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [1]، تعرض الإجراء [Action03Get] الصفحة الأولى، </span><b><span style="color: #000000">الصفحة 1</span></b><span style="color: #000000">؛</span>
+  <li><span style="color: #000000">في [1]، تعرض الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action03Get</bdi>] الصفحة الأولى، </span><b><span style="color: #000000">الصفحة 1</span></b><span style="color: #000000">؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، يتيح لنا رابط الانتقال إلى </span><b><span style="color: #000000">الصفحة 2 </span></b><span style="color: #000000">عبر استدعاء Ajax؛</span>
+  <li><span style="color: #000000">في [2]، يتيح لنا رابط الانتقال إلى </span><b><span style="color: #000000">الصفحة 2 </span></b><span style="color: #000000">عبر استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في [3]، لم يتغير عنوان URL. الصفحة المعروضة هي </span><b><span style="color: #000000">الصفحة 2</span></b><span style="color: #000000">؛</span>
+  <li><span style="color: #000000">في [3]، لم يتغير عنوان <bdi dir="ltr" class="odt-ltr-term">URL.</bdi> الصفحة المعروضة هي </span><b><span style="color: #000000">الصفحة 2</span></b><span style="color: #000000">؛</span>
   </li>
-  <li><span style="color: #000000">في [4]، يتيح لنا رابط العودة إلى </span><b><span style="color: #000000">الصفحة 1 </span></b><span style="color: #000000">عبر استدعاء Ajax؛</span>
+  <li><span style="color: #000000">في [4]، يتيح لنا رابط العودة إلى </span><b><span style="color: #000000">الصفحة 1 </span></b><span style="color: #000000">عبر استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في [5]، لم يتغير عنوان URL. والصفحة المعروضة هي </span><b><span style="color: #000000">الصفحة 1</span></b><span style="color: #000000">.</span>
+  <li><span style="color: #000000">في [5]، لم يتغير عنوان <bdi dir="ltr" class="odt-ltr-term">URL.</bdi> والصفحة المعروضة هي </span><b><span style="color: #000000">الصفحة 1</span></b><span style="color: #000000">.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">فيما يلي كود الإجراء [Action03Get]:</span></p>
+<p><span style="color: #000000">فيما يلي كود الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action03Get</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">HttpGet</span>]</span></span>
@@ -2295,12 +2297,12 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 4: يتم عرض طريقة العرض [Action03Get.cshtml].</span>
+  <li><span style="color: #000000">السطر 4: يتم عرض طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action03Get.cshtml</bdi>].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">طريقة العرض [Action03Get.cshtml] هي كما يلي:</span></p>
+<p><span style="color: #000000">طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action03Get.cshtml</bdi>] هي كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001880000012EEB6C05D2.png" width="196" height="151" style="display:inline-block; margin:4px;width:5.186cm;height:3.995cm;" class="odt-zoomable" data-zoom-src="images/10000000000001880000012EEB6C05D2.png" /></td></tr></table>
 
@@ -2331,14 +2333,14 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">الأسطر 16–18: عنصر </span><b><span style="color: #000000">بمعرف </span></b><span style="color: #000000">[content]. هذا هو العنصر الذي ستُعرض فيه الصفحات المختلفة؛</span>
+  <li><span style="color: #000000">الأسطر 16–18: عنصر </span><b><span style="color: #000000">بمعرف </span></b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">content</bdi>]. هذا هو العنصر الذي ستُعرض فيه الصفحات المختلفة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 17: بشكل افتراضي، سيتم عرض الصفحة [Page1.cshtml] أولاً.</span>
+  <li><span style="color: #000000">السطر 17: بشكل افتراضي، سيتم عرض الصفحة [<bdi dir="ltr" class="odt-ltr-term">Page1.cshtml</bdi>] أولاً.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">صفحة [Page1.cshtml] هي كما يلي:</span></p>
+<p><span style="color: #000000">صفحة [<bdi dir="ltr" class="odt-ltr-term">Page1.cshtml</bdi>] هي كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span>Page 1<span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -2351,22 +2353,22 @@
 <ul>
   <li><span style="color: #000000">السطر 1: عنوان الصفحة لتمييزها عن الصفحة 2؛</span>
   </li>
-  <li><span style="color: #000000">السطر 3: رابط Ajax بالمعلمات التالية:</span>
+  <li><span style="color: #000000">السطر 3: رابط <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> بالمعلمات التالية:</span>
     <ul>
       <li><span style="color: #000000">تسمية الرابط [الصفحة 2]؛</span>
       </li>
-      <li><span style="color: #000000">الإجراء المستهدف للرابط [Action04]؛</span>
+      <li><span style="color: #000000">الإجراء المستهدف للرابط [<bdi dir="ltr" class="odt-ltr-term">Action04</bdi>]؛</span>
       </li>
-      <li><span style="color: #000000">معلمات عنوان URL المطلوب. سيكون هذا [/Premier/Action04?Page=2]؛</span>
+      <li><span style="color: #000000">معلمات عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب. سيكون هذا [/<bdi dir="ltr" class="odt-ltr-term">Premier/Action04</bdi>?<bdi dir="ltr" class="odt-ltr-term">Page</bdi>=2]؛</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">خيارات استدعاء Ajax. هنا، يتم استخدام </span><b><span style="color: #000000">معرف </span></b><span style="color: #000000">المنطقة التي سيتم تحديثها باستجابة الخادم فقط. بالنسبة للخيارات الأخرى، يتم استخدام القيم الافتراضية عند وجودها. طريقة HTTP الافتراضية هي GET.</span>
+  <li><span style="color: #000000">خيارات استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax.</bdi> هنا، يتم استخدام </span><b><span style="color: #000000">معرف </span></b><span style="color: #000000">المنطقة التي سيتم تحديثها باستجابة الخادم فقط. بالنسبة للخيارات الأخرى، يتم استخدام القيم الافتراضية عند وجودها. طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الافتراضية هي <bdi dir="ltr" class="odt-ltr-term">GET.</bdi></span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لنرى ما يحدث عند النقر على الرابط. يتم طلب عنوان URL [/Premier/Action04?Page=2] باستخدام طلب GET. ثم يتم تنفيذ الإجراء [Action04]:</span></p>
+<p><span style="color: #000000">لنرى ما يحدث عند النقر على الرابط. يتم طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">Premier/Action04</bdi>?<bdi dir="ltr" class="odt-ltr-term">Page</bdi>=2] باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">GET.</bdi> ثم يتم تنفيذ الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action04</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">HttpGet</span>]</span></span>
@@ -2383,18 +2385,18 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: تعرض الإجراء دفق HTML جزئي؛</span>
+  <li><span style="color: #000000">السطر 2: تعرض الإجراء دفق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> جزئي؛</span>
   </li>
-  <li><span style="color: #000000">السطر 2: تستخدم الإجراء السلسلة [page] كقالب لها. نعلم أن عنوان URL يحتوي على هذه المعلومات: [/Premier/Action04?Page=2]. لاحظ أن القالب لا يميز بين الأحرف الكبيرة والصغيرة؛</span>
+  <li><span style="color: #000000">السطر 2: تستخدم الإجراء السلسلة [<bdi dir="ltr" class="odt-ltr-term">page</bdi>] كقالب لها. نعلم أن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> يحتوي على هذه المعلومات: [/<bdi dir="ltr" class="odt-ltr-term">Premier/Action04</bdi>?<bdi dir="ltr" class="odt-ltr-term">Page</bdi>=2]. لاحظ أن القالب لا يميز بين الأحرف الكبيرة والصغيرة؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 4–8: ستتلقى [view] القيمة [Page2]؛</span>
+  <li><span style="color: #000000">الأسطر 4–8: ستتلقى [<bdi dir="ltr" class="odt-ltr-term">view</bdi>] القيمة [<bdi dir="ltr" class="odt-ltr-term">Page2</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 9: يتم عرض العرض الجزئي [Page2.cshtml].</span>
+  <li><span style="color: #000000">السطر 9: يتم عرض العرض الجزئي [<bdi dir="ltr" class="odt-ltr-term">Page2.cshtml</bdi>].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">العرض الجزئي [Page2.cshtml] هو كما يلي:</span></p>
+<p><span style="color: #000000">العرض الجزئي [<bdi dir="ltr" class="odt-ltr-term">Page2.cshtml</bdi>] هو كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span>Page 2<span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -2404,7 +2406,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">وبالتالي، يقوم الخادم بإرجاع دفق HTML أعلاه كاستجابة لطلب Ajax GET [/Premier/Action04?Page=2]. تذكر أن طلب Ajax هذا يستخدم هذه الاستجابة لتحديث المنطقة ذات المعرف [content] (السطر 3 أدناه):</span></p>
+<p><span style="color: #000000">وبالتالي، يقوم الخادم بإرجاع دفق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> أعلاه كاستجابة لطلب <bdi dir="ltr" class="odt-ltr-term">Ajax GET</bdi> [/<bdi dir="ltr" class="odt-ltr-term">Premier/Action04</bdi>?<bdi dir="ltr" class="odt-ltr-term">Page</bdi>=2]. تذكر أن طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> هذا يستخدم هذه الاستجابة لتحديث المنطقة ذات المعرف [<bdi dir="ltr" class="odt-ltr-term">content</bdi>] (السطر 3 أدناه):</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span>Page 1<span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -2421,27 +2423,27 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">وباتباع نفس المنطق، نرى أن النقر على رابط [الصفحة 1] في [1] سيعرض [2].</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لنعد إلى الرسم التخطيطي العام لتطبيق ASP.NET MVC:</span></p>
+<p><span style="color: #000000">لنعد إلى الرسم التخطيطي العام لتطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC:</bdi></span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005430000019B5FCA4F72.png" width="674" height="206" style="display:inline-block; margin:4px;width:17.821cm;height:5.438cm;" class="odt-zoomable" data-zoom-src="images/10000000000005430000019B5FCA4F72.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">بفضل JavaScript المضمن في صفحات HTML والذي يتم تنفيذه في المتصفح، يمكننا نقل الكود إلى المتصفح وتحقيق البنية التالية:</span></p>
+<p><span style="color: #000000">بفضل <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المضمن في صفحات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> والذي يتم تنفيذه في المتصفح، يمكننا نقل الكود إلى المتصفح وتحقيق البنية التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005F5000003232E6439E5.png" width="680" height="358" style="display:inline-block; margin:4px;width:17.999cm;height:9.477cm;" class="odt-zoomable" data-zoom-src="images/10000000000005F5000003232E6439E5.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [1]، أصبحت طبقة الويب ASP.NET MVC </span><b><span style="color: #000000">واجهة ويب </span></b><span style="color: #000000">للوصول إلى البيانات، التي يتم تخزينها عادةً في قاعدة بيانات. تحتوي العروض التي يتم إرجاعها على البيانات فقط ولا تحتوي على علامات HTML، مثل موجزات XML أو JSON؛</span>
+  <li><span style="color: #000000">في [1]، أصبحت طبقة الويب <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> </span><b><span style="color: #000000">واجهة ويب </span></b><span style="color: #000000">للوصول إلى البيانات، التي يتم تخزينها عادةً في قاعدة بيانات. تحتوي العروض التي يتم إرجاعها على البيانات فقط ولا تحتوي على علامات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi>، مثل موجزات <bdi dir="ltr" class="odt-ltr-term">XML</bdi> أو <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في [2]: يعرض المتصفح طرق عرض ثابتة (أي غير مولدة ديناميكيًا) يتم توفيرها بواسطة خادم ويب قد يكون أو لا يكون على نفس الجهاز الذي يوجد عليه الخادم [1]. ثم يتم إثراء طرق العرض الثابتة هذه بالبيانات التي يتم الحصول عليها بواسطة JavaScript من واجهة الويب [1]؛</span>
+  <li><span style="color: #000000">في [2]: يعرض المتصفح طرق عرض ثابتة (أي غير مولدة ديناميكيًا) يتم توفيرها بواسطة خادم ويب قد يكون أو لا يكون على نفس الجهاز الذي يوجد عليه الخادم [1]. ثم يتم إثراء طرق العرض الثابتة هذه بالبيانات التي يتم الحصول عليها بواسطة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> من واجهة الويب [1]؛</span>
   </li>
-  <li><span style="color: #000000">يمكن تنظيم كود JavaScript المضمن في صفحات HTML في طبقات:</span>
+  <li><span style="color: #000000">يمكن تنظيم كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المضمن في صفحات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> في طبقات:</span>
     <ul>
       <li><span style="color: #000000">تتولى طبقة [العرض] التعامل مع تفاعلات المستخدم،</span>
       </li>
-      <li><span style="color: #000000">تتعامل طبقة [DAO] مع الوصول إلى البيانات عبر خادم الويب [1]،</span>
+      <li><span style="color: #000000">تتعامل طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] مع الوصول إلى البيانات عبر خادم الويب [1]،</span>
       </li>
       <li><span style="color: #000000">طبقة [منطق الأعمال] تتوافق مع طبقة [منطق الأعمال] التي كانت موجودة سابقًا على الخادم [1] وتم نقلها إلى المتصفح [2]؛</span>
       </li>
@@ -2453,9 +2455,9 @@
 <p><span style="color: #000000">وتتمثل ميزة هذه البنية في أنها تعتمد على مجموعات مهارات مختلفة:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">يتطلب كود خادم الويب [1] مهارات في .NET ولكنه لا يتطلب مهارات في JavaScript أو HTML أو CSS؛</span>
+  <li><span style="color: #000000">يتطلب كود خادم الويب [1] مهارات في .<bdi dir="ltr" class="odt-ltr-term">NET</bdi> ولكنه لا يتطلب مهارات في <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> أو <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> أو <bdi dir="ltr" class="odt-ltr-term">CSS</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">يتطلب الكود المضمن في المتصفح [2] مهارات في JavaScript و HTML و CSS، ولكنه لا يعتمد على تقنية خادم الويب [1].</span>
+  <li><span style="color: #000000">يتطلب الكود المضمن في المتصفح [2] مهارات في <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> و <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> و <bdi dir="ltr" class="odt-ltr-term">CSS</bdi>، ولكنه لا يعتمد على تقنية خادم الويب [1].</span>
   </li>
 </ul>
 
@@ -2463,7 +2465,7 @@
 <p><span style="color: #000000">وبالتالي، تسهل هذه البنية العمل المتوازي بين الفرق ذات المهارات المختلفة. وهي مناسبة بشكل خاص لتطبيقات الصفحة الواحدة.</span></p>
 <p><a id="refheading71235674196242"></a></p>
 <h2 id="76">7.6. <span style="color: #4f81bd">تطبيق الويب أحادي الصفحة والتحقق من صحة البيانات من جانب العميل</span></h2>
-<p><span style="color: #000000">ذكرنا سابقًا وجود شذوذ في مثال Ajax-01. فيما يلي ملخص للسياق:</span></p>
+<p><span style="color: #000000">ذكرنا سابقًا وجود شذوذ في مثال <bdi dir="ltr" class="odt-ltr-term">Ajax-01.</bdi> فيما يلي ملخص للسياق:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056D0000032C8C6BB6DC.png" width="680" height="398" style="display:inline-block; margin:4px;width:17.999cm;height:10.522cm;" class="odt-zoomable" data-zoom-src="images/100000000000056D0000032C8C6BB6DC.png" /></td></tr></table>
 
 <ul>
@@ -2471,11 +2473,11 @@
   </li>
   <li>في [3]، نقرنا على رابط [حساب]؛
   </li>
-  <li>في [4]، حدث [POST] لأننا تلقينا الاستجابة [4].
+  <li>في [4]، حدث [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] لأننا تلقينا الاستجابة [4].
   </li>
 </ul>
 
-<p><span style="color: #000000">عندما تكون القيم غير صالحة ويتم النقر على زر [حساب]، لا يحدث طلب [POST] إلى الخادم. في نفس السيناريو، يؤدي النقر على رابط [حساب] إلى تشغيل طلب [POST] إلى الخادم. لذلك، هناك سلوك لزر [حساب] لم نتمكن من إعادة إنتاجه باستخدام رابط [حساب].</span></p>
+<p><span style="color: #000000">عندما تكون القيم غير صالحة ويتم النقر على زر [حساب]، لا يحدث طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] إلى الخادم. في نفس السيناريو، يؤدي النقر على رابط [حساب] إلى تشغيل طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] إلى الخادم. لذلك، هناك سلوك لزر [حساب] لم نتمكن من إعادة إنتاجه باستخدام رابط [حساب].</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">سنعيد النظر في هذا المثال في سياق جديد: سيحتوي التطبيق على عدة طرق عرض وسيكون من نوع [تطبيق صفحة واحدة] الذي وصفناه للتو.</span></p>
 <p><a id="refheading1240852030931382"></a></p>
@@ -2486,11 +2488,11 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [1]، طريقة العرض [Action05Get]؛</span>
+  <li><span style="color: #000000">في [1]، طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Action05Get</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، العرض الجزئي [Form05]؛</span>
+  <li><span style="color: #000000">في [2]، العرض الجزئي [<bdi dir="ltr" class="odt-ltr-term">Form05</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">في [3]، طريقة العرض الجزئية [Failure05]؛</span>
+  <li><span style="color: #000000">في [3]، طريقة العرض الجزئية [<bdi dir="ltr" class="odt-ltr-term">Failure05</bdi>]؛</span>
   </li>
 </ul>
 
@@ -2499,19 +2501,19 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [4]، العرض الجزئي [Success05].</span>
+  <li><span style="color: #000000">في [4]، العرض الجزئي [<bdi dir="ltr" class="odt-ltr-term">Success05</bdi>].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">التطبيق هو تطبيق من صفحة واحدة: يتم تحميل الصفحة بواسطة المتصفح أثناء الطلب الأول. ثم يتم تحديثها عبر استدعاءات Ajax.</span></p>
+<p><span style="color: #000000">التطبيق هو تطبيق من صفحة واحدة: يتم تحميل الصفحة بواسطة المتصفح أثناء الطلب الأول. ثم يتم تحديثها عبر استدعاءات <bdi dir="ltr" class="odt-ltr-term">Ajax.</bdi></span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يتم إنشاء الصفحات السابقة بواسطة طرق العرض [cshtml] التالية:</span></p>
+<p><span style="color: #000000">يتم إنشاء الصفحات السابقة بواسطة طرق العرض [<bdi dir="ltr" class="odt-ltr-term">cshtml</bdi>] التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A6000001A9995F7EF7.png" width="211" height="213" style="display:inline-block; margin:4px;width:5.583cm;height:5.623cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A6000001A9995F7EF7.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">العرض الذي يتم تحميله في البداية هو عرض [Action05Get.cshtml] التالي:</span></p>
+<p><span style="color: #000000">العرض الذي يتم تحميله في البداية هو عرض [<bdi dir="ltr" class="odt-ltr-term">Action05Get.cshtml</bdi>] التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@model Exemple_04.Models.</span><span style="color:#2b91af">ViewModel05</span></span></span>
@@ -2552,27 +2554,27 @@
 <p><span style="color: #000000">يرجى ملاحظة النقاط التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: نموذج العرض من النوع [ViewModel05]، والذي سنناقشه بعد قليل؛</span>
+  <li><span style="color: #000000">السطر 1: نموذج العرض من النوع [<bdi dir="ltr" class="odt-ltr-term">ViewModel05</bdi>]، والذي سنناقشه بعد قليل؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 13-19: تحتوي على نصوص JavaScript اللازمة لـ Ajax والتحقق من صحة البيانات من جانب العميل؛</span>
+  <li><span style="color: #000000">الأسطر 13-19: تحتوي على نصوص <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> اللازمة لـ <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> والتحقق من صحة البيانات من جانب العميل؛</span>
   </li>
-  <li><span style="color: #000000">السطر 20: سنضيف وظائف JavaScript الخاصة بنا في [myScripts-05.js]؛</span>
+  <li><span style="color: #000000">السطر 20: سنضيف وظائف <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> الخاصة بنا في [<bdi dir="ltr" class="odt-ltr-term">myScripts-05.js</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 27: صورة التحميل المتحركة؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 28–30: علامة </span><b><span style="color: #000000">`id` </span></b><span style="color: #000000">[content]. هذا هو المكان الذي سيتم فيه إدراج العروض الجزئية [Form05، Success05، Failure05]؛</span>
+  <li><span style="color: #000000">الأسطر 28–30: علامة </span><b><span style="color: #000000">`<bdi dir="ltr" class="odt-ltr-term">id</bdi>` </span></b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">content</bdi>]. هذا هو المكان الذي سيتم فيه إدراج العروض الجزئية [<bdi dir="ltr" class="odt-ltr-term">Form05</bdi>، <bdi dir="ltr" class="odt-ltr-term">Success05</bdi>، <bdi dir="ltr" class="odt-ltr-term">Failure05</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 29: إدراج العرض الجزئي [Form05].</span>
+  <li><span style="color: #000000">السطر 29: إدراج العرض الجزئي [<bdi dir="ltr" class="odt-ltr-term">Form05</bdi>].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">العرض [Action05Get] مسؤول عن عرض القسم [1] من الصفحة الأولية:</span></p>
+<p><span style="color: #000000">العرض [<bdi dir="ltr" class="odt-ltr-term">Action05Get</bdi>] مسؤول عن عرض القسم [1] من الصفحة الأولية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000031D0000020F87B92F4C.png" width="399" height="264" style="display:inline-block; margin:4px;width:10.545cm;height:6.973cm;" class="odt-zoomable" data-zoom-src="images/100000000000031D0000020F87B92F4C.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">ستقوم طريقة العرض الجزئية [Formulaire05] بإنشاء القسم [2] أعلاه. وفيما يلي شفرة البرمجة الخاصة بها:</span></p>
+<p><span style="color: #000000">ستقوم طريقة العرض الجزئية [<bdi dir="ltr" class="odt-ltr-term">Formulaire05</bdi>] بإنشاء القسم [2] أعلاه. وفيما يلي شفرة البرمجة الخاصة بها:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@model Exemple_04.Models.</span><span style="color:#2b91af">ViewModel05</span></span></span>
@@ -2615,27 +2617,27 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: تقبل طريقة العرض الجزئية نوع [ViewModel05] كنموذج لها؛</span>
+  <li><span style="color: #000000">السطر 1: تقبل طريقة العرض الجزئية نوع [<bdi dir="ltr" class="odt-ltr-term">ViewModel05</bdi>] كنموذج لها؛</span>
   </li>
-  <li><span style="color: #000000">السطر 3: النموذج الذي تم إنشاؤه بواسطة الأسلوب [Html.BeginForm]. نظرًا لأن هذا النموذج سيتم إرساله عبر استدعاء Ajax، فسيتم تجاهل المعلمات الثلاثة الأولى للأسلوب. ما لم يقم المستخدم بتعطيل JavaScript في متصفحه. نحن نتجاهل هذه الاحتمالية هنا. المعلمة الرابعة مهمة. سيحمل النموذج </span><b><span style="color: #000000">المعرف </span></b><span style="color: #000000">[form]؛</span>
+  <li><span style="color: #000000">السطر 3: النموذج الذي تم إنشاؤه بواسطة الأسلوب [<bdi dir="ltr" class="odt-ltr-term">Html.BeginForm</bdi>]. نظرًا لأن هذا النموذج سيتم إرساله عبر استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، فسيتم تجاهل المعلمات الثلاثة الأولى للأسلوب. ما لم يقم المستخدم بتعطيل <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> في متصفحه. نحن نتجاهل هذه الاحتمالية هنا. المعلمة الرابعة مهمة. سيحمل النموذج </span><b><span style="color: #000000">المعرف </span></b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">form</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 5-22: النموذج لإدخال الرقمين A و B؛</span>
+  <li><span style="color: #000000">الأسطر 5-22: النموذج لإدخال الرقمين <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 27: رابط JavaScript الذي يؤدي إلى تنفيذ العمليات الحسابية الأربع على A و B؛</span>
+  <li><span style="color: #000000">السطر 27: رابط <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> الذي يؤدي إلى تنفيذ العمليات الحسابية الأربع على <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 30: رابط JavaScript يمسح الإدخالات وأي رسائل خطأ مرتبطة بها.</span>
+  <li><span style="color: #000000">السطر 30: رابط <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> يمسح الإدخالات وأي رسائل خطأ مرتبطة بها.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لاحظ أن النموذج لا يحتوي على زر [submit]. سنحتاج إلى إرسال [Post] القيم المدخلة لـ A و B يدويًا.</span></p>
+<p><span style="color: #000000">لاحظ أن النموذج لا يحتوي على زر [<bdi dir="ltr" class="odt-ltr-term">submit</bdi>]. سنحتاج إلى إرسال [<bdi dir="ltr" class="odt-ltr-term">Post</bdi>] القيم المدخلة لـ <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi> يدويًا.</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">إذا لم تكن هناك أخطاء، يتم عرض النتائج:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003160000031DEA4D88DB.png" width="395" height="399" style="display:inline-block; margin:4px;width:10.451cm;height:10.545cm;" class="odt-zoomable" data-zoom-src="images/10000000000003160000031DEA4D88DB.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يتم إنشاء القسم [4] أعلاه بواسطة العرض الجزئي التالي [Success05.cshtml]:</span></p>
+<p><span style="color: #000000">يتم إنشاء القسم [4] أعلاه بواسطة العرض الجزئي التالي [<bdi dir="ltr" class="odt-ltr-term">Success05.cshtml</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@model Exemple_04.Models.</span><span style="color:#2b91af">ViewModel05</span></span></span>
@@ -2655,9 +2657,9 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: تستقبل طريقة العرض الجزئية [Success05.cshtml] نموذجًا من النوع [ViewModel05]؛</span>
+  <li><span style="color: #000000">السطر 1: تستقبل طريقة العرض الجزئية [<bdi dir="ltr" class="odt-ltr-term">Success05.cshtml</bdi>] نموذجًا من النوع [<bdi dir="ltr" class="odt-ltr-term">ViewModel05</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 12: رابط JavaScript للعودة إلى حقول الإدخال.</span>
+  <li><span style="color: #000000">السطر 12: رابط <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> للعودة إلى حقول الإدخال.</span>
   </li>
 </ul>
 
@@ -2667,7 +2669,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000316000002838D09C7BA.png" width="395" height="321" style="display:inline-block; margin:4px;width:10.451cm;height:8.505cm;" class="odt-zoomable" data-zoom-src="images/1000000000000316000002838D09C7BA.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يتم إنشاء هذا العرض بواسطة الكود التالي [Failure05.cshtml]:</span></p>
+<p><span style="color: #000000">يتم إنشاء هذا العرض بواسطة الكود التالي [<bdi dir="ltr" class="odt-ltr-term">Failure05.cshtml</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@model Exemple_04.Models.</span><span style="color:#2b91af">ViewModel05</span></span></span>
@@ -2689,14 +2691,14 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: تستقبل طريقة العرض الجزئية [Failure05.cshtml] نموذجًا من النوع [ViewModel05]؛</span>
+  <li><span style="color: #000000">السطر 1: تستقبل طريقة العرض الجزئية [<bdi dir="ltr" class="odt-ltr-term">Failure05.cshtml</bdi>] نموذجًا من النوع [<bdi dir="ltr" class="odt-ltr-term">ViewModel05</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 14: رابط JavaScript للعودة إلى حقول الإدخال.</span>
+  <li><span style="color: #000000">السطر 14: رابط <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> للعودة إلى حقول الإدخال.</span>
   </li>
 </ul>
 <p><a id="refheading73622405627189"></a></p>
 <h3 id="762">7.6.2. <span style="color: #4f81bd">نموذج العرض</span></h3>
-<p><span style="color: #000000">تشترك جميع العروض السابقة في نفس النموذج [ViewModel05]:</span></p>
+<p><span style="color: #000000">تشترك جميع العروض السابقة في نفس النموذج [<bdi dir="ltr" class="odt-ltr-term">ViewModel05</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C000000D01EDB7646.png" width="150" height="104" style="display:inline-block; margin:4px;width:3.969cm;height:2.752cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000D01EDB7646.png" /></td></tr></table>
 
@@ -2735,19 +2737,19 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">هذا هو نموذج [ViewModel01] الذي تم عرضه سابقًا، مع بعض التغييرات الطفيفة:</span></p>
+<p><span style="color: #000000">هذا هو نموذج [<bdi dir="ltr" class="odt-ltr-term">ViewModel01</bdi>] الذي تم عرضه سابقًا، مع بعض التغييرات الطفيفة:</span></p>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطران 15 و 19: أصبحت الحقول A و B الآن من النوع [string] بحيث يتم عرض حقول إدخال فارغة بدلاً من الحقول ذات القيمة 0 عند عرض نموذج الإدخال لأول مرة؛</span>
+  <li><span style="color: #000000">السطران 15 و 19: أصبحت الحقول <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi> الآن من النوع [<bdi dir="ltr" class="odt-ltr-term">string</bdi>] بحيث يتم عرض حقول إدخال فارغة بدلاً من الحقول ذات القيمة 0 عند عرض نموذج الإدخال لأول مرة؛</span>
   </li>
-  <li><span style="color: #000000">السطران 14 و 18: هذا لا يمنع التحقق من صحة القيمة المدخلة باستخدام أداة التحقق من الصحة [Range]؛</span>
+  <li><span style="color: #000000">السطران 14 و 18: هذا لا يمنع التحقق من صحة القيمة المدخلة باستخدام أداة التحقق من الصحة [<bdi dir="ltr" class="odt-ltr-term">Range</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 26: قائمة برسائل الخطأ التي تعرضها طريقة العرض [Failure05].</span>
+  <li><span style="color: #000000">السطر 26: قائمة برسائل الخطأ التي تعرضها طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">Failure05</bdi>].</span>
   </li>
 </ul>
 <p><a id="refheading1240872030931382"></a></p>
-<h3 id="763-session">7.6.3. <span style="color: #4f81bd">بيانات نطاق [Session]</span></h3>
-<p><span style="color: #000000">في القسم 7.3.6، رأينا أن بيانات الجلسة تم تغليفها في نموذج [SessionModel] التالي:</span></p>
+<h3 id="763-session">7.6.3. <span style="color: #4f81bd">بيانات نطاق [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>]</span></h3>
+<p><span style="color: #000000">في القسم 7.3.6، رأينا أن بيانات الجلسة تم تغليفها في نموذج [<bdi dir="ltr" class="odt-ltr-term">SessionModel</bdi>] التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012B000000C34D245A6A.png" width="150" height="98" style="display:inline-block; margin:4px;width:3.956cm;height:2.581cm;" class="odt-zoomable" data-zoom-src="images/100000000000012B000000C34D245A6A.png" /></td></tr></table>
 
@@ -2765,7 +2767,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">تم توسيع نموذج الجلسة هذا ليشمل قيمتي A و B:</span></p>
+<p><span style="color: #000000">تم توسيع نموذج الجلسة هذا ليشمل قيمتي <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B:</bdi></span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System;</span></span></span>
@@ -2782,17 +2784,17 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>من الضروري بالفعل تخزين قيمتي A و B في الجلسة، كما هو موضح في التسلسل التالي:</p>
+<p>من الضروري بالفعل تخزين قيمتي <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi> في الجلسة، كما هو موضح في التسلسل التالي:</p>
 <p><strong>الطلب 1</strong></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000641000002F8C4CA0694.png" width="680" height="323" style="display:inline-block; margin:4px;width:17.999cm;height:8.544cm;" class="odt-zoomable" data-zoom-src="images/1000000000000641000002F8C4CA0694.png" /></td></tr></table>
 
 <p><strong>الطلب 2</strong></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006430000034EE1808B63.png" width="680" height="359" style="display:inline-block; margin:4px;width:17.999cm;height:9.499cm;" class="odt-zoomable" data-zoom-src="images/10000000000006430000034EE1808B63.png" /></td></tr></table>
 
-<p>في [4]، نرى الإدخالات التي تمت في [1]. ومع ذلك، هناك طلبان HTTP منفصلان. ونحن نعلم أن الجلسة تعمل كذاكرة بين طلبين HTTP. لكي يسترد الطلب الثاني القيم التي أرسلها الطلب الأول، يجب تخزين تلك القيم في الجلسة.</p>
+<p>في [4]، نرى الإدخالات التي تمت في [1]. ومع ذلك، هناك طلبان <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> منفصلان. ونحن نعلم أن الجلسة تعمل كذاكرة بين طلبين <bdi dir="ltr" class="odt-ltr-term">HTTP.</bdi> لكي يسترد الطلب الثاني القيم التي أرسلها الطلب الأول، يجب تخزين تلك القيم في الجلسة.</p>
 <p><a id="refheading1240892030931382"></a></p>
-<h3 id="764-action05get">7.6.4. <span style="color: #4f81bd">إجراء الخادم [Action05Get]</span></h3>
-<p>إجراء [Action05Get] هو الإجراء الذي يعرض الصفحة الفردية الأولية. وفيما يلي كوده:</p>
+<h3 id="764-action05get">7.6.4. <span style="color: #4f81bd">إجراء الخادم [<bdi dir="ltr" class="odt-ltr-term">Action05Get</bdi>]</span></h3>
+<p>إجراء [<bdi dir="ltr" class="odt-ltr-term">Action05Get</bdi>] هو الإجراء الذي يعرض الصفحة الفردية الأولية. وفيما يلي كوده:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">HttpGet</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ViewResult</span><span style="color:#000000"> Action05Get()</span></span></span>
@@ -2804,28 +2806,28 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 6: يتم عرض العرض [Action05Get.cshtml]، الذي ناقشناه سابقًا، بنموذج من النوع [ViewModel05]؛
+  <li>السطر 6: يتم عرض العرض [<bdi dir="ltr" class="odt-ltr-term">Action05Get.cshtml</bdi>]، الذي ناقشناه سابقًا، بنموذج من النوع [<bdi dir="ltr" class="odt-ltr-term">ViewModel05</bdi>]؛
   </li>
 </ul>
 <p><a id="refheading71430674196242"></a></p>
-<h3 id="765-calculate">7.6.5. <span style="color: #4f81bd">إجراء العميل [Calculate]</span></h3>
+<h3 id="765-calculate">7.6.5. <span style="color: #4f81bd">إجراء العميل [<bdi dir="ltr" class="odt-ltr-term">Calculate</bdi>]</span></h3>
 <p><span style="color: #000000">دعونا نفحص تفاعلات المستخدم مع طرق العرض:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000031A0000023642F05AB4.png" width="397" height="283" style="display:inline-block; margin:4px;width:10.504cm;height:7.488cm;" class="odt-zoomable" data-zoom-src="images/100000000000031A0000023642F05AB4.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">الرابط [1] هو رابط JavaScript:</span></p>
+<p><span style="color: #000000">الرابط [1] هو رابط <bdi dir="ltr" class="odt-ltr-term">JavaScript:</bdi></span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">a</span> <span style="color:#ff0000">href</span><span style="color:#0000ff">=&quot;javascript:calculer()&quot;&gt;</span>Calculer<span style="color:#0000ff">&lt;/</span><span style="color:#800000">a</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>توجد دالة JavaScript [calculate] في الملف [myScripts-05.js]:</p>
+<p>توجد دالة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> [<bdi dir="ltr" class="odt-ltr-term">calculate</bdi>] في الملف [<bdi dir="ltr" class="odt-ltr-term">myScripts-05.js</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#000000"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=&quot;text/javascript&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">src</span><span style="color:#0000ff">=&quot;~/Scripts/myScripts-05.js&quot;&gt;&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>فيما يلي كود وظيفة JavaScript [calculate]:</p>
+<p>فيما يلي كود وظيفة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> [<bdi dir="ltr" class="odt-ltr-term">calculate</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// global data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">var</span><span style="color:#000000"> content;</span></span></span>
@@ -2880,21 +2882,21 @@
 </code></pre></div>
 
 <ul>
-  <li>لاحظ أن كود JavaScript <b>يتم تنفيذه دائمًا على جانب العميل</b>، في المتصفح؛
+  <li>لاحظ أن كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> <b>يتم تنفيذه دائمًا على جانب العميل</b>، في المتصفح؛
   </li>
-  <li>السطر 44: وظيفة JS التي يتم تنفيذها عند اكتمال التحميل الأولي للصفحة الواحدة؛
+  <li>السطر 44: وظيفة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> التي يتم تنفيذها عند اكتمال التحميل الأولي للصفحة الواحدة؛
   </li>
-  <li>السطر 46: إشارة إلى الصورة المتحركة ذات <b>المعرف </b>[loading]؛
+  <li>السطر 46: إشارة إلى الصورة المتحركة ذات <b>المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">loading</bdi>]؛
   </li>
-  <li>السطر 47: إشارة إلى المنطقة <b>التي تحمل المعرف </b>[content]. تتلقى هذه المنطقة العروض الجزئية [Form05، Success05، Failure05]؛
+  <li>السطر 47: إشارة إلى المنطقة <b>التي تحمل المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">content</bdi>]. تتلقى هذه المنطقة العروض الجزئية [<bdi dir="ltr" class="odt-ltr-term">Form05</bdi>، <bdi dir="ltr" class="odt-ltr-term">Success05</bdi>، <bdi dir="ltr" class="odt-ltr-term">Failure05</bdi>]؛
   </li>
   <li>السطران 2-3: يتم إعلان المتغيرات من السطرين 46-47 <b>على أنها عالمية </b>حتى تتمكن الدوال الأخرى من الوصول إليها. هناك تكلفة مرتبطة بالبحث عن العناصر في الصفحة (السطران 46-47). لا داعي لتكرار هذا البحث إذا كان من الممكن تجنبه؛
   </li>
-  <li>السطر 5: الدالة [calculate]؛
+  <li>السطر 5: الدالة [<bdi dir="ltr" class="odt-ltr-term">calculate</bdi>]؛
   </li>
-  <li>السطر 7: يتم استرداد مرجع للنموذج. وقد منحته طريقة العرض الجزئية [Form05] <b>المعرف </b>[form]؛
+  <li>السطر 7: يتم استرداد مرجع للنموذج. وقد منحته طريقة العرض الجزئية [<bdi dir="ltr" class="odt-ltr-term">Form05</bdi>] <b>المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">form</bdi>]؛
   </li>
-  <li>السطر 9: تعمل هذه التعليمات على تشغيل أدوات التحقق من صحة النموذج من جانب العميل. وهذا هو ما كان مفقودًا في المشكلة التي تم تحديدها في الصفحة<a href="#anomalie-validation-client"><u><span style="color: #0563c1"> 176</span></u></a>. يتم توفير هذه الطريقة بواسطة مكتبة [jquery.unobtrusive-ajax] التي يستخدمها التطبيق أحادي الصفحة:
+  <li>السطر 9: تعمل هذه التعليمات على تشغيل أدوات التحقق من صحة النموذج من جانب العميل. وهذا هو ما كان مفقودًا في المشكلة التي تم تحديدها في الصفحة<a href="#anomalie-validation-client"><u><span style="color: #0563c1"> 176</span></u></a>. يتم توفير هذه الطريقة بواسطة مكتبة [<bdi dir="ltr" class="odt-ltr-term">jquery.unobtrusive-ajax</bdi>] التي يستخدمها التطبيق أحادي الصفحة:
   </li>
 </ul>
 
@@ -2902,23 +2904,23 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#000000"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=&quot;text/javascript&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">src</span><span style="color:#0000ff">=&quot;~/Scripts/jquery.unobtrusive-ajax.js&quot;&gt;&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>تُرجع العبارة [false] إذا تم إعلان النموذج غير صالح؛</p>
+<p>تُرجع العبارة [<bdi dir="ltr" class="odt-ltr-term">false</bdi>] إذا تم إعلان النموذج غير صالح؛</p>
 <ul>
-  <li>السطر 11: لا يتم إجراء استدعاء Ajax إلى الخادم إذا كان النموذج غير صالح؛
+  <li>السطر 11: لا يتم إجراء استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> إلى الخادم إذا كان النموذج غير صالح؛
   </li>
-  <li>الأسطر 14–32: يتم إجراء استدعاء Ajax إلى الخادم؛
+  <li>الأسطر 14–32: يتم إجراء استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> إلى الخادم؛
   </li>
-  <li>السطر 15: عنوان URL الهدف هو إجراء الخادم [Action05FaireCalcul]؛
+  <li>السطر 15: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف هو إجراء الخادم [<bdi dir="ltr" class="odt-ltr-term">Action05FaireCalcul</bdi>]؛
   </li>
-  <li>السطر 16: يتم طلبه عبر [POST]؛
+  <li>السطر 16: يتم طلبه عبر [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]؛
   </li>
-  <li>السطر 17: القيم المرسلة. هذه هي إدخالات النموذج، وفي هذه الحالة قيم A و B؛
+  <li>السطر 17: القيم المرسلة. هذه هي إدخالات النموذج، وفي هذه الحالة قيم <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛
   </li>
-  <li>الأسطر 22–24: إذا نجح استدعاء Ajax، تقوم الدالة [calculate] بتحديث المنطقة <b>ذات المعرف </b>[content] باستخدام دفق HTML المرسل من الخادم.
+  <li>الأسطر 22–24: إذا نجح استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، تقوم الدالة [<bdi dir="ltr" class="odt-ltr-term">calculate</bdi>] بتحديث المنطقة <b>ذات المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">content</bdi>] باستخدام دفق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المرسل من الخادم.
   </li>
 </ul>
 
-<p>هذا الدفق HTML هو الذي أرسلته الإجراء [Action05FaireCalcul] الذي يستهدفه استدعاء Ajax. رمز هذا الإجراء من جانب الخادم هو كما يلي:</p>
+<p>هذا الدفق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> هو الذي أرسلته الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action05FaireCalcul</bdi>] الذي يستهدفه استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax.</bdi> رمز هذا الإجراء من جانب الخادم هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">HttpPost</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">PartialViewResult</span><span style="color:#000000"> Action05FaireCalcul(</span><span style="color:#2b91af">FormCollection</span><span style="color:#000000"> postedData, </span><span style="color:#2b91af">SessionModel</span><span style="color:#000000"> session)</span></span></span>
@@ -2940,23 +2942,23 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 1: لا تقبل الإجراء سوى [post]؛
+  <li>السطر 1: لا تقبل الإجراء سوى [<bdi dir="ltr" class="odt-ltr-term">post</bdi>]؛
   </li>
   <li>السطر 2: يعرض عرضًا جزئيًا؛
   </li>
-  <li>السطر 2: يستقبل القيم المنشورة (postedData) ونموذج الجلسة (session) كمعلمات؛
+  <li>السطر 2: يستقبل القيم المنشورة (<bdi dir="ltr" class="odt-ltr-term">postedData</bdi>) ونموذج الجلسة (<bdi dir="ltr" class="odt-ltr-term">session</bdi>) كمعلمات؛
   </li>
   <li>السطر 5: يتم إنشاء نموذج العرض الجزئي؛
   </li>
   <li>السطر 7: يتم تحديثه بوقت الحساب؛
   </li>
-  <li>السطر 9: نحاول تطبيق القيم المنشورة على النموذج. سيتم بعد ذلك تنفيذ أدوات التحقق من صحتها. قد يتساءل المرء عن سبب قيامنا بهذا العناء في حين أن أدوات التحقق من صحة البيانات من جانب العميل تمنع إرسال POST إذا كانت البيانات المدخلة غير صالحة. في الواقع، نحن غير متأكدين من مصدر إرسال POST. فقد يكون تم إجراؤه بواسطة كود لا يخصنا. لذلك، يجب علينا دائمًا إجراء عمليات التحقق من الصحة من جانب الخادم؛
+  <li>السطر 9: نحاول تطبيق القيم المنشورة على النموذج. سيتم بعد ذلك تنفيذ أدوات التحقق من صحتها. قد يتساءل المرء عن سبب قيامنا بهذا العناء في حين أن أدوات التحقق من صحة البيانات من جانب العميل تمنع إرسال <bdi dir="ltr" class="odt-ltr-term">POST</bdi> إذا كانت البيانات المدخلة غير صالحة. في الواقع، نحن غير متأكدين من مصدر إرسال <bdi dir="ltr" class="odt-ltr-term">POST.</bdi> فقد يكون تم إجراؤه بواسطة كود لا يخصنا. لذلك، يجب علينا دائمًا إجراء عمليات التحقق من الصحة من جانب الخادم؛
   </li>
   <li>السطر 10: نتحقق مما إذا كانت أدوات التحقق من الصحة قد نجحت؛
   </li>
-  <li>السطر 13: إذا كان النموذج غير صالح، نقوم بتحديثه بقائمة من الأخطاء. لن ندخل في تفاصيل حول الطريقة الداخلية [getListOfMessagesFor]، والتي تشبه طريقة [GetErrorMessagesFor] الموصوفة في <a href="#geterrormessagesfor"><u><span style="color: #0563c1">الصفحة</span></u></a> 60؛
+  <li>السطر 13: إذا كان النموذج غير صالح، نقوم بتحديثه بقائمة من الأخطاء. لن ندخل في تفاصيل حول الطريقة الداخلية [<bdi dir="ltr" class="odt-ltr-term">getListOfMessagesFor</bdi>]، والتي تشبه طريقة [<bdi dir="ltr" class="odt-ltr-term">GetErrorMessagesFor</bdi>] الموصوفة في <a href="#geterrormessagesfor"><u><span style="color: #0563c1">الصفحة</span></u></a> 60؛
   </li>
-  <li>السطر 14: يتم عرض العرض الجزئي [Failure05] مع نموذجه. فيما يلي كود هذا العرض؛
+  <li>السطر 14: يتم عرض العرض الجزئي [<bdi dir="ltr" class="odt-ltr-term">Failure05</bdi>] مع نموذجه. فيما يلي كود هذا العرض؛
   </li>
 </ul>
 
@@ -2979,14 +2981,14 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 7-12: يتم عرض قائمة أخطاء النموذج باستخدام علامة &lt;<b>ul</b>&gt;.
+  <li>الأسطر 7-12: يتم عرض قائمة أخطاء النموذج باستخدام علامة &lt;<b><bdi dir="ltr" class="odt-ltr-term">ul</bdi></b>&gt;.
   </li>
 </ul>
 
-<p>تذكر أن دالة JS [calculate]، التي تطلق [Post] إلى إجراء الخادم [Action05FaireCalcul]، ستضع هذا الإخراج HTML في المنطقة <strong>ذات المعرف</strong> [content]. وينتج عن ذلك شيء مثل هذا:</p>
+<p>تذكر أن دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">calculate</bdi>]، التي تطلق [<bdi dir="ltr" class="odt-ltr-term">Post</bdi>] إلى إجراء الخادم [<bdi dir="ltr" class="odt-ltr-term">Action05FaireCalcul</bdi>]، ستضع هذا الإخراج <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> في المنطقة <strong>ذات المعرف</strong> [<bdi dir="ltr" class="odt-ltr-term">content</bdi>]. وينتج عن ذلك شيء مثل هذا:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000301000002740C7EB267.png" width="385" height="314" style="display:inline-block; margin:4px;width:10.174cm;height:8.31cm;" class="odt-zoomable" data-zoom-src="images/1000000000000301000002740C7EB267.png" /></td></tr></table>
 
-<p>لنواصل فحص كود الإجراء [Action05FaireCalcul]:</p>
+<p>لنواصل فحص كود الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action05FaireCalcul</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">HttpPost</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">PartialViewResult</span><span style="color:#000000"> Action05FaireCalcul(</span><span style="color:#2b91af">FormCollection</span><span style="color:#000000"> postedData, </span><span style="color:#2b91af">SessionModel</span><span style="color:#000000"> session)</span></span></span>
@@ -3025,13 +3027,13 @@
 <ul>
   <li>السطر 7: تم إعلان النموذج صالحًا؛
   </li>
-  <li>السطران 8-9: يتم تخزين القيمتين A و B المدخلتين في الجلسة. نريد أن نتمكن من استرجاعهما في الاستعلام التالي؛
+  <li>السطران 8-9: يتم تخزين القيمتين <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi> المدخلتين في الجلسة. نريد أن نتمكن من استرجاعهما في الاستعلام التالي؛
   </li>
   <li>الأسطر 11-22: يتم إنشاء خطأ عشوائي كل مرة؛
   </li>
   <li>الأسطر 24-29: نقوم بإجراء العمليات الحسابية الأربع على الأعداد الحقيقية المدخلة؛
   </li>
-  <li>السطر 31: يتم إرجاع العرض الجزئي [Success05] مع نموذجه. هذا العرض الجزئي هو كما يلي:
+  <li>السطر 31: يتم إرجاع العرض الجزئي [<bdi dir="ltr" class="odt-ltr-term">Success05</bdi>] مع نموذجه. هذا العرض الجزئي هو كما يلي:
   </li>
 </ul>
 
@@ -3051,20 +3053,20 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">p</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>تذكر أن دالة JS [calculate]، التي تطلق [Post] إلى إجراء الخادم [Action05FaireCalcul]، ستضع دفق HTML هذا في المنطقة <strong>ذات المعرف</strong> [content]. وينتج عن ذلك شيء مثل هذا:</p>
+<p>تذكر أن دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">calculate</bdi>]، التي تطلق [<bdi dir="ltr" class="odt-ltr-term">Post</bdi>] إلى إجراء الخادم [<bdi dir="ltr" class="odt-ltr-term">Action05FaireCalcul</bdi>]، ستضع دفق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> هذا في المنطقة <strong>ذات المعرف</strong> [<bdi dir="ltr" class="odt-ltr-term">content</bdi>]. وينتج عن ذلك شيء مثل هذا:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000378000003273E5F112C.png" width="444" height="404" style="display:inline-block; margin:4px;width:11.748cm;height:10.677cm;" class="odt-zoomable" data-zoom-src="images/1000000000000378000003273E5F112C.png" /></td></tr></table>
 
 <p><a id="refheading77396554248424"></a></p>
-<h3 id="766-clear">7.6.6. <span style="color: #4f81bd">زر [Clear]</span></h3>
-<p>يعيد رابط JavaScript [Clear] تعيين النموذج إلى حالته الأولية:</p>
+<h3 id="766-clear">7.6.6. <span style="color: #4f81bd">زر [<bdi dir="ltr" class="odt-ltr-term">Clear</bdi>]</span></h3>
+<p>يعيد رابط <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> [<bdi dir="ltr" class="odt-ltr-term">Clear</bdi>] تعيين النموذج إلى حالته الأولية:</p>
 <p><img src="images/100000000000022F0000016880792FF0.png" width="327" height="210" style="width:8.641cm;height:5.565cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000022F0000016880792FF0.png" /></p>
 <p><img src="images/100000000000022D00000146C0AB29DC.png" width="328" height="192" style="width:8.691cm;height:5.087cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000022D00000146C0AB29DC.png" /></p>
-<p>في النموذج، يتم تعريف رابط JS [مسح] على النحو التالي:</p>
+<p>في النموذج، يتم تعريف رابط <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [مسح] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">a</span><span style="color:#000000"> </span><span style="color:#ff0000">href</span><span style="color:#0000ff">=&quot;javascript:effacer()&quot;&gt;</span><span style="color:#000000">Effacer</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">a</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>يتم تعريف دالة JS [clear] في ملف [myScripts-05.js] على النحو التالي:</p>
+<p>يتم تعريف دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">clear</bdi>] في ملف [<bdi dir="ltr" class="odt-ltr-term">myScripts-05.js</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// global data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">var</span><span style="color:#000000"> content;</span></span></span>
@@ -3105,26 +3107,26 @@
 </code></pre></div>
 
 <ul>
-  <li>السطور 15-17: نسترد الإشارات إلى عناصر مختلفة من DOM (نموذج كائن المستند)؛
+  <li>السطور 15-17: نسترد الإشارات إلى عناصر مختلفة من <bdi dir="ltr" class="odt-ltr-term">DOM</bdi> (نموذج كائن المستند)؛
   </li>
-  <li>السطور 19-20: نضع قيمًا صالحة في حقول الإدخال للأرقام A و B؛
+  <li>السطور 19-20: نضع قيمًا صالحة في حقول الإدخال للأرقام <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛
   </li>
-  <li>السطر 23: تشغيل أدوات التحقق من الصحة من جانب العميل. نظرًا لأن قيمتي A و B صالحتان، سيؤدي ذلك إلى إزالة أي رسائل خطأ قد تظهر؛
+  <li>السطر 23: تشغيل أدوات التحقق من الصحة من جانب العميل. نظرًا لأن قيمتي <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi> صالحتان، سيؤدي ذلك إلى إزالة أي رسائل خطأ قد تظهر؛
   </li>
-  <li>السطور 25–26: يتم إدخال سلاسل فارغة في حقول الإدخال الخاصة بالرقمين A و B؛
+  <li>السطور 25–26: يتم إدخال سلاسل فارغة في حقول الإدخال الخاصة بالرقمين <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi>؛
   </li>
 </ul>
 <p><a id="refheading77101554248424"></a></p>
 <h3 id="767">7.6.7. <span style="color: #4f81bd">الإجراء من جانب العميل [العودة إلى حقول الإدخال]</span></h3>
-<p>يتيح لك رابط JavaScript [العودة إلى حقول الإدخال] العودة إلى النموذج بعد الحصول على النتائج:</p>
+<p>يتيح لك رابط <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> [العودة إلى حقول الإدخال] العودة إلى النموذج بعد الحصول على النتائج:</p>
 <p><img src="images/1000000000000231000002359693BC74.png" width="327" height="329" style="width:8.641cm;height:8.703cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000231000002359693BC74.png" /></p>
 <p><img src="images/1000000000000235000001518D63B701.png" width="322" height="192" style="width:8.52cm;height:5.082cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000235000001518D63B701.png" /></p>
-<p>في النموذج، يتم تعريف رابط JS [العودة إلى الإدخال] على النحو التالي:</p>
+<p>في النموذج، يتم تعريف رابط <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [العودة إلى الإدخال] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">a</span><span style="color:#000000"> </span><span style="color:#ff0000">href</span><span style="color:#0000ff">=&quot;javascript:retourSaisies()&quot;&gt;</span><span style="color:#000000">Retour aux saisies</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">a</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>تم تعريف دالة JS [retourSaisies] في الملف [myScripts-05.js] على النحو التالي:</p>
+<p>تم تعريف دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">retourSaisies</bdi>] في الملف [<bdi dir="ltr" class="odt-ltr-term">myScripts-05.js</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// global data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">var</span><span style="color:#000000"> content;</span></span></span>
@@ -3173,25 +3175,25 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li>الأسطر 11–29: استدعاء Ajax؛
+  <li>الأسطر 11–29: استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛
   </li>
-  <li>السطر 12: عنوان URL الهدف؛
+  <li>السطر 12: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف؛
   </li>
-  <li>السطر 13: سيتم طلبه عبر طلب HTTP POST. هذا طلب POST بدون معلمات. ولهذا السبب لا يوجد سطر مثل:
+  <li>السطر 13: سيتم طلبه عبر طلب <bdi dir="ltr" class="odt-ltr-term">HTTP POST.</bdi> هذا طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> بدون معلمات. ولهذا السبب لا يوجد سطر مثل:
   </li>
 </ul>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>    data: formulaire.serialize(),
 </code></pre></div>
-<p>في استدعاء Ajax؛</p>
+<p>في استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛</p>
 <ul>
-  <li>السطر 14: الاستجابة المتوقعة من الخادم هي دفق HTML؛
+  <li>السطر 14: الاستجابة المتوقعة من الخادم هي دفق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi>؛
   </li>
-  <li>الأسطر 18–20: سيتم استخدام دفق HTML هذا لتحديث المنطقة ذات <b>المعرف </b>[content]؛
+  <li>الأسطر 18–20: سيتم استخدام دفق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> هذا لتحديث المنطقة ذات <b>المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">content</bdi>]؛
   </li>
 </ul>
 
-<p>إجراء الخادم [Action05RetourSaisies] هو كما يلي:</p>
+<p>إجراء الخادم [<bdi dir="ltr" class="odt-ltr-term">Action05RetourSaisies</bdi>] هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">HttpPost</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">PartialViewResult</span><span style="color:#000000"> Action05RetourSaisies(</span><span style="color:#2b91af">SessionModel</span><span style="color:#000000"> session)</span></span></span>
@@ -3202,13 +3204,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 2: يتلقى الإجراء كمعلمة نموذج الجلسة الذي قمنا مسبقًا بتخزين قيم A و B المدخلة فيه؛
+  <li>السطر 2: يتلقى الإجراء كمعلمة نموذج الجلسة الذي قمنا مسبقًا بتخزين قيم <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi> المدخلة فيه؛
   </li>
-  <li>السطر 5: نُرجع العرض الجزئي [Form05] بنموذج من النوع [ViewModel05] حيث نحرص على تهيئة الحقول A و B بقيم A و B المأخوذة من الجلسة؛
+  <li>السطر 5: نُرجع العرض الجزئي [<bdi dir="ltr" class="odt-ltr-term">Form05</bdi>] بنموذج من النوع [<bdi dir="ltr" class="odt-ltr-term">ViewModel05</bdi>] حيث نحرص على تهيئة الحقول <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi> بقيم <bdi dir="ltr" class="odt-ltr-term">A</bdi> و <bdi dir="ltr" class="odt-ltr-term">B</bdi> المأخوذة من الجلسة؛
   </li>
 </ul>
 
-<p>الآن دعونا نعود إلى كود دالة JavaScript [returnInput]:</p>
+<p>الآن دعونا نعود إلى كود دالة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> [<bdi dir="ltr" class="odt-ltr-term">returnInput</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">function</span><span style="color:#000000"> retourSaisies() {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// make a manual Ajax call</span></span></span>
@@ -3235,18 +3237,18 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 13: الطريقة التي يتم تنفيذها عند اكتمال استدعاء Ajax؛
+  <li>السطر 13: الطريقة التي يتم تنفيذها عند اكتمال استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>؛
   </li>
   <li>السطر 14: يتم إخفاء صورة التحميل المتحركة؛
   </li>
-  <li>السطر 16: تعليمات غامضة إلى حد ما وجدتها على الإنترنت لحل المشكلة التالية: في النموذج المعروض بواسطة الرابط [العودة إلى الإدخال]، لم تعد أدوات التحقق من صحة البيانات من جانب العميل تعمل. أثناء البحث عن معلومات حول مكتبة JS [jquery.unobtrusive-ajax]، وجدت الحل في السطر 16. يقوم بتحليل النموذج، ربما لتنشيط أدوات التحقق من صحة البيانات من جانب العميل.
+  <li>السطر 16: تعليمات غامضة إلى حد ما وجدتها على الإنترنت لحل المشكلة التالية: في النموذج المعروض بواسطة الرابط [العودة إلى الإدخال]، لم تعد أدوات التحقق من صحة البيانات من جانب العميل تعمل. أثناء البحث عن معلومات حول مكتبة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">jquery.unobtrusive-ajax</bdi>]، وجدت الحل في السطر 16. يقوم بتحليل النموذج، ربما لتنشيط أدوات التحقق من صحة البيانات من جانب العميل.
   </li>
 </ul>
 <p><a id="refheading9151414318228761"></a></p>
-<h2 id="77-aspnet">7.7. <span style="color: #4f81bd">جعل تطبيق ASP.NET متاحًا على الإنترنت</span></h2>
+<h2 id="77-aspnet">7.7. <span style="color: #4f81bd">جعل تطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> متاحًا على الإنترنت</span></h2>
 <p>انظر القسم 9.26.</p>
 <p><a id="refheading932761820568291"></a></p>
-<h2 id="78-android-apu">7.8. <span style="color: #4f81bd">إنشاء تطبيق Android أصلي من تطبيق APU أحادي الصفحة</span></h2>
+<h2 id="78-android-apu">7.8. <span style="color: #4f81bd">إنشاء تطبيق <bdi dir="ltr" class="odt-ltr-term">Android</bdi> أصلي من تطبيق <bdi dir="ltr" class="odt-ltr-term">APU</bdi> أحادي الصفحة</span></h2>
 <p>انظر القسم 9.27.</p>
 
 

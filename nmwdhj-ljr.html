@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -794,28 +796,28 @@
 
 <p><a id="refheading58052676630786"></a></p>
 <h1 id="4">4. <span style="color: #365f91">نموذج الإجراء</span></h1>
-<p>لنعد إلى بنية تطبيق ASP.NET MVC:</p>
+<p>لنعد إلى بنية تطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000537000001A9E40F6010.png" width="668" height="213" style="display:inline-block; margin:4px;width:17.662cm;height:5.623cm;" class="odt-zoomable" data-zoom-src="images/1000000000000537000001A9E40F6010.png" /></td></tr></table>
 
-<p>في الفصل السابق، تناولنا العملية التي توجه الطلب [1] إلى وحدة التحكم والإجراء [2a] اللذين سيتوليان معالجته، وهي آلية تُعرف باسم التوجيه. كما عرضنا الاستجابات المختلفة التي يمكن أن ترسلها الإجراء إلى المتصفح. حتى الآن، عرضنا إجراءات لم تقم بمعالجة الطلب المقدم إليها. يحمل الطلب [1] أجزاء مختلفة من المعلومات التي يقدمها ASP.NET MVC [2a] إلى الإجراء في شكل <strong>نموذج</strong>. لا ينبغي الخلط بين هذا المصطلح ونموذج <strong>M</strong> لعرض <strong>V</strong> [2c] الذي تنتجه الإجراء:</p>
+<p>في الفصل السابق، تناولنا العملية التي توجه الطلب [1] إلى وحدة التحكم والإجراء [2a] اللذين سيتوليان معالجته، وهي آلية تُعرف باسم التوجيه. كما عرضنا الاستجابات المختلفة التي يمكن أن ترسلها الإجراء إلى المتصفح. حتى الآن، عرضنا إجراءات لم تقم بمعالجة الطلب المقدم إليها. يحمل الطلب [1] أجزاء مختلفة من المعلومات التي يقدمها <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> [2a] إلى الإجراء في شكل <strong>نموذج</strong>. لا ينبغي الخلط بين هذا المصطلح ونموذج <strong><bdi dir="ltr" class="odt-ltr-term">M</bdi></strong> لعرض <strong><bdi dir="ltr" class="odt-ltr-term">V</bdi></strong> [2c] الذي تنتجه الإجراء:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000061C00000091EF5447AE.png" width="680" height="63" style="display:inline-block; margin:4px;width:17.999cm;height:1.669cm;" class="odt-zoomable" data-zoom-src="images/100000000000061C00000091EF5447AE.png" /></td></tr></table>
 
 <ul>
-  <li>يصل طلب HTTP الخاص بالعميل إلى [1]؛
+  <li>يصل طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الخاص بالعميل إلى [1]؛
   </li>
   <li>في [2]، يتم تحويل المعلومات الواردة في الطلب إلى نموذج إجراء [3]، غالبًا ما يكون فئة، ولكنه ليس بالضرورة كذلك، والذي يعمل كمدخل للإجراء [4]؛
   </li>
-  <li>في [4]، تقوم الإجراء، بناءً على هذا النموذج، بإنشاء استجابة. تتكون هذه الاستجابة من مكونين: عرض V [6] ونموذج M لهذا العرض [5]؛
+  <li>في [4]، تقوم الإجراء، بناءً على هذا النموذج، بإنشاء استجابة. تتكون هذه الاستجابة من مكونين: عرض <bdi dir="ltr" class="odt-ltr-term">V</bdi> [6] ونموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> لهذا العرض [5]؛
   </li>
-  <li>ستستخدم طريقة العرض V [6] نموذجها M [5] لتوليد استجابة HTTP الموجهة للعميل.
+  <li>ستستخدم طريقة العرض <bdi dir="ltr" class="odt-ltr-term">V</bdi> [6] نموذجها <bdi dir="ltr" class="odt-ltr-term">M</bdi> [5] لتوليد استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الموجهة للعميل.
   </li>
 </ul>
 
-<p>في نموذج <strong>MVC</strong>، الإجراء [4] هو جزء من <strong>C</strong> (وحدة التحكم)، ونموذج العرض [5] هو <strong>M</strong>، والعرض [6] هو <strong>V</strong>.</p>
+<p>في نموذج <strong><bdi dir="ltr" class="odt-ltr-term">MVC</bdi></strong>، الإجراء [4] هو جزء من <strong><bdi dir="ltr" class="odt-ltr-term">C</bdi></strong> (وحدة التحكم)، ونموذج العرض [5] هو <strong><bdi dir="ltr" class="odt-ltr-term">M</bdi></strong>، والعرض [6] هو <strong><bdi dir="ltr" class="odt-ltr-term">V</bdi></strong>.</p>
 <p>يتناول هذا الفصل آليات ربط المعلومات التي يحملها الطلب — وهي سلاسل نصية بطبيعتها — بنموذج الإجراء، الذي يمكن أن يكون فئة ذات خصائص من أنواع مختلفة.</p>
 <p><a id="refheading58054676630786"></a></p>
 <h2 id="41">4.1. <span style="color: #4f81bd">تهيئة معلمات الإجراء</span></h2>
-<p>نقوم بإضافة [1] مشروع ASP.NET MVC أساسي جديد إلى الحل الحالي:</p>
+<p>نقوم بإضافة [1] مشروع <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> أساسي جديد إلى الحل الحالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A600000222F42F5117.png" width="680" height="257" style="display:inline-block; margin:4px;width:17.999cm;height:6.796cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A600000222F42F5117.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052E0000031BFB58988F.png" width="663" height="397" style="display:inline-block; margin:4px;width:17.542cm;height:10.516cm;" class="odt-zoomable" data-zoom-src="images/100000000000052E0000031BFB58988F.png" /></td></tr></table>
@@ -823,16 +825,16 @@
 <ul>
   <li>في [2]، اسم المشروع الجديد؛
   </li>
-  <li>في [3، 4]، نختار مشروع ASP.NET MVC أساسي؛
+  <li>في [3، 4]، نختار مشروع <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> أساسي؛
   </li>
   <li>في [5]، المشروع الجديد.
   </li>
 </ul>
 
 <p>سنجعل المشروع الجديد هو مشروع بدء التشغيل للحل.</p>
-<p>كما فعلنا في القسم 3.1، نقوم بإنشاء وحدة تحكم باسم [First] [1]:</p>
+<p>كما فعلنا في القسم 3.1، نقوم بإنشاء وحدة تحكم باسم [<bdi dir="ltr" class="odt-ltr-term">First</bdi>] [1]:</p>
 <p><img src="images/10000000000000AF000000900D740575.png" width="122" height="101" style="width:3.24cm;height:2.665cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000AF000000900D740575.png" /></p>
-<p>في وحدة التحكم هذه، نقوم بإنشاء الإجراء التالي [Action01]:</p>
+<p>في وحدة التحكم هذه، نقوم بإنشاء الإجراء التالي [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Web.Mvc;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -850,12 +852,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>الميزة الجديدة موجودة في السطر 8: تحتوي طريقة [Action01] على معلمة. في هذا الفصل، سنستكشف الطرق المختلفة لتهيئة معلمات الإجراء. يتم تهيئة المعلمة [name] أعلاه بالترتيب بالقيم التالية:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Request.Form[&quot;name&quot;]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معلمة باسم [name] مرسلة بواسطة طلب POST</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>RouteData.Values[&quot;name&quot;]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنصر URL باسم [name]</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Request.QueryString[&quot;name&quot;]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معلمة باسم [name] مرسلة بواسطة طلب GET</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Request.Files[&quot;name&quot;]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">ملف تم تحميله باسم [name]</div></td></tr></table>
+<p>الميزة الجديدة موجودة في السطر 8: تحتوي طريقة [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>] على معلمة. في هذا الفصل، سنستكشف الطرق المختلفة لتهيئة معلمات الإجراء. يتم تهيئة المعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] أعلاه بالترتيب بالقيم التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">Request.Form</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معلمة باسم [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] مرسلة بواسطة طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">RouteData.Values</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنصر <bdi dir="ltr" class="odt-ltr-term">URL</bdi> باسم [<bdi dir="ltr" class="odt-ltr-term">name</bdi>]</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معلمة باسم [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] مرسلة بواسطة طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">Request.Files</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">ملف تم تحميله باسم [<bdi dir="ltr" class="odt-ltr-term">name</bdi>]</div></td></tr></table>
 
-<p>دعونا ندرس هذه الحالات المختلفة. دعونا ندخل عنوان URL [/First/Action01?name=someone] مباشرة في المتصفح. نحصل على الاستجابة التالية:</p>
+<p>دعونا ندرس هذه الحالات المختلفة. دعونا ندخل عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">First/Action01</bdi>?<bdi dir="ltr" class="odt-ltr-term">name</bdi>=<bdi dir="ltr" class="odt-ltr-term">someone</bdi>] مباشرة في المتصفح. نحصل على الاستجابة التالية:</p>
 <p><img src="images/10000000000001E30000007C82924AE4.png" width="338" height="87" style="width:8.939cm;height:2.295cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E30000007C82924AE4.png" /></p>
-<p>كان طلب HTTP للمتصفح كما يلي:</p>
+<p>كان طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للمتصفح كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>GET /First/Action01?nom=someone HTTP/1.1
@@ -863,7 +865,7 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>...
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 1: الطلب هو GET. يتضمن عنوان URL المطلوب المعلمة [name]. على جانب الخادم، يتم توجيه الطلب إلى الإجراء [Action01]، الذي له التوقيع التالي:
+  <li>السطر 1: الطلب هو <bdi dir="ltr" class="odt-ltr-term">GET.</bdi> يتضمن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب المعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>]. على جانب الخادم، يتم توجيه الطلب إلى الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]، الذي له التوقيع التالي:
   </li>
 </ul>
 
@@ -871,7 +873,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action01(</span><span style="color:#0000ff">string</span><span style="color:#000000"> nom)</span></span></span>
 </code></pre></div>
 
-<p>لتعيين قيمة للمعلمة <code>name</code>، يتحقق ASP.NET MVC من القيم التالية بالترتيب: <code>*Request.Form[&amp;quot;name&amp;quot;], RouteData.Values[&amp;quot;name&amp;quot;],* *&lt;span style="color: #2323dc"&gt;Request.QueryString[&amp;quot;name&amp;quot;]&lt;/span&gt;**, Request.Files[&amp;quot;name&amp;quot;]*.</code> ويتوقف فور العثور على قيمة. تم وضع المعلمة [name] المضمنة في عنوان URL GET بواسطة إطار العمل في <em>Request.QueryString[&quot;name&quot;].</em> وبهذه القيمة [someone] سيتم تهيئة المعلمة [name] لـ [Action01]. ثم يتم تنفيذ كود [Action01]:</p>
+<p>لتعيين قيمة للمعلمة <code>&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;</code>، يتحقق <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> من القيم التالية بالترتيب: <code>*&lt;bdi dir="ltr" class="odt-ltr-term"&gt;Request.Form&lt;/bdi&gt;[&amp;quot;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;&amp;quot;], &lt;bdi dir="ltr" class="odt-ltr-term"&gt;RouteData.Values&lt;/bdi&gt;[&amp;quot;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;&amp;quot;],* *&lt;span style="color: #2323dc"&gt;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;Request.QueryString&lt;/bdi&gt;[&amp;quot;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;&amp;quot;]&lt;/span&gt;**, &lt;bdi dir="ltr" class="odt-ltr-term"&gt;Request.Files&lt;/bdi&gt;[&amp;quot;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;&amp;quot;]*.</code> ويتوقف فور العثور على قيمة. تم وضع المعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] المضمنة في عنوان <bdi dir="ltr" class="odt-ltr-term">URL GET</bdi> بواسطة إطار العمل في <em><bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;].</em> وبهذه القيمة [<bdi dir="ltr" class="odt-ltr-term">someone</bdi>] سيتم تهيئة المعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] لـ [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]. ثم يتم تنفيذ كود [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">return</span><span style="color:#000000"> Content(</span><span style="color:#0000ff">string</span><span style="color:#000000">.Format(</span><span style="color:#a31515">&quot;Contrôleur=First, Action=Action01, nom={0}&quot;</span><span style="color:#000000">, nom), </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">Encoding</span><span style="color:#000000">.UTF8);</span></span></span>
 </code></pre></div>
@@ -886,39 +888,39 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action01(</span><span style="color:#0000ff">string</span><span style="color:#000000"> NOM)</span></span></span>
 </code></pre></div>
 
-<p>وتم تمرير المعلمة [?Name=zébulon]، فسيتم الربط. وستتلقى المعلمة [Name] في [Action01] القيمة [zébulon].</p>
+<p>وتم تمرير المعلمة [?<bdi dir="ltr" class="odt-ltr-term">Name</bdi>=<bdi dir="ltr" class="odt-ltr-term">zébulon</bdi>]، فسيتم الربط. وستتلقى المعلمة [<bdi dir="ltr" class="odt-ltr-term">Name</bdi>] في [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>] القيمة [<bdi dir="ltr" class="odt-ltr-term">zébulon</bdi>].</p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">الآن، دعونا نطلب نفس عنوان URL باستخدام POST. للقيام بذلك، سنستخدم تطبيق [Advanced Rest Client]:</span></p>
+<p><span style="color: #000000">الآن، دعونا نطلب نفس عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> باستخدام <bdi dir="ltr" class="odt-ltr-term">POST.</bdi> للقيام بذلك، سنستخدم تطبيق [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001FA0000021A09A529B6.png" width="253" height="269" style="display:inline-block; margin:4px;width:6.694cm;height:7.117cm;" class="odt-zoomable" data-zoom-src="images/10000000000001FA0000021A09A529B6.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [1]، عنوان URL المطلوب؛</span>
+  <li><span style="color: #000000">في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، سيتم استخدام طريقة POST؛</span>
+  <li><span style="color: #000000">في [2]، سيتم استخدام طريقة <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في [3]، معلمات POST.</span>
+  <li><span style="color: #000000">في [3]، معلمات <bdi dir="ltr" class="odt-ltr-term">POST.</bdi></span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نرسل هذا الطلب ونلقي نظرة على سجلات HTTP. طلب HTTP هو كما يلي:</span></p>
+<p><span style="color: #000000">دعونا نرسل هذا الطلب ونلقي نظرة على سجلات <bdi dir="ltr" class="odt-ltr-term">HTTP.</bdi> طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> هو كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005490000020F18457CB3.png" width="677" height="264" style="display:inline-block; margin:4px;width:17.9cm;height:6.973cm;" class="odt-zoomable" data-zoom-src="images/10000000000005490000020F18457CB3.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [1]، POST؛</span>
+  <li><span style="color: #000000">في [1]، <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، معلمات POST. من الناحية الفنية، تم إرسالها بعد رؤوس HTTP، بعد السطر الفارغ الذي يشير إلى نهاية تلك الرؤوس؛</span>
+  <li><span style="color: #000000">في [2]، معلمات <bdi dir="ltr" class="odt-ltr-term">POST.</bdi> من الناحية الفنية، تم إرسالها بعد رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>، بعد السطر الفارغ الذي يشير إلى نهاية تلك الرؤوس؛</span>
   </li>
-  <li><span style="color: #000000">في [3]، الاستجابة المستلمة. نجحنا في استرداد معلمة [name] من POST. من بين القيم التي تم اختبارها لمعلمة name </span><i><span style="color: #000000">— </span></i><i><span style="color: #2323dc">Request.Form[&quot;name&quot;]</span></i><i><span style="color: #000000">, RouteData.Values[&quot;name&quot;], Request.QueryString[&quot;name&quot;], Request.Files[&quot;name&quot;] </span></i><span style="color: #000000">— نجحت القيمة الأولى.</span>
+  <li><span style="color: #000000">في [3]، الاستجابة المستلمة. نجحنا في استرداد معلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] من <bdi dir="ltr" class="odt-ltr-term">POST.</bdi> من بين القيم التي تم اختبارها لمعلمة <bdi dir="ltr" class="odt-ltr-term">name</bdi> </span><i><span style="color: #000000">— </span></i><i><span style="color: #2323dc"><bdi dir="ltr" class="odt-ltr-term">Request.Form</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</span></i><i><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">RouteData.Values</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;], <bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;], <bdi dir="ltr" class="odt-ltr-term">Request.Files</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;] </span></i><span style="color: #000000">— نجحت القيمة الأولى.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">الآن، دعونا نعدل المسار الافتراضي في [App_Start/RouteConfig]. حاليًا، هذا المسار كما يلي:</span></p>
+<p><span style="color: #000000">الآن، دعونا نعدل المسار الافتراضي في [<bdi dir="ltr" class="odt-ltr-term">App</bdi>_Start/<bdi dir="ltr" class="odt-ltr-term">RouteConfig</bdi>]. حاليًا، هذا المسار كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">      routes.MapRoute(</span></span>
@@ -941,38 +943,38 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في السطر 3، قمنا بتسمية العنصر الثالث للمسار [name]؛</span>
+  <li><span style="color: #000000">في السطر 3، قمنا بتسمية العنصر الثالث للمسار [<bdi dir="ltr" class="odt-ltr-term">name</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">في السطر 4، تم تعريف هذا العنصر على أنه اختياري.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">الآن، دعونا نعيد ترجمة التطبيق ونطلب عنوان URL [/First/Action01/zébulon] مباشرة في المتصفح. نحصل على الاستجابة التالية:</span></p>
+<p><span style="color: #000000">الآن، دعونا نعيد ترجمة التطبيق ونطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">First/Action01/zébulon</bdi>] مباشرة في المتصفح. نحصل على الاستجابة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001B300000083D6AE41C1.png" width="304" height="92" style="width:8.05cm;height:2.424cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B300000083D6AE41C1.png" /></p>
-<p><span style="color: #000000">من بين القيم التي تم اختبارها للمعلمة &quot;name&quot; </span><em><span style="color: #000000">— Request.Form[&quot;name&quot;], </span></em><em><span style="color: #2323dc">RouteData.Values[&quot;name&quot;]</span></em><em><span style="color: #000000">, Request.QueryString[&quot;name&quot;], Request.Files[&quot;name&quot;] </span></em><span style="color: #000000">— نجحت القيمة الثانية.</span></p>
+<p><span style="color: #000000">من بين القيم التي تم اختبارها للمعلمة &quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot; </span><em><span style="color: #000000">— <bdi dir="ltr" class="odt-ltr-term">Request.Form</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;], </span></em><em><span style="color: #2323dc"><bdi dir="ltr" class="odt-ltr-term">RouteData.Values</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</span></em><em><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;], <bdi dir="ltr" class="odt-ltr-term">Request.Files</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;] </span></em><span style="color: #000000">— نجحت القيمة الثانية.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نرسل الطلب نفسه باستخدام طلب POST و [Advanced Rest Client]:</span></p>
+<p><span style="color: #000000">دعونا نرسل الطلب نفسه باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> و [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005AD00000222A11C4649.png" width="680" height="256" style="display:inline-block; margin:4px;width:17.999cm;height:6.765cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AD00000222A11C4649.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [1]، قمنا بتعيين قيمة لعنصر {name} في المسار؛</span>
+  <li><span style="color: #000000">في [1]، قمنا بتعيين قيمة لعنصر {<bdi dir="ltr" class="odt-ltr-term">name</bdi>} في المسار؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، نضيف معلمة [name] إلى الطلب المرسل؛</span>
+  <li><span style="color: #000000">في [2]، نضيف معلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] إلى الطلب المرسل؛</span>
   </li>
   <li><span style="color: #000000">الاستجابة التي تم الحصول عليها موجودة في [3].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">من بين القيم التي تم اختبارها لمعلمة [name] </span><em><span style="color: #000000">— </span></em><em><span style="color: #2323dc">Request.Form[&quot;name&quot;]</span></em><em><span style="color: #000000">, </span></em><em><span style="color: #2323dc">RouteData.Values[&quot;name&quot;]</span></em><em><span style="color: #000000">, Request.QueryString[&quot;name&quot;], Request.Files[&quot;name&quot;] </span></em><span style="color: #000000">— كانت اثنتان صالحتين: أول اثنتين. تم استخدام الأولى.</span></p>
+<p><span style="color: #000000">من بين القيم التي تم اختبارها لمعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] </span><em><span style="color: #000000">— </span></em><em><span style="color: #2323dc"><bdi dir="ltr" class="odt-ltr-term">Request.Form</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</span></em><em><span style="color: #000000">, </span></em><em><span style="color: #2323dc"><bdi dir="ltr" class="odt-ltr-term">RouteData.Values</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</span></em><em><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;], <bdi dir="ltr" class="odt-ltr-term">Request.Files</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;] </span></em><span style="color: #000000">— كانت اثنتان صالحتين: أول اثنتين. تم استخدام الأولى.</span></p>
 <p><a id="refheading58056676630786"></a></p>
 <h2 id="42">4.2. <span style="color: #4f81bd">التحقق من صحة معلمات الإجراء</span></h2>
-<p><span style="color: #000000">إذا احتوت إحدى الإجراءات على معلمة باسم [p]، فسيحاول ASP.NET MVC تعيين إحدى القيم التالية لها</span><em><span style="color: #000000">: Request.Form[&quot;p&quot;]، أو </span></em><em>RouteData.Values[&quot;p&quot;]</em><em><span style="color: #000000">، أو Request.QueryString[&quot;p&quot;]، أو Request.Files[&quot;p&quot;]</span></em><span style="color: #000000">. القيم الثلاث الأولى هي سلاسل نصية. وإذا لم تكن المعلمة [p] من النوع [string]، فقد تنشأ مشكلات.</span></p>
+<p><span style="color: #000000">إذا احتوت إحدى الإجراءات على معلمة باسم [<bdi dir="ltr" class="odt-ltr-term">p</bdi>]، فسيحاول <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> تعيين إحدى القيم التالية لها</span><em><span style="color: #000000">: <bdi dir="ltr" class="odt-ltr-term">Request.Form</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">p</bdi>&quot;]، أو </span></em><em><bdi dir="ltr" class="odt-ltr-term">RouteData.Values</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">p</bdi>&quot;]</em><em><span style="color: #000000">، أو <bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">p</bdi>&quot;]، أو <bdi dir="ltr" class="odt-ltr-term">Request.Files</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">p</bdi>&quot;]</span></em><span style="color: #000000">. القيم الثلاث الأولى هي سلاسل نصية. وإذا لم تكن المعلمة [<bdi dir="ltr" class="odt-ltr-term">p</bdi>] من النوع [<bdi dir="ltr" class="odt-ltr-term">string</bdi>]، فقد تنشأ مشكلات.</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">لنقم بإنشاء الإجراء الجديد التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
@@ -987,20 +989,20 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: تقبل الإجراء [Action02] معلمة باسم [age] من النوع </span><b><span style="color: #000000">int</span></b><span style="color: #000000">. يجب أن تكون السلسلة المستردة قابلة للتحويل إلى </span><b><span style="color: #000000">int</span></b><span style="color: #000000">.</span>
+  <li><span style="color: #000000">السطر 2: تقبل الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02</bdi>] معلمة باسم [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] من النوع </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi></span></b><span style="color: #000000">. يجب أن تكون السلسلة المستردة قابلة للتحويل إلى </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi></span></b><span style="color: #000000">.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نطلب عنوان URL [</span><strong><span style="color: #000000">http://localhost:55483/First/Action02?age=21</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action02</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001B80000007669369E94.png" width="308" height="83" style="width:8.149cm;height:2.185cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B80000007669369E94.png" /></p>
-<p><span style="color: #000000">دعونا نطلب عنوان URL [</span><strong><span style="color: #000000">http://localhost:55483/First/Action02?age=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action02</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001DF00000145F65CEB4F.png" width="335" height="227" style="width:8.871cm;height:6.018cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DF00000145F65CEB4F.png" /></p>
-<p><span style="color: #000000">هذه المرة، تلقينا صفحة خطأ. من المثير للاهتمام إلقاء نظرة على رؤوس HTTP التي أرسلها الخادم في هذه الحالة:</span></p>
+<p><span style="color: #000000">هذه المرة، تلقينا صفحة خطأ. من المثير للاهتمام إلقاء نظرة على رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التي أرسلها الخادم في هذه الحالة:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -1014,12 +1016,12 @@
 </code></pre></div></td></tr></table></div>
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: استجاب الخادم برمز [500 Internal Server Error] وأرسل صفحة HTML (السطر 3) بحجم 12,438 بايت (السطر 5) لشرح الأسباب المحتملة لهذا الخطأ.</span>
+  <li><span style="color: #000000">السطر 1: استجاب الخادم برمز [500 <bdi dir="ltr" class="odt-ltr-term">Internal Server Error</bdi>] وأرسل صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> (السطر 3) بحجم 12,438 بايت (السطر 5) لشرح الأسباب المحتملة لهذا الخطأ.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">الآن دعونا ننشئ الإجراء [Action03] التالي:</span></p>
+<p><span style="color: #000000">الآن دعونا ننشئ الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action03</bdi>] التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action03</span></span></span>
@@ -1030,15 +1032,15 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">[Action03] مطابق لـ [Action02] باستثناء أننا قمنا بتغيير نوع المعلمة [age] إلى </span><strong><span style="color: #000000">int?</span></strong><span style="color: #000000">، مما يعني </span><strong><span style="color: #000000">عدد صحيح </span></strong><span style="color: #000000">أو </span><strong><span style="color: #000000">قيمة فارغة</span></strong><span style="color: #000000">.</span></p>
+<p><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">Action03</bdi>] مطابق لـ [<bdi dir="ltr" class="odt-ltr-term">Action02</bdi>] باستثناء أننا قمنا بتغيير نوع المعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] إلى </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi>?</span></strong><span style="color: #000000">، مما يعني </span><strong><span style="color: #000000">عدد صحيح </span></strong><span style="color: #000000">أو </span><strong><span style="color: #000000">قيمة فارغة</span></strong><span style="color: #000000">.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نطلب عنوان URL [</span><strong><span style="color: #000000">http://localhost:55483/First/Action03?age=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action03</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001B30000007821A5ED57.png" width="304" height="84" style="width:8.05cm;height:2.221cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B30000007821A5ED57.png" /></p>
-<p><span style="color: #000000">لم يتمكن ASP.NET MVC من تحويل [21x] إلى نوع </span><strong><span style="color: #000000">int</span></strong><span style="color: #000000">. ولذلك، قام بتعيين القيمة </span><strong><span style="color: #000000">null </span></strong><span style="color: #000000">للمتغير [age]، كما يسمح به نوع </span><strong><span style="color: #000000">int؟</span></strong><span style="color: #000000"> الخاص به. ومع ذلك، من الممكن تحديد ما إذا كان المتغير قد تلقى قيمة من الطلب أم لا.</span></p>
+<p><span style="color: #000000">لم يتمكن <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> من تحويل [21x] إلى نوع </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi></span></strong><span style="color: #000000">. ولذلك، قام بتعيين القيمة </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></strong><span style="color: #000000">للمتغير [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]، كما يسمح به نوع </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi>؟</span></strong><span style="color: #000000"> الخاص به. ومع ذلك، من الممكن تحديد ما إذا كان المتغير قد تلقى قيمة من الطلب أم لا.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">نقوم بإنشاء الإجراء الجديد التالي [Action04]:</span></p>
+<p><span style="color: #000000">نقوم بإنشاء الإجراء الجديد التالي [<bdi dir="ltr" class="odt-ltr-term">Action04</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action04</span></span></span>
@@ -1052,20 +1054,20 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: احتفظنا بنوع [int?]. وهذا يسمح على وجه التحديد للطلب بحذف المعلمة [age]، التي تتلقى عندئذ القيمة </span><b><span style="color: #000000">null</span></b><span style="color: #000000">؛</span>
+  <li><span style="color: #000000">السطر 2: احتفظنا بنوع [<bdi dir="ltr" class="odt-ltr-term">int</bdi>?]. وهذا يسمح على وجه التحديد للطلب بحذف المعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]، التي تتلقى عندئذ القيمة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi></span></b><span style="color: #000000">؛</span>
   </li>
-  <li><span style="color: #000000">السطر 4: نتحقق من صحة نموذج الإجراء. يتكون نموذج الإجراء من جميع معلماته، وفي هذه الحالة [age]. يكون النموذج صحيحًا إذا تمكنت جميع المعلمات من الحصول على قيمة من الطلب أو القيمة </span><b><span style="color: #000000">null </span></b><span style="color: #000000">إذا كان نوع المعلمة يسمح بذلك؛</span>
+  <li><span style="color: #000000">السطر 4: نتحقق من صحة نموذج الإجراء. يتكون نموذج الإجراء من جميع معلماته، وفي هذه الحالة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]. يكون النموذج صحيحًا إذا تمكنت جميع المعلمات من الحصول على قيمة من الطلب أو القيمة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></b><span style="color: #000000">إذا كان نوع المعلمة يسمح بذلك؛</span>
   </li>
-  <li><span style="color: #000000">السطر 5: نضيف قيمة المتغير [valid] إلى النص المرسل إلى العميل.</span>
+  <li><span style="color: #000000">السطر 5: نضيف قيمة المتغير [<bdi dir="ltr" class="odt-ltr-term">valid</bdi>] إلى النص المرسل إلى العميل.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نطلب عنوان URL [</span><strong><span style="color: #000000">http://localhost:55483/First/Action04?age=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action04</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001BD00000076AF114E5F.png" width="311" height="83" style="width:8.241cm;height:2.185cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BD00000076AF114E5F.png" /></p>
-<p><span style="color: #000000">لم يتمكن ASP.NET MVC من تحويل [21x] إلى النوع </span><strong><span style="color: #000000">int</span></strong><span style="color: #000000">. ولذلك، قام بتعيين القيمة </span><strong><span style="color: #000000">null </span></strong><span style="color: #000000">للمعلمة [age]، كما يسمح بذلك نوعها </span><strong><span style="color: #000000">int؟</span></strong><span style="color: #000000">. ومع ذلك، كانت هناك أخطاء في التحويل، كما هو موضح بقيمة [valid].</span></p>
+<p><span style="color: #000000">لم يتمكن <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> من تحويل [21x] إلى النوع </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi></span></strong><span style="color: #000000">. ولذلك، قام بتعيين القيمة </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></strong><span style="color: #000000">للمعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]، كما يسمح بذلك نوعها </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi>؟</span></strong><span style="color: #000000">. ومع ذلك، كانت هناك أخطاء في التحويل، كما هو موضح بقيمة [<bdi dir="ltr" class="odt-ltr-term">valid</bdi>].</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">من الممكن الحصول على رسالة الخطأ المرتبطة بفشل التحويل. دعونا نفحص الإجراء الجديد التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
@@ -1080,7 +1082,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">الميزة الجديدة موجودة في السطر 4. هنا، نستدعي طريقة خاصة [getErrorMessagesFor] ونمرر إليها حالة نموذج الإجراء. وهي تُرجع سلسلة تحتوي على جميع رسائل الخطأ التي حدثت. هذه الطريقة هي كما يلي:</span></p>
+<p><span style="color: #000000">الميزة الجديدة موجودة في السطر 4. هنا، نستدعي طريقة خاصة [<bdi dir="ltr" class="odt-ltr-term">getErrorMessagesFor</bdi>] ونمرر إليها حالة نموذج الإجراء. وهي تُرجع سلسلة تحتوي على جميع رسائل الخطأ التي حدثت. هذه الطريقة هي كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">private</span> <span style="color:#0000ff">string</span> <a id="geterrormessagesfor"></a>getErrorMessagesFor(<span style="color:#2b91af">ModelStateDictionary</span> état)</span></span>
@@ -1107,44 +1109,44 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: المعلمة [ModelState] الفعلية التي تم تمريرها إلى الأسلوب هي من النوع [ModelStateDictionary]؛</span>
+  <li><span style="color: #000000">السطر 1: المعلمة [<bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>] الفعلية التي تم تمريرها إلى الأسلوب هي من النوع [<bdi dir="ltr" class="odt-ltr-term">ModelStateDictionary</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 3: قائمة برسائل الخطأ، فارغة في البداية؛</span>
   </li>
   <li><span style="color: #000000">السطر 5: نتحقق مما إذا كانت الحالة التي تم تمريرها كمعلمة صالحة أم لا. إذا لم تكن صالحة، فسنجمع جميع رسائل الخطأ في سلسلة واحدة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: يحتوي النوع [ModelStateDictionary] على خاصية [Values]، وهي مجموعة من أنواع [ModelState]. يوجد [ModelState] واحد لكل عنصر نموذج. على سبيل المثال:</span>
+  <li><span style="color: #000000">السطر 7: يحتوي النوع [<bdi dir="ltr" class="odt-ltr-term">ModelStateDictionary</bdi>] على خاصية [<bdi dir="ltr" class="odt-ltr-term">Values</bdi>]، وهي مجموعة من أنواع [<bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>]. يوجد [<bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>] واحد لكل عنصر نموذج. على سبيل المثال:</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
 <ol>
     <ul>
-      <li><b><span style="color: #000000">ModelState[&quot;age&quot;]</span></b><span style="color: #000000">: حالة النموذج للإجراء الخاص بالمعلمة [age]،</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;]</span></b><span style="color: #000000">: حالة النموذج للإجراء الخاص بالمعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]،</span>
       </li>
-      <li><b><span style="color: #000000">ModelState[&quot;age&quot;].Errors</span></b><span style="color: #000000">: مجموعة الأخطاء الخاصة بهذا المعامل. الأخطاء من النوع [ModelError]،</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi></span></b><span style="color: #000000">: مجموعة الأخطاء الخاصة بهذا المعامل. الأخطاء من النوع [<bdi dir="ltr" class="odt-ltr-term">ModelError</bdi>]،</span>
       </li>
-      <li><b><span style="color: #000000">ModelState[&quot;age&quot;].Errors[i].ErrorMessage</span></b><span style="color: #000000">: رسالة الخطأ (إن وجدت) للمعلمة [age] في النموذج</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">ErrorMessage</bdi></span></b><span style="color: #000000">: رسالة الخطأ (إن وجدت) للمعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] في النموذج</span>
       </li>
-      <li><b><span style="color: #000000">ModelState[&quot;age&quot;].Errors[i].Exception</span></b><span style="color: #000000">: الاستثناء الخاص بالخطأ رقم i في مجموعة الأخطاء للمعلمة [age]،</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">Exception</bdi></span></b><span style="color: #000000">: الاستثناء الخاص بالخطأ رقم <bdi dir="ltr" class="odt-ltr-term">i</bdi> في مجموعة الأخطاء للمعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]،</span>
       </li>
-      <li><b><span style="color: #000000">ModelState[&quot;age&quot;].Errors[i].Exception.InnerException</span></b><span style="color: #000000">: سبب هذا الاستثناء،</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">Exception.InnerException</bdi></span></b><span style="color: #000000">: سبب هذا الاستثناء،</span>
       </li>
-      <li><b><span style="color: #000000">ModelState[&quot;age&quot;].Errors[i].Exception.InnerException.Message</span></b><span style="color: #000000">: رسالة سبب الاستثناء؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">Exception.InnerException.Message</bdi></span></b><span style="color: #000000">: رسالة سبب الاستثناء؛</span>
       </li>
     </ul>
 </ol>
 <ul>
-  <li><span style="color: #000000">السطر 9: نكرر عبر مجموعة [Errors] الخاصة بـ [ModelState] محدد؛</span>
+  <li><span style="color: #000000">السطر 9: نكرر عبر مجموعة [<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>] الخاصة بـ [<bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>] محدد؛</span>
   </li>
-  <li><span style="color: #000000">السطر 11: نسترد رسالة الخطأ من [ModelError] محدد ونضيفها إلى قائمة رسائل الخطأ من السطر 3؛</span>
+  <li><span style="color: #000000">السطر 11: نسترد رسالة الخطأ من [<bdi dir="ltr" class="odt-ltr-term">ModelError</bdi>] محدد ونضيفها إلى قائمة رسائل الخطأ من السطر 3؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 14–17: يتم ربط عناصر قائمة رسائل الخطأ في سلسلة واحدة.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">طريقة [getErrorMessageFor] في السطر 11 هي كما يلي:</span></p>
+<p><span style="color: #000000">طريقة [<bdi dir="ltr" class="odt-ltr-term">getErrorMessageFor</bdi>] في السطر 11 هي كما يلي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">string</span> getErrorMessageFor(<span style="color:#2b91af">ModelError</span> error)</span></span>
@@ -1167,18 +1169,18 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 1: نتلقى نوع [ModelError] الذي يغلف خطأً في أحد عناصر نموذج الإجراء. نسترد رسالة الخطأ من ثلاثة مواقع مختلفة:</span>
+  <li><span style="color: #000000">السطر 1: نتلقى نوع [<bdi dir="ltr" class="odt-ltr-term">ModelError</bdi>] الذي يغلف خطأً في أحد عناصر نموذج الإجراء. نسترد رسالة الخطأ من ثلاثة مواقع مختلفة:</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
 <ol>
     <ul>
-      <li><span style="color: #000000">في [ModelError].ErrorMessage، الأسطر 3–6؛</span>
+      <li><span style="color: #000000">في [<bdi dir="ltr" class="odt-ltr-term">ModelError</bdi>].<bdi dir="ltr" class="odt-ltr-term">ErrorMessage</bdi>، الأسطر 3–6؛</span>
       </li>
-      <li><span style="color: #000000">في [ModelError].Exception.Message، الأسطر 7–10؛</span>
+      <li><span style="color: #000000">في [<bdi dir="ltr" class="odt-ltr-term">ModelError</bdi>].<bdi dir="ltr" class="odt-ltr-term">Exception.Message</bdi>، الأسطر 7–10؛</span>
       </li>
-      <li><span style="color: #000000">في [ModelError].Exception.InnerException.Message، الأسطر 11–14؛</span>
+      <li><span style="color: #000000">في [<bdi dir="ltr" class="odt-ltr-term">ModelError</bdi>].<bdi dir="ltr" class="odt-ltr-term">Exception.InnerException.Message</bdi>، الأسطر 11–14؛</span>
       </li>
     </ul>
 </ol>
@@ -1186,7 +1188,7 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">أثناء الاختبار، نلاحظ أن رسالة الخطأ موجودة في هذه المواقع الثلاثة اعتمادًا على طبيعة عنصر النموذج. لا بد أن هناك قاعدة تضمن حصولنا على رسالة الخطأ المرتبطة بعنصر النموذج، لكنني لا أعرفها. لذا أبحث عنها في الأماكن المختلفة التي يمكنني العثور عليها فيها، باتباع ترتيب محدد. وبمجرد العثور على رسالة غير فارغة، يتم إرجاعها.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نطلب عنوان URL [</span><strong><span style="color: #000000">http://localhost:55483/First/Action05?age=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action05</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000002DD0000008E8489DDD0.png" width="513" height="99" style="width:13.57cm;height:2.628cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002DD0000008E8489DDD0.png" /></p>
@@ -1217,7 +1219,7 @@
 <p><img src="images/100000000000025C0000007DD19712C8.png" width="421" height="87" style="width:11.15cm;height:2.307cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000025C0000007DD19712C8.png" /></p>
 <p><a id="refheading58060676630786"></a></p>
 <h2 id="44">4.4. <span style="color: #4f81bd">استخدام فئة كنموذج لعمل</span></h2>
-<p><span style="color: #000000">دعونا نحدد فئة ستكون بمثابة نموذج لعمل ما. سنضعها في مجلد [Models] [1].</span></p>
+<p><span style="color: #000000">دعونا نحدد فئة ستكون بمثابة نموذج لعمل ما. سنضعها في مجلد [<bdi dir="ltr" class="odt-ltr-term">Models</bdi>] [1].</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000160000000B7E5E62470.png" width="176" height="92" style="display:inline-block; margin:4px;width:4.657cm;height:2.422cm;" class="odt-zoomable" data-zoom-src="images/1000000000000160000000B7E5E62470.png" /></td></tr></table>
 
@@ -1236,7 +1238,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">تحتوي فئتنا على الخاصيتين التلقائيتين [Weight] و [Age] اللتين تمت مناقشتهما سابقًا. ستكون هذه الفئة هي معلمة الإدخال للإجراء [Action07]:</span></p>
+<p><span style="color: #000000">تحتوي فئتنا على الخاصيتين التلقائيتين [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] اللتين تمت مناقشتهما سابقًا. ستكون هذه الفئة هي معلمة الإدخال للإجراء [<bdi dir="ltr" class="odt-ltr-term">Action07</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">// Action07</span></span></span>
@@ -1250,7 +1252,7 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: نموذج الإجراء هو مثيل من النوع [ActionModel01].</span>
+  <li><span style="color: #000000">السطر 2: نموذج الإجراء هو مثيل من النوع [<bdi dir="ltr" class="odt-ltr-term">ActionModel01</bdi>].</span>
   </li>
 </ul>
 
@@ -1259,24 +1261,24 @@
 <p><span style="color: #000000"> </span></p>
 <p><img src="images/10000000000002D400000092CCDC4975.png" width="504" height="102" style="width:13.33cm;height:2.688cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D400000092CCDC4975.png" /></p>
 <p><img src="images/100000000000025D000000809AA65E67.png" width="421" height="89" style="width:11.15cm;height:2.358cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000025D000000809AA65E67.png" /></p>
-<p><span style="color: #000000">لاحظ أن ربط المعلمات لا يميز بين الأحرف الكبيرة والصغيرة. كانت معلمات الطلب هي [age] و [weight]. وقد قامت بتعبئة خصائص [Age] و [Weight] في فئة [ModelAction01].</span></p>
+<p><span style="color: #000000">لاحظ أن ربط المعلمات لا يميز بين الأحرف الكبيرة والصغيرة. كانت معلمات الطلب هي [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">weight</bdi>]. وقد قامت بتعبئة خصائص [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] في فئة [<bdi dir="ltr" class="odt-ltr-term">ModelAction01</bdi>].</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">علاوة على ذلك، استخدمنا حتى الآن طلبات HTTP من نوع [GET]. دعونا نوضح أن طلبات [POST] تتصرف بنفس الطريقة. للقيام بذلك، دعونا نستخدم تطبيق [Advanced Rest Client] مرة أخرى:</span></p>
+<p><span style="color: #000000">علاوة على ذلك، استخدمنا حتى الآن طلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> من نوع [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>]. دعونا نوضح أن طلبات [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] تتصرف بنفس الطريقة. للقيام بذلك، دعونا نستخدم تطبيق [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>] مرة أخرى:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D700000229F6675F40.png" width="236" height="277" style="display:inline-block; margin:4px;width:6.232cm;height:7.317cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D700000229F6675F40.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">في [1]، عنوان URL المطلوب؛</span>
+  <li><span style="color: #000000">في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، سيتم إرساله عبر طلب POST؛</span>
+  <li><span style="color: #000000">في [2]، سيتم إرساله عبر طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في [3]، معلمات POST.</span>
+  <li><span style="color: #000000">في [3]، معلمات <bdi dir="ltr" class="odt-ltr-term">POST.</bdi></span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">نحصل على نفس الاستجابة كما في طلب GET:</span></p>
+<p><span style="color: #000000">نحصل على نفس الاستجابة كما في طلب <bdi dir="ltr" class="odt-ltr-term">GET:</bdi></span></p>
 <p><span style="color: #000000"> </span></p>
 <p><img src="images/100000000000049300000055ECCB8246.png" width="670" height="49" style="width:17.729cm;height:1.288cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000049300000055ECCB8246.png" /></p>
 <p><a id="refheading258461901815618"></a></p>
@@ -1295,7 +1297,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يمكن حذف المعلمتين [weight] و [age] من الطلب. في هذه الحالة، يتم تعيين الخاصيتين [Weight] و [Age] إلى [null]، ولا يتم الإبلاغ عن أي خطأ. قد ترغب في تحويل النموذج على النحو التالي:</span></p>
+<p><span style="color: #000000">يمكن حذف المعلمتين [<bdi dir="ltr" class="odt-ltr-term">weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] من الطلب. في هذه الحالة، يتم تعيين الخاصيتين [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">null</bdi>]، ولا يتم الإبلاغ عن أي خطأ. قد ترغب في تحويل النموذج على النحو التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> Exemple_02.Models</span></span>
@@ -1309,20 +1311,20 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">السطران 5 و 6: لم يعد بإمكان الخاصيتين [Weight] و [Age] أن تأخذا القيمة [null]. لنرى ما يحدث مع هذا النموذج الجديد عندما تكون المعلمتان [weight] و [age] مفقودتين من الطلب.</span></p>
+<p><span style="color: #000000">السطران 5 و 6: لم يعد بإمكان الخاصيتين [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] أن تأخذا القيمة [<bdi dir="ltr" class="odt-ltr-term">null</bdi>]. لنرى ما يحدث مع هذا النموذج الجديد عندما تكون المعلمتان [<bdi dir="ltr" class="odt-ltr-term">weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] مفقودتين من الطلب.</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/100000000000024C0000007FC4C3BCC7.png" width="412" height="89" style="width:10.89cm;height:2.351cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024C0000007FC4C3BCC7.png" /></p>
-<p><span style="color: #000000">لم تحدث أية أخطاء، واحتفظت خصائص [Weight] و [Age] بقيمتهما الأولية: 0. ASP.NET MVC:</span></p>
+<p><span style="color: #000000">لم تحدث أية أخطاء، واحتفظت خصائص [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] بقيمتهما الأولية: 0. <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC:</bdi></span></p>
 <ul>
-  <li><span style="color: #000000">أنشأ مثيلًا للنموذج باستخدام `</span><i><span style="color: #000000">new ActionModel01</span></i><span style="color: #000000">`. وهنا تم تعيين القيمة 0 لخاصيتي [Weight] و[Age]؛</span>
+  <li><span style="color: #000000">أنشأ مثيلًا للنموذج باستخدام `</span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">new ActionModel01</bdi></span></i><span style="color: #000000">`. وهنا تم تعيين القيمة 0 لخاصيتي [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Age</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">لم يتم تعيين أي قيم لهاتين الخاصيتين لأنه لم تكن هناك معلمات تحمل هذين الاسمين.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يسمح لنا النموذج الأول بالتحقق من عدم وجود معلمة: عندئذٍ تكون للخاصية المقابلة القيمة [null]. أما النموذج الثاني فلا يسمح بذلك. من الممكن إضافة قيود التحقق من الصحة التي تتجاوز النوع البسيط للمعلمات. سنعرضها الآن.</span></p>
+<p><span style="color: #000000">يسمح لنا النموذج الأول بالتحقق من عدم وجود معلمة: عندئذٍ تكون للخاصية المقابلة القيمة [<bdi dir="ltr" class="odt-ltr-term">null</bdi>]. أما النموذج الثاني فلا يسمح بذلك. من الممكن إضافة قيود التحقق من الصحة التي تتجاوز النوع البسيط للمعلمات. سنعرضها الآن.</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">لننظر إلى نموذج الإجراء الجديد التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
@@ -1346,18 +1348,18 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 6: يشير إلى أن حقل [Weight] مطلوب؛</span>
+  <li><span style="color: #000000">السطر 6: يشير إلى أن حقل [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] مطلوب؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: يشير إلى أن حقل [Weight] يجب أن يكون في النطاق [1,200]؛</span>
+  <li><span style="color: #000000">السطر 7: يشير إلى أن حقل [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] يجب أن يكون في النطاق [1,200]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 9: يشير إلى أن حقل [Age] مطلوب؛</span>
+  <li><span style="color: #000000">السطر 9: يشير إلى أن حقل [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] مطلوب؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: يشير إلى أن حقل [Age] يجب أن يكون ضمن النطاق [1,150]؛</span>
+  <li><span style="color: #000000">السطر 7: يشير إلى أن حقل [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] يجب أن يكون ضمن النطاق [1,150]؛</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">سيكون الإجراء الذي يستخدم هذا النموذج هو [Action08] التالي:</span></p>
+<p><span style="color: #000000">سيكون الإجراء الذي يستخدم هذا النموذج هو [<bdi dir="ltr" class="odt-ltr-term">Action08</bdi>] التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action08</span></span></span>
@@ -1371,7 +1373,7 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: تتلقى الإجراء مثيلًا للنموذج [ActionModel02]؛</span>
+  <li><span style="color: #000000">السطر 2: تتلقى الإجراء مثيلًا للنموذج [<bdi dir="ltr" class="odt-ltr-term">ActionModel02</bdi>]؛</span>
   </li>
 </ul>
 
@@ -1406,13 +1408,13 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">السطران 8 و 11: لم يعد بإمكان الخصائص أن تأخذ القيمة [null]. دعونا نجمع البرنامج ونشغل الاختبار مرة أخرى بدون معلمات:</span></p>
+<p><span style="color: #000000">السطران 8 و 11: لم يعد بإمكان الخصائص أن تأخذ القيمة [<bdi dir="ltr" class="odt-ltr-term">null</bdi>]. دعونا نجمع البرنامج ونشغل الاختبار مرة أخرى بدون معلمات:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000002FB0000008BEB209C5E.png" width="534" height="97" style="width:14.131cm;height:2.574cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002FB0000008BEB209C5E.png" /></p>
-<p><span style="color: #000000">أدى غياب المعلمات إلى احتفاظ الخصائص [Weight] و [Age] بالقيمة التي اكتسبتها عند إنشاء مثيل النموذج: 0. </span><strong><span style="color: #000000">ثم </span></strong><span style="color: #000000">يتم التحقق من الصحة. وبذلك يتم استيفاء السمة [Required]. يمكننا أن نرى أن رسالة الخطأ أعلاه تتعلق بالسمة [Range]. لذلك، للتحقق من وجود معلمة، يجب أن تكون الخاصية المرتبطة </span><em><span style="color: #000000">قابلة للقيمة </span></em><span style="color: #000000">null، أي يجب أن تكون قادرة على قبول القيمة </span><em><span style="color: #000000">null</span></em><span style="color: #000000">.</span></p>
+<p><span style="color: #000000">أدى غياب المعلمات إلى احتفاظ الخصائص [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] بالقيمة التي اكتسبتها عند إنشاء مثيل النموذج: 0. </span><strong><span style="color: #000000">ثم </span></strong><span style="color: #000000">يتم التحقق من الصحة. وبذلك يتم استيفاء السمة [<bdi dir="ltr" class="odt-ltr-term">Required</bdi>]. يمكننا أن نرى أن رسالة الخطأ أعلاه تتعلق بالسمة [<bdi dir="ltr" class="odt-ltr-term">Range</bdi>]. لذلك، للتحقق من وجود معلمة، يجب أن تكون الخاصية المرتبطة </span><em><span style="color: #000000">قابلة للقيمة </span></em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi>، أي يجب أن تكون قادرة على قبول القيمة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi></span></em><span style="color: #000000">.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لنعد إلى النموذج الأولي [ActionModel02] وننظر في إجراء يتكون نموذجه من مثيل [ActionModel02] ونوع [DateTime] </span><em><span style="color: #000000">قابل للقيمة null</span></em><span style="color: #000000">:</span></p>
+<p><span style="color: #000000">لنعد إلى النموذج الأولي [<bdi dir="ltr" class="odt-ltr-term">ActionModel02</bdi>] وننظر في إجراء يتكون نموذجه من مثيل [<bdi dir="ltr" class="odt-ltr-term">ActionModel02</bdi>] ونوع [<bdi dir="ltr" class="odt-ltr-term">DateTime</bdi>] </span><em><span style="color: #000000">قابل للقيمة <bdi dir="ltr" class="odt-ltr-term">null</bdi></span></em><span style="color: #000000">:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action09</span></span></span>
@@ -1429,7 +1431,7 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000002F30000008C11907953.png" width="528" height="98" style="width:13.981cm;height:2.593cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002F30000008C11907953.png" /></p>
-<p><span style="color: #000000">لم نمرر أي معلمات إلى الإجراء. قامت سمات [Required] في خصائص [Weight] و [Age] بوظيفتها. ومع ذلك، تلقى التاريخ القيمة </span><em><span style="color: #000000">null </span></em><span style="color: #000000">ولم يتم الإبلاغ عن أي أخطاء.</span></p>
+<p><span style="color: #000000">لم نمرر أي معلمات إلى الإجراء. قامت سمات [<bdi dir="ltr" class="odt-ltr-term">Required</bdi>] في خصائص [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] بوظيفتها. ومع ذلك، تلقى التاريخ القيمة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></em><span style="color: #000000">ولم يتم الإبلاغ عن أي أخطاء.</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">الآن دعونا نمرر معلمات غير صالحة:</span></p>
 <p><span style="color: #000000"> </span></p>
@@ -1475,22 +1477,22 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 6: السمة [Required]، هذه المرة مع رسالة خطأ نحددها بأنفسنا؛</span>
+  <li><span style="color: #000000">السطر 6: السمة [<bdi dir="ltr" class="odt-ltr-term">Required</bdi>]، هذه المرة مع رسالة خطأ نحددها بأنفسنا؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: تتطلب السمة [EMailAddress] أن يحتوي الحقل [Email] على عنوان بريد إلكتروني صالح؛</span>
+  <li><span style="color: #000000">السطر 7: تتطلب السمة [<bdi dir="ltr" class="odt-ltr-term">EMailAddress</bdi>] أن يحتوي الحقل [<bdi dir="ltr" class="odt-ltr-term">Email</bdi>] على عنوان بريد إلكتروني صالح؛</span>
   </li>
-  <li><span style="color: #000000">السطر 11: تتطلب السمة [RegularExpression] أن يحتوي الحقل [Day] على سلسلة مكونة من رقم واحد أو رقمين. المعلمة الأولى هي التعبير العادي الذي يجب أن يتحقق الحقل من صحته؛</span>
+  <li><span style="color: #000000">السطر 11: تتطلب السمة [<bdi dir="ltr" class="odt-ltr-term">RegularExpression</bdi>] أن يحتوي الحقل [<bdi dir="ltr" class="odt-ltr-term">Day</bdi>] على سلسلة مكونة من رقم واحد أو رقمين. المعلمة الأولى هي التعبير العادي الذي يجب أن يتحقق الحقل من صحته؛</span>
   </li>
-  <li><span style="color: #000000">السطر 15: تتطلب السمة [MaxLength] ألا يحتوي الحقل [Info1] على أكثر من 4 أحرف؛</span>
+  <li><span style="color: #000000">السطر 15: تتطلب السمة [<bdi dir="ltr" class="odt-ltr-term">MaxLength</bdi>] ألا يحتوي الحقل [<bdi dir="ltr" class="odt-ltr-term">Info1</bdi>] على أكثر من 4 أحرف؛</span>
   </li>
-  <li><span style="color: #000000">السطر 19: تتطلب السمة [MinLength] أن يحتوي الحقل [Info2] على حرفين على الأقل؛</span>
+  <li><span style="color: #000000">السطر 19: تتطلب السمة [<bdi dir="ltr" class="odt-ltr-term">MinLength</bdi>] أن يحتوي الحقل [<bdi dir="ltr" class="odt-ltr-term">Info2</bdi>] على حرفين على الأقل؛</span>
   </li>
-  <li><span style="color: #000000">السطران 23-24: تتطلب السمتان [MaxLength] و[MinLength] مجتمعتين أن يحتوي الحقل [Info3] على 4 أحرف بالضبط؛</span>
+  <li><span style="color: #000000">السطران 23-24: تتطلب السمتان [<bdi dir="ltr" class="odt-ltr-term">MaxLength</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">MinLength</bdi>] مجتمعتين أن يحتوي الحقل [<bdi dir="ltr" class="odt-ltr-term">Info3</bdi>] على 4 أحرف بالضبط؛</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">ستستخدم الإجراء [Action10] هذا النموذج:</span></p>
+<p><span style="color: #000000">ستستخدم الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action10</bdi>] هذا النموذج:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">// Action10</span></span>
@@ -1520,7 +1522,7 @@
 <p><img src="images/10000000000003150000007E26B3CF8D.png" width="552" height="88" style="width:14.61cm;height:2.334cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003150000007E26B3CF8D.png" /></p>
 <p><a id="refheading58062676630786"></a></p>
 <h2 id="46-2">4.6. <span style="color: #4f81bd">نموذج الإجراء مع قيود الصحة - 2</span></h2>
-<p><span style="color: #000000">نقدم قيودًا إضافية على السلامة. سيكون نموذج الإجراء الجديد هو الفئة [ActionModel04] التالية:</span></p>
+<p><span style="color: #000000">نقدم قيودًا إضافية على السلامة. سيكون نموذج الإجراء الجديد هو الفئة [<bdi dir="ltr" class="odt-ltr-term">ActionModel04</bdi>] التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000159000000F3A47872E8.png" width="173" height="122" style="display:inline-block; margin:4px;width:4.565cm;height:3.216cm;" class="odt-zoomable" data-zoom-src="images/1000000000000159000000F3A47872E8.png" /></td></tr></table>
 
@@ -1549,9 +1551,9 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 8: يشترط أن يكون الحقل المُعلَّق عليه عنوان URL صالحًا؛
+  <li>السطر 8: يشترط أن يكون الحقل المُعلَّق عليه عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> صالحًا؛
   </li>
-  <li>السطر 13: يتطلب أن تكون خصائص [Info1] و[Info2] لها نفس القيمة؛
+  <li>السطر 13: يتطلب أن تكون خصائص [<bdi dir="ltr" class="odt-ltr-term">Info1</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Info2</bdi>] لها نفس القيمة؛
   </li>
   <li>السطر 16: يتطلب أن يكون الحقل المُعلَّق عليه رقم بطاقة ائتمان صالحًا.
   </li>
@@ -1569,24 +1571,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>لاختبار الإجراء [Action11]، نستخدم تطبيق [Advanced Rest Client]:</p>
+<p>لاختبار الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action11</bdi>]، نستخدم تطبيق [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002ED0000036355D360A3.png" width="375" height="434" style="display:inline-block; margin:4px;width:9.91cm;height:11.471cm;" class="odt-zoomable" data-zoom-src="images/10000000000002ED0000036355D360A3.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، عنوان URL لإجراء [Action11]؛
+  <li>في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإجراء [<bdi dir="ltr" class="odt-ltr-term">Action11</bdi>]؛
   </li>
-  <li>في [2]، سيتم طلب عنوان URL هذا باستخدام POST؛
+  <li>في [2]، سيتم طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا باستخدام <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛
   </li>
-  <li>في [3]، حدد علامة التبويب [Form]؛
+  <li>في [3]، حدد علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Form</bdi>]؛
   </li>
-  <li>في [4]، قيم المعلمات الأربعة المتوقعة. هذه التهيئة هي ميزة يوفرها [ARC]. يمكن عرض المعلمات المرسلة فعليًا في علامة التبويب [Raw] [5]؛
+  <li>في [4]، قيم المعلمات الأربعة المتوقعة. هذه التهيئة هي ميزة يوفرها [<bdi dir="ltr" class="odt-ltr-term">ARC</bdi>]. يمكن عرض المعلمات المرسلة فعليًا في علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Raw</bdi>] [5]؛
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AA000000C6C52B9039.png" width="597" height="99" style="display:inline-block; margin:4px;width:15.796cm;height:2.619cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA000000C6C52B9039.png" /></td></tr></table>
 
 <ul>
-  <li>في [6]، معلمات POST.
+  <li>في [6]، معلمات <bdi dir="ltr" class="odt-ltr-term">POST.</bdi>
   </li>
 </ul>
 
@@ -1599,7 +1601,7 @@
 <p><img src="images/10000000000004A900000054CF6C1668.png" width="656" height="46" style="width:17.36cm;height:1.222cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004A900000054CF6C1668.png" /></p>
 <p><a id="refheading58064676630786"></a></p>
 <h2 id="47-3">4.7. <span style="color: #4f81bd">نموذج الإجراء مع قيود الصحة - 3</span></h2>
-<p><span style="color: #000000">في بعض الأحيان، لا تكون قيود التكامل المتاحة كافية. في هذه الحالة، يمكنك إنشاء قيودك الخاصة. على وجه الخصوص، يمكنك استخدام نموذج ينفذ واجهة [IValidatableObject]. في هذه الحالة، تضيف عمليات التحقق من صحة النموذج الخاصة بك إلى طريقة [Validate] لهذه الواجهة. لنلقِ نظرة على مثال. سيكون نموذج الإجراء الجديد هو الفئة [ActionModel05] التالية:</span></p>
+<p><span style="color: #000000">في بعض الأحيان، لا تكون قيود التكامل المتاحة كافية. في هذه الحالة، يمكنك إنشاء قيودك الخاصة. على وجه الخصوص، يمكنك استخدام نموذج ينفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IValidatableObject</bdi>]. في هذه الحالة، تضيف عمليات التحقق من صحة النموذج الخاصة بك إلى طريقة [<bdi dir="ltr" class="odt-ltr-term">Validate</bdi>] لهذه الواجهة. لنلقِ نظرة على مثال. سيكون نموذج الإجراء الجديد هو الفئة [<bdi dir="ltr" class="odt-ltr-term">ActionModel05</bdi>] التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012A000000CFF06C3098.png" width="149" height="103" style="display:inline-block; margin:4px;width:3.942cm;height:2.738cm;" class="odt-zoomable" data-zoom-src="images/100000000000012A000000CFF06C3098.png" /></td></tr></table>
 
@@ -1631,17 +1633,17 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 6: ينفذ النموذج واجهة [IValidatableObject]؛</span>
+  <li><span style="color: #000000">السطر 6: ينفذ النموذج واجهة [<bdi dir="ltr" class="odt-ltr-term">IValidatableObject</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 10: طريقة [Validate] لهذه الواجهة. وهي تُرجع مجموعة من العناصر من النوع [ValidationResult]. ويغلف هذا النوع الأخطاء التي سيتم الإبلاغ عنها؛</span>
+  <li><span style="color: #000000">السطر 10: طريقة [<bdi dir="ltr" class="odt-ltr-term">Validate</bdi>] لهذه الواجهة. وهي تُرجع مجموعة من العناصر من النوع [<bdi dir="ltr" class="odt-ltr-term">ValidationResult</bdi>]. ويغلف هذا النوع الأخطاء التي سيتم الإبلاغ عنها؛</span>
   </li>
   <li><span style="color: #000000">السطر 9: السعر الصالح هو سعر &lt;4.2 أو &gt; 6.7؛</span>
   </li>
-  <li><span style="color: #000000">السطر 12: نقوم بإنشاء قائمة فارغة من العناصر من النوع [ValidationResult]؛</span>
+  <li><span style="color: #000000">السطر 12: نقوم بإنشاء قائمة فارغة من العناصر من النوع [<bdi dir="ltr" class="odt-ltr-term">ValidationResult</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 13: نتحقق من صحة الخاصية [Rate]؛</span>
+  <li><span style="color: #000000">السطر 13: نتحقق من صحة الخاصية [<bdi dir="ltr" class="odt-ltr-term">Rate</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 14-17: إذا كانت الخاصية [Rate] غير صالحة، يتم إضافة عنصر من النوع [ValidationResult] إلى قائمة النتائج. المعلمة الأولى هي رسالة خطأ. المعلمة الثانية، وهي اختيارية، هي مجموعة من الخصائص المتأثرة بهذا الخطأ.</span>
+  <li><span style="color: #000000">الأسطر 14-17: إذا كانت الخاصية [<bdi dir="ltr" class="odt-ltr-term">Rate</bdi>] غير صالحة، يتم إضافة عنصر من النوع [<bdi dir="ltr" class="odt-ltr-term">ValidationResult</bdi>] إلى قائمة النتائج. المعلمة الأولى هي رسالة خطأ. المعلمة الثانية، وهي اختيارية، هي مجموعة من الخصائص المتأثرة بهذا الخطأ.</span>
   </li>
 </ul>
 
@@ -1664,8 +1666,8 @@
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001FC00000079F4909684.png" width="356" height="85" style="width:9.41cm;height:2.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001FC00000079F4909684.png" /></p>
 <p><a id="refheading58066676630786"></a></p>
-<h2 id="48-table-list">4.8. <span style="color: #4f81bd">نموذج الإجراء من النوع Table أو List</span></h2>
-<p><span style="color: #000000">لنأخذ الإجراء التالي [Action13]:</span></p>
+<h2 id="48-table-list">4.8. <span style="color: #4f81bd">نموذج الإجراء من النوع <bdi dir="ltr" class="odt-ltr-term">Table</bdi> أو <bdi dir="ltr" class="odt-ltr-term">List</bdi></span></h2>
+<p><span style="color: #000000">لنأخذ الإجراء التالي [<bdi dir="ltr" class="odt-ltr-term">Action13</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
 <span class="odt-code-line"><span class="odt-code-line-content">// Action13</span></span>
@@ -1683,7 +1685,7 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: يتكون نموذج الإجراء من مصفوفة من نوع [string]. وهو يسمح لنا باسترداد معلمة باسم [data]، والتي قد تظهر عدة مرات في معلمات الطلب، كما في [?data=data1&amp;data=data2&amp;data=data3]. ستملأ معلمات [data] المختلفة في الطلب مصفوفة [data] في نموذج الإجراء. يحدث هذا السيناريو مع القوائم المنسدلة. ثم يرسل المتصفح القيم المختلفة التي اختارها المستخدم، وكلها تحمل نفس اسم المعلمة.</span>
+  <li><span style="color: #000000">السطر 2: يتكون نموذج الإجراء من مصفوفة من نوع [<bdi dir="ltr" class="odt-ltr-term">string</bdi>]. وهو يسمح لنا باسترداد معلمة باسم [<bdi dir="ltr" class="odt-ltr-term">data</bdi>]، والتي قد تظهر عدة مرات في معلمات الطلب، كما في [?<bdi dir="ltr" class="odt-ltr-term">data</bdi>=<bdi dir="ltr" class="odt-ltr-term">data1</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">data</bdi>=<bdi dir="ltr" class="odt-ltr-term">data2</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">data</bdi>=<bdi dir="ltr" class="odt-ltr-term">data3</bdi>]. ستملأ معلمات [<bdi dir="ltr" class="odt-ltr-term">data</bdi>] المختلفة في الطلب مصفوفة [<bdi dir="ltr" class="odt-ltr-term">data</bdi>] في نموذج الإجراء. يحدث هذا السيناريو مع القوائم المنسدلة. ثم يرسل المتصفح القيم المختلفة التي اختارها المستخدم، وكلها تحمل نفس اسم المعلمة.</span>
   </li>
 </ul>
 
@@ -1720,7 +1722,7 @@
 <p><img src="images/100000000000023F00000089748B880F.png" width="405" height="97" style="width:10.719cm;height:2.554cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000023F00000089748B880F.png" /></p>
 <p><a id="refheading58068676630786"></a></p>
 <h2 id="49">4.9. <span style="color: #4f81bd">تصفية نموذج الإجراء</span></h2>
-<p><span style="color: #000000">في بعض الأحيان يكون لدينا نموذج ولكننا نريد فقط أن يتم تهيئة عناصر معينة من النموذج بواسطة طلب HTTP. لنفكر في نموذج الإجراء التالي [ActionModel06]:</span></p>
+<p><span style="color: #000000">في بعض الأحيان يكون لدينا نموذج ولكننا نريد فقط أن يتم تهيئة عناصر معينة من النموذج بواسطة طلب <bdi dir="ltr" class="odt-ltr-term">HTTP.</bdi> لنفكر في نموذج الإجراء التالي [<bdi dir="ltr" class="odt-ltr-term">ActionModel06</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.ComponentModel.DataAnnotations;</span></span>
@@ -1740,13 +1742,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطران 9 و10: المعلمة [info1] مطلوبة؛
+  <li>السطران 9 و10: المعلمة [<bdi dir="ltr" class="odt-ltr-term">info1</bdi>] مطلوبة؛
   </li>
-  <li>السطر 6: تم استبعاد المعلمة [info2] الموجودة في السطر 12 من ربط طلب HTTP بنموذجه.
+  <li>السطر 6: تم استبعاد المعلمة [<bdi dir="ltr" class="odt-ltr-term">info2</bdi>] الموجودة في السطر 12 من ربط طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> بنموذجه.
   </li>
 </ul>
 
-<p>سيكون الإجراء كما يلي [Action15]:</p>
+<p>سيكون الإجراء كما يلي [<bdi dir="ltr" class="odt-ltr-term">Action15</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Action15</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action15(</span><span style="color:#2b91af">ActionModel06</span><span style="color:#000000"> modèle)</span></span></span>
@@ -1761,9 +1763,9 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004180000011A7343A515.png" width="524" height="141" style="display:inline-block; margin:4px;width:13.864cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000004180000011A7343A515.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]: نمرر المعلمة [info2] في عنوان URL؛
+  <li>في [1]: نمرر المعلمة [<bdi dir="ltr" class="odt-ltr-term">info2</bdi>] في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>؛
   </li>
-  <li>في [2]: تظل خاصية [Info2] لنموذج الإجراء فارغة.
+  <li>في [2]: تظل خاصية [<bdi dir="ltr" class="odt-ltr-term">Info2</bdi>] لنموذج الإجراء فارغة.
   </li>
 </ul>
 <p><a id="refheading2400667523874"></a></p>
@@ -1775,9 +1777,9 @@
 <ul>
   <li>البيانات <b>المشتركة بين جميع مستخدمي </b>تطبيق الويب. وعادةً ما تكون هذه البيانات للقراءة فقط. تُستخدم ثلاثة ملفات لتنفيذ مشاركة البيانات هذه:
     <ul>
-      <li>[Web.Config]: ملف تكوين التطبيق
+      <li>[<bdi dir="ltr" class="odt-ltr-term">Web.Config</bdi>]: ملف تكوين التطبيق
       </li>
-      <li>[Global.asax، Global.asax.cs]: يسمحان لك بتعريف فئة، تسمى فئة التطبيق العالمية، والتي تستمر طوال عمر التطبيق، بالإضافة إلى معالجات لأحداث معينة في نفس التطبيق.
+      <li>[<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>، <bdi dir="ltr" class="odt-ltr-term">Global.asax.cs</bdi>]: يسمحان لك بتعريف فئة، تسمى فئة التطبيق العالمية، والتي تستمر طوال عمر التطبيق، بالإضافة إلى معالجات لأحداث معينة في نفس التطبيق.
       </li>
     </ul>
   </li>
@@ -1785,7 +1787,7 @@
 
 <p>تسمح لك فئة التطبيق العالمية بتعريف البيانات التي ستكون متاحة لجميع الطلبات من جميع المستخدمين.</p>
 <ul>
-  <li>البيانات المشتركة عبر الطلبات <b>من نفس العميل</b>. يتم تخزين هذه البيانات في كائن يسمى <b>&quot;الجلسة&quot; (Session</b>). نشير إلى هذا باسم <b>&quot;جلسة العميل&quot; </b>للإشارة إلى ذاكرة العميل. جميع الطلبات الواردة من العميل لها حق الوصول إلى هذه الجلسة. يمكنها تخزين المعلومات وقراءتها هناك.
+  <li>البيانات المشتركة عبر الطلبات <b>من نفس العميل</b>. يتم تخزين هذه البيانات في كائن يسمى <b>&quot;الجلسة&quot; (<bdi dir="ltr" class="odt-ltr-term">Session</bdi></b>). نشير إلى هذا باسم <b>&quot;جلسة العميل&quot; </b>للإشارة إلى ذاكرة العميل. جميع الطلبات الواردة من العميل لها حق الوصول إلى هذه الجلسة. يمكنها تخزين المعلومات وقراءتها هناك.
   </li>
 </ul>
 
@@ -1803,7 +1805,7 @@
 
 <p><span style="color: #000000">لنلقِ نظرة على المثال الأول الذي يوضح هذه الأنواع المختلفة من الذاكرة:</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">أولاً، نقوم بتعديل ملف [Web.config] لمشروع [Example-02] على النحو التالي:</span></p>
+<p><span style="color: #000000">أولاً، نقوم بتعديل ملف [<bdi dir="ltr" class="odt-ltr-term">Web.config</bdi>] لمشروع [<bdi dir="ltr" class="odt-ltr-term">Example-02</bdi>] على النحو التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">appSettings</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1814,9 +1816,9 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">نضيف السطر 4، الذي يربط القيمة [infoAppli1] بالمفتاح [infoAppli1]. ستكون هذه بيانات نطاق [Application] لدينا: وستكون متاحة لجميع الطلبات من جميع المستخدمين.</span></p>
+<p><span style="color: #000000">نضيف السطر 4، الذي يربط القيمة [<bdi dir="ltr" class="odt-ltr-term">infoAppli1</bdi>] بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">infoAppli1</bdi>]. ستكون هذه بيانات نطاق [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] لدينا: وستكون متاحة لجميع الطلبات من جميع المستخدمين.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">بعد ذلك، نقوم بتعديل الأسلوب [Application_Start] في ملف [Global.asax]. يتم تشغيل هذا الأسلوب مرة واحدة عند بدء تشغيل التطبيق. وهنا نحتاج إلى استخدام ملف [Web.config]:</span></p>
+<p><span style="color: #000000">بعد ذلك، نقوم بتعديل الأسلوب [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>_Start] في ملف [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]. يتم تشغيل هذا الأسلوب مرة واحدة عند بدء تشغيل التطبيق. وهنا نحتاج إلى استخدام ملف [<bdi dir="ltr" class="odt-ltr-term">Web.config</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Application_Start()</span></span>
@@ -1835,14 +1837,14 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">نضيف السطر 10. وهو يقوم بأمرين:</span></p>
 <ul>
-  <li><span style="color: #000000">يسترد قيمة مفتاح [infoAppli1] من ملف [Web.config] باستخدام فئة [System.Configuration.ConfigurationManager]؛</span>
+  <li><span style="color: #000000">يسترد قيمة مفتاح [<bdi dir="ltr" class="odt-ltr-term">infoAppli1</bdi>] من ملف [<bdi dir="ltr" class="odt-ltr-term">Web.config</bdi>] باستخدام فئة [<bdi dir="ltr" class="odt-ltr-term">System.Configuration.ConfigurationManager</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">ويخزنها في قاموس [HttpApplication.Application]، المرتبط بمفتاح [infoAppli1]. جميع الإجراءات لها حق الوصول إلى هذا القاموس.</span>
+  <li><span style="color: #000000">ويخزنها في قاموس [<bdi dir="ltr" class="odt-ltr-term">HttpApplication.Application</bdi>]، المرتبط بمفتاح [<bdi dir="ltr" class="odt-ltr-term">infoAppli1</bdi>]. جميع الإجراءات لها حق الوصول إلى هذا القاموس.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في نفس ملف [Global.asax]، نضيف طريقة [Session_Start] التالية:</span></p>
+<p><span style="color: #000000">في نفس ملف [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]، نضيف طريقة [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>_Start] التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Session_Start()</span></span>
@@ -1853,9 +1855,9 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يتم تنفيذ طريقة [Session_Start] لكل مستخدم جديد. ما هو المستخدم الجديد؟ يتم &quot;تتبع&quot; المستخدم بواسطة رمز الجلسة. هذا الرمز هو:</span></p>
+<p><span style="color: #000000">يتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>_Start] لكل مستخدم جديد. ما هو المستخدم الجديد؟ يتم &quot;تتبع&quot; المستخدم بواسطة رمز الجلسة. هذا الرمز هو:</span></p>
 <ul>
-  <li><span style="color: #000000">يتم إنشاؤه بواسطة خادم الويب وإرساله إلى المستخدم الجديد في رؤوس HTTP للاستجابة الأولى المرسلة إليه؛</span>
+  <li><span style="color: #000000">يتم إنشاؤه بواسطة خادم الويب وإرساله إلى المستخدم الجديد في رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للاستجابة الأولى المرسلة إليه؛</span>
   </li>
   <li><span style="color: #000000">يتم إرساله مرة أخرى بواسطة متصفح المستخدم مع كل طلب جديد يقوم به. وهذا يسمح للخادم بالتعرف على المستخدم وإدارة مساحة ذاكرة له تسمى جلسة عمل المستخدم.</span>
   </li>
@@ -1864,9 +1866,9 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">يتعرف خادم الويب على أنه يتعامل مع مستخدم جديد عندما لا يرسل المستخدم رمز الجلسة. ثم يقوم الخادم بإنشاء رمز له.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في السطر 4 أعلاه، نضع عدادًا في جلسة عمل المستخدم سيتم زيادته مع كل طلب من هذا المستخدم. وهذا يوضح الذاكرة المرتبطة بالمستخدم. تُستخدم فئة [Session] كالقاموس (السطر 4).</span></p>
+<p><span style="color: #000000">في السطر 4 أعلاه، نضع عدادًا في جلسة عمل المستخدم سيتم زيادته مع كل طلب من هذا المستخدم. وهذا يوضح الذاكرة المرتبطة بالمستخدم. تُستخدم فئة [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>] كالقاموس (السطر 4).</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">وبعد الانتهاء من ذلك، نكتب الإجراء [Action16] التالي:</span></p>
+<p><span style="color: #000000">وبعد الانتهاء من ذلك، نكتب الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action16</bdi>] التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">// Action16</span></span>
@@ -1888,9 +1890,9 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 5: نسترد سياق طلب HTTP الذي يجري معالجته حاليًا. سيمنحنا هذا السياق إمكانية الوصول إلى البيانات في نطاقي [Application] و[Session]؛</span>
+  <li><span style="color: #000000">السطر 5: نسترد سياق طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الذي يجري معالجته حاليًا. سيمنحنا هذا السياق إمكانية الوصول إلى البيانات في نطاقي [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Session</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: نسترد معلومات نطاق [Application]؛</span>
+  <li><span style="color: #000000">السطر 7: نسترد معلومات نطاق [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 9: نسترد العداد من الجلسة؛</span>
   </li>
@@ -1903,21 +1905,21 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">فيما يلي بعض أمثلة التنفيذ:</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يتم طلب [Action16] مرة واحدة [1]، ثم يتم تحديث الصفحة [F5] مرتين [2]:</span></p>
+<p><span style="color: #000000">يتم طلب [<bdi dir="ltr" class="odt-ltr-term">Action16</bdi>] مرة واحدة [1]، ثم يتم تحديث الصفحة [<bdi dir="ltr" class="odt-ltr-term">F5</bdi>] مرتين [2]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005C4000000F6927C44F8.png" width="680" height="113" style="display:inline-block; margin:4px;width:17.999cm;height:3cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C4000000F6927C44F8.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">في [2]، أرسل العميل ما مجموعه ثلاثة طلبات. وفي كل مرة، تمكن من استرداد العداد الذي تم تحديثه بواسطة الطلب السابق.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لمحاكاة مستخدم ثانٍ، نستخدم متصفحًا ثانيًا لطلب نفس عنوان URL:</span></p>
+<p><span style="color: #000000">لمحاكاة مستخدم ثانٍ، نستخدم متصفحًا ثانيًا لطلب نفس عنوان <bdi dir="ltr" class="odt-ltr-term">URL:</bdi></span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028F000000FDC947C3D9.png" width="328" height="127" style="display:inline-block; margin:4px;width:8.666cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/100000000000028F000000FDC947C3D9.png" /></td></tr></table>
 
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">في [3]، يسترد المستخدم الثاني بنجاح نفس معلومات نطاق [التطبيق]، ولكنه يمتلك عداد نطاق [الجلسة] الخاص به.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لنعد إلى كود الإجراء [Action16]:</span></p>
+<p><span style="color: #000000">لنعد إلى كود الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action16</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">// Action16</span></span>
@@ -1938,7 +1940,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">أحد أهداف إطار عمل ASP.NET MVC هو جعل وحدات التحكم والإجراءات قابلة للاختبار بشكل منفصل دون الحاجة إلى خادم ويب. ومع ذلك، كما هو موضح في السطر 5، فإن سياق طلب HTTP مطلوب لاسترداد البيانات من نطاقي [Application] و[Session]. نقترح إنشاء إجراء جديد [Action17] يستقبل بيانات نطاقي [Application] و[Session] كمعلمات:</span></p>
+<p><span style="color: #000000">أحد أهداف إطار عمل <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> هو جعل وحدات التحكم والإجراءات قابلة للاختبار بشكل منفصل دون الحاجة إلى خادم ويب. ومع ذلك، كما هو موضح في السطر 5، فإن سياق طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> مطلوب لاسترداد البيانات من نطاقي [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Session</bdi>]. نقترح إنشاء إجراء جديد [<bdi dir="ltr" class="odt-ltr-term">Action17</bdi>] يستقبل بيانات نطاقي [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Session</bdi>] كمعلمات:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    // Action17</span></span>
@@ -1955,9 +1957,9 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لم يعد الكود يعتمد على طلب HTTP. وبالتالي، يمكن اختباره بشكل مستقل عن خادم الويب.</span></p>
+<p><span style="color: #000000">لم يعد الكود يعتمد على طلب <bdi dir="ltr" class="odt-ltr-term">HTTP.</bdi> وبالتالي، يمكن اختباره بشكل مستقل عن خادم الويب.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لنرى كيفية القيام بذلك. أولاً، نحتاج إلى إنشاء فئتي [ApplicationModel] و [SessionModel]، اللتين ستقومان بتغليف بيانات نطاق [Application] و [Session]، على التوالي. وهما كالتالي:</span></p>
+<p><span style="color: #000000">لنرى كيفية القيام بذلك. أولاً، نحتاج إلى إنشاء فئتي [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">SessionModel</bdi>]، اللتين ستقومان بتغليف بيانات نطاق [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>]، على التوالي. وهما كالتالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001410000013948D0013A.png" width="161" height="157" style="display:inline-block; margin:4px;width:4.247cm;height:4.142cm;" class="odt-zoomable" data-zoom-src="images/10000000000001410000013948D0013A.png" /></td></tr></table>
 
@@ -1989,7 +1991,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">بعد ذلك، نحتاج إلى تعديل طريقتي [Application_Start] و [Session_Start] في ملف [Global.asax]:</span></p>
+<p><span style="color: #000000">بعد ذلك، نحتاج إلى تعديل طريقتي [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>_Start] و [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>_Start] في ملف [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">MvcApplication</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span></span>
@@ -2022,13 +2024,13 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 14: يتم إنشاء مثيل لـ [ApplicationModel]؛</span>
+  <li><span style="color: #000000">السطر 14: يتم إنشاء مثيل لـ [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 15: يتم تهيئتها؛</span>
   </li>
-  <li><span style="color: #000000">السطر 16: ووضعها في قاموس [Application]، مرتبطة بالمفتاح [data]. [Application] هي خاصية لفئة [HttpApplication] من السطر 1؛</span>
+  <li><span style="color: #000000">السطر 16: ووضعها في قاموس [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>]، مرتبطة بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">data</bdi>]. [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] هي خاصية لفئة [<bdi dir="ltr" class="odt-ltr-term">HttpApplication</bdi>] من السطر 1؛</span>
   </li>
-  <li><span style="color: #000000">السطر 24: يتم إنشاء مثيل لـ [SessionModel] ووضعه في قاموس [Session]، مرتبطًا بالمفتاح [data]. [Session] هي خاصية لفئة [HttpApplication] من السطر 1؛</span>
+  <li><span style="color: #000000">السطر 24: يتم إنشاء مثيل لـ [<bdi dir="ltr" class="odt-ltr-term">SessionModel</bdi>] ووضعه في قاموس [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>]، مرتبطًا بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">data</bdi>]. [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>] هي خاصية لفئة [<bdi dir="ltr" class="odt-ltr-term">HttpApplication</bdi>] من السطر 1؛</span>
   </li>
 </ul>
 
@@ -2040,22 +2042,22 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">أن طلب HTTP الذي تعالجه الإجراء يجب أن يتضمن معلمات باسم [applicationData] و [sessionData]. لن يكون هذا هو الحال. يجب علينا إنشاء نموذج ربط بيانات جديد بحيث عندما يتلقى إجراء نوعًا كمعلمة:</span></p>
+<p><span style="color: #000000">أن طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الذي تعالجه الإجراء يجب أن يتضمن معلمات باسم [<bdi dir="ltr" class="odt-ltr-term">applicationData</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">sessionData</bdi>]. لن يكون هذا هو الحال. يجب علينا إنشاء نموذج ربط بيانات جديد بحيث عندما يتلقى إجراء نوعًا كمعلمة:</span></p>
 <ul>
-  <li><span style="color: #000000">[ApplicationModel]، يتم تزويده بالبيانات ذات النطاق [Application] والمفتاح [data]؛</span>
+  <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>]، يتم تزويده بالبيانات ذات النطاق [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] والمفتاح [<bdi dir="ltr" class="odt-ltr-term">data</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">[SessionModel]، يتم توفير البيانات ذات النطاق [Session] والمفتاح [data] له.</span>
+  <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">SessionModel</bdi>]، يتم توفير البيانات ذات النطاق [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>] والمفتاح [<bdi dir="ltr" class="odt-ltr-term">data</bdi>] له.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">للقيام بذلك، نحتاج إلى إنشاء فئات تنفذ واجهة [IModelBinder].</span></p>
+<p><span style="color: #000000">للقيام بذلك، نحتاج إلى إنشاء فئات تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IModelBinder</bdi>].</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">نبدأ بإنشاء مجلد [Infrastructure] في مشروع [Example-02]:</span></p>
+<p><span style="color: #000000">نبدأ بإنشاء مجلد [<bdi dir="ltr" class="odt-ltr-term">Infrastructure</bdi>] في مشروع [<bdi dir="ltr" class="odt-ltr-term">Example-02</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">   </span></p>
 <p><img src="images/10000000000000E40000005E1D40097B.png" width="159" height="66" style="width:4.219cm;height:1.739cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E40000005E1D40097B.png" /></p>
-<p><span style="color: #000000">داخله، نقوم بإنشاء فئة [ApplicationModelBinder] التالية:</span></p>
+<p><span style="color: #000000">داخله، نقوم بإنشاء فئة [<bdi dir="ltr" class="odt-ltr-term">ApplicationModelBinder</bdi>] التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Web.Mvc;</span></span>
@@ -2075,22 +2077,22 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 5: تنفذ الفئة واجهة [IModelBinder]. لفهم كودها، عليك أن تعلم أنها ستُستدعى في كل مرة يكون فيها لإجراء ما معلمة من نوع [ApplicationModel]. سيتم إنشاء هذا الربط [ApplicationModel] --&gt; [ApplicationModelBinder] عند بدء تشغيل التطبيق، في طريقة [Application_Start] في [Global.asax]؛</span>
+  <li><span style="color: #000000">السطر 5: تنفذ الفئة واجهة [<bdi dir="ltr" class="odt-ltr-term">IModelBinder</bdi>]. لفهم كودها، عليك أن تعلم أنها ستُستدعى في كل مرة يكون فيها لإجراء ما معلمة من نوع [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>]. سيتم إنشاء هذا الربط [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>] --&gt; [<bdi dir="ltr" class="odt-ltr-term">ApplicationModelBinder</bdi>] عند بدء تشغيل التطبيق، في طريقة [<bdi dir="ltr" class="odt-ltr-term">Application_Start</bdi>] في [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: الطريقة الوحيدة لواجهة [IModelBinder]؛</span>
+  <li><span style="color: #000000">السطر 7: الطريقة الوحيدة لواجهة [<bdi dir="ltr" class="odt-ltr-term">IModelBinder</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: تتيح لنا المعلمة [ControllerContext] الوصول إلى طلب HTTP الذي يجري معالجته حاليًا؛</span>
+  <li><span style="color: #000000">السطر 7: تتيح لنا المعلمة [<bdi dir="ltr" class="odt-ltr-term">ControllerContext</bdi>] الوصول إلى طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الذي يجري معالجته حاليًا؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: تتيح لنا المعلمة من النوع [ModelBindingContext] الوصول إلى معلومات حول النموذج المراد إنشاؤه، وهو في هذه الحالة النوع [ApplicationModel]؛</span>
+  <li><span style="color: #000000">السطر 7: تتيح لنا المعلمة من النوع [<bdi dir="ltr" class="odt-ltr-term">ModelBindingContext</bdi>] الوصول إلى معلومات حول النموذج المراد إنشاؤه، وهو في هذه الحالة النوع [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: نتيجة [BindModel] هي الكائن الذي سيتم تعيينه إلى المعلمة المرتبطة، وهنا معلمة من النوع [ApplicationModel]؛</span>
+  <li><span style="color: #000000">السطر 7: نتيجة [<bdi dir="ltr" class="odt-ltr-term">BindModel</bdi>] هي الكائن الذي سيتم تعيينه إلى المعلمة المرتبطة، وهنا معلمة من النوع [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 10: نعيد ببساطة الكائن ذي النطاق [Application] والمفتاح [data].</span>
+  <li><span style="color: #000000">السطر 10: نعيد ببساطة الكائن ذي النطاق [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] والمفتاح [<bdi dir="ltr" class="odt-ltr-term">data</bdi>].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">تتبع فئة [</span><a id="sessionmodelbinder"></a><span style="color: #000000"> SessionModelBinder] نفس النمط:</span></p>
+<p><span style="color: #000000">تتبع فئة [</span><a id="sessionmodelbinder"></a><span style="color: #000000"> <bdi dir="ltr" class="odt-ltr-term">SessionModelBinder</bdi>] نفس النمط:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Web.Mvc;</span></span>
@@ -2109,7 +2111,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">كل ما تبقى هو ربط كل نموذج [XModel] بـ [XModelBinder] </span><em><span style="color: #000000">الخاص به</span></em><span style="color: #000000">. ويتم ذلك في الأسلوب [Application_Start] في [Global.asax]:</span></p>
+<p><span style="color: #000000">كل ما تبقى هو ربط كل نموذج [<bdi dir="ltr" class="odt-ltr-term">XModel</bdi>] بـ [<bdi dir="ltr" class="odt-ltr-term">XModelBinder</bdi>] </span><em><span style="color: #000000">الخاص به</span></em><span style="color: #000000">. ويتم ذلك في الأسلوب [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>_Start] في [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Application_Start()</span></span>
@@ -2127,14 +2129,14 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 9: عندما تحتوي إحدى الإجراءات على معلمة من النوع [ApplicationModel]، سيتم استدعاء الأسلوب [ApplicationModelBinder.Bind]. ونعلم أنه يعيد البيانات الموجودة في نطاق [Application] المرتبطة بالمفتاح [data]؛</span>
+  <li><span style="color: #000000">السطر 9: عندما تحتوي إحدى الإجراءات على معلمة من النوع [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>]، سيتم استدعاء الأسلوب [<bdi dir="ltr" class="odt-ltr-term">ApplicationModelBinder.Bind</bdi>]. ونعلم أنه يعيد البيانات الموجودة في نطاق [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] المرتبطة بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">data</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 10: الأمر نفسه بالنسبة لنوع [SessionModel].</span>
+  <li><span style="color: #000000">السطر 10: الأمر نفسه بالنسبة لنوع [<bdi dir="ltr" class="odt-ltr-term">SessionModel</bdi>].</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">لنعد إلى إجراء [Action17] الخاص بنا:</span></p>
+<p><span style="color: #000000">لنعد إلى إجراء [<bdi dir="ltr" class="odt-ltr-term">Action17</bdi>] الخاص بنا:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    // Action17</span></span>
@@ -2153,26 +2155,26 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: عند استدعاء [Action17]، ستتلقى</span>
+  <li><span style="color: #000000">السطر 2: عند استدعاء [<bdi dir="ltr" class="odt-ltr-term">Action17</bdi>]، ستتلقى</span>
     <ul>
-      <li><span style="color: #000000">المعلمة الأولى: بيانات نطاق [Application] المرتبطة بمفتاح [data]،</span>
+      <li><span style="color: #000000">المعلمة الأولى: بيانات نطاق [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] المرتبطة بمفتاح [<bdi dir="ltr" class="odt-ltr-term">data</bdi>]،</span>
       </li>
-      <li><span style="color: #000000">المعلمة الثانية: بيانات نطاق [Session] المرتبطة بمفتاح [data]؛</span>
+      <li><span style="color: #000000">المعلمة الثانية: بيانات نطاق [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>] المرتبطة بمفتاح [<bdi dir="ltr" class="odt-ltr-term">data</bdi>]؛</span>
       </li>
     </ul>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يمكن أن تكون هاتان المجموعتان من البيانات معقدتين بقدر ما تريد، ويمكن أن تتضمن إحداهما جميع البيانات من نطاق [Application]، والأخرى جميع البيانات من نطاق [Session].</span></p>
+<p><span style="color: #000000">يمكن أن تكون هاتان المجموعتان من البيانات معقدتين بقدر ما تريد، ويمكن أن تتضمن إحداهما جميع البيانات من نطاق [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>]، والأخرى جميع البيانات من نطاق [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>].</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">فيما يلي مثال على تنفيذ الإجراء [Action17]:</span></p>
+<p><span style="color: #000000">فيما يلي مثال على تنفيذ الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action17</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/100000000000017F0000008B307028DC.png" width="268" height="97" style="width:7.091cm;height:2.574cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017F0000008B307028DC.png" /></p>
 <p><a id="refheading58070676630786"></a></p>
 <h2 id="411">4.11. <span style="color: #4f81bd">الربط المتأخر لنموذج الإجراء</span></h2>
-<p><span style="color: #000000">لقد كتبنا [Action12] التالي:</span></p>
+<p><span style="color: #000000">لقد كتبنا [<bdi dir="ltr" class="odt-ltr-term">Action12</bdi>] التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">// Action12</span></span>
@@ -2185,11 +2187,11 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">في الخلفية، يقوم ASP.NET MVC بما يلي:</span></p>
+<p><span style="color: #000000">في الخلفية، يقوم <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> بما يلي:</span></p>
 <ul>
-  <li><span style="color: #000000">ينشئ مثيلًا من النوع [ActionModel05] باستخدام منشئه الذي لا يحتوي على معلمات؛</span>
+  <li><span style="color: #000000">ينشئ مثيلًا من النوع [<bdi dir="ltr" class="odt-ltr-term">ActionModel05</bdi>] باستخدام منشئه الذي لا يحتوي على معلمات؛</span>
   </li>
-  <li><span style="color: #000000">يقوم بتهيئتها بمعلومات الطلب التي تحمل نفس الاسم (بغض النظر عن حالة الأحرف) كواحدة من خصائص [ActionModel05].</span>
+  <li><span style="color: #000000">يقوم بتهيئتها بمعلومات الطلب التي تحمل نفس الاسم (بغض النظر عن حالة الأحرف) كواحدة من خصائص [<bdi dir="ltr" class="odt-ltr-term">ActionModel05</bdi>].</span>
   </li>
 </ul>
 
@@ -2214,9 +2216,9 @@
   </li>
   <li><span style="color: #000000">السطر 4: نقوم بأنفسنا بإنشاء مثيل لنموذج الإجراء. وهنا يمكننا استخدام منشئ مختلف؛</span>
   </li>
-  <li><span style="color: #000000">السطر 5: نقوم بتهيئة النموذج باستخدام معلومات الطلب. يقوم ASP.NET MVC بهذه المهمة. ويقوم بها بنفس الطريقة التي كان سيقوم بها لو كان النموذج معلمة؛</span>
+  <li><span style="color: #000000">السطر 5: نقوم بتهيئة النموذج باستخدام معلومات الطلب. يقوم <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> بهذه المهمة. ويقوم بها بنفس الطريقة التي كان سيقوم بها لو كان النموذج معلمة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 6: نحن الآن في نفس الموقف كما في الإجراء [Action12].</span>
+  <li><span style="color: #000000">السطر 6: نحن الآن في نفس الموقف كما في الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action12</bdi>].</span>
   </li>
 </ul>
 
@@ -2227,25 +2229,25 @@
 <p><img src="images/10000000000001C4000000880BFA7F6D.png" width="316" height="95" style="width:8.37cm;height:2.519cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C4000000880BFA7F6D.png" /></p>
 <p><a id="refheading58072676630786"></a></p>
 <h2 id="412">4.12. <span style="color: #4f81bd">خاتمة</span></h2>
-<p>لنعد إلى بنية تطبيق ASP.NET MVC:</p>
+<p>لنعد إلى بنية تطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000530000001A3C3A7DB2B.png" width="664" height="209" style="display:inline-block; margin:4px;width:17.568cm;height:5.542cm;" class="odt-zoomable" data-zoom-src="images/1000000000000530000001A3C3A7DB2B.png" /></td></tr></table>
 
-<p>يحمل الطلب [1] أجزاء مختلفة من المعلومات التي يقدمها ASP.NET MVC [2a] إلى الإجراء في شكل <strong>نموذج</strong>، وهو ما أطلقنا عليه <strong>اسم نموذج الإجراء</strong>.</p>
+<p>يحمل الطلب [1] أجزاء مختلفة من المعلومات التي يقدمها <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> [2a] إلى الإجراء في شكل <strong>نموذج</strong>، وهو ما أطلقنا عليه <strong>اسم نموذج الإجراء</strong>.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006000000008ED32B6F3B.png" width="680" height="63" style="display:inline-block; margin:4px;width:17.999cm;height:1.663cm;" class="odt-zoomable" data-zoom-src="images/10000000000006000000008ED32B6F3B.png" /></td></tr></table>
 
 <ul>
-  <li>يصل طلب HTTP الخاص بالعميل إلى [1]؛
+  <li>يصل طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الخاص بالعميل إلى [1]؛
   </li>
   <li>في [2]، يتم تحويل المعلومات الواردة في الطلب إلى نموذج إجراء [3]؛
   </li>
-  <li>في [4]، سيقوم الإجراء، بناءً على هذا النموذج، بإنشاء استجابة. ستتألف هذه الاستجابة من مكونين: عرض V [6] ونموذج M لهذا العرض [5]؛
+  <li>في [4]، سيقوم الإجراء، بناءً على هذا النموذج، بإنشاء استجابة. ستتألف هذه الاستجابة من مكونين: عرض <bdi dir="ltr" class="odt-ltr-term">V</bdi> [6] ونموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> لهذا العرض [5]؛
   </li>
-  <li>ستستخدم طريقة العرض V [6] نموذجها M [5] لتوليد استجابة HTTP الموجهة للعميل.
+  <li>ستستخدم طريقة العرض <bdi dir="ltr" class="odt-ltr-term">V</bdi> [6] نموذجها <bdi dir="ltr" class="odt-ltr-term">M</bdi> [5] لتوليد استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الموجهة للعميل.
   </li>
 </ul>
 
-<p>في نموذج MVC، الإجراء [4] هو جزء من C (وحدة التحكم)، ونموذج العرض [5] هو M، والعرض [6] هو V.</p>
-<p><span style="color: #000000">تناول هذا الفصل الآليات التي تربط المعلومات التي يحملها الطلب — وهي سلاسل نصية بطبيعتها — بنموذج الإجراء، الذي يمكن أن يكون فئة ذات خصائص من أنواع مختلفة. كما رأينا أنه من الممكن التحقق من صحة النموذج المقدم إلى الإجراء. وأخيرًا، رأينا كيفية توسيع هذا النموذج ليشمل البيانات من نطاقي [Session] و[Application].</span></p>
+<p>في نموذج <bdi dir="ltr" class="odt-ltr-term">MVC</bdi>، الإجراء [4] هو جزء من <bdi dir="ltr" class="odt-ltr-term">C</bdi> (وحدة التحكم)، ونموذج العرض [5] هو <bdi dir="ltr" class="odt-ltr-term">M</bdi>، والعرض [6] هو <bdi dir="ltr" class="odt-ltr-term">V.</bdi></p>
+<p><span style="color: #000000">تناول هذا الفصل الآليات التي تربط المعلومات التي يحملها الطلب — وهي سلاسل نصية بطبيعتها — بنموذج الإجراء، الذي يمكن أن يكون فئة ذات خصائص من أنواع مختلفة. كما رأينا أنه من الممكن التحقق من صحة النموذج المقدم إلى الإجراء. وأخيرًا، رأينا كيفية توسيع هذا النموذج ليشمل البيانات من نطاقي [<bdi dir="ltr" class="odt-ltr-term">Session</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Application</bdi>].</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">سنركز الآن على نهاية سلسلة معالجة الطلب [1]: إنشاء العرض [6] ونموذجه [5]. يتم إنتاج هذين العنصرين بواسطة الإجراء [4].</span></p>
 
