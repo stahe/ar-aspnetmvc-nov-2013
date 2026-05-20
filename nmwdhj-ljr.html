@@ -873,7 +873,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">ContentResult</span><span style="color:#000000"> Action01(</span><span style="color:#0000ff">string</span><span style="color:#000000"> nom)</span></span></span>
 </code></pre></div>
 
-<p>لتعيين قيمة للمعلمة <code>&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;</code>، يتحقق <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> من القيم التالية بالترتيب: <code>*&lt;bdi dir="ltr" class="odt-ltr-term"&gt;Request.Form&lt;/bdi&gt;[&amp;quot;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;&amp;quot;], &lt;bdi dir="ltr" class="odt-ltr-term"&gt;RouteData.Values&lt;/bdi&gt;[&amp;quot;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;&amp;quot;],* *&lt;span style="color: #2323dc"&gt;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;Request.QueryString&lt;/bdi&gt;[&amp;quot;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;&amp;quot;]&lt;/span&gt;**, &lt;bdi dir="ltr" class="odt-ltr-term"&gt;Request.Files&lt;/bdi&gt;[&amp;quot;&lt;bdi dir="ltr" class="odt-ltr-term"&gt;name&lt;/bdi&gt;&amp;quot;]*.</code> ويتوقف فور العثور على قيمة. تم وضع المعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] المضمنة في عنوان <bdi dir="ltr" class="odt-ltr-term">URL GET</bdi> بواسطة إطار العمل في <em><bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;].</em> وبهذه القيمة [<bdi dir="ltr" class="odt-ltr-term">someone</bdi>] سيتم تهيئة المعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] لـ [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]. ثم يتم تنفيذ كود [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]:</p>
+<p>لتعيين قيمة للمعلمة <code>name</code>، يتحقق <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> من القيم التالية بالترتيب: <code>*Request.Form[&amp;quot;name&amp;quot;], RouteData.Values[&amp;quot;name&amp;quot;],* *&lt;span style="color: #2323dc"&gt;Request.QueryString[&amp;quot;name&amp;quot;]&lt;/span&gt;**, Request.Files[&amp;quot;name&amp;quot;]*.</code> ويتوقف فور العثور على قيمة. تم وضع المعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] المضمنة في عنوان <bdi dir="ltr" class="odt-ltr-term">URL GET</bdi> بواسطة إطار العمل في <em><bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;].</em> وبهذه القيمة [<bdi dir="ltr" class="odt-ltr-term">someone</bdi>] سيتم تهيئة المعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] لـ [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]. ثم يتم تنفيذ كود [<bdi dir="ltr" class="odt-ltr-term">Action01</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">return</span><span style="color:#000000"> Content(</span><span style="color:#0000ff">string</span><span style="color:#000000">.Format(</span><span style="color:#a31515">&quot;Contrôleur=First, Action=Action01, nom={0}&quot;</span><span style="color:#000000">, nom), </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">Encoding</span><span style="color:#000000">.UTF8);</span></span></span>
 </code></pre></div>
@@ -974,7 +974,7 @@
 <p><span style="color: #000000">من بين القيم التي تم اختبارها لمعلمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] </span><em><span style="color: #000000">— </span></em><em><span style="color: #2323dc"><bdi dir="ltr" class="odt-ltr-term">Request.Form</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</span></em><em><span style="color: #000000">, </span></em><em><span style="color: #2323dc"><bdi dir="ltr" class="odt-ltr-term">RouteData.Values</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;]</span></em><em><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;], <bdi dir="ltr" class="odt-ltr-term">Request.Files</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;] </span></em><span style="color: #000000">— كانت اثنتان صالحتين: أول اثنتين. تم استخدام الأولى.</span></p>
 <p><a id="refheading58056676630786"></a></p>
 <h2 id="42">4.2. <span style="color: #4f81bd">التحقق من صحة معلمات الإجراء</span></h2>
-<p><span style="color: #000000">إذا احتوت إحدى الإجراءات على معلمة باسم [<bdi dir="ltr" class="odt-ltr-term">p</bdi>]، فسيحاول <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> تعيين إحدى القيم التالية لها</span><em><span style="color: #000000">: <bdi dir="ltr" class="odt-ltr-term">Request.Form</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">p</bdi>&quot;]، أو </span></em><em><bdi dir="ltr" class="odt-ltr-term">RouteData.Values</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">p</bdi>&quot;]</em><em><span style="color: #000000">، أو <bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">p</bdi>&quot;]، أو <bdi dir="ltr" class="odt-ltr-term">Request.Files</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">p</bdi>&quot;]</span></em><span style="color: #000000">. القيم الثلاث الأولى هي سلاسل نصية. وإذا لم تكن المعلمة [<bdi dir="ltr" class="odt-ltr-term">p</bdi>] من النوع [<bdi dir="ltr" class="odt-ltr-term">string</bdi>]، فقد تنشأ مشكلات.</span></p>
+<p><span style="color: #000000">إذا احتوت إحدى الإجراءات على معلمة باسم [p]، فسيحاول <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> تعيين إحدى القيم التالية لها</span><em><span style="color: #000000">: <bdi dir="ltr" class="odt-ltr-term">Request.Form</bdi>[&quot;p&quot;]، أو </span></em><em><bdi dir="ltr" class="odt-ltr-term">RouteData.Values</bdi>[&quot;p&quot;]</em><em><span style="color: #000000">، أو <bdi dir="ltr" class="odt-ltr-term">Request.QueryString</bdi>[&quot;p&quot;]، أو <bdi dir="ltr" class="odt-ltr-term">Request.Files</bdi>[&quot;p&quot;]</span></em><span style="color: #000000">. القيم الثلاث الأولى هي سلاسل نصية. وإذا لم تكن المعلمة [p] من النوع [<bdi dir="ltr" class="odt-ltr-term">string</bdi>]، فقد تنشأ مشكلات.</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">لنقم بإنشاء الإجراء الجديد التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
@@ -989,16 +989,16 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: تقبل الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02</bdi>] معلمة باسم [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] من النوع </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi></span></b><span style="color: #000000">. يجب أن تكون السلسلة المستردة قابلة للتحويل إلى </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi></span></b><span style="color: #000000">.</span>
+  <li><span style="color: #000000">السطر 2: تقبل الإجراء [<bdi dir="ltr" class="odt-ltr-term">Action02</bdi>] معلمة باسم [age] من النوع </span><b><span style="color: #000000">int</span></b><span style="color: #000000">. يجب أن تكون السلسلة المستردة قابلة للتحويل إلى </span><b><span style="color: #000000">int</span></b><span style="color: #000000">.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action02</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action02</bdi>?age=21</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001B80000007669369E94.png" width="308" height="83" style="width:8.149cm;height:2.185cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B80000007669369E94.png" /></p>
-<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action02</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action02</bdi>?age=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001DF00000145F65CEB4F.png" width="335" height="227" style="width:8.871cm;height:6.018cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DF00000145F65CEB4F.png" /></p>
@@ -1032,13 +1032,13 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">Action03</bdi>] مطابق لـ [<bdi dir="ltr" class="odt-ltr-term">Action02</bdi>] باستثناء أننا قمنا بتغيير نوع المعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] إلى </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi>?</span></strong><span style="color: #000000">، مما يعني </span><strong><span style="color: #000000">عدد صحيح </span></strong><span style="color: #000000">أو </span><strong><span style="color: #000000">قيمة فارغة</span></strong><span style="color: #000000">.</span></p>
+<p><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">Action03</bdi>] مطابق لـ [<bdi dir="ltr" class="odt-ltr-term">Action02</bdi>] باستثناء أننا قمنا بتغيير نوع المعلمة [age] إلى </span><strong><span style="color: #000000">int?</span></strong><span style="color: #000000">، مما يعني </span><strong><span style="color: #000000">عدد صحيح </span></strong><span style="color: #000000">أو </span><strong><span style="color: #000000">قيمة فارغة</span></strong><span style="color: #000000">.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action03</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action03</bdi>?age=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001B30000007821A5ED57.png" width="304" height="84" style="width:8.05cm;height:2.221cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B30000007821A5ED57.png" /></p>
-<p><span style="color: #000000">لم يتمكن <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> من تحويل [21x] إلى نوع </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi></span></strong><span style="color: #000000">. ولذلك، قام بتعيين القيمة </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></strong><span style="color: #000000">للمتغير [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]، كما يسمح به نوع </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi>؟</span></strong><span style="color: #000000"> الخاص به. ومع ذلك، من الممكن تحديد ما إذا كان المتغير قد تلقى قيمة من الطلب أم لا.</span></p>
+<p><span style="color: #000000">لم يتمكن <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> من تحويل [21x] إلى نوع </span><strong><span style="color: #000000">int</span></strong><span style="color: #000000">. ولذلك، قام بتعيين القيمة </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></strong><span style="color: #000000">للمتغير [age]، كما يسمح به نوع </span><strong><span style="color: #000000">int؟</span></strong><span style="color: #000000"> الخاص به. ومع ذلك، من الممكن تحديد ما إذا كان المتغير قد تلقى قيمة من الطلب أم لا.</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">نقوم بإنشاء الإجراء الجديد التالي [<bdi dir="ltr" class="odt-ltr-term">Action04</bdi>]:</span></p>
 <p><span style="color: #000000"> </span></p>
@@ -1054,20 +1054,20 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطر 2: احتفظنا بنوع [<bdi dir="ltr" class="odt-ltr-term">int</bdi>?]. وهذا يسمح على وجه التحديد للطلب بحذف المعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]، التي تتلقى عندئذ القيمة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi></span></b><span style="color: #000000">؛</span>
+  <li><span style="color: #000000">السطر 2: احتفظنا بنوع [int?]. وهذا يسمح على وجه التحديد للطلب بحذف المعلمة [age]، التي تتلقى عندئذ القيمة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi></span></b><span style="color: #000000">؛</span>
   </li>
-  <li><span style="color: #000000">السطر 4: نتحقق من صحة نموذج الإجراء. يتكون نموذج الإجراء من جميع معلماته، وفي هذه الحالة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]. يكون النموذج صحيحًا إذا تمكنت جميع المعلمات من الحصول على قيمة من الطلب أو القيمة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></b><span style="color: #000000">إذا كان نوع المعلمة يسمح بذلك؛</span>
+  <li><span style="color: #000000">السطر 4: نتحقق من صحة نموذج الإجراء. يتكون نموذج الإجراء من جميع معلماته، وفي هذه الحالة [age]. يكون النموذج صحيحًا إذا تمكنت جميع المعلمات من الحصول على قيمة من الطلب أو القيمة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></b><span style="color: #000000">إذا كان نوع المعلمة يسمح بذلك؛</span>
   </li>
   <li><span style="color: #000000">السطر 5: نضيف قيمة المتغير [<bdi dir="ltr" class="odt-ltr-term">valid</bdi>] إلى النص المرسل إلى العميل.</span>
   </li>
 </ul>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action04</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action04</bdi>?age=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000001BD00000076AF114E5F.png" width="311" height="83" style="width:8.241cm;height:2.185cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BD00000076AF114E5F.png" /></p>
-<p><span style="color: #000000">لم يتمكن <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> من تحويل [21x] إلى النوع </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi></span></strong><span style="color: #000000">. ولذلك، قام بتعيين القيمة </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></strong><span style="color: #000000">للمعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]، كما يسمح بذلك نوعها </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">int</bdi>؟</span></strong><span style="color: #000000">. ومع ذلك، كانت هناك أخطاء في التحويل، كما هو موضح بقيمة [<bdi dir="ltr" class="odt-ltr-term">valid</bdi>].</span></p>
+<p><span style="color: #000000">لم يتمكن <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> من تحويل [21x] إلى النوع </span><strong><span style="color: #000000">int</span></strong><span style="color: #000000">. ولذلك، قام بتعيين القيمة </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">null</bdi> </span></strong><span style="color: #000000">للمعلمة [age]، كما يسمح بذلك نوعها </span><strong><span style="color: #000000">int؟</span></strong><span style="color: #000000">. ومع ذلك، كانت هناك أخطاء في التحويل، كما هو موضح بقيمة [<bdi dir="ltr" class="odt-ltr-term">valid</bdi>].</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">من الممكن الحصول على رسالة الخطأ المرتبطة بفشل التحويل. دعونا نفحص الإجراء الجديد التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
@@ -1122,17 +1122,17 @@
 <p><span style="color: #000000"> </span></p>
 <ol>
     <ul>
-      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;]</span></b><span style="color: #000000">: حالة النموذج للإجراء الخاص بالمعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]،</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;age&quot;]</span></b><span style="color: #000000">: حالة النموذج للإجراء الخاص بالمعلمة [age]،</span>
       </li>
-      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi></span></b><span style="color: #000000">: مجموعة الأخطاء الخاصة بهذا المعامل. الأخطاء من النوع [<bdi dir="ltr" class="odt-ltr-term">ModelError</bdi>]،</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;age&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi></span></b><span style="color: #000000">: مجموعة الأخطاء الخاصة بهذا المعامل. الأخطاء من النوع [<bdi dir="ltr" class="odt-ltr-term">ModelError</bdi>]،</span>
       </li>
-      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">ErrorMessage</bdi></span></b><span style="color: #000000">: رسالة الخطأ (إن وجدت) للمعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] في النموذج</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;age&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[i].<bdi dir="ltr" class="odt-ltr-term">ErrorMessage</bdi></span></b><span style="color: #000000">: رسالة الخطأ (إن وجدت) للمعلمة [age] في النموذج</span>
       </li>
-      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">Exception</bdi></span></b><span style="color: #000000">: الاستثناء الخاص بالخطأ رقم <bdi dir="ltr" class="odt-ltr-term">i</bdi> في مجموعة الأخطاء للمعلمة [<bdi dir="ltr" class="odt-ltr-term">age</bdi>]،</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;age&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[i].<bdi dir="ltr" class="odt-ltr-term">Exception</bdi></span></b><span style="color: #000000">: الاستثناء الخاص بالخطأ رقم i في مجموعة الأخطاء للمعلمة [age]،</span>
       </li>
-      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">Exception.InnerException</bdi></span></b><span style="color: #000000">: سبب هذا الاستثناء،</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;age&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[i].<bdi dir="ltr" class="odt-ltr-term">Exception.InnerException</bdi></span></b><span style="color: #000000">: سبب هذا الاستثناء،</span>
       </li>
-      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">Exception.InnerException.Message</bdi></span></b><span style="color: #000000">: رسالة سبب الاستثناء؛</span>
+      <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ModelState</bdi>[&quot;age&quot;].<bdi dir="ltr" class="odt-ltr-term">Errors</bdi>[i].<bdi dir="ltr" class="odt-ltr-term">Exception.InnerException.Message</bdi></span></b><span style="color: #000000">: رسالة سبب الاستثناء؛</span>
       </li>
     </ul>
 </ol>
@@ -1188,7 +1188,7 @@
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">أثناء الاختبار، نلاحظ أن رسالة الخطأ موجودة في هذه المواقع الثلاثة اعتمادًا على طبيعة عنصر النموذج. لا بد أن هناك قاعدة تضمن حصولنا على رسالة الخطأ المرتبطة بعنصر النموذج، لكنني لا أعرفها. لذا أبحث عنها في الأماكن المختلفة التي يمكنني العثور عليها فيها، باتباع ترتيب محدد. وبمجرد العثور على رسالة غير فارغة، يتم إرجاعها.</span></p>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action05</bdi>?<bdi dir="ltr" class="odt-ltr-term">age</bdi>=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
+<p><span style="color: #000000">دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [</span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http://localhost:55483/First/Action05</bdi>?age=21x</span></strong><span style="color: #000000">]. نحصل على الصفحة التالية:</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/10000000000002DD0000008E8489DDD0.png" width="513" height="99" style="width:13.57cm;height:2.628cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002DD0000008E8489DDD0.png" /></p>
@@ -1261,7 +1261,7 @@
 <p><span style="color: #000000"> </span></p>
 <p><img src="images/10000000000002D400000092CCDC4975.png" width="504" height="102" style="width:13.33cm;height:2.688cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D400000092CCDC4975.png" /></p>
 <p><img src="images/100000000000025D000000809AA65E67.png" width="421" height="89" style="width:11.15cm;height:2.358cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000025D000000809AA65E67.png" /></p>
-<p><span style="color: #000000">لاحظ أن ربط المعلمات لا يميز بين الأحرف الكبيرة والصغيرة. كانت معلمات الطلب هي [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">weight</bdi>]. وقد قامت بتعبئة خصائص [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] في فئة [<bdi dir="ltr" class="odt-ltr-term">ModelAction01</bdi>].</span></p>
+<p><span style="color: #000000">لاحظ أن ربط المعلمات لا يميز بين الأحرف الكبيرة والصغيرة. كانت معلمات الطلب هي [age] و [<bdi dir="ltr" class="odt-ltr-term">weight</bdi>]. وقد قامت بتعبئة خصائص [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] في فئة [<bdi dir="ltr" class="odt-ltr-term">ModelAction01</bdi>].</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">علاوة على ذلك، استخدمنا حتى الآن طلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> من نوع [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>]. دعونا نوضح أن طلبات [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] تتصرف بنفس الطريقة. للقيام بذلك، دعونا نستخدم تطبيق [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>] مرة أخرى:</span></p>
 <p><span style="color: #000000"> </span></p>
@@ -1297,7 +1297,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">يمكن حذف المعلمتين [<bdi dir="ltr" class="odt-ltr-term">weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] من الطلب. في هذه الحالة، يتم تعيين الخاصيتين [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">null</bdi>]، ولا يتم الإبلاغ عن أي خطأ. قد ترغب في تحويل النموذج على النحو التالي:</span></p>
+<p><span style="color: #000000">يمكن حذف المعلمتين [<bdi dir="ltr" class="odt-ltr-term">weight</bdi>] و [age] من الطلب. في هذه الحالة، يتم تعيين الخاصيتين [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">null</bdi>]، ولا يتم الإبلاغ عن أي خطأ. قد ترغب في تحويل النموذج على النحو التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> Exemple_02.Models</span></span>
@@ -1311,7 +1311,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">السطران 5 و 6: لم يعد بإمكان الخاصيتين [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] أن تأخذا القيمة [<bdi dir="ltr" class="odt-ltr-term">null</bdi>]. لنرى ما يحدث مع هذا النموذج الجديد عندما تكون المعلمتان [<bdi dir="ltr" class="odt-ltr-term">weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] مفقودتين من الطلب.</span></p>
+<p><span style="color: #000000">السطران 5 و 6: لم يعد بإمكان الخاصيتين [<bdi dir="ltr" class="odt-ltr-term">Weight</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Age</bdi>] أن تأخذا القيمة [<bdi dir="ltr" class="odt-ltr-term">null</bdi>]. لنرى ما يحدث مع هذا النموذج الجديد عندما تكون المعلمتان [<bdi dir="ltr" class="odt-ltr-term">weight</bdi>] و [age] مفقودتين من الطلب.</span></p>
 <p><span style="color: #000000"> </span></p>
 <p><span style="color: #000000">  </span></p>
 <p><img src="images/100000000000024C0000007FC4C3BCC7.png" width="412" height="89" style="width:10.89cm;height:2.351cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024C0000007FC4C3BCC7.png" /></p>

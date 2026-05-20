@@ -1968,10 +1968,10 @@
 <p>سنقوم أولاً ببناء هذا التطبيق باستخدام طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] محاكاة:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048E0000019552EC088D.png" width="583" height="203" style="display:inline-block; margin:4px;width:15.425cm;height:5.359cm;" class="odt-zoomable" data-zoom-src="images/100000000000048E0000019552EC088D.png" /></td></tr></table>
 
-<p>وهذا سيسمح لنا بالتركيز حصريًا على طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]. وستلتزم طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] المحاكاة بواجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] الفعلية. وبمجرد أن تصبح طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] جاهزة للعمل، سنقوم بعد ذلك ببناء طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">EF5</bdi>].</p>
+<p>وهذا سيسمح لنا بالتركيز حصريًا على طبقة [web]. وستلتزم طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] المحاكاة بواجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] الفعلية. وبمجرد أن تصبح طبقة [web] جاهزة للعمل، سنقوم بعد ذلك ببناء طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">EF5</bdi>].</p>
 <p><a id="refheading1304831934352599"></a></p>
 <h2 id="94">9.4. <span style="color: #4f81bd">قاعدة البيانات</span></h2>
-<p>يتم تخزين البيانات الثابتة اللازمة لإنشاء كشف الراتب في قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> باسم [<strong><bdi dir="ltr" class="odt-ltr-term">dbpam</bdi>_ef5]</strong> (<bdi dir="ltr" class="odt-ltr-term">pam</bdi> = <bdi dir="ltr" class="odt-ltr-term">Paie Assistante Maternelle</bdi>). تحتوي قاعدة البيانات هذه على مسؤول باسم <strong><bdi dir="ltr" class="odt-ltr-term">root</bdi></strong> بدون كلمة مرور. وتحتوي على ثلاثة جداول:</p>
+<p>يتم تخزين البيانات الثابتة اللازمة لإنشاء كشف الراتب في قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> باسم [<strong><bdi dir="ltr" class="odt-ltr-term">dbpam</bdi>_ef5]</strong> (pam = <bdi dir="ltr" class="odt-ltr-term">Paie Assistante Maternelle</bdi>). تحتوي قاعدة البيانات هذه على مسؤول باسم <strong><bdi dir="ltr" class="odt-ltr-term">root</bdi></strong> بدون كلمة مرور. وتحتوي على ثلاثة جداول:</p>
 <p><img src="images/10000000000002D5000002420B5D899B.png" width="435" height="347" style="width:11.509cm;height:9.176cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D5000002420B5D899B.png" /></p>
 <p>توجد علاقة مفتاح خارجي بين عمود <bdi dir="ltr" class="odt-ltr-term">EMPLOYEES</bdi>(<bdi dir="ltr" class="odt-ltr-term">INDEMNITE</bdi>_ID) وعمود <bdi dir="ltr" class="odt-ltr-term">INDEMNITIES</bdi>(<bdi dir="ltr" class="odt-ltr-term">ID</bdi>). يتم تحديد بنية قاعدة البيانات هذه حسب استخدامها مع <bdi dir="ltr" class="odt-ltr-term">EF5.</bdi> سنعود إلى هذا الموضوع عند إنشاء الطبقات السفلية للتطبيق.</p>
 <div style="margin:0 0 0.75em 0; background-color:#cccccc; padding:0.35em 0.6em">جدول <b><bdi dir="ltr" class="odt-ltr-term">EMPLOYEES</bdi></b>: يحتوي على معلومات حول مختلف مقدمي خدمات رعاية الأطفال</div>
@@ -2249,7 +2249,7 @@
 </code></pre></div>
 
 <p>لاحظ أن الفئات لا تتضمن عمودي [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">VERSIONING</bdi>] من الجداول. هذه الأعمدة، التي تكون مفيدة عند استخدام <bdi dir="ltr" class="odt-ltr-term">EF5 ORM</bdi>، ليست مطلوبة في سياق طبقة [الأعمال] المحاكاة.</p>
-<p>تغلف فئة [<bdi dir="ltr" class="odt-ltr-term">FeuilleS</bdi><a id="feuillesalaire"></a> <bdi dir="ltr" class="odt-ltr-term">al</bdi>] المعلومات من 6 إلى 24 من النموذج المقدم سابقًا:</p>
+<p>تغلف فئة [<bdi dir="ltr" class="odt-ltr-term">FeuilleS</bdi><a id="feuillesalaire"></a> al] المعلومات من 6 إلى 24 من النموذج المقدم سابقًا:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Pam.Metier.Entites</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
@@ -2683,7 +2683,7 @@
   </li>
 </ul>
 
-<p>الآن، باستخدام مستكشف <bdi dir="ltr" class="odt-ltr-term">Windows</bdi>، استبدل مجلد [<bdi dir="ltr" class="odt-ltr-term">Content</bdi>] الخاص بالمشروع بمجلد [<bdi dir="ltr" class="odt-ltr-term">étudedecas-support</bdi> / <bdi dir="ltr" class="odt-ltr-term">web</bdi> / <bdi dir="ltr" class="odt-ltr-term">Content</bdi>]. بمجرد الانتهاء من ذلك، يجب عليك تضمين الملفات الجديدة في مشروع [<bdi dir="ltr" class="odt-ltr-term">pam-web-01</bdi>]. تابع كما يلي:</p>
+<p>الآن، باستخدام مستكشف <bdi dir="ltr" class="odt-ltr-term">Windows</bdi>، استبدل مجلد [<bdi dir="ltr" class="odt-ltr-term">Content</bdi>] الخاص بالمشروع بمجلد [<bdi dir="ltr" class="odt-ltr-term">étudedecas-support</bdi> / web / <bdi dir="ltr" class="odt-ltr-term">Content</bdi>]. بمجرد الانتهاء من ذلك، يجب عليك تضمين الملفات الجديدة في مشروع [<bdi dir="ltr" class="odt-ltr-term">pam-web-01</bdi>]. تابع كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000060F000001DA45BBD4DA.png" width="680" height="208" style="display:inline-block; margin:4px;width:17.999cm;height:5.502cm;" class="odt-zoomable" data-zoom-src="images/100000000000060F000001DA45BBD4DA.png" /></td></tr></table>
 
 <ul>
@@ -3268,7 +3268,7 @@
 </code></pre></div>
 
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">تحتوي جميع الروابط على سمة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] تسمح لنا بإدارتها في <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> نقوم بتعديل طريقة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> التي يتم تنفيذها عند تحميل الصفحة على النحو التالي:</span></p>
+<p><span style="color: #000000">تحتوي جميع الروابط على سمة [id] تسمح لنا بإدارتها في <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> نقوم بتعديل طريقة <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> التي يتم تنفيذها عند تحميل الصفحة على النحو التالي:</span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content">// variables globales</span></span>
@@ -3335,11 +3335,11 @@
 <ul>
   <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">T.length</bdi> </span></b><span style="color: #000000">هو عدد الروابط؛</span>
   </li>
-  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">T</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>] </span></b><span style="color: #000000">هو الرابط رقم <bdi dir="ltr" class="odt-ltr-term">i</bdi>؛</span>
+  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">T</bdi>[i] </span></b><span style="color: #000000">هو الرابط رقم i؛</span>
   </li>
-  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">T</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">show</bdi>() </span></b><span style="color: #000000">تعرض الرابط رقم <bdi dir="ltr" class="odt-ltr-term">i</bdi>؛</span>
+  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">T</bdi>[i].<bdi dir="ltr" class="odt-ltr-term">show</bdi>() </span></b><span style="color: #000000">تعرض الرابط رقم i؛</span>
   </li>
-  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">T</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>].<bdi dir="ltr" class="odt-ltr-term">hide</bdi>() </span></b><span style="color: #000000">يخفي الرابط رقم <bdi dir="ltr" class="odt-ltr-term">i.</bdi></span>
+  <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">T</bdi>[i].<bdi dir="ltr" class="odt-ltr-term">hide</bdi>() </span></b><span style="color: #000000">يخفي الرابط رقم <bdi dir="ltr" class="odt-ltr-term">i.</bdi></span>
   </li>
 </ul>
 
@@ -3770,7 +3770,7 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li><span style="color: #000000">السطور 13 و 16 و 18: القيم الثلاث المنشورة. لاحظ أن [<bdi dir="ltr" class="odt-ltr-term">daysWorked</bdi>] قد تم إعلانه كنوع [<bdi dir="ltr" class="odt-ltr-term">double</bdi>] على الرغم من أنه من المتوقع في الواقع أن يكون عددًا صحيحًا. تم إدخال النوع [<bdi dir="ltr" class="odt-ltr-term">double</bdi>] لتسهيل التحقق من صحة هذا الحقل من جانب العميل، حيث تسبب التحقق من صحة النوع [<bdi dir="ltr" class="odt-ltr-term">int</bdi>] في حدوث مشكلات؛</span>
+  <li><span style="color: #000000">السطور 13 و 16 و 18: القيم الثلاث المنشورة. لاحظ أن [<bdi dir="ltr" class="odt-ltr-term">daysWorked</bdi>] قد تم إعلانه كنوع [<bdi dir="ltr" class="odt-ltr-term">double</bdi>] على الرغم من أنه من المتوقع في الواقع أن يكون عددًا صحيحًا. تم إدخال النوع [<bdi dir="ltr" class="odt-ltr-term">double</bdi>] لتسهيل التحقق من صحة هذا الحقل من جانب العميل، حيث تسبب التحقق من صحة النوع [int] في حدوث مشكلات؛</span>
   </li>
   <li><span style="color: #000000">السطور 12 و 14 و 17: تسميات لأساليب [<bdi dir="ltr" class="odt-ltr-term">Html.LabelFor</bdi>] الخاصة بالعرض المرتبط بالنموذج؛</span>
   </li>
@@ -4740,7 +4740,7 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p><span style="color: #000000"> </span></p>
 <p><img src="images/100000000000033A00000169C5846764.png" width="578" height="253" style="width:15.289cm;height:6.682cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000033A00000169C5846764.png" /></p>
-<p><span style="color: #000000">قم بتعيين فئات <bdi dir="ltr" class="odt-ltr-term">CSS</bdi> [<bdi dir="ltr" class="odt-ltr-term">even</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">odd</bdi>]، المحددة في ورقة الأنماط [/<bdi dir="ltr" class="odt-ltr-term">Content/Site.css</bdi>]، بالتناوب إلى صفوف</span><strong><span style="color: #000000"> &lt;<bdi dir="ltr" class="odt-ltr-term">tr</bdi>&gt; </span></strong><span style="color: #000000">في جدول <bdi dir="ltr" class="odt-ltr-term">HTML:</bdi></span></p>
+<p><span style="color: #000000">قم بتعيين فئات <bdi dir="ltr" class="odt-ltr-term">CSS</bdi> [<bdi dir="ltr" class="odt-ltr-term">even</bdi>] و [odd]، المحددة في ورقة الأنماط [/<bdi dir="ltr" class="odt-ltr-term">Content/Site.css</bdi>]، بالتناوب إلى صفوف</span><strong><span style="color: #000000"> &lt;tr&gt; </span></strong><span style="color: #000000">في جدول <bdi dir="ltr" class="odt-ltr-term">HTML:</bdi></span></p>
 <p><span style="color: #000000"> </span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">.impair</span> {</span></span>
@@ -4972,7 +4972,7 @@
 <p><span style="color: #000000">حيث </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">N</bdi> </span></strong><span style="color: #000000">هو رقم المحاكاة.</span></p>
 <p><span style="color: #000000"> </span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong><span style="color: #000000">المهمة</span></strong><span style="color: #000000">: باتباع الإجراء الوارد في الأقسام 9.9.3، اكتب دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">removeSimulation</bdi>]. سترسل هذه الدالة طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> من نوع <bdi dir="ltr" class="odt-ltr-term">POST</bdi> إلى الإجراء [/<bdi dir="ltr" class="odt-ltr-term">Pam/RemoveSimulation</bdi>]. وسترسل البيانات <bdi dir="ltr" class="odt-ltr-term">N</bdi> في النموذج </span><strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">num</bdi>=<bdi dir="ltr" class="odt-ltr-term">N</bdi></span></strong><span style="color: #000000">.</span></p>
+<p><strong><span style="color: #000000">المهمة</span></strong><span style="color: #000000">: باتباع الإجراء الوارد في الأقسام 9.9.3، اكتب دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">removeSimulation</bdi>]. سترسل هذه الدالة طلب <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> من نوع <bdi dir="ltr" class="odt-ltr-term">POST</bdi> إلى الإجراء [/<bdi dir="ltr" class="odt-ltr-term">Pam/RemoveSimulation</bdi>]. وسترسل البيانات <bdi dir="ltr" class="odt-ltr-term">N</bdi> في النموذج </span><strong><span style="color: #000000">num=<bdi dir="ltr" class="odt-ltr-term">N</bdi></span></strong><span style="color: #000000">.</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p><span style="color: #000000"> </span></p>
 <p><strong><span style="color: #000000">ملاحظة</span></strong><span style="color: #000000">: دالة <bdi dir="ltr" class="odt-ltr-term">JS</bdi> [<bdi dir="ltr" class="odt-ltr-term">retirerSimulation</bdi>] مشابهة لدوال <bdi dir="ltr" class="odt-ltr-term">JS</bdi> الأخرى التي كتبتها والتي تقوم بإجراء استدعاء <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> إلى الخادم. والفرق الوحيد هنا هو إرسال قيمة <bdi dir="ltr" class="odt-ltr-term">POST</bdi> غير موجودة في نموذج. ونحن نعلم أن القيم المرسلة يتم دمجها في سلسلة بالصيغة التالية:</span></p>
@@ -5005,7 +5005,7 @@
 <h3 id="9193-removesimulation">9.19.3. <span style="color: #4f81bd">كتابة إجراء الخادم [<bdi dir="ltr" class="odt-ltr-term">RemoveSimulation</bdi>]</span></h3>
 <p><span style="color: #000000">إجراء الخادم [<bdi dir="ltr" class="odt-ltr-term">RemoveSimulation</bdi>]:</span></p>
 <ul>
-  <li><span style="color: #000000">يتلقى معلمة مرسلة تسمى [<bdi dir="ltr" class="odt-ltr-term">num</bdi>]، وهي رقم المحاكاة؛</span>
+  <li><span style="color: #000000">يتلقى معلمة مرسلة تسمى [num]، وهي رقم المحاكاة؛</span>
   </li>
   <li><span style="color: #000000">يجب أن تزيل المحاكاة التي تحمل هذا الرقم من قائمة المحاكاة المخزنة في الجلسة؛</span>
   </li>
@@ -5015,7 +5015,7 @@
 
 <p><span style="color: #000000"> </span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong><span style="color: #000000">المهمة</span></strong><span style="color: #000000">: اكتب إجراء الخادم [<bdi dir="ltr" class="odt-ltr-term">RemoveSimulation</bdi>]. راجع القسم 4.1 لتتعلم كيفية استرداد المعلمة المنشورة المسماة [<bdi dir="ltr" class="odt-ltr-term">num</bdi>].</span></p>
+<p><strong><span style="color: #000000">المهمة</span></strong><span style="color: #000000">: اكتب إجراء الخادم [<bdi dir="ltr" class="odt-ltr-term">RemoveSimulation</bdi>]. راجع القسم 4.1 لتتعلم كيفية استرداد المعلمة المنشورة المسماة [num].</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading1241872030931382"></a></p>
@@ -5051,7 +5051,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>في السطر 17، يتم إنشاء مثيل لطبقة الأعمال باستخدام عامل التشغيل <strong><bdi dir="ltr" class="odt-ltr-term">new</bdi></strong>. بالإضافة إلى ذلك، يتم تعريف نموذج التطبيق على النحو التالي:</p>
+<p>في السطر 17، يتم إنشاء مثيل لطبقة الأعمال باستخدام عامل التشغيل <strong>new</strong>. بالإضافة إلى ذلك، يتم تعريف نموذج التطبيق على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">ApplicationModel</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
@@ -5083,7 +5083,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005110000019A738B13C9.png" width="649" height="205" style="display:inline-block; margin:4px;width:17.159cm;height:5.424cm;" class="odt-zoomable" data-zoom-src="images/10000000000005110000019A738B13C9.png" /></td></tr></table>
 
 <p>في [1]، انقر بزر الماوس الأيمن على فرع [<bdi dir="ltr" class="odt-ltr-term">References</bdi>] (المراجع) للمشروع وحدد الخيار [<bdi dir="ltr" class="odt-ltr-term">Manage NuGet Packages</bdi>] (إدارة حزم <bdi dir="ltr" class="odt-ltr-term">NuGet</bdi>). يلزم وجود اتصال بالإنترنت. ثم تابع كما فعلت سابقًا مع مكتبة <bdi dir="ltr" class="odt-ltr-term">JQuery</bdi> [<bdi dir="ltr" class="odt-ltr-term">Globalize</bdi>]. ابحث عن الكلمة الرئيسية [<bdi dir="ltr" class="odt-ltr-term">Spring.core</bdi>] وقم بتثبيت هذه الحزمة. يتضمن التثبيت ملفين <bdi dir="ltr" class="odt-ltr-term">DLL:</bdi> [<bdi dir="ltr" class="odt-ltr-term">Spring.core</bdi>] [2] و [<bdi dir="ltr" class="odt-ltr-term">Common.Logging</bdi>] [3]. في الأمثلة التالية، تم استخدام إصدار <bdi dir="ltr" class="odt-ltr-term">Spring 1.3.2</bdi>.</p>
-<p><strong>ملاحظة</strong>: إذا لم يكن لديك اتصال بالإنترنت، فستجد ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> هذه في مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] ضمن المواد الخاصة بدراسة الحالة هذه.</p>
+<p><strong>ملاحظة</strong>: إذا لم يكن لديك اتصال بالإنترنت، فستجد ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> هذه في مجلد [lib] ضمن المواد الخاصة بدراسة الحالة هذه.</p>
 <p><a id="refheading1235802030931382"></a></p>
 <h3 id="9202-webconfig">9.20.2. <span style="color: #4f81bd">تكوين [<bdi dir="ltr" class="odt-ltr-term">web.config</bdi>]</span></h3>
 <p>يتم تعريف فئة التنفيذ لواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>] في ملف [<bdi dir="ltr" class="odt-ltr-term">web.config</bdi>].</p>
@@ -5117,11 +5117,11 @@
   </li>
   <li>السطر 6: يُعرّف الفئة [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">Spring.Context.Support.ContextHandler</bdi></span>] الموجودة في مكتبة <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">Spring.Core</bdi></span>] باعتبارها الفئة القادرة على معالجة قسم [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">context</bdi></span>] في الأسطر 11–13؛
   </li>
-  <li>الأسطر 11-13: يوفر هذا القسم المعلومات [<span style="color: #0000ff">&lt;</span><span style="color: #a31515"><bdi dir="ltr" class="odt-ltr-term">resource</bdi> </span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">uri</bdi>=</span><span style="color: #000000">&quot;</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">config://spring/objects</bdi></span><span style="color: #000000">&quot; </span><span style="color: #0000ff">/&gt;</span>]، والتي تشير إلى أن كائنات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> موجودة في ملف التكوين ضمن قسم [/<bdi dir="ltr" class="odt-ltr-term">spring/objects</bdi>]، أي في الأسطر 14-16؛
+  <li>الأسطر 11-13: يوفر هذا القسم المعلومات [<span style="color: #0000ff">&lt;</span><span style="color: #a31515"><bdi dir="ltr" class="odt-ltr-term">resource</bdi> </span><span style="color: #0000ff">uri=</span><span style="color: #000000">&quot;</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">config://spring/objects</bdi></span><span style="color: #000000">&quot; </span><span style="color: #0000ff">/&gt;</span>]، والتي تشير إلى أن كائنات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> موجودة في ملف التكوين ضمن قسم [/<bdi dir="ltr" class="odt-ltr-term">spring/objects</bdi>]، أي في الأسطر 14-16؛
   </li>
   <li>الأسطر 14-16: تقدم علامة [<span style="color: #a31515"><bdi dir="ltr" class="odt-ltr-term">objects</bdi></span>] كائنات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>السطر 15: يُعرّف كائنًا محددًا بـ [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">id</bdi>=</span><span style="color: #000000">&quot;</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">pammetier</bdi></span><span style="color: #000000">&quot;</span>]، وهو مثيل للفئة [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">Pam.Metier.Service.PamMetier</bdi></span>] الموجودة في مكتبة <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">pam-metier-simule</bdi></span>]. احرص على عدم ارتكاب أي خطأ هنا. بالنسبة لسمة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>]، يمكنك استخدام أي شيء تريده. ستستخدم هذا المعرف في [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]. الفئة [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">Pam.Metier.Service.PamMetier</bdi></span>] هي فئة طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] المحاكاة الخاصة بنا. تحتاج إلى الرجوع إلى تعريفها للعثور على اسمها الكامل:
+  <li>السطر 15: يُعرّف كائنًا محددًا بـ [<span style="color: #0000ff">id=</span><span style="color: #000000">&quot;</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">pammetier</bdi></span><span style="color: #000000">&quot;</span>]، وهو مثيل للفئة [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">Pam.Metier.Service.PamMetier</bdi></span>] الموجودة في مكتبة <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">pam-metier-simule</bdi></span>]. احرص على عدم ارتكاب أي خطأ هنا. بالنسبة لسمة [id]، يمكنك استخدام أي شيء تريده. ستستخدم هذا المعرف في [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]. الفئة [<span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">Pam.Metier.Service.PamMetier</bdi></span>] هي فئة طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] المحاكاة الخاصة بنا. تحتاج إلى الرجوع إلى تعريفها للعثور على اسمها الكامل:
   </li>
 </ul>
 
@@ -5167,7 +5167,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 19: نستخدم فئة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">ContextRegistry</bdi>]، القادرة على معالجة ملف [<bdi dir="ltr" class="odt-ltr-term">web.config</bdi>]. للقيام بذلك، نحتاج إلى استيراد مساحة الاسم من السطر 1. تسترد الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">GetContext</bdi>] محتويات علامات [<span style="color: #a31515"><bdi dir="ltr" class="odt-ltr-term">context</bdi></span>]، التي تشير إلى مكان وجود كائنات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> ثم تسمح لنا الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">GetObject</bdi>] باسترداد كائن محدد يتم تحديده بواسطة سمة <b><bdi dir="ltr" class="odt-ltr-term">id</bdi></b> الخاصة به. لاحظ أن اسم الفئة التي تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>] لم يعد مبرمجًا بشكل ثابت في الكود. فهو موجود الآن في ملف [<bdi dir="ltr" class="odt-ltr-term">web.config</bdi>].
+  <li>السطر 19: نستخدم فئة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">ContextRegistry</bdi>]، القادرة على معالجة ملف [<bdi dir="ltr" class="odt-ltr-term">web.config</bdi>]. للقيام بذلك، نحتاج إلى استيراد مساحة الاسم من السطر 1. تسترد الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">GetContext</bdi>] محتويات علامات [<span style="color: #a31515"><bdi dir="ltr" class="odt-ltr-term">context</bdi></span>]، التي تشير إلى مكان وجود كائنات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> ثم تسمح لنا الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">GetObject</bdi>] باسترداد كائن محدد يتم تحديده بواسطة سمة <b>id</b> الخاصة به. لاحظ أن اسم الفئة التي تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>] لم يعد مبرمجًا بشكل ثابت في الكود. فهو موجود الآن في ملف [<bdi dir="ltr" class="odt-ltr-term">web.config</bdi>].
   </li>
 </ul>
 
@@ -5379,7 +5379,7 @@
 <p>بالإضافة إلى ذلك، سنحتاج أحيانًا إلى مفاهيم لغة <bdi dir="ltr" class="odt-ltr-term">C#.</bdi> وعندها سنشير إلى الدورة التدريبية [<strong>مقدمة إلى لغة <bdi dir="ltr" class="odt-ltr-term">C#</bdi></strong>] المتوفرة على الرابط [<a href="http://tahe.developpez.com/dotnet/ef5cf-02/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://tahe.developpez.com/dotnet/csharp/</bdi></span></u></a>] باستخدام الرمز [<strong><bdi dir="ltr" class="odt-ltr-term">refC#</bdi></strong>].</p>
 <p><a id="refheading1241992030931382"></a></p>
 <h3 id="9221">9.22.1. <span style="color: #4f81bd">قاعدة البيانات</span></h3>
-<p>تم تقديم قاعدة بيانات التطبيق في القسم 9.4. وهي قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> تسمى [<strong><bdi dir="ltr" class="odt-ltr-term">dbpam</bdi>_ef5]</strong> (<bdi dir="ltr" class="odt-ltr-term">pam</bdi> = <bdi dir="ltr" class="odt-ltr-term">Paie Assistante Maternelle</bdi>). تحتوي قاعدة البيانات هذه على مسؤول يسمى <strong><bdi dir="ltr" class="odt-ltr-term">root</bdi></strong> بدون كلمة مرور.</p>
+<p>تم تقديم قاعدة بيانات التطبيق في القسم 9.4. وهي قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> تسمى [<strong><bdi dir="ltr" class="odt-ltr-term">dbpam</bdi>_ef5]</strong> (pam = <bdi dir="ltr" class="odt-ltr-term">Paie Assistante Maternelle</bdi>). تحتوي قاعدة البيانات هذه على مسؤول يسمى <strong><bdi dir="ltr" class="odt-ltr-term">root</bdi></strong> بدون كلمة مرور.</p>
 <p>دعونا نراجع مخطط قاعدة البيانات. تحتوي على ثلاثة جداول:</p>
 <p><img src="images/10000000000002D5000002420B5D899B.png" width="435" height="347" style="width:11.509cm;height:9.176cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D5000002420B5D899B.png" /></p>
 <p>توجد علاقة مفتاح خارجي بين عمود <bdi dir="ltr" class="odt-ltr-term">EMPLOYEES</bdi>(<bdi dir="ltr" class="odt-ltr-term">INDEMNITY</bdi>_ID) وعمود <bdi dir="ltr" class="odt-ltr-term">INDEMNITIES</bdi>(<bdi dir="ltr" class="odt-ltr-term">ID</bdi>). يتم تحديد جزء من بنية قاعدة البيانات هذه بناءً على استخدامها مع <bdi dir="ltr" class="odt-ltr-term">EF5.</bdi></p>
@@ -5607,7 +5607,7 @@
 
 <p><a id="refheading1242012030931382"></a></p>
 <h3 id="9222-visual-studio">9.22.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi></span></h3>
-<p>باستخدام <bdi dir="ltr" class="odt-ltr-term">Visual Studio Express</bdi> 2012 <strong><bdi dir="ltr" class="odt-ltr-term">for Desktop</bdi></strong>، نقوم بتحميل الحل [<bdi dir="ltr" class="odt-ltr-term">pam-td</bdi>] المستخدم عند إنشاء طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]:</p>
+<p>باستخدام <bdi dir="ltr" class="odt-ltr-term">Visual Studio Express</bdi> 2012 <strong><bdi dir="ltr" class="odt-ltr-term">for Desktop</bdi></strong>، نقوم بتحميل الحل [<bdi dir="ltr" class="odt-ltr-term">pam-td</bdi>] المستخدم عند إنشاء طبقة [web]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000060500000260AD4C40C3.png" width="680" height="268" style="display:inline-block; margin:4px;width:17.999cm;height:7.101cm;" class="odt-zoomable" data-zoom-src="images/100000000000060500000260AD4C40C3.png" /></td></tr></table>
 
 <ul>
@@ -5645,14 +5645,14 @@
   </li>
 </ul>
 
-<p>يشرح القسم 4.2 من [<strong><bdi dir="ltr" class="odt-ltr-term">refEF5</bdi></strong>] كيفية تثبيت ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> هذه باستخدام أداة [<bdi dir="ltr" class="odt-ltr-term">NuGet</bdi>]. حاليًا (نوفمبر 2013)، الإصدار المتاح من <bdi dir="ltr" class="odt-ltr-term">Entity Framework</bdi> هو الإصدار 6 (<bdi dir="ltr" class="odt-ltr-term">EF6</bdi>). لسوء الحظ، يبدو أن موصل <bdi dir="ltr" class="odt-ltr-term">MySQL ADO.NET</bdi> المتاح (نوفمبر 2013) عبر [<bdi dir="ltr" class="odt-ltr-term">NuGet</bdi>] غير متوافق مع <bdi dir="ltr" class="odt-ltr-term">EF6.</bdi> لذلك، قمنا بوضع ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الخاص بـ <bdi dir="ltr" class="odt-ltr-term">EF5</bdi> وملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الأخرى المطلوبة لمشروع [<bdi dir="ltr" class="odt-ltr-term">pam-ef5</bdi>] في مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] [1]</p>
+<p>يشرح القسم 4.2 من [<strong><bdi dir="ltr" class="odt-ltr-term">refEF5</bdi></strong>] كيفية تثبيت ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> هذه باستخدام أداة [<bdi dir="ltr" class="odt-ltr-term">NuGet</bdi>]. حاليًا (نوفمبر 2013)، الإصدار المتاح من <bdi dir="ltr" class="odt-ltr-term">Entity Framework</bdi> هو الإصدار 6 (<bdi dir="ltr" class="odt-ltr-term">EF6</bdi>). لسوء الحظ، يبدو أن موصل <bdi dir="ltr" class="odt-ltr-term">MySQL ADO.NET</bdi> المتاح (نوفمبر 2013) عبر [<bdi dir="ltr" class="odt-ltr-term">NuGet</bdi>] غير متوافق مع <bdi dir="ltr" class="odt-ltr-term">EF6.</bdi> لذلك، قمنا بوضع ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الخاص بـ <bdi dir="ltr" class="odt-ltr-term">EF5</bdi> وملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الأخرى المطلوبة لمشروع [<bdi dir="ltr" class="odt-ltr-term">pam-ef5</bdi>] في مجلد [lib] [1]</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D20000014B3B870096.png" width="617" height="166" style="display:inline-block; margin:4px;width:16.325cm;height:4.38cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D20000014B3B870096.png" /></td></tr></table>
 
-<p>لقد وضعنا ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الأخرى في مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>]. سنستخدمها لاحقًا. في [2]، نضيف ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الجديدة هذه إلى المشروع.</p>
+<p>لقد وضعنا ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الأخرى في مجلد [lib]. سنستخدمها لاحقًا. في [2]، نضيف ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الجديدة هذه إلى المشروع.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000057800000146A159CEBF.png" width="680" height="158" style="display:inline-block; margin:4px;width:17.999cm;height:4.191cm;" class="odt-zoomable" data-zoom-src="images/100000000000057800000146A159CEBF.png" /></td></tr></table>
 
 <ul>
-  <li>في [3]، انتقل عبر نظام الملفات إلى مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>]؛
+  <li>في [3]، انتقل عبر نظام الملفات إلى مجلد [lib]؛
   </li>
   <li>في [4]، حدد ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الثلاثة ثم انقر فوق &quot;موافق&quot; مرتين؛
   </li>
@@ -5686,7 +5686,7 @@
 <h3 id="9224-entity-framework">9.22.4. <span style="color: #4f81bd">كيانات <bdi dir="ltr" class="odt-ltr-term">Entity Framework</bdi></span></h3>
 <p>كيانات <bdi dir="ltr" class="odt-ltr-term">Entity Framework</bdi> هي فئات تغلف صفوف جداول قاعدة البيانات المختلفة. دعونا نستعرضها:</p>
 <p><img src="images/10000000000002D5000002420B5D899B.png" width="435" height="347" style="width:11.509cm;height:9.176cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D5000002420B5D899B.png" /></p>
-<p>في طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]، استخدمنا كيانات [<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>، <bdi dir="ltr" class="odt-ltr-term">Contributions</bdi>، <bdi dir="ltr" class="odt-ltr-term">Benefits</bdi>] (انظر القسم 9.7.3، <a href="#refheading1883981168461456"><u><span style="color: #0563c1">الصفحة 211</span></u></a>). لم تكن هذه الكيانات تمثيلات دقيقة للجداول. وبالتالي، تم تجاهل أعمدة [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>، <bdi dir="ltr" class="odt-ltr-term">VERSIONING</bdi>]. هنا، لن يكون الأمر كذلك لأنها تُستخدم بواسطة <bdi dir="ltr" class="odt-ltr-term">EF5 ORM.</bdi> لذلك سنضيف الخصائص المفقودة إليها. نقوم بإنشاء هذه الكيانات في مجلد [<bdi dir="ltr" class="odt-ltr-term">Models</bdi>] داخل المشروع:</p>
+<p>في طبقة [web]، استخدمنا كيانات [<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>، <bdi dir="ltr" class="odt-ltr-term">Contributions</bdi>، <bdi dir="ltr" class="odt-ltr-term">Benefits</bdi>] (انظر القسم 9.7.3، <a href="#refheading1883981168461456"><u><span style="color: #0563c1">الصفحة 211</span></u></a>). لم تكن هذه الكيانات تمثيلات دقيقة للجداول. وبالتالي، تم تجاهل أعمدة [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>، <bdi dir="ltr" class="odt-ltr-term">VERSIONING</bdi>]. هنا، لن يكون الأمر كذلك لأنها تُستخدم بواسطة <bdi dir="ltr" class="odt-ltr-term">EF5 ORM.</bdi> لذلك سنضيف الخصائص المفقودة إليها. نقوم بإنشاء هذه الكيانات في مجلد [<bdi dir="ltr" class="odt-ltr-term">Models</bdi>] داخل المشروع:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015A0000014BD7117F6C.png" width="173" height="166" style="display:inline-block; margin:4px;width:4.577cm;height:4.38cm;" class="odt-zoomable" data-zoom-src="images/100000000000015A0000014BD7117F6C.png" /></td></tr></table>
 
 <p>أصبح الكود الجديد لها كما يلي:</p>
@@ -6097,7 +6097,7 @@
 </ul>
 <p><a id="refheading1239782030931382"></a></p>
 <h3 id="9227-ef5-dll">9.22.7. <span style="color: #4f81bd">[<bdi dir="ltr" class="odt-ltr-term">EF5</bdi>] طبقة <bdi dir="ltr" class="odt-ltr-term">DLL</bdi></span></h3>
-<p>نقوم بتحويل مشروعنا إلى مكتبة فئات بحيث يتم إنشاء تجميع .<bdi dir="ltr" class="odt-ltr-term">dll</bdi> بدلاً من .<bdi dir="ltr" class="odt-ltr-term">exe</bdi> عند الإنشاء. يتم ذلك في خصائص المشروع كما هو موضح في القسم 9.7.6، لطبقة الأعمال المحاكاة.</p>
+<p>نقوم بتحويل مشروعنا إلى مكتبة فئات بحيث يتم إنشاء تجميع .dll بدلاً من .exe عند الإنشاء. يتم ذلك في خصائص المشروع كما هو موضح في القسم 9.7.6، لطبقة الأعمال المحاكاة.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>المهمة</strong>: قم بتغيير نوع المشروع [<bdi dir="ltr" class="odt-ltr-term">pam-ef5</bdi>] إلى مكتبة فئات، ثم أعد إنشاء المشروع.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
@@ -6177,7 +6177,7 @@
   </li>
 </ul>
 
-<p>بالإضافة إلى ذلك، سنستخدم [<bdi dir="ltr" class="odt-ltr-term">Spring.net</bdi>] لإنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. ولهذا الغرض، نحتاج إلى مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<bdi dir="ltr" class="odt-ltr-term">Spring.core</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Common.Logging</bdi>]. توجد مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> هذه في المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] ضمن مواد دراسة الحالة.</p>
+<p>بالإضافة إلى ذلك، سنستخدم [<bdi dir="ltr" class="odt-ltr-term">Spring.net</bdi>] لإنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. ولهذا الغرض، نحتاج إلى مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<bdi dir="ltr" class="odt-ltr-term">Spring.core</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Common.Logging</bdi>]. توجد مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> هذه في المجلد [lib] ضمن مواد دراسة الحالة.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>المهمة</strong>: أضف هذه المراجع المختلفة إلى مشروع [<bdi dir="ltr" class="odt-ltr-term">pam-dao</bdi>].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
@@ -6547,7 +6547,7 @@
   </li>
   <li><span style="color: #000000">السطر 7: يحدد الكائن [<bdi dir="ltr" class="odt-ltr-term">pammetier</bdi>] المرتبط بفئة [<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 8: تُستخدم علامة [<bdi dir="ltr" class="odt-ltr-term">property</bdi>] لتهيئة خاصية عامة لفئة [<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>]. تتوافق السمة [</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">name</bdi>=</span><span style="color: #000000">&quot;</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">PamDao</bdi></span><span style="color: #000000">&quot;] مع اسم الخاصية المراد تهيئتها في فئة [<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>]. تشير السمة [</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">ref</bdi>=</span><span style="color: #000000">&quot;</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">pamdao</bdi></span><span style="color: #000000">&quot;] إلى أن الخاصية يتم تهيئتها باستخدام مرجع، وهو مرجع الكائن [<bdi dir="ltr" class="odt-ltr-term">pamdao</bdi>] من السطر 6، وبالتالي باستخدام المرجع من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. وهذا ما كنا نريده.</span>
+  <li><span style="color: #000000">السطر 8: تُستخدم علامة [<bdi dir="ltr" class="odt-ltr-term">property</bdi>] لتهيئة خاصية عامة لفئة [<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>]. تتوافق السمة [</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">name</bdi>=</span><span style="color: #000000">&quot;</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">PamDao</bdi></span><span style="color: #000000">&quot;] مع اسم الخاصية المراد تهيئتها في فئة [<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>]. تشير السمة [</span><span style="color: #0000ff">ref=</span><span style="color: #000000">&quot;</span><span style="color: #0000ff"><bdi dir="ltr" class="odt-ltr-term">pamdao</bdi></span><span style="color: #000000">&quot;] إلى أن الخاصية يتم تهيئتها باستخدام مرجع، وهو مرجع الكائن [<bdi dir="ltr" class="odt-ltr-term">pamdao</bdi>] من السطر 6، وبالتالي باستخدام المرجع من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. وهذا ما كنا نريده.</span>
   </li>
 </ul>
 <p><a id="refheading1242252030931382"></a></p>
@@ -6634,11 +6634,11 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading1242292030931382"></a></p>
-<h2 id="925-18-web">9.25. <span style="color: #4f81bd">الخطوة 18: تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]</span></h2>
-<p>لقد وصلنا إلى الطبقة الأخيرة من بنية نظامنا، وهي طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]:</p>
+<h2 id="925-18-web">9.25. <span style="color: #4f81bd">الخطوة 18: تنفيذ طبقة [web]</span></h2>
+<p>لقد وصلنا إلى الطبقة الأخيرة من بنية نظامنا، وهي طبقة [web]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005F50000014137E1CEBC.png" width="680" height="143" style="display:inline-block; margin:4px;width:17.999cm;height:3.789cm;" class="odt-zoomable" data-zoom-src="images/10000000000005F50000014137E1CEBC.png" /></td></tr></table>
 
-<p>سنعيد استخدام طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] التي طورناها باستخدام طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] محاكاة.</p>
+<p>سنعيد استخدام طبقة [web] التي طورناها باستخدام طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] محاكاة.</p>
 <p><a id="refheading1242312030931382"></a></p>
 <h3 id="9251-visual-studio">9.25.1. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi></span></h3>
 <p>نعود إلى <bdi dir="ltr" class="odt-ltr-term">Visual Studio Express</bdi> 2012 <strong><bdi dir="ltr" class="odt-ltr-term">for the Web</bdi></strong> لربط طبقة الويب الخاصة بنا بطبقات [منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>، <bdi dir="ltr" class="odt-ltr-term">EF5</bdi>] التي طورناها للتو. يتضمن هذا بشكل أساسي بعض التكوينات وبعض التغييرات في مساحة الأسماء.</p>
@@ -6688,13 +6688,13 @@
 
 <p><img src="images/100000000000014200000147218C792F.png" width="225" height="229" style="width:5.96cm;height:6.054cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014200000147218C792F.png" /></p>
 <p><a id="refheading1242352030931382"></a></p>
-<h3 id="9253-web">9.25.3. <span style="color: #4f81bd">تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]</span></h3>
+<h3 id="9253-web">9.25.3. <span style="color: #4f81bd">تنفيذ طبقة [web]</span></h3>
 <p>قم ببناء مشروع [<bdi dir="ltr" class="odt-ltr-term">pam-web-02</bdi>]. ستظهر أخطاء، مثل ما يلي:</p>
 <p><span style="color: #000000"> </span></p>
 <p><img src="images/10000000000002E9000000CC6E5A03F5.png" width="522" height="143" style="width:13.801cm;height:3.778cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002E9000000CC6E5A03F5.png" /></p>
 <p><span style="color: #000000">تستخدم فئة [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>] النوع [<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>]. مع محاكاة طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]، تم تعريف هذا النوع في مساحة الاسم [<bdi dir="ltr" class="odt-ltr-term">Pam.Business.Entities</bdi>]. وهو موجود الآن في مساحة الاسم [<bdi dir="ltr" class="odt-ltr-term">Pam.EF5.Entities</bdi>]. قم بتصحيح هذه الأخطاء كما هو موضح أعلاه.</span></p>
 <p><a id="refheading1242372030931382"></a></p>
-<h3 id="9254-web">9.25.4. <span style="color: #4f81bd">تكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]</span></h3>
+<h3 id="9254-web">9.25.4. <span style="color: #4f81bd">تكوين طبقة [web]</span></h3>
 <p>كما تم في القسم 9.24.5، نحتاج إلى تكوين <bdi dir="ltr" class="odt-ltr-term">EF5</bdi> في ملف [<bdi dir="ltr" class="odt-ltr-term">web.config</bdi>] الخاص بالمشروع:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015E00000205A31CC585.png" width="175" height="258" style="display:inline-block; margin:4px;width:4.63cm;height:6.839cm;" class="odt-zoomable" data-zoom-src="images/100000000000015E00000205A31CC585.png" /></td></tr></table>
 
@@ -6716,8 +6716,8 @@
 
 <p><span style="color: #000000">السطر 4: نطلب مرجعًا إلى كائن <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> المسمى [<bdi dir="ltr" class="odt-ltr-term">pammetier</bdi>]. هذا هو بالفعل الاسم الممنوح لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] (تحقق من ذلك في ملف [<bdi dir="ltr" class="odt-ltr-term">web.config</bdi>] الخاص بك).</span></p>
 <p><a id="refheading1242392030931382"></a></p>
-<h3 id="9255-web">9.25.5. <span style="color: #4f81bd">اختبار طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]</span></h3>
-<p>نحن جاهزون لاختبار طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] الخاصة بنا. أولاً، سنقوم بتغيير منفذ العمل الخاص بها. بشكل افتراضي، [<bdi dir="ltr" class="odt-ltr-term">pam-web-02</bdi>] له نفس تكوين [<bdi dir="ltr" class="odt-ltr-term">pam-web-01</bdi>] وبالتالي يعمل على نفس المنفذ. وتُظهر التجربة أن هذا يسبب مشاكل: يستمر <bdi dir="ltr" class="odt-ltr-term">IIS</bdi> في استخدام الكود من مشروع [<bdi dir="ltr" class="odt-ltr-term">pam-web-01</bdi>]. تابع كما يلي:</p>
+<h3 id="9255-web">9.25.5. <span style="color: #4f81bd">اختبار طبقة [web]</span></h3>
+<p>نحن جاهزون لاختبار طبقة [web] الخاصة بنا. أولاً، سنقوم بتغيير منفذ العمل الخاص بها. بشكل افتراضي، [<bdi dir="ltr" class="odt-ltr-term">pam-web-02</bdi>] له نفس تكوين [<bdi dir="ltr" class="odt-ltr-term">pam-web-01</bdi>] وبالتالي يعمل على نفس المنفذ. وتُظهر التجربة أن هذا يسبب مشاكل: يستمر <bdi dir="ltr" class="odt-ltr-term">IIS</bdi> في استخدام الكود من مشروع [<bdi dir="ltr" class="odt-ltr-term">pam-web-01</bdi>]. تابع كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E6000003C227E9F065.png" width="499" height="481" style="display:inline-block; margin:4px;width:13.203cm;height:12.726cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E6000003C227E9F065.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B3000003508446810C.png" width="602" height="424" style="display:inline-block; margin:4px;width:15.916cm;height:11.218cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B3000003508446810C.png" /></td></tr></table>

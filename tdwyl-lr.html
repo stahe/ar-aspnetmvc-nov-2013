@@ -1007,7 +1007,7 @@
     <ul>
       <li><span style="color: #000000">السطر 15: في معلمات عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [?<bdi dir="ltr" class="odt-ltr-term">lang</bdi>=<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>]،</span>
       </li>
-      <li><span style="color: #000000">السطر 19: في المعلمات المنشورة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>=<bdi dir="ltr" class="odt-ltr-term">de</bdi>]،</span>
+      <li><span style="color: #000000">السطر 19: في المعلمات المنشورة [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>=de]،</span>
       </li>
       <li><span style="color: #000000">السطر 24: في جلسة عمل المستخدم،</span>
       </li>
@@ -1338,7 +1338,7 @@
 <ul>
   <li><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyResources.ResourceManager.GetObject</bdi>(&quot;<bdi dir="ltr" class="odt-ltr-term">infoIncorrecte</bdi>&quot;, <bdi dir="ltr" class="odt-ltr-term">new CultureInfo</bdi>(&quot;<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>&quot;)) </span></b><span style="color: #000000">: يسترد الكائن المرتبط بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">infoIncorrecte</bdi>] من ملف الموارد [<bdi dir="ltr" class="odt-ltr-term">MyResources.en-US.resx</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">لقد رأينا أن وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>] تحدد الثقافة الحالية في الجلسة المرتبطة بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>]. وبالتالي، يمكن استرداد الثقافة الحالية باستخدام </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">System.Web.HttpContext.Current.Session</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">lang</bdi>&quot;] <bdi dir="ltr" class="odt-ltr-term">as</bdi> </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">string</bdi>؛</span>
+  <li><span style="color: #000000">لقد رأينا أن وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">I18NController</bdi>] تحدد الثقافة الحالية في الجلسة المرتبطة بالمفتاح [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>]. وبالتالي، يمكن استرداد الثقافة الحالية باستخدام </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">System.Web.HttpContext.Current.Session</bdi>[&quot;<bdi dir="ltr" class="odt-ltr-term">lang</bdi>&quot;] as </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">string</bdi>؛</span>
   </li>
   <li><span style="color: #000000">يتم استرداد المورد كـ [<bdi dir="ltr" class="odt-ltr-term">object</bdi>]. للحصول على رسالة الخطأ، نطبق عليها طريقة [<bdi dir="ltr" class="odt-ltr-term">ToString</bdi>].</span>
   </li>
@@ -1536,7 +1536,7 @@
 <p><span style="color: #000000"> </span></p>
 <p>الأسطر 22–40 هي نفسها الموجودة بالفعل في البرنامج النصي [<bdi dir="ltr" class="odt-ltr-term">myscripts.js</bdi>] المستخدم في المثال السابق. لن نعيد تناولها هنا. توجد الدالة [<bdi dir="ltr" class="odt-ltr-term">postForm</bdi>]، التي يتم تنفيذها عند النقر على روابط اللغات، في الأسطر 1–20:</p>
 <ul>
-  <li>السطر 1: تأخذ الدالة معلمتين، [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>]، وهي الثقافة التي اختارها المستخدم، و[<bdi dir="ltr" class="odt-ltr-term">url</bdi>]، وهي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يجب إعادة توجيه متصفح العميل إليه بمجرد إجراء تغيير الثقافة. يتم تحديد هاتين المعلمتين في الاستدعاء:
+  <li>السطر 1: تأخذ الدالة معلمتين، [<bdi dir="ltr" class="odt-ltr-term">lang</bdi>]، وهي الثقافة التي اختارها المستخدم، و[url]، وهي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يجب إعادة توجيه متصفح العميل إليه بمجرد إجراء تغيير الثقافة. يتم تحديد هاتين المعلمتين في الاستدعاء:
   </li>
 </ul>
 
@@ -1564,7 +1564,7 @@
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;url&quot;</span><span class="p">/&gt;</span>
 </code></pre></div>
-<p>حيث [<bdi dir="ltr" class="odt-ltr-term">url</bdi>] هي قيمة المعلمة [<bdi dir="ltr" class="odt-ltr-term">url</bdi>] للدالة؛</p>
+<p>حيث [url] هي قيمة المعلمة [url] للدالة؛</p>
 <ul>
   <li>السطر 19: تم الآن إرسال النموذج الثاني. إلى أي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>؟
   </li>
@@ -1610,7 +1610,7 @@
 <ul>
   <li>السطر 18: لا يستجيب الإجراء إلا لـ [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]؛
   </li>
-  <li>السطر 19: يسترد فقط المعلمة المسماة [<bdi dir="ltr" class="odt-ltr-term">url</bdi>]؛
+  <li>السطر 19: يسترد فقط المعلمة المسماة [url]؛
   </li>
   <li>السطر 22: يوجه العميل لإعادة التوجيه إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا.
   </li>
@@ -1981,7 +1981,7 @@
   </li>
   <li><span style="color: #000000">السطر 19: عند انتهاء تحميل الصفحة، سيتم تطبيق دالة <bdi dir="ltr" class="odt-ltr-term">jQuery UI</bdi> [<bdi dir="ltr" class="odt-ltr-term">datepicker</bdi>] على العنصر </span><b><span style="color: #000000">الذي يحمل المعرف </span></b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>]، أي العنصر الموجود في السطر 34. تضمن هذه الدالة أنه عند تركيز المستخدم على حقل الإدخال [<bdi dir="ltr" class="odt-ltr-term">Date1</bdi>]، سيظهر تقويم يسمح له باختيار تاريخ. تقبل دالة [<bdi dir="ltr" class="odt-ltr-term">datepicker</bdi>] معلمة تحدد لغة التقويم. يجب تعيين المتغير [@<bdi dir="ltr" class="odt-ltr-term">Model.Regionale</bdi>] إلى:</span>
   </li>
-  <li><span style="color: #000000">&#x27;<bdi dir="ltr" class="odt-ltr-term">fr</bdi>&#x27; للتقويم الفرنسي،</span>
+  <li><span style="color: #000000">&#x27;fr&#x27; للتقويم الفرنسي،</span>
   </li>
   <li><span style="color: #000000">&#x27;&#x27; للتقويم الإنجليزي؛</span>
   </li>
@@ -2072,7 +2072,7 @@
 <ul>
   <li><span style="color: #000000">السطر 60: لغة العرض، &#x27;<bdi dir="ltr" class="odt-ltr-term">fr-FR</bdi>&#x27; أو &#x27;<bdi dir="ltr" class="odt-ltr-term">en-US</bdi>&#x27;. يتم تهيئة هذه اللغة في المنشئ في السطر 26؛</span>
   </li>
-  <li><span style="color: #000000">السطر 61: الثقافة الإقليمية لتقويم <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi>، &#x27;<bdi dir="ltr" class="odt-ltr-term">fr</bdi>&#x27; للتقويم الفرنسي، &#x27;&#x27; للتقويم الإنجليزي. يتم تهيئة هذا الحقل في السطر 29 من المنشئ؛</span>
+  <li><span style="color: #000000">السطر 61: الثقافة الإقليمية لتقويم <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi>، &#x27;fr&#x27; للتقويم الفرنسي، &#x27;&#x27; للتقويم الإنجليزي. يتم تهيئة هذا الحقل في السطر 29 من المنشئ؛</span>
   </li>
   <li><span style="color: #000000">السطر 63: تنسيق التاريخ من السطر 15: &#x27;<bdi dir="ltr" class="odt-ltr-term">dd/MM/yyyy</bdi>&#x27; للتاريخ الفرنسي، &#x27;<bdi dir="ltr" class="odt-ltr-term">MM/dd/yyyy</bdi>&#x27; للتاريخ الإنجليزي. يتم تهيئة هذا الحقل في السطر 31 من المنشئ؛</span>
   </li>
